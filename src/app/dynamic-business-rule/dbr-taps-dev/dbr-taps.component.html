@@ -1,0 +1,35 @@
+
+  <tab-ctrl [paramsObject]="dbrTaps" [defaultTab]="2320" (clicked)="activatedbrTaps($event)"></tab-ctrl>
+
+
+  <div class="card-block" *ngIf="activedbrTaps == 2320 || tab2320Activated == true" [hidden]="activedbrTaps != 2320">
+    <app-dpr-setup  > </app-dpr-setup>
+  </div>
+
+  <div class="card-block" *ngIf="activedbrTaps == 2321 || tab2321Activated == true" [hidden]="activedbrTaps != 2321">
+    <app-dbr-parms> </app-dbr-parms>
+  </div>
+
+  <div class="card-block" *ngIf="activedbrTaps == 2322 || tab2322Activated == true" [hidden]="activedbrTaps != 2322">
+
+    <app-dbr-outputs  > </app-dbr-outputs>
+  </div>
+
+
+
+<!--<div>
+
+  <tab-ctrl [paramsObject]="dbrTaps" [defaultTab]="2320" (clicked)="activateTab($event)"></tab-ctrl>
+  <div class="row" *ngIf="activeTabSerial ==2320  || visitedTabs['2148']" [hidden]="activeTabSerial != 2320">
+    <app-dpr-setup> </app-dpr-setup>
+  </div>
+  <div class="row" *ngIf="activeTabSerial ==2321  || visitedTabs['2149'] " [hidden]="activeTabSerial !=2321 ">
+    
+    <app-dbr-parms> </app-dbr-parms>
+  </div>
+  <div class="row" *ngIf="activeTabSerial == 2322 ||  visitedTabs['2150'] " [hidden]="activeTabSerial !=2322 ">
+   
+    <app-dbr-outputs> </app-dbr-outputs>
+  </div>
+ 
+</div>-->

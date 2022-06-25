@@ -1,0 +1,65 @@
+header {
+    background-image: -webkit-gradient(linear, right top, left top, color-stop(34%, #24b4ea), to(#26be7fa1));
+    background-image: -webkit-linear-gradient(right, #24b4ea 34%, #26be7fa1);
+    background-image: -o-linear-gradient(right, #24b4ea 34%, #26be7fa1);
+    background-image: linear-gradient(to left, #24b4ea 34%, #26be7fa1);
+}
+.lang_dropper .drop_down_content {
+    background-image: -webkit-linear-gradient(320deg, #24b4ea 0%, #00d67c 100%);
+    background-image: -o-linear-gradient(320deg, #24b4ea 0%, #00d67c 100%);
+    background-image: linear-gradient(130deg, #24b4ea 0%, #00d67c 100%);
+}
+.nav-sub .active>a:focus {
+    background-color: #24b4ea;
+    color: #e9ecef;
+}
+.links-container .title {
+    color: #fff;
+    border-radius: 20px;
+    background-image: -webkit-linear-gradient(275deg, #00e685, #000000 193%);
+    background-image: -o-linear-gradient(275deg, #00e685, #000000 193%);
+    background-image: linear-gradient(-185deg, #00e685, #000000 193%);
+}
+nav>ul>li.active>ul>li a:hover {
+    color: #02baff;
+}
+nav>ul>li>a:hover, nav>ul>li.active>a {
+    color: #fff;
+    background-color: #24b4ea;
+    box-shadow: inset 0 0 41px #27b4e2
+}
+.links-container .link-container-area ul li {
+    border-radius: 20px;
+}
+.links-container .link-container-area ul li a:last-of-type {
+    font-size: 15px;
+    width: 33px;
+}
+.links-container .link-container-area ul li:hover {
+    box-shadow: inset -400px 0px 0px #24b4ea;
+}
+.links-container .link-container-area ul li a:first-of-type {
+    color: #1797c7;
+}
+
+
+/* table header  */
+
+.ui-datatable-tablewrapper table th {
+    background-image: linear-gradient(180deg, #08AEEA 82%, #08AEEA 100%);
+    padding: 6px 1px;
+    font-size: 13px;
+}
+
+.table thead th {
+    background-color: #66c3a9;
+    color: #fff !important;
+}
+/* table header  */
+
+/* btns */
+
+button[ngbtooltip] {
+    background-color: #1cb365;
+}
+/* btns */

@@ -1,0 +1,131 @@
+﻿<div [class]="styleClass"
+     [ngStyle]="style"
+     class="text-sm-center"
+     [ngClass]="{'card-header py-0':true}">
+    <a href="#"
+       #firstlink
+       class="btn btn-sm"
+       (mouseenter)="hoveredItem = $event.target"
+       (mouseleave)="hoveredItem = null"
+       (click)="changePageToFirst($event)"
+       [tabindex]="isFirstPage() ? -1 : null">
+       <span class="fa fa-step-backward"></span>
+    </a>
+    <!-- [ngClass]="{'ui-state-disabled':isFirstPage(),'ui-state-hover':(firstlink === hoveredItem && !isFirstPage())}" -->
+    <!-- by abood -->
+    <a href="#"
+    #prevlink
+    class="btn btn-sm"
+    (mouseenter)="hoveredItem = $event.target"
+    (mouseleave)="hoveredItem = null"
+    (click)="changePageToPrev($event)"
+    [tabindex]="isFirstPage() ? -1 : null">
+    <span class="fa fa-backward"></span>
+</a>
+<!-- [ngClass]="{'ui-state-disabled':isFirstPage(),'ui-state-hover':(prevlink === hoveredItem && !isFirstPage())}" -->
+<!-- by abood -->
+<span class="ui-paginator-pages">
+    <button href="#"
+    #plink
+    *ngFor="let pageLink of pageLinks"
+    class="btn btn-sm active"
+    (mouseenter)="hoveredItem = $event.target"
+    (mouseleave)="hoveredItem = null"
+    (click)="changePage(pageLink - 1, $event)"
+    >{{pageLink}}</button>
+    <!-- [ngClass]="{'bg-warning':(plink === hoveredItem), 'bg-danger': (pageLink-1 == getPage())}" -->
+    <!-- by abood -->
+</span>
+<a href="#"
+#nextlink
+class="btn btn-sm"
+(mouseenter)="hoveredItem = $event.target"
+(mouseleave)="hoveredItem = null"
+(click)="changePageToNext($event)"
+[tabindex]="isLastPage() ? -1 : null">
+<span class="fa fa-forward"></span>
+</a>
+<!-- [ngClass]="{'ui-state-disabled':isLastPage(),'bg-warning':(nextlink === hoveredItem  && !isLastPage())}" -->
+<!-- by abood -->
+<a href="#" #lastlink
+class="btn btn-sm"
+(mouseenter)="hoveredItem = $event.target"
+(mouseleave)="hoveredItem = null"
+(click)="changePageToLast($event)"
+[tabindex]="isLastPage() ? -1 : null">
+<span class="fa fa-step-forward"></span>
+</a>
+<!-- [ngClass]="{'ui-state-disabled':isLastPage(),'ui-state-hover':(lastlink === hoveredItem  && !isLastPage())}" -->
+<!-- by abood -->
+    <select class="ui-paginator-rpp-options ui-widget ui-state-default" *ngIf="rowsPerPageOptions" (change)="onRppChange($event)">
+        <option *ngFor="let opt of rowsPerPageOptions" [value]="opt" [selected]="rows == opt">{{opt}}</option>
+    </select>
+</div>
+
+<!--<nav aria-label="Page navigation">
+    <ul class="pagination pagination-sm">
+        <li class="page-link">
+            <a href="#"
+            #firstlink
+            class="ui-paginator-first ui-paginator-element ui-state-default ui-corner-all"
+            (mouseenter)="hoveredItem = $event.target"
+            (mouseleave)="hoveredItem = null"
+            (click)="changePageToFirst($event)"
+            [ngClass]="{'ui-state-disabled':isFirstPage(),'ui-state-hover':(firstlink === hoveredItem && !isFirstPage())}"
+            [tabindex]="isFirstPage() ? -1 : null">
+            <span class="fa fa-step-backward"></span>
+        </a>
+        </li>
+        <li class="page-link">
+            <a href="#"
+               #prevlink
+               class="ui-paginator-prev ui-paginator-element ui-state-default ui-corner-all"
+               (mouseenter)="hoveredItem = $event.target"
+               (mouseleave)="hoveredItem = null"
+               (click)="changePageToPrev($event)"
+               [ngClass]="{'ui-state-disabled':isFirstPage(),'ui-state-hover':(prevlink === hoveredItem && !isFirstPage())}"
+               [tabindex]="isFirstPage() ? -1 : null">
+                <span class="fa fa-backward"></span>
+            </a>
+        </li>
+        <li class="page-item">
+            <a class="page-link" href="#" aria-label="Previous">
+                <span aria-hidden="true">«</span>
+                <span class="sr-only">Previous</span>
+            </a>
+        </li>
+        <li class="page-item">
+            <a href="#"
+               #plink
+               *ngFor="let pageLink of pageLinks"
+               class="ui-paginator-page ui-paginator-element ui-state-default ui-corner-all"
+               (mouseenter)="hoveredItem = $event.target"
+               (mouseleave)="hoveredItem = null"
+               (click)="changePage(pageLink - 1, $event)"
+               [ngClass]="{'ui-state-hover':(plink === hoveredItem), 'ui-state-active': (pageLink-1 == getPage())}">{{pageLink}}</a>
+        </li>
+        <li class="page-link">
+            <a href="#"
+               #nextlink
+               class="ui-paginator-next ui-paginator-element ui-state-default ui-corner-all"
+               (mouseenter)="hoveredItem = $event.target"
+               (mouseleave)="hoveredItem = null"
+               (click)="changePageToNext($event)"
+               [ngClass]="{'ui-state-disabled':isLastPage(),'ui-state-hover':(nextlink === hoveredItem  && !isLastPage())}"
+               [tabindex]="isLastPage() ? -1 : null">
+                <span class="fa fa-forward"></span>
+            </a>
+        </li>
+        <li class="page-item">
+            <a href="#" #lastlink
+               class="ui-paginator-last ui-paginator-element ui-state-default ui-corner-all"
+               (mouseenter)="hoveredItem = $event.target"
+               (mouseleave)="hoveredItem = null"
+               (click)="changePageToLast($event)"
+               [ngClass]="{'ui-state-disabled':isLastPage(),'ui-state-hover':(lastlink === hoveredItem  && !isLastPage())}"
+               [tabindex]="isLastPage() ? -1 : null">
+                <span class="fa fa-step-forward"></span>
+            </a>
+        </li>
+    </ul>
+</nav>-->

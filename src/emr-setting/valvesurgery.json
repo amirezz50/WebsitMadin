@@ -1,0 +1,1050 @@
+{
+    "sec1_head": {
+        "display": true,
+        "inputType": "mainHeader",
+        "lookupCode": 0,
+        "required": false,
+        "labelText": " Valve Surgery   ",
+        "cssClass": "col-12 pt-2"
+    },
+    "valveProsthesisExplant": {
+        "display": true,
+        "inputType": "selectize",
+        "lookupCode": 10,
+        "required": false,
+        "labelText": "Valve Prosthesis Explant:   ",
+        "cssClass": "col-12 col-sm-6 col-md-3 col-lg-3 col-xl-2 pt-2 general-input-class"
+    },
+    "explantPosition": {
+        "display": true,
+        "inputType": "selectize",
+        "lookupCode": 93,
+        "required": false,
+        "labelText": "Explant Position: ",
+        "cssClass": "col-12 col-sm-6 col-md-3 col-lg-3 col-xl-2 pt-2 general-input-class"
+    },
+    "valveProsthesisExplantExplantType": {
+        "display": true,
+        "inputType": "selectize",
+        "lookupCode": 94,
+        "required": false,
+        "labelText": "Explant Type: ",
+        "cssClass": "col-12 col-sm-6 col-md-3 col-lg-3 col-xl-2 pt-2 general-input-class"
+    },
+    "valveProsthesisExplantExplantEtiology": {
+        "display": true,
+        "inputType": "selectize",
+        "lookupCode": 95,
+        "required": false,
+        "labelText": "Explant Etiology:  ",
+        "cssClass": "col-12 col-sm-6 col-md-3 col-lg-3 col-xl-2 pt-2 general-input-class"
+    },
+    "explantDeviceknown": {
+        "display": true,
+        "inputType": "selectize",
+        "lookupCode": 10,
+        "required": false,
+        "labelText": "Explant Device known:   ",
+        "cssClass": "col-12 col-sm-6 col-md-3 col-lg-3 col-xl-2 pt-2 general-input-class"
+    },
+    "explantModel": {
+        "display": true,
+        "inputType": "text",
+        "lookupCode": 0,
+        "required": false,
+        "labelText": "Explant model# ",
+        "cssClass": "col-12 col-sm-6 col-md-3 col-lg-3 col-xl-2 pt-2 general-input-class"
+    },
+    "valveProsthesisExplantUniqueDeviceIdentifier": {
+        "display": true,
+        "inputType": "text",
+        "lookupCode": 0,
+        "required": false,
+        "labelText": "Unique Device Identifier (UDI): ",
+        "cssClass": "col-12 col-sm-6 col-md-3 col-lg-3 col-xl-2 pt-2 general-input-class"
+    },
+    "secondValveProsthesisExplant": {
+        "display": true,
+        "inputType": "selectize",
+        "lookupCode": 10,
+        "required": false,
+        "labelText": "Second Valve Prosthesis Explant:   ",
+        "cssClass": "col-12 col-sm-6 col-md-3 col-lg-3 col-xl-2 pt-2 general-input-class"
+    },
+    "secondValveProsthesisExplantExplantPosition": {
+        "display": true,
+        "inputType": "selectize",
+        "lookupCode": 93,
+        "required": false,
+        "labelText": "Explant Position: ",
+        "cssClass": "col-12 col-sm-6 col-md-3 col-lg-3 col-xl-2 pt-2 general-input-class"
+    },
+    "secondValveProsthesisExplantType": {
+        "display": true,
+        "inputType": "database add",
+        "lookupCode": 94,
+        "required": false,
+        "labelText": "Explant Type: ",
+        "cssClass": "col-12 col-sm-6 col-md-3 col-lg-3 col-xl-2 pt-2 general-input-class"
+    },
+    "secondValveProsthesisExplantExplantEtiology": {
+        "display": true,
+        "inputType": "selectize",
+        "lookupCode": 95,
+        "required": false,
+        "labelText": "lead ekg findings:  ",
+        "cssClass": "col-12 col-sm-6 col-md-3 col-lg-3 col-xl-2 pt-2 general-input-class"
+    },
+    "secondValveProsthesisExplantexplantDeviceknown": {
+        "display": true,
+        "inputType": "selectize",
+        "lookupCode": 10,
+        "required": false,
+        "labelText": "Explant Device known:   ",
+        "cssClass": "col-12 col-sm-6 col-md-3 col-lg-3 col-xl-2 pt-2 general-input-class"
+    },
+    "secondValveProsthesisExplantUniqueDeviceIdentifier": {
+        "display": true,
+        "inputType": "text",
+        "lookupCode": 0,
+        "required": false,
+        "labelText": "lead ekg findings:  ",
+        "cssClass": "col-12 col-sm-6 col-md-3 col-lg-3 col-xl-2 pt-2 general-input-class"
+    },
+    "secondValveProsthesisExplantModel": {
+        "display": true,
+        "inputType": "databaseadd",
+        "lookupCode": 0,
+        "required": false,
+        "labelText": "MOde# :",
+        "cssClass": "col-12 col-sm-6 col-md-3 col-lg-3 col-xl-2 pt-2 general-input-class"
+    },
+    "hr1": {
+        "display": true,
+        "inputType": "hr",
+        "lookupCode": 0,
+        "required": false,
+        "labelText": "",
+        "cssClass": "col-12 general-input-class"
+    },
+    "aorticValveProcedurePerformed": {
+        "display": true,
+        "inputType": "selectize",
+        "lookupCode": 96,
+        "required": false,
+        "labelText": "Aortic Valve Procedure Performed: ",
+        "cssClass": "col-12 col-sm-6 col-md-3 col-lg-3 col-xl-2 pt-2 general-input-class"
+    },
+    "transcatheterValveReplacement": {
+        "display": true,
+        "inputType": "selectize",
+        "lookupCode": 10,
+        "required": false,
+        "labelText": "Transcatheter Valve Replacement:   ",
+        "cssClass": "col-12 col-sm-6 col-md-3 col-lg-3 col-xl-2 pt-2 general-input-class"
+    },
+    "surgicalValveReplacement": {
+        "display": true,
+        "inputType": "selectize",
+        "lookupCode": 10,
+        "required": false,
+        "labelText": "Surgical valve Replacement:   ",
+        "cssClass": "col-12 col-sm-6 col-md-3 col-lg-3 col-xl-2 pt-2 general-input-class"
+    },
+    "approach": {
+        "display": true,
+        "inputType": "selectize",
+        "lookupCode": 98,
+        "required": false,
+        "labelText": "lead ekg findings:  ",
+        "cssClass": "col-12 col-sm-6 col-md-3 col-lg-3 col-xl-2 pt-2 general-input-class"
+    },
+    "secondValveProsthesisExplantReplacement": {
+        "display": true,
+        "inputType": "chexbox",
+        "lookupCode": 0,
+        "required": false,
+        "labelText": "Replacement :  ",
+        "cssClass": "col-12 col-sm-6 col-md-3 col-lg-3 col-xl-2 pt-2 general-input-class"
+    },
+    "deviceType": {
+        "display": true,
+        "inputType": "selectize",
+        "lookupCode": 99,
+        "required": false,
+        "labelText": "lead ekg findings:  ",
+        "cssClass": "col-12 col-sm-6 col-md-3 col-lg-3 col-xl-2 pt-2 general-input-class"
+    },
+    "valveType": {
+        "display": true,
+        "inputType": "selectize",
+        "lookupCode": 100,
+        "required": false,
+        "labelText": "lead ekg findings:  ",
+        "cssClass": "col-12 col-sm-6 col-md-3 col-lg-3 col-xl-2 pt-2 general-input-class"
+    },
+    "repairReconstruction": {
+        "display": true,
+        "inputType": "checkbox",
+        "lookupCode": 0,
+        "required": false,
+        "labelText": "lead ekg findings:  ",
+        "cssClass": "col-12 col-sm-6 col-md-3 col-lg-3 col-xl-2 pt-2 general-input-class"
+    },
+    "repairType": {
+        "display": true,
+        "inputType": "label",
+        "lookupCode": 0,
+        "required": false,
+        "labelText": "Repair Type:  ",
+        "cssClass": "col-12 col-sm-6 col-md-3 col-lg-3 col-xl-2 pt-2 general-input-class"
+    },
+    "commissuralSutureAnnuloplasty": {
+        "display": true,
+        "inputType": "selectize",
+        "lookupCode": 10,
+        "required": false,
+        "labelText": "Commissural suture annuloplasty : ",
+        "cssClass": "col-12 col-sm-6 col-md-3 col-lg-3 col-xl-2 pt-2 general-input-class"
+    },
+    "externalSutureAnnuloplasty": {
+        "display": true,
+        "inputType": "selectize",
+        "lookupCode": 10,
+        "required": false,
+        "labelText": "External Suture Annuloplasty: ",
+        "cssClass": "col-12 col-sm-6 col-md-3 col-lg-3 col-xl-2 pt-2 general-input-class"
+    },
+    "leafletPlication": {
+        "display": true,
+        "inputType": "selectize",
+        "lookupCode": 10,
+        "required": false,
+        "labelText": "Leaflet plication:  ",
+        "cssClass": "col-12 col-sm-6 col-md-3 col-lg-3 col-xl-2 pt-2 general-input-class"
+    },
+    "nodularRelease": {
+        "display": true,
+        "inputType": "selectize",
+        "lookupCode": 10,
+        "required": false,
+        "labelText": "Nodular Release:  ",
+        "cssClass": "col-12 col-sm-6 col-md-3 col-lg-3 col-xl-2 pt-2 general-input-class"
+    },
+    "ringAnnuloplasty": {
+        "display": true,
+        "inputType": "selectize",
+        "lookupCode": 10,
+        "required": false,
+        "labelText": "Ring annuloplasty:  ",
+        "cssClass": "col-12 col-sm-6 col-md-3 col-lg-3 col-xl-2 pt-2 general-input-class"
+    },
+    "externalSutureAnnuloplastyType": {
+        "display": true,
+        "inputType": "selectize",
+        "lookupCode": 102,
+        "required": false,
+        "labelText": "ExternalSutureAnnuloplastyType:  ",
+        "cssClass": "col-12 col-sm-6 col-md-3 col-lg-3 col-xl-2 pt-2 general-input-class"
+    },
+    "leafletResectionSuture": {
+        "display": true,
+        "inputType": "selectize",
+        "lookupCode": 10,
+        "required": false,
+        "labelText": "lLeaflet resection suture:  ",
+        "cssClass": "col-12 col-sm-6 col-md-3 col-lg-3 col-xl-2 pt-2 general-input-class"
+    },
+    "leafletShaving": {
+        "display": true,
+        "inputType": "selectize",
+        "lookupCode": 10,
+        "required": false,
+        "labelText": "Leaflet Shaving:  ",
+        "cssClass": "col-12 col-sm-6 col-md-3 col-lg-3 col-xl-2 pt-2 general-input-class"
+    },
+    "leafletFreeEdgeReinforcement": {
+        "display": true,
+        "inputType": "selectize",
+        "lookupCode": 10,
+        "required": false,
+        "labelText": "Leaflet free edge reinforcement :  ",
+        "cssClass": "col-12 col-sm-6 col-md-3 col-lg-3 col-xl-2 pt-2 general-input-class"
+    },
+    "leafletCommissuralResuspensionSuture": {
+        "display": true,
+        "inputType": "selectize",
+        "lookupCode": 10,
+        "required": false,
+        "labelText": "Leaflet commissural resuspension suture:  ",
+        "cssClass": "col-12 col-sm-6 col-md-3 col-lg-3 col-xl-2 pt-2 general-input-class"
+    },
+    "divisionOfFusedLeafletRaphe": {
+        "display": true,
+        "inputType": "selectize",
+        "lookupCode": 10,
+        "required": false,
+        "labelText": "Division of fused leaflet raphe:  ",
+        "cssClass": "col-12 col-sm-6 col-md-3 col-lg-3 col-xl-2 pt-2 general-input-class"
+    },
+    "repairOfPeriprosthetiCleak": {
+        "display": true,
+        "inputType": "selectize",
+        "lookupCode": 10,
+        "required": false,
+        "labelText": "Repair of periprosthetic leak:  ",
+        "cssClass": "col-12 col-sm-6 col-md-3 col-lg-3 col-xl-2 pt-2 general-input-class"
+    },
+    "hr2": {
+        "display": true,
+        "inputType": "hr",
+        "lookupCode": 0,
+        "required": false,
+        "labelText": "",
+        "cssClass": "col-12 general-input-class"
+    },
+    "aorticAnnularEnlargementWithPatch": {
+        "display": true,
+        "inputType": "selectize",
+        "lookupCode": 10,
+        "required": false,
+        "labelText": "Aortic annular enlargement with patch :  ",
+        "cssClass": "col-12 col-sm-6 col-md-3 col-lg-3 col-xl-2 pt-2 general-input-class"
+    },
+    "technique": {
+        "display": true,
+        "inputType": "selectize",
+        "lookupCode": 103,
+        "required": false,
+        "labelText": "Technique:  ",
+        "cssClass": "col-12 col-sm-6 col-md-3 col-lg-3 col-xl-2 pt-2 general-input-class"
+    },
+    "rootProcedure": {
+        "display": true,
+        "inputType": "selectize",
+        "lookupCode": 10,
+        "required": false,
+        "labelText": "Root Procedure :  ",
+        "cssClass": "col-12 col-sm-6 col-md-3 col-lg-3 col-xl-2 pt-2 general-input-class"
+    },
+    "rootReplacementWithCoronaryOstialReimplantation": {
+        "display": true,
+        "inputType": "selectize",
+        "lookupCode": 10,
+        "required": false,
+        "labelText": "Root Replacement with coronary Ostial Reimplantation :  ",
+        "cssClass": "col-12 col-sm-6 col-md-3 col-lg-3 col-xl-2 pt-2 general-input-class"
+    },
+    "rootReplacementWithCoronaryOstialReimplantationType": {
+        "display": true,
+        "inputType": "selectize",
+        "lookupCode": 104,
+        "required": false,
+        "labelText": "Major root reconstruction/ debridement with or without pericardial patch : ",
+        "cssClass": "col-12 col-sm-6 col-md-3 col-lg-3 col-xl-2 pt-2 general-input-class"
+    },
+    "valveSparingRootOperation": {
+        "display": true,
+        "inputType": "selectize",
+        "lookupCode": 10,
+        "required": false,
+        "labelText": "Valve Sparing root operation:   ",
+        "cssClass": "col-12 col-sm-6 col-md-3 col-lg-3 col-xl-2 pt-2 general-input-class"
+    },
+    "patchUsed": {
+        "display": true,
+        "inputType": "selectize",
+        "lookupCode": 10,
+        "required": false,
+        "labelText": "patchUsed:  ",
+        "cssClass": "col-12 col-sm-6 col-md-3 col-lg-3 col-xl-2 pt-2 general-input-class"
+    },
+    "patchType": {
+        "display": true,
+        "inputType": "selectize",
+        "lookupCode": 105,
+        "required": false,
+        "labelText": "patch Type ",
+        "cssClass": "col-12 col-sm-6 col-md-3 col-lg-3 col-xl-2 pt-2 general-input-class"
+    },
+    "aorticValveImplant": {
+        "display": true,
+        "inputType": "selectize",
+        "lookupCode": 105,
+        "required": false,
+        "labelText": "Aortic Valve Implant:   ",
+        "cssClass": "col-12 col-sm-6 col-md-3 col-lg-3 col-xl-2 pt-2 general-input-class"
+    },
+    "implantModelNumber": {
+        "display": true,
+        "inputType": "text",
+        "lookupCode": 105,
+        "required": false,
+        "labelText": "Implant Model Number: ",
+        "cssClass": "col-12 col-sm-6 col-md-3 col-lg-3 col-xl-2 pt-2 general-input-class"
+    },
+    "implantSize": {
+        "display": true,
+        "inputType": "text",
+        "lookupCode": 73,
+        "required": false,
+        "labelText": "Implant Size:  ",
+        "cssClass": "col-12 col-sm-6 col-md-3 col-lg-3 col-xl-2 pt-2 general-input-class"
+    },
+    "aorticValveImplantUniqueDeviceIdentifier": {
+        "display": true,
+        "inputType": "text",
+        "lookupCode": 0,
+        "required": false,
+        "labelText": "Unique Device identifier (UDI):  ",
+        "cssClass": "col-12 col-sm-6 col-md-3 col-lg-3 col-xl-2 pt-2 general-input-class"
+    },
+    "hr3": {
+        "display": true,
+        "inputType": "hr",
+        "lookupCode": 0,
+        "required": false,
+        "labelText": "",
+        "cssClass": "col-12 general-input-class"
+    },
+    "mitralValveProcedurePerformed": {
+        "display": true,
+        "inputType": "selectize",
+        "lookupCode": 96,
+        "required": false,
+        "labelText": "lead ekg findings:  ",
+        "cssClass": "col-12 col-sm-6 col-md-3 col-lg-3 col-xl-2 pt-2 general-input-class"
+    },
+    "procedurePerformed": {
+        "display": true,
+        "inputType": "selectize",
+        "lookupCode": 0,
+        "required": false,
+        "labelText": "ProcedurePerformed:  ",
+        "cssClass": "col-12 col-sm-6 col-md-3 col-lg-3 col-xl-2 pt-2 general-input-class"
+    },
+    "repair": {
+        "display": true,
+        "inputType": "checkbox",
+        "lookupCode": 0,
+        "required": false,
+        "labelText": "Repair:  ",
+        "cssClass": "col-12 col-sm-6 col-md-3 col-lg-3 col-xl-2 pt-2 general-input-class"
+    },
+    "repairApproach": {
+        "display": true,
+        "inputType": "selectize",
+        "lookupCode": 106,
+        "required": false,
+        "labelText": "Repair Approach:  ",
+        "cssClass": "col-12 col-sm-6 col-md-3 col-lg-3 col-xl-2 pt-2 general-input-class"
+    },
+    "annuloplasty": {
+        "display": true,
+        "inputType": "selectize",
+        "lookupCode": 10,
+        "required": false,
+        "labelText": "Annuloplasty:  ",
+        "cssClass": "col-12 col-sm-6 col-md-3 col-lg-3 col-xl-2 pt-2 general-input-class"
+    },
+    "leafletResection": {
+        "display": true,
+        "inputType": "selectize",
+        "lookupCode": 10,
+        "required": false,
+        "labelText": "Leaflet resection: :  ",
+        "cssClass": "col-12 col-sm-6 col-md-3 col-lg-3 col-xl-2 pt-2 general-input-class"
+    },
+    "resectionType": {
+        "display": true,
+        "inputType": "selectize",
+        "lookupCode": 107,
+        "required": false,
+        "labelText": "Resection Type: ",
+        "cssClass": "col-12 col-sm-6 col-md-3 col-lg-3 col-xl-2 pt-2 general-input-class"
+    },
+    "anteriorResection": {
+        "display": true,
+        "inputType": "selectize",
+        "lookupCode": 10,
+        "required": false,
+        "labelText": "Anterior resection:   ",
+        "cssClass": "col-12 col-sm-6 col-md-3 col-lg-3 col-xl-2 pt-2 general-input-class"
+    },
+    "locationDocumented": {
+        "display": true,
+        "inputType": "selectize",
+        "lookupCode": 10,
+        "required": false,
+        "labelText": "lead ekg findings:  ",
+        "cssClass": "col-12 col-sm-6 col-md-3 col-lg-3 col-xl-2 pt-2 general-input-class"
+    },
+    "anteriorLeafletResectionLocationA1": {
+        "display": true,
+        "inputType": "selectize",
+        "lookupCode": 10,
+        "required": false,
+        "labelText": "Anterior leaflet resection locationA1:  ",
+        "cssClass": "col-12 col-sm-6 col-md-3 col-lg-3 col-xl-2 pt-2 general-input-class"
+    },
+    "anteriorLeafletResectionLocationA2": {
+        "display": true,
+        "inputType": "selectize",
+        "lookupCode": 10,
+        "required": false,
+        "labelText": "Anterior leaflet resection locationA2:  ",
+        "cssClass": "col-12 col-sm-6 col-md-3 col-lg-3 col-xl-2 pt-2 general-input-class"
+    },
+    "anteriorLeafletResectionLocationA3": {
+        "display": true,
+        "inputType": "selectize",
+        "lookupCode": 10,
+        "required": false,
+        "labelText": "Anterior leaflet resection locationA3 :  ",
+        "cssClass": "col-12 col-sm-6 col-md-3 col-lg-3 col-xl-2 pt-2 general-input-class"
+    },
+    "locationDocumented2": {
+        "display": true,
+        "inputType": "selectize",
+        "lookupCode": 10,
+        "required": false,
+        "labelText": "Location Decomented:  ",
+        "cssClass": "col-12 col-sm-6 col-md-3 col-lg-3 col-xl-2 pt-2 general-input-class"
+    },
+    "posteriorResection": {
+        "display": true,
+        "inputType": "selectize",
+        "lookupCode": 10,
+        "required": false,
+        "labelText": "Posterior Resection:  ",
+        "cssClass": "col-12 col-sm-6 col-md-3 col-lg-3 col-xl-2 pt-2 general-input-class"
+    },
+    "posterioLeafletResectionLocationP1": {
+        "display": true,
+        "inputType": "selectize",
+        "lookupCode": 10,
+        "required": false,
+        "labelText": "Posterior leaflet resection locationP1:   ",
+        "cssClass": "col-12 col-sm-6 col-md-3 col-lg-3 col-xl-2 pt-2 general-input-class"
+    },
+    "posterioLeafletResectionLocationP2": {
+        "display": true,
+        "inputType": "selectize",
+        "lookupCode": 10,
+        "required": false,
+        "labelText": "Posterior leaflet resection locationP2:  ",
+        "cssClass": "col-12 col-sm-6 col-md-3 col-lg-3 col-xl-2 pt-2 general-input-class"
+    },
+    "posterioLeafletResectionLocationP3": {
+        "display": true,
+        "inputType": "selectize",
+        "lookupCode": 10,
+        "required": false,
+        "labelText": "Posterior leaflet resection locationP3:  ",
+        "cssClass": "col-12 col-sm-6 col-md-3 col-lg-3 col-xl-2 pt-2 general-input-class"
+    },
+    "commissureResection": {
+        "display": true,
+        "inputType": "selectize",
+        "lookupCode": 10,
+        "required": false,
+        "labelText": "Commissure Resection:  ",
+        "cssClass": "col-12 col-sm-6 col-md-3 col-lg-3 col-xl-2 pt-2 general-input-class"
+    },
+    "commissuralResectionLocation": {
+        "display": true,
+        "inputType": "selectize",
+        "lookupCode": 10,
+        "required": false,
+        "labelText": "Commissural resection location:  ",
+        "cssClass": "col-12 col-sm-6 col-md-3 col-lg-3 col-xl-2 pt-2 general-input-class"
+    },
+    "neochords": {
+        "display": true,
+        "inputType": "selectize",
+        "lookupCode": 10,
+        "required": false,
+        "labelText": "Neochords (PTFE):  ",
+        "cssClass": "col-12 col-sm-6 col-md-3 col-lg-3 col-xl-2 pt-2 general-input-class"
+    },
+    "anteriorNeochords": {
+        "display": true,
+        "inputType": "selectize",
+        "lookupCode": 10,
+        "required": false,
+        "labelText": "Anterior Neochords:   ",
+        "cssClass": "col-12 col-sm-6 col-md-3 col-lg-3 col-xl-2 pt-2 general-input-class"
+    },
+    "locationDocumented3": {
+        "display": true,
+        "inputType": "selectize",
+        "lookupCode": 10,
+        "required": false,
+        "labelText": "Location Decoumented:  ",
+        "cssClass": "col-12 col-sm-6 col-md-3 col-lg-3 col-xl-2 pt-2 general-input-class"
+    },
+    "anteriorNeochordLocationA1": {
+        "display": true,
+        "inputType": "selectize",
+        "lookupCode": 10,
+        "required": false,
+        "labelText": "Anterior neochord locationA1:  ",
+        "cssClass": "col-12 col-sm-6 col-md-3 col-lg-3 col-xl-2 pt-2 general-input-class"
+    },
+    "anteriorNeochordLocationA2": {
+        "display": true,
+        "inputType": "selectize",
+        "lookupCode": 10,
+        "required": false,
+        "labelText": "Anterior neochord locationA2:  ",
+        "cssClass": "col-12 col-sm-6 col-md-3 col-lg-3 col-xl-2 pt-2 general-input-class"
+    },
+    "anteriorNeochordLocationA3": {
+        "display": true,
+        "inputType": "selectize",
+        "lookupCode": 10,
+        "required": false,
+        "labelText": "Anterior neochord locationA3:  ",
+        "cssClass": "col-12 col-sm-6 col-md-3 col-lg-3 col-xl-2 pt-2 general-input-class"
+    },
+    "commissureNeochords": {
+        "display": true,
+        "inputType": "selectize",
+        "lookupCode": 10,
+        "required": false,
+        "labelText": "Commissure Neochords:   ",
+        "cssClass": "col-12 col-sm-6 col-md-3 col-lg-3 col-xl-2 pt-2 general-input-class"
+    },
+    "commissureNeochordLocation": {
+        "display": true,
+        "inputType": "selectize",
+        "lookupCode": 108,
+        "required": false,
+        "labelText": "lead ekg findings:  ",
+        "cssClass": "col-12 col-sm-6 col-md-3 col-lg-3 col-xl-2 pt-2 general-input-class"
+    },
+    "chordalLeafletTransfer": {
+        "display": true,
+        "inputType": "selectize",
+        "lookupCode": 10,
+        "required": false,
+        "labelText": "lead ekg findings:  ",
+        "cssClass": "col-12 col-sm-6 col-md-3 col-lg-3 col-xl-2 pt-2 general-input-class"
+    },
+    "anteriorChordalLeafletTransfer": {
+        "display": true,
+        "inputType": "selectize",
+        "lookupCode": 10,
+        "required": false,
+        "labelText": "Anterior Chordal/Leaflet transfer:  ",
+        "cssClass": "col-12 col-sm-6 col-md-3 col-lg-3 col-xl-2 pt-2 general-input-class"
+    },
+    "anteriorChordalLeafletTransferLocationA1": {
+        "display": true,
+        "inputType": "selectize",
+        "lookupCode": 10,
+        "required": false,
+        "labelText": "Anterior chordal/leaflet transfer locationA1:  ",
+        "cssClass": "col-12 col-sm-6 col-md-3 col-lg-3 col-xl-2 pt-2 general-input-class"
+    },
+    "anteriorChordalLeafletTransferLocationA2": {
+        "display": true,
+        "inputType": "selectize",
+        "lookupCode": 10,
+        "required": false,
+        "labelText": "Anterior chordal/leaflet transfer locationA2:  ",
+        "cssClass": "col-12 col-sm-6 col-md-3 col-lg-3 col-xl-2 pt-2 general-input-class"
+    },
+    "anteriorChordalLeafletTransferLocationA3": {
+        "display": true,
+        "inputType": "selectize",
+        "lookupCode": 10,
+        "required": false,
+        "labelText": "Anterior chordal/leaflet transfer location A3: ",
+        "cssClass": "col-12 col-sm-6 col-md-3 col-lg-3 col-xl-2 pt-2 general-input-class"
+    },
+    "locationDocumented4": {
+        "display": true,
+        "inputType": "selectize",
+        "lookupCode": 10,
+        "required": false,
+        "labelText": "Locatiion Decoumnted:  ",
+        "cssClass": "col-12 col-sm-6 col-md-3 col-lg-3 col-xl-2 pt-2 general-input-class"
+    },
+    "posteriorChordalLeafletTransfer": {
+        "display": true,
+        "inputType": "selectize",
+        "lookupCode": 10,
+        "required": false,
+        "labelText": "Posterior Chordal/Leaflet transfer:   ",
+        "cssClass": "col-12 col-sm-6 col-md-3 col-lg-3 col-xl-2 pt-2 general-input-class"
+    },
+    "posteriorChordalleafletTransferLocationP1": {
+        "display": true,
+        "inputType": "selectize",
+        "lookupCode": 10,
+        "required": false,
+        "labelText": "Posterior chordal/leaflet transfer locationP1: ",
+        "cssClass": "col-12 col-sm-6 col-md-3 col-lg-3 col-xl-2 pt-2 general-input-class"
+    },
+    "posteriorChordalleafletTransferLocationP2": {
+        "display": true,
+        "inputType": "selectize",
+        "lookupCode": 10,
+        "required": false,
+        "labelText": "Posterior chordal/leaflet transfer locationP2:  ",
+        "cssClass": "col-12 col-sm-6 col-md-3 col-lg-3 col-xl-2 pt-2 general-input-class"
+    },
+    "posteriorChordalleafletTransferLocationP3": {
+        "display": true,
+        "inputType": "selectize",
+        "lookupCode": 10,
+        "required": false,
+        "labelText": "Posterior chordal/leaflet transfer locationP3:  ",
+        "cssClass": "col-12 col-sm-6 col-md-3 col-lg-3 col-xl-2 pt-2 general-input-class"
+    },
+    "commissureChordalLeafletTransfer": {
+        "display": true,
+        "inputType": "selectize",
+        "lookupCode": 10,
+        "required": false,
+        "labelText": "Commissure Chordal/Leaflet transfer:   ",
+        "cssClass": "col-12 col-sm-6 col-md-3 col-lg-3 col-xl-2 pt-2 general-input-class"
+    },
+    "commissuralChordalLeafletTransferLocation": {
+        "display": true,
+        "inputType": "selectize",
+        "lookupCode": 108,
+        "required": false,
+        "labelText": "Commissural chordal/leaflet transfer location:  ",
+        "cssClass": "col-12 col-sm-6 col-md-3 col-lg-3 col-xl-2 pt-2 general-input-class"
+    },
+    "foldingPlasty": {
+        "display": true,
+        "inputType": "selectize",
+        "lookupCode": 10,
+        "required": false,
+        "labelText": "Folding Plasty: ",
+        "cssClass": "col-12 col-sm-6 col-md-3 col-lg-3 col-xl-2 pt-2 general-input-class"
+    },
+    "slidingPlasty": {
+        "display": true,
+        "inputType": "selectize",
+        "lookupCode": 10,
+        "required": false,
+        "labelText": "lead ekg findings:  ",
+        "cssClass": "col-12 col-sm-6 col-md-3 col-lg-3 col-xl-2 pt-2 general-input-class"
+    },
+    "annularDecalcificationDebridement": {
+        "display": true,
+        "inputType": "selectize",
+        "lookupCode": 10,
+        "required": false,
+        "labelText": "Annular decalcification/ debridement:   ",
+        "cssClass": "col-12 col-sm-6 col-md-3 col-lg-3 col-xl-2 pt-2 general-input-class"
+    },
+    "leafletExtensionReplacementPatch": {
+        "display": true,
+        "inputType": "selectize",
+        "lookupCode": 10,
+        "required": false,
+        "labelText": "Leaflet extension/replacement patch:   ",
+        "cssClass": "col-12 col-sm-6 col-md-3 col-lg-3 col-xl-2 pt-2 general-input-class"
+    },
+    "patchLocation": {
+        "display": true,
+        "inputType": "selectize",
+        "lookupCode": 109,
+        "required": false,
+        "labelText": "Patch Location:    ",
+        "cssClass": "col-12 col-sm-6 col-md-3 col-lg-3 col-xl-2 pt-2 general-input-class"
+    },
+    "edgeToEdgeRepair": {
+        "display": true,
+        "inputType": "selectize",
+        "lookupCode": 10,
+        "required": false,
+        "labelText": "Edge to edge repair:  ",
+        "cssClass": "col-12 col-sm-6 col-md-3 col-lg-3 col-xl-2 pt-2 general-input-class"
+    },
+    "mitralCommissurotomy": {
+        "display": true,
+        "inputType": "selectize",
+        "lookupCode": 10,
+        "required": false,
+        "labelText": "Mitral commissurotomy:  ",
+        "cssClass": "col-12 col-sm-6 col-md-3 col-lg-3 col-xl-2 pt-2 general-input-class"
+    },
+    "mitralCommissuroplasty": {
+        "display": true,
+        "inputType": "selectize",
+        "lookupCode": 10,
+        "required": false,
+        "labelText": "Mitral commissuroplasty:   ",
+        "cssClass": "col-12 col-sm-6 col-md-3 col-lg-3 col-xl-2 pt-2 general-input-class"
+    },
+    "mitralCleftRepair": {
+        "display": true,
+        "inputType": "selectize",
+        "lookupCode": 10,
+        "required": false,
+        "labelText": "Mitral cleft repair: (scallop closure):  ",
+        "cssClass": "col-12 col-sm-6 col-md-3 col-lg-3 col-xl-2 pt-2 general-input-class"
+    },
+    "mitralParaprostheticLeakRepair": {
+        "display": true,
+        "inputType": "selectize",
+        "lookupCode": 10,
+        "required": false,
+        "labelText": "Mitral paraprosthetic leak repair:  ",
+        "cssClass": "col-12 col-sm-6 col-md-3 col-lg-3 col-xl-2 pt-2 general-input-class"
+    },
+    "replacement2": {
+        "display": true,
+        "inputType": "checkbox",
+        "lookupCode": 0,
+        "required": false,
+        "labelText": "Replacement (If Replacement ↓):  ",
+        "cssClass": "col-12 col-sm-6 col-md-3 col-lg-3 col-xl-2 pt-2 general-input-class"
+    },
+    "mitralRepairAttemptedPriorToReplacement": {
+        "display": true,
+        "inputType": "selectize",
+        "lookupCode": 10,
+        "required": false,
+        "labelText": "Mitral repair attempted prior to replacement:  ",
+        "cssClass": "col-12 col-sm-6 col-md-3 col-lg-3 col-xl-2 pt-2 general-input-class"
+    },
+    "mitralChordsPreserved": {
+        "display": true,
+        "inputType": "selectize",
+        "lookupCode": 109,
+        "required": false,
+        "labelText": "Mitral chords preserved: ",
+        "cssClass": "col-12 col-sm-6 col-md-3 col-lg-3 col-xl-2 pt-2 general-input-class"
+    },
+    "transcatheterReplacement": {
+        "display": true,
+        "inputType": "selectize",
+        "lookupCode": 10,
+        "required": false,
+        "labelText": "Transcatheter replacement:  ",
+        "cssClass": "col-12 col-sm-6 col-md-3 col-lg-3 col-xl-2 pt-2 general-input-class"
+    },
+    "implant": {
+        "display": true,
+        "inputType": "selectize",
+        "lookupCode": 10,
+        "required": false,
+        "labelText": "Implant:  ",
+        "cssClass": "col-12 col-sm-6 col-md-3 col-lg-3 col-xl-2 pt-2 general-input-class"
+    },
+    "implantType": {
+        "display": true,
+        "inputType": "selectize",
+        "lookupCode": 110,
+        "required": false,
+        "labelText": "Implant type:  ",
+        "cssClass": "col-12 col-sm-6 col-md-3 col-lg-3 col-xl-2 pt-2 general-input-class"
+    },
+    "mitralValveProcedurePerformedImplantModelNumber": {
+        "display": true,
+        "inputType": "text",
+        "lookupCode": 73,
+        "required": false,
+        "labelText": "Implant Model Number:  ",
+        "cssClass": "col-12 col-sm-6 col-md-3 col-lg-3 col-xl-2 pt-2 general-input-class"
+    },
+    "mitralValveProcedurePerformedImplantSize": {
+        "display": true,
+        "inputType": "text",
+        "lookupCode": 0,
+        "required": false,
+        "labelText": "Implant Size: ",
+        "cssClass": "col-12 col-sm-6 col-md-3 col-lg-3 col-xl-2 pt-2 general-input-class"
+    },
+    "mitralValveProcedurePerformedUniqueDeviceIdentifier": {
+        "display": true,
+        "inputType": "text",
+        "lookupCode": 0,
+        "required": false,
+        "labelText": "lead ekg findings:  ",
+        "cssClass": "col-12 col-sm-6 col-md-3 col-lg-3 col-xl-2 pt-2 general-input-class"
+    },
+    "tricuspidValveProcedurePerformed": {
+        "display": true,
+        "inputType": "selectize",
+        "lookupCode": 96,
+        "required": false,
+        "labelText": "lead ekg findings:  ",
+        "cssClass": "col-12 col-sm-6 col-md-3 col-lg-3 col-xl-2 pt-2 general-input-class"
+    },
+    "tricuspidValveProcedurePerformedRepair": {
+        "display": true,
+        "inputType": "selectize",
+        "lookupCode": 10,
+        "required": false,
+        "labelText": "Repair:  ",
+        "cssClass": "col-12 col-sm-6 col-md-3 col-lg-3 col-xl-2 pt-2 general-input-class"
+    },
+    "tricuspidValveProcedurePerformedReplacement": {
+        "display": true,
+        "inputType": "selectize",
+        "lookupCode": 10,
+        "required": false,
+        "labelText": "Replacement:  ",
+        "cssClass": "col-12 col-sm-6 col-md-3 col-lg-3 col-xl-2 pt-2 general-input-class"
+    },
+    "tricuspidValveProcedurePerformedAnnuloplasty": {
+        "display": true,
+        "inputType": "selectize",
+        "lookupCode": 10,
+        "required": false,
+        "labelText": "Annuloplasty   ",
+        "cssClass": "col-12 col-sm-6 col-md-3 col-lg-3 col-xl-2 pt-2 general-input-class"
+    },
+    "typeOfAnnuloplasty": {
+        "display": true,
+        "inputType": "selectize",
+        "lookupCode": 10,
+        "required": false,
+        "labelText": "Type of Annuloplasty:  ",
+        "cssClass": "col-12 col-sm-6 col-md-3 col-lg-3 col-xl-2 pt-2 general-input-class"
+    },
+    "valvectomy": {
+        "display": true,
+        "inputType": "selectize",
+        "lookupCode": 10,
+        "required": false,
+        "labelText": "Valvectomy:  ",
+        "cssClass": "col-12 col-sm-6 col-md-3 col-lg-3 col-xl-2 pt-2 general-input-class"
+    },
+    "tricuspidValveProcedurePerformedImplant": {
+        "display": true,
+        "inputType": "selectize",
+        "lookupCode": 10,
+        "required": false,
+        "labelText": "Implant:   ",
+        "cssClass": "col-12 col-sm-6 col-md-3 col-lg-3 col-xl-2 pt-2 general-input-class"
+    },
+    "tricuspidValveProcedurePerformedImplantModelNumber": {
+        "display": true,
+        "inputType": "text",
+        "lookupCode": 0,
+        "required": false,
+        "labelText": "Implant Model Number: ",
+        "cssClass": "col-12 col-sm-6 col-md-3 col-lg-3 col-xl-2 pt-2 general-input-class"
+    },
+    "tricuspidValveProcedurePerformedImplantSize": {
+        "display": true,
+        "inputType": "text",
+        "lookupCode": 0,
+        "required": false,
+        "labelText": "Implant Model Number: ",
+        "cssClass": "col-12 col-sm-6 col-md-3 col-lg-3 col-xl-2 pt-2 general-input-class"
+    },
+    "tricuspidValveProcedurePerformedImplantType": {
+        "display": true,
+        "inputType": "selectize",
+        "lookupCode": 0,
+        "required": false,
+        "labelText": "Implant Type: ",
+        "cssClass": "col-12 col-sm-6 col-md-3 col-lg-3 col-xl-2 pt-2 general-input-class"
+    },
+    "tricuspidValveProcedurePerformedUniqueDeviceIdentifier": {
+        "display": true,
+        "inputType": "selectize",
+        "lookupCode": 0,
+        "required": false,
+        "labelText": "Unique Device Identifier (UDI):  ",
+        "cssClass": "col-12 col-sm-6 col-md-3 col-lg-3 col-xl-2 pt-2 general-input-class"
+    },
+    "hr4": {
+        "display": true,
+        "inputType": "hr",
+        "lookupCode": 0,
+        "required": false,
+        "labelText": "",
+        "cssClass": "col-12 general-input-class"
+    },
+    "pulmonicValveProcedurePerformed": {
+        "display": true,
+        "inputType": "selectize",
+        "lookupCode": 96,
+        "required": false,
+        "labelText": "Pulmonic Valve Procedure Performed:   ",
+        "cssClass": "col-12 col-sm-6 col-md-3 col-lg-3 col-xl-2 pt-2 general-input-class"
+    },
+    "pulmonicValveProcedurePerformedProcedurePerformed": {
+        "display": true,
+        "inputType": "selectize",
+        "lookupCode": 111,
+        "required": false,
+        "labelText": "Procedure Performed: ",
+        "cssClass": "col-12 col-sm-6 col-md-3 col-lg-3 col-xl-2 pt-2 general-input-class"
+    },
+    "procedurePerformedImplant": {
+        "display": true,
+        "inputType": "selectize",
+        "lookupCode": 10,
+        "required": false,
+        "labelText": "Implant:   ",
+        "cssClass": "col-12 col-sm-6 col-md-3 col-lg-3 col-xl-2 pt-2 general-input-class"
+    },
+    "procedurePerformedImplantType": {
+        "display": true,
+        "inputType": "selectize",
+        "lookupCode": 112,
+        "required": false,
+        "labelText": "Implant Type:  ",
+        "cssClass": "col-12 col-sm-6 col-md-3 col-lg-3 col-xl-2 pt-2 general-input-class"
+    },
+    "material": {
+        "display": true,
+        "inputType": "selectize",
+        "lookupCode": 113,
+        "required": false,
+        "labelText": "Material:  ",
+        "cssClass": "col-12 col-sm-6 col-md-3 col-lg-3 col-xl-2 pt-2 general-input-class"
+    },
+    "procedurePerformedDeviceType": {
+        "display": true,
+        "inputType": "selectize",
+        "lookupCode": 114,
+        "required": false,
+        "labelText": "Device Type: ",
+        "cssClass": "col-12 col-sm-6 col-md-3 col-lg-3 col-xl-2 pt-2 general-input-class"
+    },
+    "procedurePerformedImplantModelNumber": {
+        "display": true,
+        "inputType": "text",
+        "lookupCode": 0,
+        "required": false,
+        "labelText": "lead ekg findings:  ",
+        "cssClass": "col-12 col-sm-6 col-md-3 col-lg-3 col-xl-2 pt-2 general-input-class"
+    },
+    "procedurePerformedSize": {
+        "display": true,
+        "inputType": "text",
+        "lookupCode": 0,
+        "required": false,
+        "labelText": "lead ekg findings:  ",
+        "cssClass": "col-12 col-sm-6 col-md-3 col-lg-3 col-xl-2 pt-2 general-input-class"
+    },
+    "serial": {
+        "display": false,
+        "inputType": "",
+        "lookupCode": "",
+        "required": false,
+        "labelText": "",
+        "cssClass": "col-12 col-sm-6 col-md-3 col-lg-3 col-xl-2 pt-2 general-input-class"
+    },
+    "visitSerial": {
+        "display": false,
+        "inputType": "",
+        "lookupCode": "",
+        "required": false,
+        "labelText": "",
+        "cssClass": "col-12 col-sm-6 col-md-3 col-lg-3 col-xl-2 pt-2 general-input-class"
+    }
+}

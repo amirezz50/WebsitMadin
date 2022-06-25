@@ -1,0 +1,117 @@
+{
+    "sec1_head": {
+        "display": true,
+        "inputType": "mainHeader",
+        "lookupCode": 0,
+        "required": false,
+        "labelText": "Readmit  ",
+        "cssClass": "col-12 pt-2"
+    },
+    "readmit": {
+        "display": true,
+        "inputType": "selectize",
+        "lookupCode": 61,
+        "required": true,
+        "labelText": "readmit: ",
+        "cssClass": "col-12 col-sm-6 col-md-3 col-lg-3 col-xl-5 pt-2 general-input-class"
+
+    },
+    "hr1": {
+        "display": true,
+        "inputType": "hr",
+        "lookupCode": 0,
+        "required": false,
+        "labelText": "",
+        "cssClass": "col-12 general-input-class"
+    },
+    "readmitDate": {
+        "display": true,
+        "inputType": "date",
+        "required": false,
+        "labelText": "readmit Date:  ",
+        "cssClass": "col-12 col-sm-6 col-md-3 col-lg-3 col-xl-5 pt-2 general-input-class"
+
+    },
+    "hr2": {
+        "display": true,
+        "inputType": "hr",
+        "lookupCode": 0,
+        "required": false,
+        "labelText": "",
+        "cssClass": "col-12 general-input-class"
+    },
+    "readmitPrimaryProcedure": {
+        "display": true,
+        "inputType": "selectize",
+        "lookupCode": 49,
+        "required": true,
+        "labelText": "readmit Primary Procedure: : ",
+        "cssClass": "col-12 col-sm-6 col-md-3 col-lg-3 col-xl-5 pt-2 general-input-class"
+
+    },"hr3": {
+        "display": true,
+        "inputType": "hr",
+        "lookupCode": 0,
+        "required": false,
+        "labelText": "",
+        "cssClass": "col-12 general-input-class"
+    },
+    "readmitPrimaryReason": {
+        "display": true,
+        "inputType": "selectize",
+        "lookupCode": 48,
+        "required": true,
+        "labelText": "readmit Primary Reason: ",
+        "cssClass": "col-12 col-sm-6 col-md-3 col-lg-3 col-xl-5 pt-2 general-input-class"
+
+    },"hr4": {
+        "display": true,
+        "inputType": "hr",
+        "lookupCode": 0,
+        "required": false,
+        "labelText": "",
+        "cssClass": "col-12 general-input-class"
+    },
+    "aortainterventionIndication": {
+        "display": true,
+        "inputType": "selectize",
+        "lookupCode": 51,
+        "required": false,
+        "labelText": "aorta intervention Indication: ",
+        "cssClass": "col-12 col-sm-6 col-md-3 col-lg-3 col-xl-5 pt-2 general-input-class"
+
+    },"hr5": {
+        "display": true,
+        "inputType": "hr",
+        "lookupCode": 0,
+        "required": false,
+        "labelText": "",
+        "cssClass": "col-12 general-input-class"
+    },
+    "aortainterventionReadmitType": {
+        "display": true,
+        "inputType": "selectize",
+        "lookupCode": 50,
+        "required": false,
+        "labelText": "aorta intervention Readmit Type",
+        "cssClass": "col-12 col-sm-6 col-md-3 col-lg-3 col-xl-5 pt-2 general-input-class"
+
+    }, "serial": {
+        "display": false,
+        "inputType": "",
+        "lookupCode": "",
+        "required": false,
+        "labelText": "",
+        "cssClass": "col-12 col-sm-6 col-md-3 col-lg-3 col-xl-5 pt-2 general-input-class"
+
+    },
+    "visitSerial": {
+        "display": false,
+        "inputType": "",
+        "lookupCode": "",
+        "required": false,
+        "labelText": "",
+        "cssClass": "col-12 col-sm-6 col-md-3 col-lg-3 col-xl-5 pt-2 general-input-class"
+
+    }
+   }

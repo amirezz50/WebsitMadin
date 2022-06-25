@@ -1,0 +1,48 @@
+﻿button {
+    border-radius: 0;
+}
+
+.card .ch {
+    background-color: blue;
+}
+
+.unch .active {
+    background-color: #5cb85c
+}
+
+.unch :after {
+    background-color: #ff0000;
+    border-color: orangered;
+}
+
+input {
+    display: none;
+}
+
+.active {
+    border-color: orangered;
+}
+
+.free {
+    background-color: #3ecf3e;
+}
+
+.pocked {
+    background-color: orangered;
+}
+
+.cancelled {
+    background-color: #0094ff;
+}
+
+.table th, .table td {
+    border: 1px solid #d6d6d6;
+}
+
+.custom-fm {
+    background-color: #fff;
+    min-width: 18px;
+    color: #207a9c;
+    border-radius: 50%;
+    height: 18px;
+}

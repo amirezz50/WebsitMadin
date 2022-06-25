@@ -1,0 +1,123 @@
+<div class="auth-page">
+  <div class="auth-form">
+    <div class="card-auth" *ngIf="!showActivationForm">
+      <div class="auth-title">
+        <h2 class="">{{'LETSGO'|translate}}!</h2>
+        <p class="">{{'CREATENEWACCOUNT'|translate}}</p>
+      </div>
+      <div class="card-form">
+        <form [formGroup]="registerForm" (ngSubmit)="onSubmit()" [matchValue]="['password', 'confirm_password']">
+          <div class="row">
+            <div class="form-group col-12">
+              <label for="fullnameAr" class="label">{{'FULLNAME' |translate}} *</label>
+              <input id="fullnameAr" type="text" class="form-control" formControlName="fullnameAr"
+                [ngClass]="{ 'is-invalid': f.fullnameAr.errors && (f.fullnameAr.dirty || f.fullnameAr.touched), 'is-valid': !f.fullnameAr.errors }">
+              <span class="errorSpan"
+                *ngIf="f.fullnameAr.invalid && f.fullnameAr.touched">{{'FULLNAMESHOULDNOTLESSTHAN9CHAR'|translate}}</span>
+            </div>
+            <div class="form-group col-12">
+              <label for="username" class="label">{{'USERNAME' |translate}} * </label>
+              <input id="username" type="text" class="form-control" formControlName="userName"
+                [ngClass]="{ 'is-invalid': f.userName.errors && (f.userName.dirty || f.userName.touched), 'is-valid': !f.userName.errors }">
+              <span class="errorSpan"
+                *ngIf="f.userName.invalid && f.userName.touched">{{'USERNAMESHOULDNTLESSTHAN4CHAR'|translate}}</span>
+            </div>
+
+            <div class="form-group col-12">
+              <label for="mobile" class="label">{{'MOBILENUMBER' |translate}} * </label>
+              <input id="mobile" type="tel" class="form-control" formControlName="mobile"
+                [ngClass]="{ 'is-invalid': f.mobile.errors && (f.mobile.dirty || f.mobile.touched), 'is-valid': !f.mobile.errors }">
+              <span class="errorSpan"
+                *ngIf="f.mobile.invalid && f.mobile.touched">{{'MOBILESHOULDBE11DIGIT'|translate}}</span>
+
+            </div>
+            <div class="form-group col-12">
+              <label for="pass" class="label">{{'PASSWORD' |translate}} * </label>
+              <input id="pass" type="password" class="form-control" formControlName="password"
+                [ngClass]="{ 'is-invalid': f.password.errors && (f.password.dirty || f.password.touched), 'is-valid': !f.password.errors }">
+              <span class="errorSpan" *ngIf="f.password.invalid && f.password.touched">
+                {{'PASSWORDMIN8DIGITCHAR'|translate}}<br>
+                {{'ATLEAST1LETTER1NUMBER'|translate}} </span>
+
+            </div>
+            <div class="form-group col-12">
+              <label for="cpass" class="label">{{'REPASSWORD' |translate}} * </label>
+              <input id="cpass" type="password" class="form-control" formControlName="confirm_password"
+                [ngClass]="{ 'is-invalid': f.confirm_password.errors && (f.confirm_password.dirty || f.confirm_password.touched), 'is-valid': !f.confirm_password.errors }">
+              <span class="errorSpan"
+                *ngIf="f.confirm_password.invalid && f.confirm_password.touched">{{'PASSWORDNOTMATCHED'|translate}}</span>
+
+            </div>
+            <div class="form-group col-12">
+              <label for="addr" class="label">{{'ArabicFullAddress' |translate}} * </label>
+              <input id="addr" type="text" class="form-control" formControlName="fullAddressAr"
+                [ngClass]="{ 'is-invalid': f.fullAddressAr.errors && (f.fullAddressAr.dirty || f.fullAddressAr.touched), 'is-valid': !f.fullAddressAr.errors }">
+
+            </div>
+
+            <div class="form-group col-12">
+              <identity-component [disableIdentity]="false" #identity
+                (identityValueInfoEmitted)="identityValueInfoEmitted($event)">
+              </identity-component>
+            </div>
+            <div class="form-group col-12">
+              <Portal-Contract-Id [portalReg]="true" #TherapeuticCards
+                (contractValueInfoEmitted)="contractValueInfoEmitted($event)">
+              </Portal-Contract-Id>
+            </div>
+            <div class="form-group col-12">
+              <button type="submit" class="btn btn-auth">
+                <span *ngIf="loading" class="fa fa-spinner fa-spin mr-1"></span>
+                {{'REGNEW' |translate}}
+              </button>
+            </div>
+            <div class="form-group col-12">
+              <div class="log">
+                <span>{{'ALREADYHAVEANACCOUNT'|translate}} ? </span>
+                <a routerLink="/portal/login">{{'PO_LOGIN'|translate}}</a>
+              </div>
+            </div>
+          </div>
+        </form>
+      </div>
+    </div>
+    <div class="card-auth" *ngIf="showActivationForm">
+      <div class="">
+        <br>
+        <br>
+        <div class="auth-title">
+          <h2 class="">{{'ACTIVECODE'|translate}}!</h2>
+          <br>
+          <p class="">{{'PLEASEENTERTHEACTIVATIONCODEONPHONE'|translate}}</p>
+          <br>
+        </div>
+        <br>
+
+        <div class="card-form">
+          <div class="row">
+            <div class="form-group col-12">
+              <label for="activationCode" class="">{{'ACTIVECODE'|translate}}*</label>
+              <input id="activationCode" type="text" class="form-control" [formControl]="activationCode"
+                [ngClass]="{ 'is-invalid': activationCode.errors && (activationCode.dirty || activationCode.touched), 'is-valid': !activationCode.errors }">
+            </div>
+            <div class="form-group col-12">
+              <button type="submit" class="btn btn-auth" [disabled]="!activationCode.valid || loading"
+                (click)="activateAccount()">
+                <span *ngIf="loading"></span>
+                {{'PO_ACTIVE'|translate}}
+              </button>
+            </div>
+            <div class="form-group col-12">
+              <div class="log">
+                <a routerLink="/portal/login">{{'BACKTOLOGIN'|translate}}</a>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="slide">
+    <img src="../../../../assets/images/Portal/Doc.png" alt="">
+  </div>
+</div>

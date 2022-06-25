@@ -1,0 +1,234 @@
+
+ <div id="htmlDataExportToPdf"  #htmlDataExportToPdf style="margin-right:8px;">
+
+
+    <table [ngClass]="getCSSClasses()"  *ngIf="patServices.length>0" style="direction: ltr; width: 100%;" class="full-width">
+        <thead>
+            <th>
+                <table style="width: 100%;">
+                    <thead style="direction: ltr; ">
+                        <tr>
+                            <div width="15%">
+                                <p style="height: 90px;margin-bottom: -90px;">
+                                </p>
+                            </div>
+                            <td width="25%" class="groupHeaderDataCell_ar">{{patientData?.patientAge }}</td>
+                            <td width="17.5%" class="groupHeaderLabelCell_ar">
+                                <strong >العمر </strong>
+                            </td>
+                            <td width="25%" class="groupHeaderDataCell_ar">{{patientData?.patientNameAr}}</td>
+                            <td width="17.5%" class="groupHeaderLabelCell_ar">
+                                <strong >إسم المريض</strong>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td width="15%"> <strong > </strong>
+                            </td>
+                            <td width="25%" class="groupHeaderDataCell_ar">{{patientData?.doctorNameAr}}</td>
+                            <td width="17.5%" class="groupHeaderLabelCell_ar">
+                                <strong >الطبيب</strong>
+                            </td>
+                            <td width="25%" class="groupHeaderDataCell_ar">{{patientData?.patCode}}</td>
+                            <td width="17.5%" class="groupHeaderLabelCell_ar">
+                                <strong >الرقم الطبى</strong>
+                            </td>
+
+                        </tr>
+                     
+                        <tr>
+                            <td width="15%"> <strong > </strong>
+                            </td>
+                            <td width="25%" class="groupHeaderDataCell_ar">
+                                {{patientData?.orderDate|date: 'dd/MM/yyyy-hh:mm:ssa'}}
+                            </td>
+                            <td width="17.5%" class="groupHeaderLabelCell_ar">
+                                <strong >تاريخ الطلب</strong>
+                            </td>
+                            <td width="25%" class="groupHeaderDataCell_ar">{{patientData?.orderNumber}}</td>
+                            <td width="15%" class="groupHeaderLabelCell_ar">
+                                <strong >رقم الطلب</strong>
+                            </td>
+                        </tr>
+                    </thead>
+                </table>
+            </th>
+        </thead>
+
+        <tbody style="direction: ltr; ">
+            <tr>
+                <td>
+                    <table style="width: 100%;">
+                        <tbody>
+                            <tr *ngFor="let LabService of LabServiceCtg; let serv = index" style="font-size:14px;">
+                                <td>
+                                    <table style="width: 100%;">
+                                        <tbody>
+                                            <tr>
+                                                <td>
+                                                    <h4 style="color:rgb(9, 132, 255);font-size:14px;">
+                                                        {{LabService['serviceNameEn'] | titlecase}} </h4>
+                                                </td>
+                                                <td>
+
+                                                </td>
+                                                <td>
+                                                    <h5 style="color:rgb(154, 30, 255);font-size:14px;">
+                                                        <strong >{{'RESULTDATE'|translate}}
+                                                            </strong>
+                                                    </h5>
+                                                </td>
+                                                <td>
+                                                    <h5 style="color:rgb(154, 30, 255);font-size:14px;">
+                                                        {{LabService['resultWriteDate']  | date:'dd/MM/yyyy-hh:mm:ssa '}}
+                                                    </h5>
+                                                </td>
+                                            </tr>
+                                            <ng-template ngFor let-LabCtg [ngForOf]="LabService.LabSheetCtg"
+                                                let-i="index">
+                                                <tr style="font-size: 13px;">
+
+                                                    <td style="width: 30%;">
+                                                        <h5 style="color:gray">
+                                                            <p *ngIf="LabCtg['labSheetCtgDescEn']">
+                                                                {{LabCtg['labSheetCtgDescEn'] | titlecase}}
+                                                                :
+                                                            </p>
+                                                        </h5>
+                                                    </td>
+                                                    <td colspan="2" style="width: 25%;">
+                                                        <h5 *ngIf="serv==0 && i==0"
+                                                            style=" color:gray;">
+                                                            Result:</h5>
+                                                    </td>
+                                                    <td style="width: 20%;">
+                                                        <h5 *ngIf="serv==0 && i==0"
+                                                            style="color:gray;">Unit:
+                                                        </h5>
+                                                    </td>
+                                                    <td style="width: 25%;">
+                                                        <h5 *ngIf="serv==0 && i==0"
+                                                            style=" color:gray;">
+                                                            Reference Range :
+                                                        </h5>
+                                                    </td>
+                                                </tr>
+
+                                                <ng-template ngFor let-sheet [ngForOf]="testData" let-w="index">
+
+                                                    <tr style="font-size: 14px;"
+                                                        *ngIf="sheet.sheetVisiable && LabCtg.labSheetCtgCode == sheet.labSheetCtgCode && LabCtg.serviceId == sheet.serviceId ">
+                                                        <td colspan="" width="30%" style="padding:0">
+                                                            <span style="text-align: center;">
+                                                                <b> => {{sheet.sheetNameEn}}</b>
+                                                            </span>
+                                                        </td>
+                                                        <td colspan="" width="20%" style="padding:0">
+                                                            <span style="text-align: center;">
+                                                                <b
+                                                                    [style.color]="sheet.abnormality == 1 ||sheet.abnormality == 2 ?'red':''">
+                                                                    <ng-container
+                                                                        *ngIf="sheet.itemType != 3 && sheet.sheetValue">
+                                                                        {{sheet.resultValue}}
+                                                                    </ng-container>
+                                                                    <ng-container *ngIf="sheet.itemType == 3">
+                                                                        {{sheet.sheetOptionAr}}</ng-container>
+                                                                </b>
+                                                            </span>
+                                                        </td>
+                                                        <!-- <td width="5%">
+                                                            <span *ngIf="sheet.abnormalityLvl=='L'">
+                                                                <i style="color: red;" class="fas fa-arrow-down"
+                                                                    aria-hidden="true"></i>
+                                                            </span>
+                                                            <span *ngIf="sheet.abnormalityLvl=='H'">
+                                                                <i style="color: red;" class="fas fa-arrow-up"
+                                                                    aria-hidden="true"></i>
+                                                            </span>
+
+                                                        </td> -->
+                                                        <td colspan="" width="20%">
+                                                            <span style="text-align: center;">
+                                                                <b>{{sheet.unitNameAr}}</b>
+                                                            </span>
+                                                        </td>
+                                                        <td colspan="" width="30%">
+                                                            <span style="text-align: center;">
+                                                                <pre>{{sheet.refValue}}</pre>
+                                                            </span>
+                                                        </td>
+                                                    </tr>
+                                                </ng-template>
+                                            </ng-template>
+                                        </tbody>
+                                    </table>
+                                </td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </td>
+            </tr>
+
+        </tbody>
+
+        <tfoot>
+            <tr>
+                <td colspan="2">
+                    <ul class="list-group" *ngIf="serviceComment.length > 0">
+                        <li class="list-group-item active">Comments:</li>
+                        <li class="list-group-item" *ngFor="let comment of serviceComment">
+                            <span>{{comment.nameEn}}</span>
+                        </li>
+                    </ul>
+                </td>
+            </tr>
+
+            <tr *ngIf="printhistory" [style]="{'width': '100%'}" style="font-size: 14px;">
+                <td colspan="2">
+                    <span>
+                        Service history
+                    </span>
+                    <table class="full-width" [style]="{'width': '100%'}">
+                        <thead colspan="2">
+                            <tr style="font-size:13px;">
+                                <th rowspan="2" class="groupHeaderLevel1_ar" [style]="{'width': '10%'}">
+                                    {{'DATE'|translate}}
+                                </th>
+                                <th [attr.colspan]="getColspan(headersLev1)" class="groupHeaderLevel1_ar"
+                                    *ngFor="let headersLev1 of HistoryArr.headersLev1">
+                                    {{headersLev1['serviceNameAr']}}
+                                </th>
+                            </tr>
+                            <tr>
+                                <ng-template ngFor let-headersLev1 [ngForOf]="HistoryArr.headersLev1">
+                                    <ng-template ngFor let-headersLev2 [ngForOf]="HistoryArr.headersLev2">
+                                        <th class="groupHeaderLevel1_ar"
+                                            *ngIf="headersLev2['serviceCode']==headersLev1['serviceCode']">
+                                            {{headersLev2['sheetNameAr']}}
+                                        </th>
+                                    </ng-template>
+                                </ng-template>
+                            </tr>
+                        </thead>
+
+                        <tbody>
+                            <tr *ngFor="let sheetrow of HistoryArr.rows" style="font-size: 14px;">
+                             
+                                <td class="detailBand_ar" [style]="{'width': '10%'}">
+                                    {{sheetrow['resultWriteDate']| date :'dd/MM/yyyy'}}
+                           
+                                </td>
+                                <td class="detailBand_ar" *ngFor="let el of HistoryArr.headersLev2; let i=index">
+                                    {{HistoryArr.hashMap[sheetrow['resultWriteDate']+'_'+ el['sheetNameAr']]}}
+                                </td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </td>
+            </tr>
+        </tfoot>
+    </table>
+    <br>
+    <br>
+</div>
+<br> 
+ 

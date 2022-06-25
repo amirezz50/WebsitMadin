@@ -1,0 +1,21 @@
+﻿{
+  "nameEn": {
+    "display": true,
+    "required": true,
+    "min_length": 5,
+    "defaultVal": "ahmed"
+  },
+  "nameAr": {
+    "display": false,
+    "required": true,
+    "regex": "[A-Za-z]{5}",
+    "defaultVal": "mohamed"
+  },
+  "fnameEn": {
+    "display": true,
+    "required": true,
+    "min_length": 2,
+    "max_length": 200,
+    "placeHolder": "English name"
+  }
+}

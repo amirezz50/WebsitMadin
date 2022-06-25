@@ -1,0 +1,51 @@
+{
+    "mobile": {
+        "display": true,
+        "required": true,
+        "defaultVal": ""
+    },
+    "fullNameAr": {
+        "display": true,
+        "required": true,
+        "defaultVal": ""
+    },
+    "nationalityId": {
+        "display": true,
+        "required": true,
+        "defaultVal": 187
+    },
+    "serviceId": {
+        "display": true,
+        "required": true,
+        "defaultVal": "701001"
+    },
+    "gender": {
+        "display": false,
+        "required": true,
+        "defaultVal": 1
+    },
+    "contractId": {
+        "display": true,
+        "required": false,
+        "defaultVal": 49
+    },
+    "vPlaceId": {
+        "display": true,
+        "required": false,
+        "defaultVal": 287
+    },
+    "docId": {
+        "display": true,
+        "required": false,
+        "defaultVal": 28
+    },
+    "specialityId": {
+        "display": true,
+        "required": false,
+        "defaultVal": 35
+    },
+    "identityValue": {
+        "display": true,
+        "required": false
+    }
+}

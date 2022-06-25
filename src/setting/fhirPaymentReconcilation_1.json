@@ -1,0 +1,239 @@
+﻿{
+    "resourceType": "Bundle",
+    "id": "99a4daf8-3a36-41ee-84fd-d35ede497782",
+    "meta": {
+      "profile": [
+        "http://nphies.sa/fhir/ksa/nphies-fs/StructureDefinition/bundle%7C1.0.0"
+      ]
+    },
+    "type": "message",
+    "timestamp": "2020-11-19T11:57:03+03:00",
+    "entry": [
+      {
+        "fullUrl": "urn:uuid:72b89658-da4c-4225-860e-df7d3df31e5b",
+        "resource": {
+          "resourceType": "MessageHeader",
+          "id": "72b89658-da4c-4225-860e-df7d3df31e5b",
+          "meta": {
+            "profile": [
+              "http://nphies.sa/fhir/ksa/nphies-fs/StructureDefinition/message-header%7C1.0.0"
+            ]
+          },
+          "eventCoding": {
+            "system": "http://nphies.sa/terminology/CodeSystem/ksa-message-events",
+            "code": "payment-reconciliation"
+          },
+          "destination": [
+            {
+              "endpoint": "http://nphies.sa/license/provider-license/PR-FHIR",
+              "receiver": {
+                "type": "Organization",
+                "identifier": {
+                  "system": "http://nphies.sa/license/provider-license",
+                  "value": "PR-FHIR"
+                }
+              }
+            }
+          ],
+          "sender": {
+            "type": "Organization",
+            "identifier": {
+              "system": "http://nphies.sa/license/payer-license",
+              "value": "TMB-INS"
+            }
+          },
+          "source": {
+            "endpoint": "http://nphies.sa/license/payer-license/TMB-INS"
+          },
+          "focus": [
+            {
+              "reference": "http://tmb-ins.com.sa/PaymentReconciliation/900001"
+            }
+          ]
+        }
+      },
+      {
+        "fullUrl": "http://tmb-ins.com.sa/PaymentReconciliation/900001",
+        "resource": {
+          "resourceType": "PaymentReconciliation",
+          "id": "900001",
+          "meta": {
+            "profile": [
+              "http://nphies.sa/fhir/ksa/nphies-fs/StructureDefinition/payment-reconciliation%7C1.0.0"
+            ]
+          },
+          "identifier": [
+            {
+              "system": "http://tmb-ins.com.sa/PaymentReconciliation",
+              "value": "0000000000900001"
+            }
+          ],
+          "status": "active",
+          "period": {
+            "start": "2020-08-20T00:00:00+03:00",
+            "end": "2020-08-31T00:00:00+03:00"
+          },
+          "created": "2020-09-25T10:00:00+03:00",
+          "paymentIssuer": {
+            "reference": "Organization/11"
+          },
+          "outcome": "complete",
+          "paymentDate": "2020-10-01",
+          "paymentAmount": {
+            "value": 4980,
+            "currency": "SAR"
+          },
+          "detail": [
+            {
+              "type": {
+                "coding": [
+                  {
+                    "system": "http://terminology.hl7.org/CodeSystem/payment-type",
+                    "code": "payment"
+                  }
+                ]
+              },
+              "request": {
+                "identifier": [
+                  {
+                    "system": "http://pr-fhir.com.sa/Claim",
+                    "value": "0000000400001"
+                  }
+                ]
+              },
+              "submitter": {
+                "reference": "Organization/11"
+              },
+              "response": {
+                "identifier": [
+                  {
+                    "system": "http://tmb-ins.com.sa/ClaimResponse",
+                    "value": "000000000500001"
+                  }
+                ]
+              },
+              "date": "2020-08-30",
+              "payee": {
+                "reference": "Organization/10"
+              },
+              "amount": {
+                "value": 2980,
+                "currency": "SAR"
+              }
+            },
+            {
+              "type": {
+                "coding": [
+                  {
+                    "system": "http://terminology.hl7.org/CodeSystem/payment-type",
+                    "code": "payment"
+                  }
+                ]
+              },
+              "request": {
+                "identifier": [
+                  {
+                    "system": "http://pr-fhir.com.sa/Claim",
+                    "value": "0000000400002"
+                  }
+                ]
+              },
+              "submitter": {
+                "reference": "Organization/11"
+              },
+              "response": {
+                "identifier": [
+                  {
+                    "system": "http://tmb-ins.com.sa/ClaimResponse",
+                    "value": "000000000500002"
+                  }
+                ]
+              },
+              "date": "2020-08-30",
+              "payee": {
+                "reference": "Organization/10"
+              },
+              "amount": {
+                "value": 2000,
+                "currency": "SAR"
+              }
+            }
+          ]
+        }
+      },
+      {
+        "fullUrl": "http://tmb-ins.com.sa/Organization/10",
+        "resource": {
+          "resourceType": "Organization",
+          "id": "10",
+          "meta": {
+            "profile": [
+              "http://nphies.sa/fhir/ksa/nphies-fs/StructureDefinition/provider-organization%7C1.0.0"
+            ]
+          },
+          "identifier": [
+            {
+              "type": {
+                "coding": [
+                  {
+                    "system": "http://terminology.hl7.org/CodeSystem/organization-type",
+                    "code": "prov"
+                  }
+                ]
+              },
+              "system": "http://nphies.sa/license/provider-license",
+              "value": "PR-FHIR"
+            }
+          ],
+          "active": true,
+          "type": [
+            {
+              "coding": [
+                {
+                  "system": "http://nphies.sa/terminology/CodeSystem/organization-type",
+                  "code": "prov"
+                }
+              ]
+            }
+          ]
+        }
+      },
+      {
+        "fullUrl": "http://tmb-ins.com.sa/Organization/11",
+        "resource": {
+          "resourceType": "Organization",
+          "id": "11",
+          "meta": {
+            "profile": [
+              "http://nphies.sa/fhir/ksa/nphies-fs/StructureDefinition/insurer-organization%7C1.0.0"
+            ]
+          },
+          "identifier": [
+            {
+              "type": {
+                "coding": [
+                  {
+                    "system": "http://terminology.hl7.org/CodeSystem/organization-type",
+                    "code": "ins"
+                  }
+                ]
+              },
+              "system": "http://nphies.sa/license/payer-license",
+              "value": "TMB-INS"
+            }
+          ],
+          "active": true,
+          "type": [
+            {
+              "coding": [
+                {
+                  "system": "http://nphies.sa/terminology/CodeSystem/organization-type",
+                  "code": "ins"
+                }
+              ]
+            }
+          ]
+        }
+      }
+    ]
+  }

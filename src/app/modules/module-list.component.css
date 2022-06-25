@@ -1,0 +1,53 @@
+﻿.characters {
+  list-style-type: none;
+  padding: 0;
+}
+
+*.characters li {
+  padding: 4px;
+}
+
+.list-text,
+.mdl-card__title-text {
+  font-size: 16px;
+}
+
+.mdl-card {
+  min-height: 60px;
+}
+/*ibrahim*/
+/*.ibrahim{
+     font-size: 66px;
+}*/
+
+/*.material-icons.aqua { 
+    color: #0D47A1
+}*/
+.mdl-data-table td{
+        padding: 12px 16px; 
+               
+}
+/*ahmedful*/
+.editcolor{
+    color:#4CAF50;
+}
+.deletecolor{
+    color:#D50000;
+}
+.addcolor{
+    color:#37474F;
+}
+.viscolor{        
+    color:#0D47A1;
+}
+.icons-style {
+    font-size: 18px;
+    background-color: rgb(45, 117, 179);
+    margin-left: 1058px;
+}
+
+.header-style {
+    background-color: #2d75b3;
+    color: #f5f5f5;
+    height: 39px;
+}

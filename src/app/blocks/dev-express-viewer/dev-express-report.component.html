@@ -1,0 +1,29 @@
+<div *ngIf="isLoaded">
+
+    <div class="card" *ngIf="repType==1 ">
+        <div class="row mx-0" *ngIf="showCriteria">
+
+            <div class="list-group col-3 px-3" *ngIf="showReportNamesArea">
+                <a href="javascript:void(0);" *ngFor="let rep of reportsIds" (click)="loadReportAppCodes(rep);appCodes=[]" [class.active]="rep.selected==true" class="list-group-item list-group-item-action">{{rep.nameAr}}</a>
+            </div>
+
+            <div class="master-form col">
+                <app-fast-search *ngIf="isLoaded" [appCodes]="appCodes" [appCodesSearchKeys]="appCodesSearchKeys" 
+                [multiAppCodes]="multiAppCodes" [appearFastSearch]="false" [searchType]="'PatientParms'" 
+                (searchKeys)="onSearchClick($event)" #fastSearch ngDefaultControl [reportCriterias]="reportCriterias">
+
+                </app-fast-search>
+            </div>
+
+        </div>
+        <div class="card-body" *ngIf="viewerIsHidden == false">
+            <dev-express-viewer [hidden]="viewerIsHidden" [reportActionName]="reportActionName" 
+            [reportControllerName]="reportControllerName" [reportClassName]="reportClassName"
+             [appCodes]="appCodes" [url]="reportUrl" [arguments]="arguments"></dev-express-viewer>
+        </div>
+    </div>
+
+    <div *ngIf="repType==2">
+        <html-viewer [hidden]="viewerIsHidden" [reportName]="reportName" [reportClassName]="reportClassName" [appCodes]="appCodes" [url]="reportUrl" [arguments]="arguments"></html-viewer>
+    </div>
+</div>

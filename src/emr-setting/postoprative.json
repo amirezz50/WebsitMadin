@@ -1,0 +1,314 @@
+{
+    "sec1_head": {
+        "display": true,
+        "inputType": "mainHeader",
+        "lookupCode": 0,
+        "required": false,
+        "labelText": "Post-Operative ",
+        "cssClass": "col-12 pt-2"
+    },
+    "peakGlucoseWithinHoursOfAnesthesiaEndTime": {
+        "display": true,
+        "inputType": "text",
+        "lookupCode": 0,
+        "required": true,
+        "labelText": "Peak Glucose within18-24 hours of anesthesia end time: ",
+        "cssClass": "col-12 col-sm-6 col-md-3 col-lg-3 col-xl-2 pt-2 general-input-class"
+    },
+    "hr1": {
+        "display": true,
+        "inputType": "hr",
+        "lookupCode": 0,
+        "required": false,
+        "labelText": "",
+        "cssClass": "col-12 general-input-class"
+    },
+    "postoperativeCreatinineLevel": {
+        "display": true,
+        "inputType": "text",
+        "required": false,
+        "labelText": "Postoperative Creatinine Level:  ",
+        "cssClass": "col-12 col-sm-6 col-md-3 col-lg-3 col-xl-2 pt-2 general-input-class"
+    },
+    "dischargeHemoglobin": {
+        "display": true,
+        "inputType": "text",
+        "lookupCode": 0,
+        "required": true,
+        "labelText": "Discharge Hemoglobin:",
+        "cssClass": "col-12 col-sm-6 col-md-3 col-lg-3 col-xl-2 pt-2 general-input-class"
+    },
+    "dischargeHematocrit": {
+        "display": true,
+        "inputType": "text",
+        "lookupCode": 0,
+        "required": true,
+        "labelText": "Discharge Hematocrit:",
+        "cssClass": "col-12 col-sm-6 col-md-3 col-lg-3 col-xl-2 pt-2 general-input-class"
+    },
+   
+    "hr4": {
+        "display": true,
+        "inputType": "hr",
+        "lookupCode": 0,
+        "required": false,
+        "labelText": "",
+        "cssClass": "col-12 general-input-class"
+    },
+    "bloodProductsUsedPostoperatively": {
+        "display": true,
+        "inputType": "selectize",
+        "lookupCode": 15,
+        "required": false,
+        "labelText": "Blood Products Used Postoperatively: ",
+        "cssClass": "col-12 col-sm-6 col-md-3 col-lg-3 col-xl-2 pt-2 general-input-class"
+    },
+    "redBloodCellUnits": {
+        "display": true,
+        "inputType": "text",
+        "lookupCode": 0,
+        "required": false,
+        "labelText": "Red Blood Cell Units: ",
+        "cssClass": "col-12 col-sm-6 col-md-3 col-lg-3 col-xl-2 pt-2 general-input-class"
+    },
+    "freshFrozenPlasmaUnits": {
+        "display": true,
+        "inputType": "text",
+        "lookupCode": 0,
+        "required": false,
+        "labelText": "Fresh Frozen Plasma Units: ",
+        "cssClass": "col-12 col-sm-6 col-md-3 col-lg-3 col-xl-2 pt-2 general-input-class"
+    },
+    "cryoprecipitateUnits": {
+        "display": true,
+        "inputType": "text",
+        "lookupCode": 0,
+        "required": false,
+        "labelText": "Cryoprecipitate Units: ",
+        "cssClass": "col-12 col-sm-6 col-md-3 col-lg-3 col-xl-2 pt-2 general-input-class"
+    },
+    "plateletUnits": {
+        "display": true,
+        "inputType": "text",
+        "lookupCode": 50,
+        "required": false,
+        "labelText": "Platelet Units :",
+        "cssClass": "col-12 col-sm-6 col-md-3 col-lg-3 col-xl-2 pt-2 general-input-class"
+    },
+    "hr5": {
+        "display": true,
+        "inputType": "hr",
+        "lookupCode": 0,
+        "required": false,
+        "labelText": "",
+        "cssClass": "col-12 general-input-class"
+    },
+    "extubatedInOR": {
+        "display": true,
+        "inputType": "selectize",
+        "lookupCode": 72,
+        "required": false,
+        "labelText": "Extubated in OR: ",
+        "cssClass": "col-12 col-sm-6 col-md-3 col-lg-3 col-xl-2 pt-2 general-input-class"
+    },
+    "reIntubatedoRintubated": {
+        "display": true,
+        "inputType": "selectize",
+        "lookupCode": 15,
+        "required": false,
+        "labelText": "Re-intubated /or intubated Post Op During Hospital Stay: ",
+        "cssClass": "col-12 col-sm-6 col-md-3 col-lg-3 col-xl-2 pt-2 general-input-class"
+    },
+    "additionalHoursVentilated": {
+        "display": true,
+        "inputType": "text",
+        "lookupCode": 0,
+        "required": false,
+        "labelText": "Additional Hours Ventilated: ",
+        "cssClass": "col-12 col-sm-6 col-md-3 col-lg-3 col-xl-2 pt-2 general-input-class"
+    },
+    "totalPostOperativeVentilationHours": {
+        "display": true,
+        "inputType": "text",
+        "lookupCode": 0,
+        "required": false,
+        "labelText": "Total post-operative ventilation hours ",
+        "cssClass": "col-12 col-sm-6 col-md-3 col-lg-3 col-xl-2 pt-2 general-input-class"
+    },
+    "hr3": {
+        "display": true,
+        "inputType": "hr",
+        "lookupCode": 0,
+        "required": false,
+        "labelText": "",
+        "cssClass": "col-12 general-input-class"
+    },
+    "icuVisit": {
+        "display": true,
+        "inputType": "selectize",
+        "lookupCode": 15,
+        "required": false,
+        "labelText": "ICU Visit:  ",
+        "cssClass": "col-12 col-sm-6 col-md-3 col-lg-3 col-xl-2 pt-2 general-input-class"
+    },
+    "initialIcuHours": {
+        "display": true,
+        "inputType": "text",
+        "lookupCode": 0,
+        "required": false,
+        "labelText": "Initial ICU Hours: ",
+        "cssClass": "col-12 col-sm-6 col-md-3 col-lg-3 col-xl-2 pt-2 general-input-class"
+    },
+    "hr2": {
+        "display": true,
+        "inputType": "hr",
+        "lookupCode": 0,
+        "required": false,
+        "labelText": "",
+        "cssClass": "col-12 general-input-class"
+    },
+    "readmissionToIcu": {
+        "display": true,
+        "inputType": "selectize",
+        "lookupCode": 15,
+        "required": false,
+        "labelText": "Readmission to ICU: ",
+        "cssClass": "col-12 col-sm-6 col-md-3 col-lg-3 col-xl-2 pt-2 general-input-class"
+    },
+    "additionalIcuHours": {
+        "display": true,
+        "inputType": "text",
+        "lookupCode": 0,
+        "required": false,
+        "labelText": "Additional ICU Hours:  ",
+        "cssClass": "col-12 col-sm-6 col-md-3 col-lg-3 col-xl-2 pt-2 general-input-class"
+    },
+    "postOpEchoPerformedToEvaluateValve": {
+        "display": true,
+        "inputType": "selectize",
+        "lookupCode": 15,
+        "required": false,
+        "labelText": "Post Op Echo Performed to evaluate valve(s):  ",
+        "cssClass": "col-12 col-sm-6 col-md-3 col-lg-3 col-xl-2 pt-2 general-input-class"
+    },
+    "levelAorticInsufficiencyFound": {
+        "display": true,
+        "inputType": "selectize",
+        "lookupCode": 76,
+        "required": false,
+        "labelText": "Level aortic insufficiency found: ",
+        "cssClass": "col-12 col-sm-6 col-md-3 col-lg-3 col-xl-2 pt-2 general-input-class"
+    },
+    "aorticParavalvularleak": {
+        "display": true,
+        "inputType": "selectize",
+        "lookupCode": 76,
+        "required": false,
+        "labelText": "Aortic Paravalvular leak: ",
+        "cssClass": "col-12 col-sm-6 col-md-3 col-lg-3 col-xl-2 pt-2 general-input-class"
+    },
+    "levelMitralInsufficiencyFound": {
+        "display": true,
+        "inputType": "selectize",
+        "lookupCode": 76,
+        "required": false,
+        "labelText": "Level mitral insufficiency found: ",
+        "cssClass": "col-12 col-sm-6 col-md-3 col-lg-3 col-xl-2 pt-2 general-input-class"
+    },
+    "mitralParavalvularleak": {
+        "display": true,
+        "inputType": "selectize",
+        "lookupCode": 76,
+        "required": false,
+        "labelText": "Mitral Paravalvular leak: ",
+        "cssClass": "col-12 col-sm-6 col-md-3 col-lg-3 col-xl-2 pt-2 general-input-class"
+    },
+    "levelTricuspidInsufficiencyFound": {
+        "display": true,
+        "inputType": "selectize",
+        "lookupCode": 76,
+        "required": false,
+        "labelText": "Level tricuspid insufficiency found: ",
+        "cssClass": "col-12 col-sm-6 col-md-3 col-lg-3 col-xl-2 pt-2 general-input-class"
+    },
+    "levelPulmonicInsufficiencyFound": {
+        "display": true,
+        "inputType": "selectize",
+        "lookupCode": 76,
+        "required": false,
+        "labelText": "Level pulmonic insufficiency found: ",
+        "cssClass": "col-12 col-sm-6 col-md-3 col-lg-3 col-xl-2 pt-2 general-input-class"
+    },
+    "postOpEjectionFraction": {
+        "display": true,
+        "inputType": "selectize",
+        "lookupCode": 15,
+        "required": false,
+        "labelText": "Post Op Ejection Fraction: ",
+        "cssClass": "col-12 col-sm-6 col-md-3 col-lg-3 col-xl-2 pt-2 general-input-class"
+    },
+    "postOpEjectionFractionRatio": {
+        "display": true,
+        "inputType": "text",
+        "lookupCode": 0,
+        "required": false,
+        "labelText": "Post Op Ejection Fraction: ",
+        "cssClass": "col-12 col-sm-6 col-md-3 col-lg-3 col-xl-2 pt-2 general-input-class"
+    },
+    "cardiacEnzymesDrawn": {
+        "display": true,
+        "inputType": "selectize",
+        "lookupCode": 15,
+        "required": false,
+        "labelText": "Cardiac Enzymes (biomarkers) Drawn:  ",
+        "cssClass": "col-12 col-sm-6 col-md-3 col-lg-3 col-xl-2 pt-2 general-input-class"
+    },
+    "peakCkmb": {
+        "display": true,
+        "inputType": "text",
+        "lookupCode": 0,
+        "required": false,
+        "labelText": "Peak CKMB:  ",
+        "cssClass": "col-12 col-sm-6 col-md-3 col-lg-3 col-xl-2 pt-2 general-input-class"
+    },
+    "peakTroponinI": {
+        "display": true,
+        "inputType": "text",
+        "lookupCode": 0,
+        "required": false,
+        "labelText": "Peak Troponin I:  ",
+        "cssClass": "col-12 col-sm-6 col-md-3 col-lg-3 col-xl-2 pt-2 general-input-class"
+    },
+    "peakTroponinT": {
+        "display": true,
+        "inputType": "text",
+        "lookupCode": 0,
+        "required": false,
+        "labelText": "Peak Troponin T :  ",
+        "cssClass": "col-12 col-sm-6 col-md-3 col-lg-3 col-xl-2 pt-2 general-input-class"
+    },
+    "leadEkgFindings": {
+        "display": true,
+        "inputType": "selectize",
+        "lookupCode": 73,
+        "required": false,
+        "labelText": "Lead EKG Findings:  ",
+        "cssClass": "col-12 col-sm-6 col-md-3 col-lg-3 col-xl-2 pt-2 general-input-class"
+    },
+    "serial": {
+        "display": false,
+        "inputType": "",
+        "lookupCode": "",
+        "required": false,
+        "labelText": "",
+        "cssClass": "col-12 col-sm-6 col-md-3 col-lg-3 col-xl-2 pt-2 general-input-class"
+    },
+    "visitSerial": {
+        "display": false,
+        "inputType": "",
+        "lookupCode": "",
+        "required": false,
+        "labelText": "",
+        "cssClass": "col-12 col-sm-6 col-md-3 col-lg-3 col-xl-2 pt-2 general-input-class"
+    }
+}

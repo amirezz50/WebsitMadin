@@ -1,0 +1,130 @@
+#regForm {
+ }
+
+.title-tab-step{
+	font-size: 1.3em;
+    line-height: 2;
+    margin-top: 0;
+    margin-bottom: 10px;
+    border-bottom: 1px solid #e6e6e6;
+    padding-bottom: 10px;
+    padding: 5px 10px;
+    background: #eaedf3;
+	
+}
+
+ 
+.form-control{ height: 45px;
+border-radius: 0;}
+.label-form{ line-height: 45px;}
+/* Hide all steps by default: */
+.tab {
+  display: none;
+}
+
+button {
+  background: $sec-color;
+  color: #ffffff;
+  border: none;
+  padding: 10px 20px;
+  font-size: 1em;
+   cursor: pointer;
+}
+#prevBtn {
+  background-color: #bbbbbb;
+}
+.title-span-step{    position: relative;
+    z-index: 2;}
+.step {
+        height: auto;
+    width: auto;
+    margin: 0;
+    background: none;
+    text-align: center;
+	position: relative;
+    border: none;
+    border-radius: 0;
+    font-size: 1.1em;
+    display: inline-flex;
+    align-items: center;
+    padding: 10px 48px 10px 7px;
+    text-decoration: none !important;
+    color: #8c939e;
+    -webkit-transition: all .4s ease;
+    transition: all .4s ease;
+	&:first-child{
+		padding-right: 15px;
+	}
+	&:after{
+		      content: '';
+    width: 50px;
+    height: 55PX;
+    border-radius: 12px;
+    background: #e4e6ed;
+        border-left: 1px solid rgba(140, 147, 158, 0.38);
+    border-bottom: 1px solid rgba(140, 147, 158, 0.38);
+    position: absolute;
+    top: 0;
+    left: -28px;
+    transform: rotate(45deg);
+	}
+	&.active{
+		opacity: 1;
+        color: #ffffff !important;
+        font-weight: 500;
+        background: $sec-color !important;
+		&:after{   background: #5c8ce1;
+     border-left: 1px solid rgb(108, 159, 247);
+    border-bottom: 1px solid rgb(108, 159, 247);
+		}
+		&:hover{
+			 color: #fff !important;
+		      }
+    }
+	-webkit-transition: all .4s ease;
+    transition: all .4s ease;
+	}
+	
+
+	
+ 
+
+ 
+ 
+ 
+
+/* Mark the steps that are finished and valid: */
+.step.finish {
+      color: #4CAF50;
+    opacity: 1;
+}
+.container-step{ 
+      overflow: hidden;
+    height: auto;
+    width: calc(100% - 30px);
+    padding: 15px 15px;
+    margin-top: 10px;
+    border:  1px solid rgba(140,147,158,0.25);
+    margin: 0 15px;
+    border-top: 0;
+}
+.block{
+	 overflow: hidden;
+    height: auto;
+    width: 100%;
+    padding: 0;
+     -webkit-box-shadow: 0 1px 15px 1px rgba(69,65,78,0.08);
+    -moz-box-shadow: 0 1px 15px 1px rgba(69,65,78,0.08);
+    box-shadow: 0 1px 15px 1px rgba(69,65,78,0.08);
+    display: block;
+    border: 1px solid #e6e6e6;
+}
+.header-step-wid .step:nth-child(1){  }
+.control-area{     overflow: hidden;
+    height: auto;
+    width: 100%;
+    display: block;
+    margin-top: 20px;
+    text-align: left;
+}
+.control-area button{ display: inline-block}

@@ -1,0 +1,21 @@
+﻿{
+    
+    "valid": {
+        "display": true,
+        "required": false,
+        "defaultVal": true
+    },
+    "branch": {
+        "display": true,
+        "required": false,
+        "defaultVal": 0
+       
+
+    },
+    "thirdBranch": {
+        "display": true,
+        "required": false,
+        "defaultVal": false
+    }
+ 
+}

@@ -1,0 +1,463 @@
+﻿{
+	"resourceType": "Bundle",
+	"id": "97087dd0-bacf-4e95-8508-e1d9e7f91ec2",
+	"meta": {
+		"profile": [
+			"http://nphies.sa/fhir/ksa/nphies-fs/StructureDefinition/bundle|1.0.0"
+		]
+	},
+	"type": "message",
+	"timestamp": "2021-03-28",
+	"entry": [
+		{
+			"fullUrl": "urn:uuid:718de2d0-9b5b-43a7-bcf9-ba089e6bbef1",
+			"resource": {
+				"resourceType": "MessageHeader",
+				"id": "718de2d0-9b5b-43a7-bcf9-ba089e6bbef1",
+				"meta": {
+					"profile": [
+						"http://nphies.sa/fhir/ksa/nphies-fs/StructureDefinition/message-header|1.0.0"
+					]
+				},
+				"eventCoding": {
+					"system": "http://nphies.sa/terminology/CodeSystem/ksa-message-events",
+					"code": "priorauth-request"
+				},
+				"destination": [
+					{
+						"endpoint": "http://nphies.sa/license/payer-license/TMB-INS",
+						"receiver": {
+							"type": "Organization",
+							"identifier": {
+								"system": "http://nphies.sa/license/payer-license",
+								"value": "TMB-INS"
+							}
+						}
+					}
+				],
+				"sender": {
+					"type": "Organization",
+					"identifier": {
+						"system": "http://nphies.sa/license/provider-license",
+						"value": "PR-FHIR"
+					}
+				},
+				"source": {
+					"endpoint": "http://nphies.sa/license/provider-license/PR-FHIR"
+				},
+				"focus": [
+					{
+						"reference": "http://pr-fhir.com.sa/Claim/274625"
+					}
+				]
+			}
+		},
+		{
+			"fullUrl": "http://pr-fhir.com.sa/Claim/274625",
+			"resource": {
+				"resourceType": "Claim",
+				"id": "274625",
+				"meta": {
+					"profile": [
+						"http://nphies.sa/fhir/ksa/nphies-fs/StructureDefinition/institutional-priorauth|1.0.0"
+					]
+				},
+				"identifier": [
+					{
+						"system": "http://pr-fhir.com.sa/Authorization",
+						"value": "274625"
+					}
+				],
+				"status": "active",
+				"type": {
+					"coding": [
+						{
+							"system": "http://terminology.hl7.org/CodeSystem/claim-type",
+							"code": "institutional"
+						}
+					]
+				},
+				"subType": {
+					"coding": [
+						{
+							"system": "http://nphies.sa/terminology/CodeSystem/claim-subtype",
+							"code": "emr"
+						}
+					]
+				},
+				"use": "preauthorization",
+				"patient": {
+					"reference": "Patient/3"
+				},
+				"created": "2021-03-28",
+				"insurer": {
+					"reference": "Organization/11"
+				},
+				"provider": {
+					"reference": "Organization/10"
+				},
+				"priority": {
+					"coding": [
+						{
+							"system": "http://terminology.hl7.org/CodeSystem/processpriority",
+							"code": "deferred"
+						}
+					]
+				},
+				"payee": {
+					"type": {
+						"coding": [
+							{
+								"system": "http://terminology.hl7.org/CodeSystem/payeetype",
+								"code": "provider"
+							}
+						]
+					}
+				},
+				"careTeam": [
+					{
+						"sequence": 1,
+						"provider": {
+							"reference": "PractitionerRole/7"
+						},
+						"role": {
+							"coding": [
+								{
+									"system": "http://terminology.hl7.org/CodeSystem/claimcareteamrole",
+									"code": "primary"
+								}
+							]
+						},
+						"qualification": 
+                            {
+                                "coding": [{
+                                "system": "http://nphies.sa/terminology/CodeSystem/practice-codes",
+                                "code": "01.00"}]
+                            }
+					}
+				],
+				"diagnosis": [
+					{
+						"sequence": 1,
+						"diagnosisCodeableConcept": {
+							"coding": [
+								{
+									"system": "http://hl7.org/fhir/sid/icd-10-am",
+									"code": "A01.1"
+								}
+							]
+						},
+						"onAdmission": {
+							"coding": [
+								{
+									"system": "http://nphies.sa/terminology/CodeSystem/diagnosis-on-admission",
+									"code": "y"
+								}
+							]
+						},
+						"type": [
+							{
+								"coding": [
+									{
+										"system": "http://nphies.sa/terminology/CodeSystem/diagnosis-type",
+										"code": "principal"
+									}
+								]
+							}
+						]
+					}
+				],
+				"insurance": [
+					{
+						"sequence": 1,
+						"focal": true,
+						"coverage": {
+							"reference": "Coverage/3"
+						}
+					}
+				],
+				"item": [
+					{
+						"extension": [
+							{
+								"url": "http://nphies.sa/fhir/ksa/nphies-fs/StructureDefinition/extension-package",
+								"valueBoolean": false
+							},
+							{
+								"url": "http://nphies.sa/fhir/ksa/nphies-fs/StructureDefinition/extension-tax",
+								"valueMoney": {
+									"value": 10,
+									"currency": "SAR"
+								}
+							},
+							{
+								"url": "http://nphies.sa/fhir/ksa/nphies-fs/StructureDefinition/extension-patient-share",
+								"valueMoney": {
+									"value": 0,
+									"currency": "SAR"
+								}
+							}
+						],
+						"sequence": 1,
+						"careTeamSequence": [
+							1
+						],
+						"productOrService": {
+							"coding": [
+								{
+									"system": "http://nphies.sa/terminology/CodeSystem/services",
+									"code": "83600-00-90"
+								}
+							]
+						},
+						"servicedDate": "2021-03-28",
+						"quantity": {
+							"value": 1
+						},
+						"unitPrice": {
+							"value": 6.5,
+							"currency": "SAR"
+						},
+						"net": {
+							"value": 6.5,
+							"currency": "SAR"
+						}
+					}
+				],
+				"total": {
+					"value": 6.5,
+					"currency": "SAR"
+				}
+			}
+		},
+		{
+			"fullUrl": "http://pr-fhir.com.sa/Patient/3",
+			"resource": {
+				"resourceType": "Patient",
+				"id": "3",
+				"meta": {
+					"profile": [
+						"http://nphies.sa/fhir/ksa/nphies-fs/StructureDefinition/patient|1.0.0"
+					]
+				},
+				"identifier": [
+					{
+						"type": {
+							"coding": [
+								{
+									"system": "http://terminology.hl7.org/CodeSystem/v2-0203",
+									"code": "VS"
+								}
+							]
+						},
+						"system": "http://nphies.sa/identifier/visa",
+						"value": "00000000003"
+					}
+				],
+				"active": true,
+				"name": [
+					{
+						"text": "Muhammad Ali Abbas",
+						"family": "Abbas",
+						"given": [
+							"Muhammad",
+							"Ali"
+						]
+					}
+				],
+				"gender": "male",
+				"_gender": {
+					"extension": [
+						{
+							"url": "http://nphies.sa/fhir/ksa/nphies-fs/StructureDefinition/extension-ksa-administrative-gender",
+							"valueCodeableConcept": {
+								"coding": [
+									{
+										"system": "http://nphies.sa/terminology/CodeSystem/ksa-administrative-gender",
+										"code": "male"
+									}
+								]
+							}
+						}
+					]
+				},
+				"birthDate": "2010-08-21"
+			}
+		},
+		{
+			"fullUrl": "http://pr-fhir.com.sa/Coverage/3",
+			"resource": {
+				"resourceType": "Coverage",
+				"id": "3",
+				"meta": {
+					"profile": [
+						"http://nphies.sa/fhir/ksa/nphies-fs/StructureDefinition/coverage|1.0.0"
+					]
+				},
+				"identifier": [
+					{
+						"system": "http://tmb-ins.com.sa/memberid",
+						"value": "0000000001-03"
+					}
+				],
+				"status": "active",
+				"type": {
+					"coding": [
+						{
+							"system": "http://nphies.sa/terminology/CodeSystem/coverage-type",
+							"code": "EHCPOL"
+						}
+					]
+				},
+				"beneficiary": {
+					"reference": "Patient/3"
+				},
+				"relationship": {
+					"coding": [
+						{
+							"system": "http://terminology.hl7.org/CodeSystem/subscriber-relationship",
+							"code": "child"
+						}
+					]
+				},
+				"payor": [
+					{
+						"reference": "Organization/11"
+					}
+				]
+			}
+		},
+		{
+			"fullUrl": "http://pr-fhir.com.sa/Practitioner/7",
+			"resource": {
+				"resourceType": "Practitioner",
+				"id": "7",
+				"meta": {
+					"profile": [
+						"http://nphies.sa/fhir/ksa/nphies-fs/StructureDefinition/practitioner|1.0.0"
+					]
+				},
+				"identifier": [
+					{
+						"type": {
+							"coding": [
+								{
+									"system": "http://terminology.hl7.org/CodeSystem/v2-0203",
+									"code": "MD"
+								}
+							]
+						},
+						"system": "http://nphies.sa/license/practitioner-license",
+						"value": "0007"
+					}
+				],
+				"active": true
+			}
+		},
+		{
+			"fullUrl": "http://pr-fhir.com.sa/PractitionerRole/7",
+			"resource": {
+				"resourceType": "PractitionerRole",
+				"id": "7",
+				"meta": {
+					"profile": [
+						"http://nphies.sa/fhir/ksa/nphies-fs/StructureDefinition/practitioner-role|1.0.0"
+					]
+				},
+				"identifier": [
+					{
+						"system": "http://nphies.sa/terminology/CodeSystem/practitioner-role",
+						"value": "ict"
+					}
+				],
+				"active": true,
+				"practitioner": {
+					"reference": "Practitioner/7"
+				},
+				"organization": {
+					"reference": "Organization/10"
+				},
+				"code": [
+					{
+						"coding": [
+							{
+								"system": "http://nphies.sa/terminology/CodeSystem/practitioner-role",
+								"code": "doctor"
+							}
+						]
+					}
+				],
+				"specialty": [
+					{
+						"coding": [
+							{
+								"system": "http://nphies.sa/terminology/CodeSystem/practice-codes",
+								"code": "19.00"
+							}
+						]
+					}
+				]
+			}
+		},
+		{
+			"fullUrl": "http://pr-fhir.com.sa/Organization/10",
+			"resource": {
+				"resourceType": "Organization",
+				"id": "10",
+				"meta": {
+					"profile": [
+						"http://nphies.sa/fhir/ksa/nphies-fs/StructureDefinition/provider-organization|1.0.0"
+					]
+				},
+				"identifier": [
+					{
+						"use": "official",
+						"system": "http://nphies.sa/license/provider-license",
+						"value": "PR-FHIR"
+					}
+				],
+				"active": true,
+				"type": [
+					{
+						"coding": [
+							{
+								"system": "http://nphies.sa/terminology/CodeSystem/organization-type",
+								"code": "prov"
+							}
+						]
+					}
+				]
+			}
+		},
+		{
+			"fullUrl": "http://pr-fhir.com.sa/Organization/11",
+			"resource": {
+				"resourceType": "Organization",
+				"id": "11",
+				"meta": {
+					"profile": [
+						"http://nphies.sa/fhir/ksa/nphies-fs/StructureDefinition/insurer-organization|1.0.0"
+					]
+				},
+				"identifier": [
+					{
+						"use": "official",
+						"system": "http://nphies.sa/license/payer-license",
+						"value": "TMB-INS"
+					}
+				],
+				"active": true,
+				"type": [
+					{
+						"coding": [
+							{
+								"system": "http://nphies.sa/terminology/CodeSystem/organization-type",
+								"code": "ins"
+							}
+						]
+					}
+				]
+			}
+		}
+	]
+}

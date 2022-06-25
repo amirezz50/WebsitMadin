@@ -1,0 +1,214 @@
+<div style='display:none'>
+  <div class="" id="shape">
+    <!-- mmc for export--exportPdf==1-->
+    <div class="text-start">
+      <!-- header -->
+      <table class="full-width">
+        <tr style="vertical-align:top;">
+          <img alt="" src="../../../../assets/images/ora/logo.png" style="width: 12.5%;margin: auto;height: 55px;">
+        </tr>
+        <tr style="vertical-align:top;">
+          <td colspan="6" class="tr-as-line"></td>
+        </tr>
+      </table>
+      <!-- rx-details -->
+      <div style=" direction: rtl;padding:2px;">
+        <table class="full-width">
+          <tbody>
+            <tr style="text-align: right;">
+              <td colspan="2" class="groupHeaderDataCell_ar"><strong style="font-size: 14px;text-decoration: none;">اسم
+                  المريض: </strong>
+              </td>
+              <td colspan="3" class="groupHeaderDataCell_ar"><strong
+                  style="font-size: 12px; text-decoration: none; font-weight: normal;font-style: normal;">
+                  {{translate.currentLang == 'ar' ? rxInfo.patNameAr : rxInfo.patNameEn}}
+                </strong>
+              </td>
+              <td colspan="2" class="groupHeaderDataCell_ar"><strong
+                  style="font-size: 14px;text-decoration: none;">:PATIENT NAME </strong>
+              </td>
+            </tr>
+
+
+            <tr style="text-align: right;">
+              <td colspan="1" class="groupHeaderDataCell_ar"><strong style="font-size: 14px;text-decoration: none;">ذكر:
+                </strong>
+              </td>
+              <td colspan="1" class="groupHeaderDataCell_ar"><strong style="font-size: 14px;text-decoration: none;">
+                  <input *ngIf="+rxInfo.gender == 1" class="form-check-input mx-2" disabled type="checkbox" checked />
+                  <input *ngIf="+rxInfo.gender != 1" class="form-check-input mx-2" disabled type="checkbox" />
+                </strong>
+              </td>
+              <td colspan="1" class="groupHeaderDataCell_ar"><strong
+                  style="font-size: 14px;text-decoration: none;">:MALE </strong>
+              </td>
+              <td colspan="1" class="groupHeaderDataCell_ar"><strong
+                  style="font-size: 14px;text-decoration: none; ">انثي: </strong>
+              </td>
+              <td colspan="1" class="groupHeaderDataCell_ar"><strong style="font-size: 14px;text-decoration: none; ">
+
+                  <input *ngIf="+rxInfo.gender == 2" class="form-check-input mx-2" disabled type="checkbox" checked />
+                  <input *ngIf="+rxInfo.gender != 2" class="form-check-input mx-2" disabled type="checkbox" />
+                </strong>
+              </td>
+              <td colspan="1" class="groupHeaderDataCell_ar"><strong
+                  style="font-size: 14px;text-decoration: none; ">:FEMALE</strong>
+              </td>
+            </tr>
+            <tr style="text-align: right;">
+              <td colspan="3" class="groupHeaderDataCell_ar"><strong
+                  style="font-size: 14px;text-decoration: none;padding-left: 12px;">رقم السجل المدني الإقامة:
+                </strong>
+              </td>
+              <td colspan="3" class="groupHeaderDataCell_ar"><strong
+                  style="font-size: 12px; text-decoration: none; font-weight: normal;font-style: normal;">
+                  {{rxInfo.identityValue}}
+                </strong>
+              </td>
+            </tr>
+            <tr style="text-align: right;">
+              <td colspan="3" class="groupHeaderDataCell_ar"><strong style="font-size: 14px;text-decoration: none;">عقد
+                  التأمين:</strong>
+              </td>
+              <td colspan="3" class="groupHeaderDataCell_ar"><strong
+                  style="font-size: 12px; text-decoration: none; font-weight: normal;font-style: normal;">
+                  {{translate.currentLang == 'ar' ? rxInfo.contractNameAr : rxInfo.contractNameEn}}
+                </strong>
+              </td>
+            </tr>
+            <tr style="text-align: right;">
+              <td colspan="1" class="groupHeaderDataCell_ar">
+                <strong style="font-size: 14px;text-decoration: none; ">العمر: </strong>
+              </td>
+              <td colspan="1" class="groupHeaderDataCell_ar">
+                <strong style="font-size: 12px; text-decoration: none; font-weight: normal;font-style: normal;">
+                  {{rxInfo.ageAr}} </strong>
+              </td>
+              <td colspan="1" class="groupHeaderDataCell_ar">
+                <strong style="font-size: 14px;text-decoration: none; ">:AGE </strong>
+              </td>
+
+              <td colspan="1" class="groupHeaderDataCell_ar">
+                <strong style="font-size: 14px;text-decoration: none;">رقم الملف : </strong>
+              </td>
+              <td colspan="1" class="groupHeaderDataCell_ar">
+                <strong
+                  style="font-size: 12px; text-decoration: none; font-weight: normal;font-style: normal;">{{rxInfo.code}}
+                </strong>
+              </td>
+              <td colspan="1" class="groupHeaderDataCell_ar">
+                <strong style="font-size: 14px;text-decoration: none;">:FILE NO</strong>
+              </td>
+            </tr>
+            <tr style="text-align: right;">
+              <td colspan="2" class="groupHeaderDataCell_ar"><strong
+                  style="font-size: 14px;text-decoration: none;">العيادة /القسم :</strong>
+              </td>
+              <td colspan="3" class="groupHeaderDataCell_ar"><strong
+                  style="font-size: 12px; text-decoration: none; font-weight: normal;font-style: normal;">
+                  {{translate.currentLang == 'ar' ? rxInfo.clinicNameAr : rxInfo.clinicNameEn}}
+                </strong>
+              </td>
+              <td colspan="2" class="groupHeaderDataCell_ar"><strong
+                  style="font-size: 14px;text-decoration: none;">:CLINIC/WARD </strong>
+              </td>
+            </tr>
+            <tr style="text-align: right;">
+              <td colspan="2" class="groupHeaderDataCell_ar"><strong
+                  style="font-size: 14px;text-decoration: none;float: right;"> التشخيص:</strong>
+              </td>
+              <td colspan="3" class="groupHeaderDataCell_ar"><strong
+                  style="font-size: 12px; text-decoration: none; font-weight: normal;font-style: normal;">
+                  {{rxInfo.diagAsText}}
+                </strong>
+              </td>
+              <td colspan="2" class="groupHeaderDataCell_ar"><strong
+                  style="font-size: 14px;text-decoration: none;float: right;">:DIAGNOSIS</strong>
+              </td>
+            </tr>
+
+          </tbody>
+        </table>
+      </div>
+      <hr style="margin: 0;margin-top: 7px;width: 100%;border-color: #232323; border-width: thin;">
+      <!-- doses-medicine -->
+      <div style="padding: 8px;margin-top:20px; direction: ltr;">
+        <strong style="font-size: 14px;text-decoration: none;float: left;">RX:</strong>
+        <table class="full-width">
+          <tbody>
+            <div *ngFor="let desc of rxDesc">
+              <tr style="text-align: left;">
+                <td colspan="3" class="groupHeaderDataCell_ar">
+                  <strong style="text-decoration: none;">{{ desc.customID}} - </strong>
+                </td>
+                <td colspan="3" class="groupHeaderDataCell_ar"><strong
+                    style="font-size: 12px; text-decoration: none; font-weight: normal;font-style: normal;">
+                    {{translate.currentLang == 'ar' ? desc.itemNameAr : desc.itemNameEn}}
+                  </strong>
+                </td>
+              </tr>
+              <tr style="text-align: left;">
+                <td colspan="3" class="groupHeaderDataCell_ar">
+                  <Strong style="font-size: 14px;text-decoration: none;">Dose :
+                  </Strong>
+                </td>
+                <td colspan="3" class="groupHeaderDataCell_ar"><strong
+                    style="font-size: 12px; text-decoration: none; font-weight: normal;font-style: normal;">
+                    {{translate.currentLang == 'ar' ? desc.rxDoseAr : desc.rxDoseEn}}
+                  </strong>
+                </td>
+
+              </tr>
+              <tr style="vertical-align:top;">
+                <td colspan="6" class="tr-as-line"></td>
+              </tr>
+            </div>
+          </tbody>
+        </table>
+      </div>
+      <!--footer rx--->
+      <div style=" direction: rtl;padding:2px;">
+        <table class="full-width">
+          <tbody>
+            <tr style="text-align: right;">
+              <td colspan="2" class="groupHeaderDataCell_ar"><strong style="font-size: 14px;text-decoration: none; ">اسم
+                  الدكتور: </strong>
+              </td>
+              <td colspan="3" class="groupHeaderDataCell_ar"><strong
+                  style="font-size: 12px; text-decoration: none; font-weight: normal;font-style: normal;">
+                  {{translate.currentLang == 'ar' ? rxInfo.doctorNameAr : rxInfo.doctorNameEn}}
+                </strong>
+              </td>
+              <td colspan="2" class="groupHeaderDataCell_ar"><strong
+                  style="font-size: 14px;text-decoration: none; ">:DOCTOR </strong>
+              </td>
+            </tr>
+            <tr style="text-align: right;">
+              <td colspan="2" class="groupHeaderDataCell_ar"><strong
+                  style="font-size: 14px;text-decoration: none; ">التوقيع: </strong>
+              </td>
+              <td colspan="3" class="groupHeaderDataCell_ar"><strong
+                  style="font-size: 12px; text-decoration: none; font-weight: normal;font-style: normal;">
+                </strong>
+              </td>
+              <td colspan="2" class="groupHeaderDataCell_ar"><strong
+                  style="font-size: 14px;text-decoration: none; ">:SIGNATURE </strong>
+              </td>
+              <td colspan="2" class="groupHeaderDataCell_ar">
+                <strong style="font-size: 12px; text-decoration: none; font-weight: normal;font-style: normal;">
+                  {{rxInfo.rxDate | date: 'dd/MM/yyyy'}}
+                </strong>
+              </td>
+              <td colspan="2" class="groupHeaderDataCell_ar">
+                <strong style="font-size: 14px;text-decoration: none;">:DATE </strong>
+              </td>
+          </tbody>
+        </table>
+      </div>
+    </div>
+
+  </div>
+</div>
+<div>
+  <app-print-page #printComponent section="shape" [width]="width" [height]="height"></app-print-page>
+</div>

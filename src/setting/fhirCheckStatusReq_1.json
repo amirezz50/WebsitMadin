@@ -1,0 +1,161 @@
+﻿{
+	"resourceType": "Bundle",
+	"id": "0ed9fee0-baca-4892-b2f5-e8d992d18700",
+	"meta": {
+		"profile": [
+			"http://nphies.sa/fhir/ksa/nphies-fs/StructureDefinition/bundle|1.0.0"
+		]
+	},
+	"type": "message",
+	"timestamp": "2021-03-28",
+	"entry": [
+		{
+			"fullUrl": "urn:uuid:34e907f4-3e5b-4a71-b454-fb56563e64fc",
+			"resource": {
+				"resourceType": "MessageHeader",
+				"id": "34e907f4-3e5b-4a71-b454-fb56563e64fc",
+				"meta": {
+					"profile": [
+						"http://nphies.sa/fhir/ksa/nphies-fs/StructureDefinition/message-header|1.0.0"
+					]
+				},
+				"eventCoding": {
+					"system": "http://nphies.sa/terminology/CodeSystem/ksa-message-events",
+					"code": "status-check"
+				},
+				"destination": [
+					{
+						"endpoint": "http://nphies.sa/license/payer-license/TMB-INS",
+						"receiver": {
+							"type": "Organization",
+							"identifier": {
+								"system": "http://nphies.sa/license/payer-license",
+								"value": "INS-FHIR"
+							}
+						}
+					}
+				],
+				"sender": {
+					"type": "Organization",
+					"identifier": {
+						"system": "http://nphies.sa/license/provider-license",
+						"value": "PR-FHIR"
+					}
+				},
+				"source": {
+					"endpoint": "http://nphies.sa/license/provider-license/PR-FHIR"
+				},
+				"focus": [
+					{
+						"reference": "http://nphies.sa/Task/601791"
+					}
+				]
+			}
+		},
+		{
+			"fullUrl": "http://nphies.sa/Task/601791",
+			"resource": {
+				"resourceType": "Task",
+				"id": "601791",
+				"meta": {
+					"profile": [
+						"http://nphies.sa/fhir/ksa/nphies-fs/StructureDefinition/task|1.0.0"
+					]
+				},
+				"identifier": [
+					{
+						"use": "official",
+						"system": "http:/happyvalley.com/task",
+						"value": "601791"
+					}
+				],
+				"status": "requested",
+				"intent": "order",
+				"priority": "routine",
+				"code": {
+					"coding": [
+						{
+							"system": "http://nphies.sa/terminology/CodeSystem/task-code",
+							"code": "status"
+						}
+					]
+				},
+				"focus": {
+					"type": "Claim",
+					"identifier": {
+						"system": "http://happyvalley.com/claim",
+						"value": "735215"
+					}
+				},
+				"authoredOn": "2021-03-28",
+				"lastModified": "2021-03-28",
+				"requester": {
+					"reference": "http://pr-fhir.com.sa/Organization/10"
+				},
+				"owner": {
+					"reference": "http://pr-fhir.com.sa/Organization/11"
+				}
+			}
+		},
+		{
+			"fullUrl": "http://pr-fhir.com.sa/Organization/10",
+			"resource": {
+				"resourceType": "Organization",
+				"id": "10",
+				"meta": {
+					"profile": [
+						"http://nphies.sa/fhir/ksa/nphies-fs/StructureDefinition/provider-organization|1.0.0"
+					]
+				},
+				"identifier": [
+					{
+						"use": "official",
+						"system": "http://nphies.sa/license/provider-license",
+						"value": "PR-FHIR"
+					}
+				],
+				"active": true,
+				"type": [
+					{
+						"coding": [
+							{
+								"system": "http://nphies.sa/terminology/CodeSystem/organization-type",
+								"code": "prov"
+							}
+						]
+					}
+				]
+			}
+		},
+		{
+			"fullUrl": "http://pr-fhir.com.sa/Organization/11",
+			"resource": {
+				"resourceType": "Organization",
+				"id": "11",
+				"meta": {
+					"profile": [
+						"http://nphies.sa/fhir/ksa/nphies-fs/StructureDefinition/insurer-organization|1.0.0"
+					]
+				},
+				"identifier": [
+					{
+						"use": "official",
+						"system": "http://nphies.sa/license/payer-license",
+						"value": "INS-FHIR"
+					}
+				],
+				"active": true,
+				"type": [
+					{
+						"coding": [
+							{
+								"system": "http://nphies.sa/terminology/CodeSystem/organization-type",
+								"code": "ins"
+							}
+						]
+					}
+				]
+			}
+		}
+	]
+}

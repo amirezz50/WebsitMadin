@@ -1,0 +1,78 @@
+﻿/* You can add global styles to this file, and also import other style files */
+@import "~@angular/material/prebuilt-themes/indigo-pink.css";
+
+.title-tab-step {
+    margin-top   : 0;
+    margin-bottom: 0 !important;
+    padding      : 0 11px !important;
+}
+
+/* patient bill bar */
+.pat-bill-bar {
+    border       : #f1eded 2px solid !important;
+    border-radius: 5px;
+}
+
+.pat-bill-bar h5 {
+    width: max-content;
+}
+
+.pat-bill-bar span {
+    color: #212529
+}
+
+.pat-bill-bar .head {
+    color: #007bff;
+}
+
+.qr-code-class  img {
+    width: 200px;
+  }
+/* patient bill bar */
+
+
+
+
+/* table .input-group .form-control {
+    text-align: center !important;
+} */
+
+
+/* ######################################## Start media query  ############################### */
+/* Small devices (landscape phones, 576px and up) */
+/* @media (min-width: 576px) { 
+    .modal-content {
+        width: 94%;
+        right: 3%;
+        top: 5%;
+        height: 90%;
+    } 
+} */
+
+/* Medium devices (tablets, 768px and up) */
+/* @media (min-width: 768px) {  } */
+
+/* Large devices (desktops, 992px and up) */
+/* @media (min-width: 992px) { 
+    .modal-content {
+        width: 75%;
+        right: 15%;
+        top: 5%;
+        height: 80%;
+    }
+ } */
+
+/* Extra large devices (large desktops, 1200px and up) */
+/* @media (min-width: 1200px) { 
+    .modal-content {
+        width: 50%;
+        right: 26%;
+        top: 5%;
+        height: 80%;
+    }
+ } */
+
+#bootstrapForm {
+    direction : ltr;
+    text-align: left;
+}

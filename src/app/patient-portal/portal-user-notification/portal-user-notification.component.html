@@ -1,0 +1,49 @@
+<p-dataTable tableStyleClass="table table-bordered table-striped" [value]="portalnotificationList" [rows]="10"
+  [paginator]="true" [pageLinks]="3" >
+  <p-column field="msgBody" header="{{'MSGBODY' | translate }}">
+    <ng-template pTemplate="options" let-row="rowData">
+      <input *ngIf="row.dataStatus==2 || row.dataStatus ==1" type="text" class="form-control" [(ngModel)]="row.nameAr" />
+      <b *ngIf="!row.dataStatus || row.dataStatus==4">{{row.msgBody}}</b>
+    </ng-template>
+  </p-column>
+  <!-- <p-column field="nameEn" header="{{'msgBody' | translate}}" [sortable]="true">
+    <ng-template pTemplate="options" let-row="rowData">
+      <input *ngIf="row.dataStatus==2 || row.dataStatus ==1" type="text" class="form-control" [(ngModel)]="row.nameEn" />
+      <b *ngIf="!row.dataStatus || row.dataStatus==4">{{row.msgBody}}</b>
+    </ng-template>
+  </p-column> -->
+  <!-- <p-column field="jsonPropName" header="{{'jsonPropName' | translate}}" [sortable]="true">
+    <ng-template pTemplate="options" let-row="rowData">
+      <input *ngIf="row.dataStatus==2 || row.dataStatus ==1" type="text" class="form-control" 
+      [(ngModel)]="row.jsonPropName" />
+      <b *ngIf="!row.dataStatus || row.dataStatus==4">{{row.jsonPropName}}</b>
+    </ng-template>
+  </p-column> -->
+  <!-- </p-column>
+  <p-column styleClass="col-button">
+    <ng-template pTemplate="options" let-row="rowData">
+      <icon-action *ngIf="!row.dataStatus || row.dataStatus==4" (clicked)="onRowIconClick($event , row)"
+        [appCodes]="[402,403]"></icon-action>
+        <div *ngIf="row.dataStatus==2">
+          <button class="btn btn-info btn-sm" (click)="undoAddEdit(row, 2);">
+            <i class="fa fa-undo fa-1x"></i>
+          </button>
+          <button class="btn btn-success btn-sm" (click)="saveEdit(row);">
+            <i class="fa fa-save fa-1x"></i>
+          </button>
+        </div>
+        <div *ngIf="row.dataStatus == 1">
+          <button class="btn btn-info btn-sm" (click)="undoAddEdit(row, 1);">
+            <i class="fa fa-undo fa-1x"></i>
+          </button>
+        </div>
+    </ng-template>
+
+  </p-column> -->
+</p-dataTable>
+<hr>
+<h3 class="my-3">{{'ALLNOTIFICATIONS'|translate}}</h3>
+<ol>
+  <li *ngFor="let msg of notifications">{{msg.msgBody}}</li>
+</ol>
+<hr>

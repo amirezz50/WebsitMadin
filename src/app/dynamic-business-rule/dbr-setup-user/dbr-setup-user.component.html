@@ -1,0 +1,97 @@
+<div class="container-fluid">
+  <div class="card card-outline-primary">
+
+    <div class="panel-body">
+      <div class="card-block">
+        <div>
+          <div class="col-3">
+            <i class="fa fa-plus fa-2x AddButton"
+               (click)="addRow()"
+               aria-hidden="true" placement="left"
+               ngbTooltip="{{ 'ADD' | translate }}">
+            </i>
+          </div>
+
+          <!--<div class="ui-widget-header search-area col-3">
+            <i class="fa fa-search search-icon"></i>
+            <input #gb type="text" size="30" placeholder="{{ 'FILTER' | translate }}">
+          </div>
+          <div class="col-3">
+            <sanabel-selectize appcode="51" [simpleView]="true">
+            </sanabel-selectize>
+          </div>-->
+
+        </div>
+        <form>
+          <div>
+            <!--class="col-sm-12"-->
+            <!--class="form-control form-control-sm "-->
+            <p-dataTable tableStyleClass="table table-bordered table-striped" [value]="dbrSetupUserItem"
+                         [rows]="10" [paginator]="true" [pageLinks]="3" (onPage)="paginate($event)" selectionMode="single"
+                         [rowsPerPageOptions]="[5,10,20,50,100]">
+
+              <p-column [style]="{'width': '20%'}" field="code" header="{{ 'CODE' | translate }}" [sortable]="true">
+                <ng-template pTemplate="options" let-row="rowData">
+                  <input type="text" (change)="onRowDataChange(row,$event);" disabled
+                         class="form-control form-control-sm col-sm-12 "
+                         [(ngModel)]="row.code"
+                         name="code{{row.code}}" />
+                </ng-template>
+              </p-column>
+
+              <p-column [style]="{'width': '20%'}" field="descAr" header="{{ 'DESCAR' | translate }}" [sortable]="true">
+                <ng-template pTemplate="options" let-row="rowData">
+                  <input type="text" (change)="onRowDataChange(row,$event);"
+                         class="form-control form-control-sm col-sm-12 " [(ngModel)]="row.descAr"
+                         name="descAr{{row.code}}" />
+                </ng-template>
+              </p-column>
+
+              <p-column [style]="{'width': '20%'}" field="descEn" header="{{ 'DESCEN' | translate }}" [sortable]="true">
+                <ng-template pTemplate="options" let-row="rowData">
+                  <input type="text" (change)="onRowDataChange(row,$event);"
+                         class="form-control form-control-sm col-sm-12 " [(ngModel)]="row.descEn"
+                         name="descEn{{row.code}}" />
+                </ng-template>
+              </p-column>
+
+
+              <p-column [style]="{'width': '20%'}" field="rType" header="{{ 'RTYPE' | translate }}" [sortable]="true">
+                <ng-template pTemplate="options" let-row="rowData">
+                  <input type="text" (change)="onRowDataChange(row,$event);"
+                         class="form-control form-control-sm col-sm-12 " [(ngModel)]="row.rType"
+                         name="rType{{row.code}}" />
+                </ng-template>
+              </p-column>
+
+
+              <p-column [style]="{'width': '20%'}" field="sort" header="{{ 'SORT' | translate }}" [sortable]="true">
+                <ng-template pTemplate="options" let-row="rowData">
+                  <input type="text" (change)="onRowDataChange(row,$event);"
+                         class="form-control form-control-sm col-sm-12 " [(ngModel)]="row.sort"
+                         name="sort{{row.code}}" />
+                </ng-template>
+              </p-column>
+
+              <p-column [style]="{'width': '7%'}" [sortable]="true">
+                <ng-template pTemplate="options" let-row="rowData">
+                  <icon-action (clicked)="onRowIconClick($event ,row)" [appCodes]="[403]"></icon-action>
+                </ng-template>
+              </p-column>
+
+            </p-dataTable>
+
+          </div>
+          <div class="container-fluid">
+            <div class="row">
+              <div class="col">
+                <btns-ctrl [paramsArr]="controlsParams" (clicked)="onClicked($event)"></btns-ctrl>
+              </div>
+            </div>
+          </div>
+
+        </form>
+      </div>
+    </div>
+  </div>
+</div>

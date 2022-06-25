@@ -1,0 +1,12 @@
+<div class="container-fluid p-0">
+  <div class="row" *ngIf="reportName=='AddmissionForm'">
+    <addmission-form></addmission-form>
+     <!-- <addmission-discharge-form></addmission-discharge-form> -->
+  </div>
+  <div  *ngIf="reportName=='PatientBarCode'">
+      <PatientBarCode></PatientBarCode>
+    </div>
+    <div class="row" *ngIf="reportName=='AddmissionDischargeForm'">
+        <addmission-discharge-form></addmission-discharge-form> 
+    </div>
+</div>  

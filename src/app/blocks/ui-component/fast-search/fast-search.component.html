@@ -1,0 +1,134 @@
+<div class="container-fluid pb-2" *ngIf="initComplete">
+    <form [formGroup]="searchForm" *ngIf="test" novalidate>
+
+        <div class=" row p-0 m-0">
+
+            <div class="col-12 col-sm-5 col-md-4 col-lg-4 col-xl-2 p-0 pt-1" [hidden]="!toggleFilter">
+                <div *ngIf="!placeholderText">
+                    <input #inputFastSearch class="form-control form-control-sm" (focus)="onFastSearchDataFocus()"
+                        formControlName="fastSearchData" placeholder="{{ 'FASTSEARCH' | translate }}" type="text"
+                        (keydown.enter)="onKeydown($event)" autofocus>
+                </div>
+                <div *ngIf="placeholderText">
+                    <input #inputFastSearch class="form-control form-control-sm" (focus)="onFastSearchDataFocus()"
+                        formControlName="fastSearchData" placeholder="{{ placeholderText }}" type="text" autofocus>
+                </div>
+            </div>
+
+            <!-- <div class="col-md-{{codeKey.gridWidth}}" -->
+            <div class="col-12 col-sm-6 col-md-4 col-lg-4 col-xl-3 pt-2" [hidden]="toggleFilter "
+                *ngFor="let codeKey of appCodesKeys | arrayfilter: 'visible' : 1">
+                <div *ngIf="codeKey.type=='selectize' && ! codeKey.multi && ! codeKey.staticFlagAppCode">
+                    <sanabel-selectize [customPlaceHolder]="codeKey.placholderKey" [appcode]="codeKey.code"
+                        formControlName="{{codeKey.controlName  }}" [SearchKeys]="appCodesSearchKeys[codeKey.code]"
+                        (clicked)="onSelectizeClick($event , codeKey )" [simpleView]="false"
+                        [excludedCodes]="codeKey.excludedCodes?codeKey.excludedCodes:''">
+                    </sanabel-selectize>
+                </div>
+                <div *ngIf="codeKey.type=='selectize' && ! codeKey.multi && codeKey.staticFlagAppCode">
+                    <sanabel-selectize [disabled]="true" [customPlaceHolder]="codeKey.placholderKey"
+                        [appcode]="codeKey.code" formControlName="{{codeKey.controlName  }}"
+                        [SearchKeys]="appCodesSearchKeys[codeKey.code]" (clicked)="onSelectizeClick($event , codeKey )"
+                        [simpleView]="false">
+                    </sanabel-selectize>
+                </div>
+                <div *ngIf="codeKey.type=='selectize' && codeKey.multi">
+                    <sanabel-selectize [appcode]="codeKey.code" [customPlaceHolder]="codeKey.placholderKey"
+                        formControlName="{{codeKey.controlName + 'Arr'}}" [multi]="true"
+                        [SearchKeys]="appCodesSearchKeys[codeKey.code]" (addSelected)="onSelected($event , codeKey )"
+                        (clicked)="onSelectizeClick($event , codeKey )" [simpleView]="false">
+                    </sanabel-selectize>
+                </div>
+                <!-- addSelected -->
+                <div *ngIf="codeKey.type=='text'" class="">
+                    <label>{{codeKey.placholderKey | translate}}</label>
+                    <input #inputCustom class="form-control form-control-sm"
+                        placeholder="{{codeKey.placholderKey | translate}}" [type]="codeKey.type"
+                        formControlName="{{codeKey.controlName}}" />
+                </div>
+                <div *ngIf="codeKey.type=='numbersOnly'" class="">
+                    <label>{{codeKey.placholderKey | translate}}</label>
+                    <input numbersOnly class="form-control form-control-sm"
+                        placeholder="{{codeKey.placholderKey | translate}}" formControlName="{{codeKey.controlName}}" />
+                </div>
+                <div *ngIf="codeKey.type=='date'" id="divOfDate">
+                    <label class="mb-2">{{codeKey.placholderKey | translate}}</label>
+                    <div class="input-group input-group-sm">
+                        <input #input class="form-control" placeholder="{{'DATEFORMAT' | translate}}"
+                            formControlName="{{codeKey.controlName}}" ngbDatepicker #d="ngbDatepicker" />
+                        <div class="input-group-addon" (click)="d.toggle()">
+                            <i class="fa fa-calendar"></i>
+                        </div>
+                    </div>
+                </div>
+                <div *ngIf="codeKey.type=='radio'"></div>
+                <div *ngIf="codeKey.type=='hidden'">
+                    <label hidden>{{codeKey.placholderKey | translate}}</label>
+                    <input hidden numbersOnly class="form-control form-control-sm"
+                        placeholder="{{codeKey.placholderKey | translate}}" formControlName="{{codeKey.controlName}}" />
+                </div>
+
+
+                <div *ngIf="codeKey.type=='labsearch'" class="mt-4">
+                    <button class="btn btn-success mt-2 rounded-0" (click)="labSearchPopup()">{{codeKey.placholderKey |
+                        translate}}</button>
+                </div>
+                <div *ngIf="codeKey.type=='checkbox'">
+                    <div class="col-sm-10">
+                        <div class="form-group pt-1">
+                            <label class="custom-control custom-checkbox">
+                                <input type="checkbox" class="custom-control-input"
+                                    placeholder="{{codeKey.placholderKey | translate}}"
+                                    formControlName="{{codeKey.controlName}}">
+                                <span class="custom-control-indicator"></span>
+                                <span style="font-size: .9em;" class="customcontroldescription">{{codeKey.placholderKey
+                                    | translate}}</span>
+                            </label>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="col d-flex pt-1">
+                <div class="btn-group align-self-center">
+                    <button [hidden]="fastSearchAvalability == false" *ngIf="showFilterIcon" type="button"
+                        class="btn btn-success" (click)="toggleFilterArea()" ngbTooltip="Show Filter">
+                        <i class="fa fa-filter fa-lg" aria-hidden="true"></i>
+                    </button>
+                    <button class="btn btn-primary" title="{{ 'SEARCH' | translate }}" placement="top"
+                        ngbTooltip="search " (click)="onSearchClick()">
+                        <i class="fa fa-search"></i>
+                    </button>
+                </div>
+            </div>
+        </div>
+
+    </form>
+    <div *ngIf="reportInfo" class="mt-2 position-absolute" style="left: 8px;bottom: 5px;">
+        <span class="fa fa-info-circle cursor-pointer text-info" style="font-size: 32px"
+            (click)="labSearchPopup(2)"></span>
+    </div>
+</div>
+
+<div></div>
+<block-modal-container #content (close)=onModalClose($event)>
+    <ng-container class="modal-body">
+        <lab-search *ngIf="compType == 1"></lab-search>
+        <div class="info" *ngIf="compType == 2" [innerHTML]="reportInfo">
+
+        </div>
+    </ng-container>
+</block-modal-container>
+
+
+<!--<div class="col-md-3">
+        <button class="button button-search" title="{{ 'SEARCH' | translate }}"
+                placement="top" ngbTooltip="search "
+                (click)="onSearchClick()">
+          <i class="fa fa-search"></i>
+        </button>
+        <button class="button button-search adv-search-button"
+                [hidden]="fastSearchAvalability == false" type="button"
+                (click)="toggleFilterArea()"
+                ngbTooltip="Show Filter">
+            بحث متقدم  <i class="fa fa-filter fa-lg" aria-hidden="true"></i>
+        </button>-->

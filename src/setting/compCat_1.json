@@ -1,0 +1,56 @@
+﻿{
+    
+    "freeRevisitPeriod": {
+        "display": true,
+        "required": false,
+        
+        "defaultVal": 14
+    },
+    "freeRevisitOty": {
+        "display": true,
+        "required": false,
+       
+        "defaultVal": 1
+       
+
+    },
+    "status": {
+        "display": true,
+        "required": false,
+       
+        "defaultVal": 1
+       
+
+    },
+    "patSharingPercentFromCardFlag": {
+        "display": true,
+        "required": false,
+       
+        "defaultVal": 1
+       
+
+    },
+    "cardNumEnterNecessity": {
+        "display": true,
+        "required": false,
+       
+        "defaultVal": 1
+       
+
+    },
+    "noServiceWithoutConsultation": {
+        "display": true,
+        "required": false,
+       
+        "defaultVal": 1
+       
+
+    },
+    "admissionRequestApproval":{
+        "display": true,
+        "required": false,
+       
+        "defaultVal": 1
+    }
+    
+}

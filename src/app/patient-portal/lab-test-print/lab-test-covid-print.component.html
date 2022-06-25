@@ -1,0 +1,219 @@
+<div class="container-fluid">
+    <div style="display:none">
+        <div id="labTestPrintView" *ngIf="patServices.length>0">
+            <div class="wrapper framedPage ">
+                <table style="direction: ltr;" class="full-width" *ngIf="testData?.length != 0">
+                    <thead>
+                        <th>
+                            <table style="width: 100%;height: 200;">
+                                <thead style="direction: ltr; text-align: left;line-height:2; font-size:12px !important">
+                                    <tr style="vertical-align:top;">
+                                        <img alt="" src="../../../../assets/images/ora/pnu.png" style="width: 100%;margin-left: 0;height: 100px;">
+                                    </tr>
+                                    <br>
+                                    <br>
+
+                                    <tr>
+                                        <td width="17.5%" class="groupHeaderLabelCell_ar">
+                                            <strong>PASSENGER NAME: </strong>
+                                        </td>
+                                        <td width="25%" class="groupHeaderDataCell_ar">
+                                            <B class="w-100">{{patientData?.patientNameAr}}</B>
+                                        </td>
+                                        <td width="17.5%" class="groupHeaderLabelCell_ar">
+                                            <strong></strong>
+                                        </td>
+                                        <td width="25%" class="groupHeaderDataCell_ar"></td>
+
+                                    </tr>
+                                    <tr></tr>
+
+                                    <tr>
+                                        <td width="auto" class="groupHeaderLabelCell_ar">
+                                            <strong>PASSPORT NO.: </strong>
+                                        </td>
+                                        <td width="auto%" class="groupHeaderDataCell_ar">
+                                            <b>{{patientData?.identityValue}}</b>
+                                        </td>
+
+                                    </tr>
+                                    <tr></tr>
+
+
+                                    <!---------------------------------------------------------------------------------->
+                                    <!-- <tr>
+
+                                  <td width="auto" class="groupHeaderLabelCell_ar">
+                                      <strong>ID: </strong>
+                                  </td>
+                                  <td width="auto" class="groupHeaderDataCell_ar"><b>{{patientData?.patCode}}</b>
+                                  </td>
+                              </tr>
+                              <tr></tr> -->
+
+
+                                    <!---------------------------------------------------------------------------------->
+                                    <tr>
+
+                                        <td width="auto" class="groupHeaderLabelCell_ar">
+                                            <strong>D.O.B:</strong>
+                                        </td>
+                                        <td width="auto" class="groupHeaderDataCell_ar">
+                                            <b>{{patientData?.patientBirthDate|date: 'dd/MM/yyyy'}}</b>
+                                        </td>
+
+                                    </tr>
+                                    <tr></tr>
+
+
+                                    <!---------------------------------------------------------------------------------->
+                                    <tr>
+                                        <td width="auto" class="groupHeaderLabelCell_ar">
+                                            <strong>REFERENCE NO.: </strong>
+                                        </td>
+                                        <td width="auto" class="groupHeaderDataCell_ar">
+                                            <b>{{patientData?.orderNumber}}</b>
+                                        </td>
+
+                                    </tr>
+                                    <tr></tr>
+
+                                    <!--------------------------------------------------------------------------------------->
+                                    <tr>
+                                        <td width="auto" class="groupHeaderLabelCell_ar">
+                                            <strong>DATE: </strong>
+                                        </td>
+                                        <td width="auto" class="groupHeaderDataCell_ar"><b>{{patientData.orderDate|date:
+                                          'dd/MM/yyyy'}}</b></td>
+
+                                    </tr>
+                                    <tr>
+                                        <td width="auto" class="groupHeaderLabelCell_ar">
+                                            <strong>TIME: </strong>
+                                        </td>
+                                        <td width="auto" class="groupHeaderDataCell_ar"><b>{{patientData.orderDate|date:
+                                          'hh:mm:ss'}}</b></td>
+
+                                    </tr>
+
+                                    <!---------------------------------------------------------------------------------->
+                                </thead>
+                            </table>
+                            <table class="full-width mb-0">
+                                <tr style="vertical-align:top;">
+                                    <td colspan="6" class="tr-as-line"></td>
+                                </tr>
+                                <tr>
+                                    <td style="text-align: center">
+                                        <span style="font-size: 18px !important;">LABORATORY REPORT</span>
+                                    </td>
+                                    <!-- <td width="auto" style="text-align: center; font-size: 11!important;">
+                                  <strong>LABORATOR
+                                      REPORT</strong>
+                              </td> -->
+                                    <!-- <img alt="" src="../../../../assets/images/ora/logo.png" style="width: 12.5%;margin-left: 0;height: 50px;"> -->
+                                    <!-- <h1  colspan="2" style="text-align: center; margin: auto;font-size: 17;">LABORATORY REPORT
+                                  </h1> -->
+                                </tr>
+
+                            </table>
+                            <table class="full-width mb-0" style="text-align: center;" style="border-spacing: 0px!important;">
+                                <tr>
+                                    <td class="groupHeaderLevel1_ar covidTest" style="font-size: 13px !important;" width="40%"><b>Test Description</b></td>
+                                    <td class="groupHeaderLevel1_ar covidTest" style="font-size: 13px !important;" width="70%"><b>Result</b></td>
+
+
+                                </tr>
+
+                                <tbody>
+                                    <tr *ngFor="let service of testData">
+                                        <td class="detailBand_ar covidTest" width="40%"><b>{{service.serviceNameEn}} </b> </td>
+                                        <td class="detailBand_ar covidTest" width="70%"><b [ngStyle]="{'color':service.sheetValue == 1 ? 'red' : 'green' }">{{service['sheetOptionEn']}} </b> <b>, for the presence
+                                          of SARS-CoV-2 Antigen
+                                          <!-- for the presence of SARS-CoV-2 Antigen --> </b> </td>
+
+                                    </tr>
+                                    <tr>
+                                        <td colspan="8"></td>
+                                    </tr>
+
+                                </tbody>
+                            </table>
+                            <table class="full-width mb-0 " style="text-align: left;font-size: 10px !important;margin-top:40px">
+                                <tbody>
+                                    <tr>
+                                        <td class="groupHeaderLabelCell_ar "><strong>Remarks:</strong>
+                                            <br> &nbsp;&nbsp;&nbsp;&nbsp; - This is a screening test for COVID-19 Antigen, a PCR test is recommended for confirmation
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <td class="groupHeaderLabelCell_ar">
+                                            &nbsp;&nbsp;&nbsp;&nbsp; - Please follow social distance instruction published by the Ministry Of Health.
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <td class="groupHeaderLabelCell_ar">
+
+                                            &nbsp;&nbsp;&nbsp;&nbsp; - This test is requested by certain airlines
+
+                                        </td>
+                                    </tr>
+                                    <tr style="vertical-align:top;">
+                                        <td colspan="6" class="tr-as-line"></td>
+                                    </tr>
+                                </tbody>
+                            </table>
+                            <table class="full-width">
+                                <tr>
+                                    <td class="detailBand_ar" style="border:0 ;text-align: left; border-spacing: 0px!important;"><strong>
+                                      Nourah Medical Services Co.
+                                  </strong></td>
+                                </tr>
+                                <tr>
+                                    <td>
+                                        <img alt="" src="../../../../assets/images/ora/ensure.png" style="width: 150;margin-left: 0;height: 150;">
+                                    </td>
+                                </tr>
+
+
+
+                            </table>
+
+                        </th>
+                    </thead>
+                </table>
+
+
+            </div>
+            <div class="footer" style="margin-top: -20;">
+                <table class="full-width">
+                    <tr>
+                        <div class="container-fluid">
+                            <div style="text-align: center;"><strong> King Abdullah bin Abdulaziz University
+                              Hospital, Airport Road, King Khalid International Airport, Riyadh 11564,
+                              Saudi Arabia
+                          </strong></div>
+                        </div>
+                    </tr>
+                </table>
+            </div>
+            <!-- <div class="footer">
+      <table class="full-width">
+        <tr>
+          <td class="groupHeaderDataCell_ar">
+            <strong>Phone:</strong>01022833775</td>
+          <td class="groupHeaderDataCell_ar">
+            <strong>Email:</strong>
+            <a href="web@bee.com">web@BEE.com</a>
+          </td>
+        </tr>
+      </table>
+    </div> -->
+
+
+        </div>
+
+
+    </div>
+    <app-print-page #printComponent section="labTestPrintView" (click)="PrintedCount()"></app-print-page>
+</div>

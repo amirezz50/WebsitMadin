@@ -1,0 +1,387 @@
+{
+    "sec1_head": {
+        "display": true,
+        "inputType": "mainHeader",
+        "lookupCode": 0,
+        "required": false,
+        "labelText": "Discharge / Mortalit  ",
+        "cssClass": "col-12 pt-2"
+    },
+    "dateofLastFollowup": {
+        "display": true,
+        "inputType": "date",
+        "required": false,
+        "labelText": "Date of Last Follow-up: ",
+        "cssClass": "col-12 col-sm-6 col-md-3 col-lg-3 col-xl-5 pt-2 general-input-class"
+    },
+    "hr1": {
+        "display": true,
+        "inputType": "hr",
+        "lookupCode": 0,
+        "required": false,
+        "labelText": "",
+        "cssClass": "col-12 general-input-class"
+    },
+    "statusat30daysAfterSurgery": {
+        "display": true,
+        "inputType": "selectize",
+        "lookupCode": 62,
+        "required": false,
+        "labelText": "Status at 30 days After Surgery: ",
+        "cssClass": "col-12 col-sm-6 col-md-3 col-lg-3 col-xl-5 pt-2 general-input-class"
+    },
+    "hr2": {
+        "display": true,
+        "inputType": "hr",
+        "lookupCode": 0,
+        "required": false,
+        "labelText": "",
+        "cssClass": "col-12 general-input-class"
+    },
+    "primaryMethodusedverify30dayStatus": {
+        "display": true,
+        "inputType": "selectize",
+        "lookupCode": 53,
+        "required": false,
+        "labelText": "Primary method used to verify 30-day status: ",
+        "cssClass": "col-12 col-sm-6 col-md-3 col-lg-3 col-xl-5 pt-2 general-input-class"
+    },
+    "hr3": {
+        "display": true,
+        "inputType": "hr",
+        "lookupCode": 0,
+        "required": false,
+        "labelText": "",
+        "cssClass": "col-12 general-input-class"
+    },
+    "dischargeOrMortalityStatus": {
+        "display": true,
+        "inputType": "selectize",
+        "lookupCode": 54,
+        "required": false,
+        "labelText": "Discharge/Mortality status: ",
+        "cssClass": "col-12 col-sm-6 col-md-3 col-lg-3 col-xl-5 pt-2 general-input-class"
+    },
+    "hr4": {
+        "display": true,
+        "inputType": "hr",
+        "lookupCode": 0,
+        "required": false,
+        "labelText": "",
+        "cssClass": "col-12 general-input-class"
+    },
+    "dischargeDate": {
+        "display": true,
+        "inputType": "date",
+        "required": false,
+        "labelText": "Discharge Date",
+        "cssClass": "col-12 col-sm-6 col-md-3 col-lg-3 col-xl-5 pt-2 general-input-class"
+    },
+    "dischargeLocation": {
+        "display": true,
+        "inputType": "selectize",
+        "lookupCode": 52,
+        "required": false,
+        "labelText": "Discharge Location:",
+        "cssClass": "col-12 col-sm-6 col-md-3 col-lg-3 col-xl-5 pt-2 general-input-class"
+    },
+    "hr5": {
+        "display": true,
+        "inputType": "hr",
+        "lookupCode": 0,
+        "required": false,
+        "labelText": "",
+        "cssClass": "col-12 general-input-class"
+    },
+    "cardiacRehabilitationReferral": {
+        "display": true,
+        "inputType": "selectize",
+        "lookupCode": 55,
+        "required": false,
+        "labelText": "Cardiac Rehabilitation Referral:",
+        "cssClass": "col-12 col-sm-6 col-md-3 col-lg-3 col-xl-5 pt-2 general-input-class"
+    },
+    "hr6": {
+        "display": true,
+        "inputType": "hr",
+        "lookupCode": 0,
+        "required": false,
+        "labelText": "",
+        "cssClass": "col-12 general-input-class"
+    },
+    "smokingCessationCounseling": {
+        "display": true,
+        "inputType": "selectize",
+        "lookupCode": 55,
+        "required": false,
+        "labelText": "Smoking Cessation Counseling:",
+        "cssClass": "col-12 col-sm-6 col-md-3 col-lg-3 col-xl-5 pt-2 general-input-class"
+    },
+    "hr7": {
+        "display": true,
+        "inputType": "hr",
+        "lookupCode": 0,
+        "required": false,
+        "labelText": "",
+        "cssClass": "col-12 general-input-class"
+    },
+    "sec1_head1": {
+        "display": true,
+        "inputType": "head1",
+        "lookupCode": 0,
+        "required": false,
+        "labelText": "Medications Prescribed at Discharge",
+        "cssClass": "col-12 pt-2"
+         
+    },"sec1_head2": {
+        "display": true,
+        "inputType": "head2",
+        "lookupCode": 0,
+        "required": false,
+        "labelText": "Antiplatelet",
+        "cssClass": "col-12 pt-2"
+         
+    },
+    "descriptor_Antiplatelet_Aspirin": {
+        "display": true,
+        "inputType": "selectize",
+        "lookupCode": 57,
+        "required": false,
+        "labelText": "Aspirin ",
+        "cssClass": "col-12 col-sm-6 col-md-3 col-lg-3 col-xl-5 pt-2 general-input-class"
+    },
+    "descriptor_Antiplatelet_ADPInhibito": {
+        "display": true,
+        "inputType": "selectize",
+        "lookupCode": 57,
+        "required": false,
+        "labelText": "ADP Inhibitor",
+        "cssClass": "col-12 col-sm-6 col-md-3 col-lg-3 col-xl-5 pt-2 general-input-class"
+    },
+    "descriptor_Antiplatelet_OtherAntiplatelet": {
+        "display": true,
+        "inputType": "selectize",
+        "lookupCode": 57,
+        "required": false,
+        "labelText": "Other Antiplatelet",
+        "cssClass": "col-12 col-sm-6 col-md-3 col-lg-3 col-xl-5 pt-2 general-input-class"
+    },
+    "hr8": {
+        "display": true,
+        "inputType": "hr",
+        "lookupCode": 0,
+        "required": false,
+        "labelText": "",
+        "cssClass": "col-12 general-input-class"
+    },
+    "sec1_head3": {
+        "display": true,
+        "inputType": "head2",
+        "lookupCode": 0,
+        "required": false,
+        "labelText": "Anticoagulant",
+        "cssClass": "col-12 pt-2"
+         
+    },
+    "descriptor_Anticoagulant_ThrombinInhibitors": {
+        "display": true,
+        "inputType": "selectize",
+        "lookupCode": 57,
+        "required": false,
+        "labelText": "Thrombin Inhibitors ",
+        "cssClass": "col-12 col-sm-6 col-md-3 col-lg-3 col-xl-5 pt-2 general-input-class"
+    },
+    "descriptor_Anticoagulant_Warfarin": {
+        "display": true,
+        "inputType": "selectize",
+        "lookupCode": 57,
+        "required": false,
+        "labelText": "Warfarin (Coumadin) ",
+        "cssClass": "col-12 col-sm-6 col-md-3 col-lg-3 col-xl-5 pt-2 general-input-class"
+    },
+    "descriptor_Anticoagulant_FactorXaInhibitor": {
+        "display": true,
+        "inputType": "selectize",
+        "lookupCode": 57,
+        "required": false,
+        "labelText": "Factor Xa inhibitors ",
+        "cssClass": "col-12 col-sm-6 col-md-3 col-lg-3 col-xl-5 pt-2 general-input-class"
+    },
+    "descriptor_Anticoagulant_NovelOralAnticoagulant": {
+        "display": true,
+        "inputType": "selectize",
+        "lookupCode": 57,
+        "required": false,
+        "labelText": "Novel Oral Anticoagulant ",
+        "cssClass": "col-12 col-sm-6 col-md-3 col-lg-3 col-xl-5 pt-2 general-input-class"
+    },
+    "descriptor_Anticoagulant_OtherAnticoagulant": {
+        "display": true,
+        "inputType": "selectize",
+        "lookupCode": 57,
+        "required": false,
+        "labelText": "Other Anticoagulant ",
+        "cssClass": "col-12 col-sm-6 col-md-3 col-lg-3 col-xl-5 pt-2 general-input-class"
+    },
+    "hr9": {
+        "display": true,
+        "inputType": "hr",
+        "lookupCode": 0,
+        "required": false,
+        "labelText": "",
+        "cssClass": "col-12 general-input-class"
+    },
+    "aceOrARB": {
+        "display": true,
+        "inputType": "selectize",
+        "lookupCode": 57,
+        "required": false,
+        "labelText": "ACE or ARB",
+        "cssClass": "col-12 col-sm-6 col-md-3 col-lg-3 col-xl-5 pt-2 general-input-class"
+    },
+    "hr10": {
+        "display": true,
+        "inputType": "hr",
+        "lookupCode": 0,
+        "required": false,
+        "labelText": "",
+        "cssClass": "col-12 general-input-class"
+    },
+    "amiodarone": {
+        "display": true,
+        "inputType": "selectize",
+        "lookupCode": 57,
+        "required": false,
+        "labelText": "Amiodarone",
+        "cssClass": "col-12 col-sm-6 col-md-3 col-lg-3 col-xl-5 pt-2 general-input-class"
+    },
+    "hr11": {
+        "display": true,
+        "inputType": "hr",
+        "lookupCode": 0,
+        "required": false,
+        "labelText": "",
+        "cssClass": "col-12 general-input-class"
+    },
+    "betaBlocker": {
+        "display": true,
+        "inputType": "selectize",
+        "lookupCode": 57,
+        "required": false,
+        "labelText": " Beta Blocker ",
+        "cssClass": "col-12 col-sm-6 col-md-3 col-lg-3 col-xl-5 pt-2 general-input-class"
+    },
+    "hr12": {
+        "display": true,
+        "inputType": "hr",
+        "lookupCode": 0,
+        "required": false,
+        "labelText": "",
+        "cssClass": "col-12 general-input-class"
+    },
+    "LipidLoweringStatin": {
+        "display": true,
+        "inputType": "selectize",
+        "lookupCode": 57,
+        "required": false,
+        "labelText": " Lipid Lowering - Statin  ",
+        "cssClass": "col-12 col-sm-6 col-md-3 col-lg-3 col-xl-5 pt-2 general-input-class"
+    },
+    "hr13": {
+        "display": true,
+        "inputType": "hr",
+        "lookupCode": 0,
+        "required": false,
+        "labelText": "",
+        "cssClass": "col-12 general-input-class"
+    },
+    "lipidLoweringOther": {
+        "display": true,
+        "inputType": "selectize",
+        "lookupCode": 57,
+        "required": false,
+        "labelText": " Lipid Lowering - Other  ",
+        "cssClass": "col-12 col-sm-6 col-md-3 col-lg-3 col-xl-5 pt-2 general-input-class"
+    },
+    "hr14": {
+        "display": true,
+        "inputType": "hr",
+        "lookupCode": 0,
+        "required": false,
+        "labelText": "",
+        "cssClass": "col-12 general-input-class"
+    },
+  
+    "mortalityDate": {
+        "display": true,
+        "inputType": "date",
+        "required": false,
+        "labelText": " Mortality - Date ",
+        "cssClass": "col-12 col-sm-6 col-md-3 col-lg-3 col-xl-5 pt-2 general-input-class"
+    },
+    "primaryCauseofDeath": {
+        "display": true,
+        "inputType": "selectize",
+        "lookupCode": 58,
+        "required": false,
+        "labelText": " Primary Cause of Death   ",
+        "cssClass": "col-12 col-sm-6 col-md-3 col-lg-3 col-xl-5 pt-2 general-input-class"
+    },
+    "hr17": {
+        "display": true,
+        "inputType": "hr",
+        "lookupCode": 0,
+        "required": false,
+        "labelText": "",
+        "cssClass": "col-12 general-input-class"
+    },
+    "inHospitalDeathLocation": {
+        "display": true,
+        "inputType": "selectize",
+        "lookupCode": 59,
+        "required": false,
+        "labelText": " In-Hospital death location:   ",
+        "cssClass": "col-12 col-sm-6 col-md-3 col-lg-3 col-xl-5 pt-2 general-input-class"
+    },
+    
+    "hr18": {
+        "display": true,
+        "inputType": "hr",
+        "lookupCode": 0,
+        "required": false,
+        "labelText": "",
+        "cssClass": "col-12 general-input-class"
+    },
+    "operativeDeath": {
+        "display": true,
+        "inputType": "selectize",
+        "lookupCode": 10,
+        "required": false,
+        "labelText": "Operative Death:   ",
+        "cssClass": "col-12 col-sm-6 col-md-3 col-lg-3 col-xl-5 pt-2 general-input-class"
+    },
+    "postDischargedeathlocation": {
+        "display": true,
+        "inputType": "selectize",
+        "lookupCode": 60,
+        "required": false,
+        "labelText": " Post Discharge death location: ",
+        "cssClass": "col-12 col-sm-6 col-md-3 col-lg-3 col-xl-5 pt-2 general-input-class"
+    },
+    "serial": {
+        "display": false,
+        "inputType": "",
+        "lookupCode": "",
+        "required": false,
+        "labelText": "",
+        "cssClass": "col-12 col-sm-6 col-md-3 col-lg-3 col-xl-5 pt-2 general-input-class"
+    },
+    "visitSerial": {
+        "display": false,
+        "inputType": "",
+        "lookupCode": "",
+        "required": false,
+        "labelText": "",
+        "cssClass": "col-12 col-sm-6 col-md-3 col-lg-3 col-xl-5 pt-2 general-input-class"
+    }
+}

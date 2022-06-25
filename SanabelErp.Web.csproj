@@ -1,0 +1,81 @@
+﻿<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup Label="Globals">
+    <SccProjectName>SAK</SccProjectName>
+    <SccProvider>SAK</SccProvider>
+    <SccAuxPath>SAK</SccAuxPath>
+    <SccLocalPath>SAK</SccLocalPath>
+  </PropertyGroup>
+
+  <PropertyGroup>
+    <TargetFramework>netcoreapp2.0</TargetFramework>
+    <PreserveCompilationContext>true</PreserveCompilationContext>
+    <AssemblyName>SanabelErp.Web</AssemblyName>
+    <OutputType>Library</OutputType>
+    <PackageId>SanabelErp.Web</PackageId>
+    <UserSecretsId>aspnet5-SanabelErp.Web-59b76c1c-7d5e-49d0-bdd6-899de34b83c5</UserSecretsId>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <Compile Remove="clientsrc\**" />
+    <Compile Remove="config\**" />
+    <Compile Remove="node_modules\**" />
+    <Compile Remove="src\app\common\blocks\**" />
+    <Compile Remove="src\app\dynamic-business-rule\NewFolder\**" />
+    <Compile Remove="src\app\physiotherapist\**" />
+    <Compile Remove="src\app\specialized-emr\emr-nutrition-med-sheet\**" />
+    <Compile Remove="src\app\specialized-emr\emr-nutritiondiet-system\**" />
+    <Compile Remove="src\app\stock-purchases\**" />
+    <EmbeddedResource Remove="clientsrc\**" />
+    <EmbeddedResource Remove="config\**" />
+    <EmbeddedResource Remove="node_modules\**" />
+    <EmbeddedResource Remove="src\app\common\blocks\**" />
+    <EmbeddedResource Remove="src\app\dynamic-business-rule\NewFolder\**" />
+    <EmbeddedResource Remove="src\app\physiotherapist\**" />
+    <EmbeddedResource Remove="src\app\specialized-emr\emr-nutrition-med-sheet\**" />
+    <EmbeddedResource Remove="src\app\specialized-emr\emr-nutritiondiet-system\**" />
+    <EmbeddedResource Remove="src\app\stock-purchases\**" />
+    <None Remove="clientsrc\**" />
+    <None Remove="config\**" />
+    <None Remove="node_modules\**" />
+    <None Remove="src\app\common\blocks\**" />
+    <None Remove="src\app\dynamic-business-rule\NewFolder\**" />
+    <None Remove="src\app\physiotherapist\**" />
+    <None Remove="src\app\specialized-emr\emr-nutrition-med-sheet\**" />
+    <None Remove="src\app\specialized-emr\emr-nutritiondiet-system\**" />
+    <None Remove="src\app\stock-purchases\**" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <None Update="wwwroot\**\*;web.config;alertThresholds.json;Views">
+      <CopyToPublishDirectory>PreserveNewest</CopyToPublishDirectory>
+    </None>
+  </ItemGroup>
+
+  <ItemGroup>
+    <PackageReference Include="Microsoft.AspNetCore.Server.IISIntegration" Version="2.0.0" />
+    <PackageReference Include="Microsoft.AspNetCore.Server.Kestrel" Version="2.0.0" />
+    <PackageReference Include="Microsoft.AspNetCore.StaticFiles" Version="2.0.0" />
+    <PackageReference Include="Microsoft.Extensions.Configuration" Version="2.0.0" />
+    <PackageReference Include="Microsoft.Extensions.Configuration.Json" Version="2.0.0" />
+  </ItemGroup>
+
+  <Target Name="PrepublishScript" BeforeTargets="PrepareForPublish">
+    <Exec Command="npm install" />
+    <Exec Command="bower install" />
+    <Exec Command="gulp clean" />
+    <Exec Command="gulp min" />
+  </Target>
+
+  <ItemGroup>
+    <Folder Include="src\app\inventory\supplier\" />
+    <Folder Include="src\app\orders\requests-list\" />
+    <Folder Include="src\app\orders\order-reception\order-schedule\" />
+    <Folder Include="src\assets\layouts\global\" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <None Include="src\app\personnel-setup\emp-setting\emp-setting.component.ts" />
+  </ItemGroup>
+
+</Project>

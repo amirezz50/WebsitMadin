@@ -1,0 +1,26 @@
+﻿{
+  "nameEn": {
+    "display": true,
+    "required": true,
+    "min_length": 2,
+    "max_length": 100
+  },
+  "nameAr": {
+    "display": true,
+    "required": true,
+    "min_length": 2,
+    "max_length": 100
+  },
+  "type": {
+    "display": true,
+    "required": true
+  },
+  "accountNo": {
+    "display": true,
+    "required": true
+  },
+  "place": {
+    "display": true,
+    "required": true
+  }
+}

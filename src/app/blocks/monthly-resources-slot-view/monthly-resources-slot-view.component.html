@@ -1,0 +1,66 @@
+<div class="container-fluid" [ngClass]="{'p-0': portal_padding}">
+    <h3 *ngIf="isNoSlot">
+        {{'DEVICENOTSCH' | translate }}
+    </h3>
+    <div class="row" *ngIf="checkFutureDate">
+        <div class="col-6">
+            <label for="startDate">{{ 'FAVTS_DATE' | translate }}</label>
+            <div class="input-group">
+                <input class="form-control" placeholder="{{'DATEFORMAT' | translate}}" ngbDatepicker #dp="ngbDatepicker"
+                    (navigate)="startDateChanged()" (change)="startDateChanged()" [(ngModel)]="startDateNgb">
+                <div class="input-group-addon" (click)="dp.toggle()">
+                    <i class="fa fa-calendar-minus-o"></i>
+                </div>
+            </div>
+        </div>
+        <div class="col">
+            <h4 class="text-info">{{translate.currentLang == 'ar'? currentSatrt.genDaysNameAr:
+                currentSatrt.genDaysNameEn}} {{ 'CORRESPONDING' | translate }} {{ currentSatrt.dateOnly }}</h4>
+        </div>
+    </div>
+    <div>
+        <strong *ngIf="showPatCode==2" style="color: red;">اقرب شهر للجدوله:</strong>
+        <strong *ngIf="showPatCode==1" style="color: red;"> مواعيد الطبيب لشهر :</strong>
+        <strong style="color: blue;">{{monthNo}}</strong>
+
+    </div>
+    <table *ngIf="!isNoSlot" class="table matrix bg-white">
+
+        <tbody>
+            <tr>
+                <th style=" color:blue;  font-size: 12px;">Time</th>
+                <th *ngFor="let hour of arrayOfDays" scope="row " class="p-0 m-0">
+                    <p class="d-flex justify-content-center p-0 m-3" title="Day">{{hour.dayOfTheMonth}}
+                    </p>
+                    <p class="bg-info text-white d-flex justify-content-center" title="Day">{{hour.dayOfWeekName}}</p>
+
+                </th>
+            </tr>
+
+            <tr *ngFor=" let time of newArrayTimeId">
+
+                <td class="btn bg-success  text-white mb-2 " style="font-size: 12px; padding: 2px ;">{{time.startTime}}
+                </td>
+                <!-- [ngClass]="{'text-danger': dataMap[time.startTime + '_' + hour.dayOfTheMonth ].slotStatus == 1}" -->
+                <td [ngClass]="getCSSClasses(dataMap[time.startTime + '_' + hour.dayOfTheMonth+'_' + hour.monthNo] )"
+                    (click)="selectedSlot(dataMap[time.startTime + '_' + hour.dayOfTheMonth +'_'+ hour.monthNo] ) ;"
+                    [ngStyle]="{ 'background-color': dataMap[time.startTime + '_' +
+                    hour.dayOfTheMonth +'_'+ hour.monthNo ]?.patStatusBgColor}" style="border-style: solid;"
+                    *ngFor="let hour of arrayOfDays">
+                    <span *ngIf="showPatCode==2">{{dataMap[time.startTime + '_' + hour.dayOfTheMonth+'_'+
+                        hour.monthNo]?.gender}}</span>
+                    <span *ngIf="showPatCode==1">
+                        {{dataMap[time.startTime + '_' +
+                        hour.dayOfTheMonth +'_'+ hour.monthNo ]?.patCode }}
+                    </span>
+                </td>
+
+            </tr>
+        </tbody>
+
+
+    </table>
+
+</div>
+<!-----------hint-->
+<!-- <td  [ngClass]="{'text-danger': dataMap[time.startTime + '_' + hour.dayOfTheMonth ].slotStatus == 1}" (click)="slotClickFn(hour.dayOfTheMonth ,time.startTime )" style="border-style: solid;" -->

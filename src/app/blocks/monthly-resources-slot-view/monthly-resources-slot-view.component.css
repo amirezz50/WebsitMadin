@@ -1,0 +1,7 @@
+table.ex1 {
+    empty-cells: hide;
+  }
+  
+  table.ex2 {
+    empty-cells: show;
+  }

@@ -1,0 +1,46 @@
+﻿.breadcrumb>li {
+    display: inline-block;
+}
+
+.breadcrumb-item {
+    display: inline-block;
+    font-size: 18px;
+}
+
+.matrix th, .matrix td {
+    text-align: center !important;
+}
+
+.payed-class {
+    border: 1px solid #3489db !important;
+    border-radius: 0 !important;
+}
+
+.session-class {
+    /* color: #3489db !important; */
+    border-radius: 0 !important;
+}
+
+.tbt {
+    box-shadow: 0 0 5px 0px rgba(0, 0, 0, 0.25);
+    border-radius: 7px 7px 20px 20px;
+}
+
+.tbt td {
+    vertical-align: middle !important;
+    color: #25b982 !important;
+}
+
+.tbt th {
+    color: teal !important;
+    padding-left: 25px;
+    padding-right: 25px;
+}
+
+.cvc::after {
+    background-color: #25b982 !important;
+}
+
+.bg-none {
+    background: none;
+}

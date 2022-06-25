@@ -1,0 +1,13 @@
+<div class="card">
+  <div class="card-header text-center">
+    <ng-content select=".header"></ng-content>
+
+  </div>
+  <div class="card-body">
+    <ng-content select=".body"></ng-content>
+  </div>
+  <div class="card-footer d-flex flex-row justify-content-center">
+    <button mat-raised-button class="btn-primary" (click)="emitAction(false)">No</button>
+    <button mat-raised-button class="btn-danger" (click)="emitAction(true)">Yes</button>
+  </div>
+</div>

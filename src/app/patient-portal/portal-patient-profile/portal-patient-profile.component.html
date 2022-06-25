@@ -1,0 +1,85 @@
+<div class="container-fluid">
+  <div class="row">
+    <div class="col-lg-12 col-md-12">
+      <div class="profile-title">
+        <h4>
+          {{translate.currentLang == 'ar' ? patientData.titleNameAr+': '+patientData.fullnameAr:
+          patientData.titleNameEn+': '+patientData.fullnameEn}}
+        </h4>
+
+        <div>
+          <button class="btn btn-edit" *ngIf="editPatient.changeType!=2"
+            (click)="openForEdit()">{{'EDITEDATA'|translate}}</button>
+          <btns-ctrl *ngIf="editPatient.changeType==2" [appCodes]="[1]" (clicked)="onClicked($event)">
+          </btns-ctrl>
+        </div>
+      </div>
+    </div>
+    <div class="col-lg-6 col-md-6">
+
+      <div class="card-data">
+        <h4> {{translate.currentLang=='ar'?'معلومات طبية':'Medical Informations' | translate }} </h4>
+
+        <div class="card-info">
+
+          <div class="item-info">
+            <h5>{{translate.currentLang=='ar'?'الرقم الطبي':'Medical Number'}}</h5>
+            <h6> {{'#'+ patientData.code}}</h6>
+          </div>
+          <div class="item-info">
+            <h5> {{'BloodGroup'|translate}}:</h5>
+            <h6> {{translate.currentLang == 'ar' ? patientData.bLoodTypeAr: patientData.bLoodTypeEn}}</h6>
+          </div>
+          <div class="item-info">
+            <h5>{{'LASTVISIT' | translate }}</h5>
+            <h6> {{translate.currentLang == 'ar' ? patientData.lastVisitNoAr : patientData.lastVisitNoEn}}</h6>
+          </div>
+        </div>
+
+      </div>
+    </div>
+
+    <div class="col-lg-6 col-md-6">
+      <div class="card-data">
+        <h4> {{translate.currentLang == 'ar' ? 'معلومات عامة':'General Information'}} </h4>
+
+        <div class="card-info">
+          <div class="item-info">
+            <h5> {{'NationalValue'|translate}}:</h5>
+            <h6> {{patientData.identityValue}}</h6>
+          </div>
+          <div class="item-info">
+            <h5> {{'BIRTHDATE'|translate}}:</h5>
+            <h6> {{egyptDate}} - ( {{ksaDate}} )</h6>
+          </div>
+          <div class="item-info">
+            <h5> {{'Gender'|translate}}:</h5>
+            <h6> {{patientData.gender}}</h6>
+          </div>
+          <div class="item-info">
+            <h5> {{'MOBILENUMBER'|translate}}:</h5>
+            <h6> <b *ngIf="editPatient.changeType!=2">ت/ {{patientData.mobile}}</b></h6>
+            <input type="text" *ngIf="editPatient.changeType==2" [(ngModel)]="editPatient.mobile" class="form-control"
+              placeholder="التليفون">
+          </div>
+          <div class="item-info">
+            <h5> {{'ADDRESS'|translate}}:</h5>
+            <h6 *ngIf="editPatient.changeType !=2">
+              {{translate.currentLang == 'ar' ? patientData.fullAddressAr : patientData.fullAddressAr}}
+            </h6>
+            <input type="text" *ngIf="editPatient.changeType == 2" [(ngModel)]="editPatient.fullAddressAr"
+              class="form-control" placeholder="العنوان">
+          </div>
+          <div class="item-info">
+            <h5> {{'EMAILADDRESS'|translate}}:</h5>
+            <h6> {{patientData.mailAddress}}</h6>
+          </div>
+          <div class="item-info">
+            <h5> {{'CONTRACTNAME'|translate}}:</h5>
+            <h6> {{translate.currentLang == 'ar' ? patientData.contractsAr : patientData.contractsEn}}</h6>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

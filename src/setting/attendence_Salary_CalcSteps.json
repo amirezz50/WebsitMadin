@@ -1,0 +1,155 @@
+﻿[
+  {
+      "Implementation": [
+          {
+              "Link": {
+                  "LinkAr": "استخراج المرتبات",
+                  "LinkEn": "Salary Extract",
+                  "id": "6476",
+                  "NOtes": [
+                      {
+                          "Note1": "لازم يكون مدخل تواريخ الصرفيات في شاشه اعدادات المرتب للشهر المراد حساب راتبه",
+                          "QueryNote":"Select * FROM HrPayrollDates WHERE Month = @month  AND Year = @year"
+                      },
+                      {
+                          "NOte2": "employee must  HaveSalary = 1 in table HrEmploymentData ",
+                          "QueryNote": "Select HaveSalary,* from HrEmploymentData"
+                      },
+                      {
+                          "NOte2": "employee must  WorkStatus = 1 in table HrEmploymentData ",
+                          "QueryNote": "Select WorkStatus,* from HrEmploymentData"
+                      }
+                  ],
+                  "Steps": [
+                      {
+                          "StepAr1": "حساب المؤثرات",
+                          "StepEn1": "Calculation of effects",
+                          "reference": "/salary/affectsextract/6525"
+                      },
+                      {
+                          "Step2": "مراجعة الاضافي للموظفين",
+                          "StepEn": "Additional revised for employees",
+                          "reference": "attendance/overTime/6501"
+                      },
+                      {
+                          "Step3": "اغلاق شهر",
+                          "StepEn": "Month closing",
+                          "reference": "/salary/attendanc-month-close/9843"
+                      },
+                      {
+                           "Step4": "استخراج صرفيات للموظفين",
+                           "StepEn": "Employees payroll extract",
+                          "reference": "/salary/payrollextract/6476"
+                      }
+              ],
+              "Proc": [
+                  {
+                      "ProcNAme": "HrPayrollCalcNew",
+                      "USe": "Extract Salaries OF Employees ->>insert CompID And SAlary IN table Hrempcalcsalary",
+                      "Notes":" Stord procdeure parent",
+                      "TAbles": [
+                              {
+                                  "TableNAme": "Hrempcalcsalary",
+                                  "SelectQuery": "Select * From  Hrempcalcsalary Where EmpId = 1 AND Month = 3"
+                              }
+                          ]
+                  },
+                  {
+                      "ProcNAme": "EXEC HrPayrollCalcDeleteOldData ",
+                       "USe": "Delete Old data From Hrempcalcsalary And HrEmpTaxes For Month that is want to Extract",
+                       "Notes":" Stord procdeure Child",
+                       "TAbles": [
+                              {
+                                  "TableNAme": "Hrempcalcsalary",
+                                  "SelectQuery": "DELETE FROM Hrempcalcsalary   WHERE Month = @month  AND year =  @Year   AND PayrollType = @PayrollType AND EmpId = EmpId"
+                              },
+                              {
+                                  "TableNAme": "HrEmpTaxes",
+                                  "SelectQuery": " DELETE FROM HrEmpTaxes WHERE Month = @month AND year = @Year AND  PayrollType = @PayrollType   AND EmpId  = EmpId"
+                              }
+                          ]
+                  },
+                  {
+                      "ProcNAme": "HrPayrollCalcInsertTempBasicSal",
+                      "USe": "insert EmpBasicSal&VariableSal For Current PayRollDates into  #vHrempbasicsalary",
+                      "Notes":" Stord procdeure Child",
+                      "TAbles": [
+                              {
+                                  "TableNAme": "Hrempvariablesalary",
+                                  "SelectQuery": "SELECT @BranchId, Serial,  EmpId, CompId, CompValue, PayrollType, MainItem,  2, 0--ManualNo FROM Hrempvariablesalary WHERE PayrollType = @PayrollType  AND EmpId IN  (SELECT EmpId FROM #vEmpSalCalc )                  AND (CAST(Hrempvariablesalary.DateFrom AS DATE) >= CAST(@DateFromMonth AS DATE))  AND (CAST(Hrempvariablesalary.DateTo AS DATE) <= CAST(@DateToMonth AS DATE));"
+                              }
+                          ]
+                  },
+                  {
+                      "ProcNAme": "HrPayrollCalcBasicSal",
+                      "USe": "GEt VAlue OF CompID",
+                      "Notes":" Stord procdeure Child --Contain Some Sub Child Proc --TAke PArameter Flage 1 or 2 or 3 get Comp values And Convaert To Xml THen Insert In Hrempcalcsalary",
+                      "TAbles": [
+                              {
+                                  "TableNAme": "HrSalItemsMaster,Hrempcalcsalary",
+                                  "SelectQuery": ""
+                              }
+                          ]
+                  },
+                   {
+                      "ProcNAme": "HrPayrollCalcLoans",
+                      "USe": "Calc Loans of Employee",
+                      "Notes":" TermStatus Must BE 1,Stord proc iS Child",
+                      "TAbles": [
+                              {
+                                  "TableNAme": "HrLoanReqMaster,HrLoanReasons,HrLoanReqDetail",
+                                  "SelectQuery": "SELECT HrLoanReqDetail.*,PayRollType, SalItemId INTO #vHrLoanReqDetail FROmHrLoanReqDetail                                             INNER JOIN HrLoanReqMaster ON HrLoanReqDetail.RequestNo = HrLoanReqMaster.Serial INNER JOIN HrLoanReasons ON HrLoanReqMaster.LoanReason = HrLoanReasons.Code  WHERE HrLoanReqMaster.PayRollType = @PayrollType  AND HrLoanReqDetail.EmpId IN ( SELECT EmpId FROM #vEmpSalCalc  )AND MONTH(LoanTermDate) = @month              AND YEAR(LoanTermDate) = @Year AND TermStatus = 1;"
+                              }
+                          ]
+                  },
+                   {
+                      "ProcNAme": "HrPayrollCalcInsertHrEmpCalcSal",
+                      "USe": "insert Row In Hrempcalcsalary",
+                      "Notes":" Stord proc Sub Child",
+                      "TAbles": [
+                              {
+                                  "TableNAme": "Hrempcalcsalary",
+                                  "SelectQuery": "insert into Hrempcalcsalary"
+                              }
+                          ]
+                  },
+                   {
+                      "ProcNAme": "HrPayrollCalcPenalities",
+                      "USe": "Calc Penalities OF Employee",
+                      "Notes":" Stord proc Child , Must Be Revised = 1",
+                      "TAbles": [
+                              {
+                                  "TableNAme": "HrPenalityRequest,HrPenalities",
+                                  "SelectQuery": "SELECT HrPenalityRequest.*, HrPenalities.SalItemId,              ISNULL(HourValType, 1) HourValType   INTO #vHrPenalityRequest                 FROM HrPenalityRequest                                                         INNER JOIN HrPenalities ON HrPenalityRequest.PenalityId = HrPenalities.ID       INNER JOIN #vEmpSalCalc ON HrPenalityRequest.EmpId = #vEmpSalCalc.EmpId      WHERE PayRollType = @PayrollType   AND HrPenalityRequest.EmpId IN  ( SELECT EmpId FROM #vEmpSalCalc )                                                                              AND CAST(RequestDate AS DATE) >= CAST(@DateFrom AS DATE)                       AND CAST(RequestDate AS DATE) <= CAST(@DateTo AS DATE)                         AND Revised = 1 AND PayrollType = @PayrollType;"
+                              }
+              ]},
+                   {
+                      "ProcNAme": "HrPayrollCalcAbsent",
+                      "USe": "Calc Absent OF Employee",
+                      "Notes":" Stord proc Child , Must Be Revised = 1",
+                      "TAbles": [
+                              {
+                                  "TableNAme": "HrAbsentRequest",
+                                  "SelectQuery":
+                                   "SELECT HrAbsentRequest.*   INTO #vHrAbsentRequest  FROM  HrAbsentRequest  WHERE PayRollType = @PayrollType                        AND EmpId IN(SELECT EmpId FROM #vEmpSalCalc )                                  AND CAST(RequestDate AS DATE) >= CAST(@DateFrom AS DATE)                       AND CAST(RequestDate AS DATE) <= CAST(@DateTo AS DATE)  AND Revised = 1;"
+                              }
+                          ]
+                  },
+                   {
+                      "ProcNAme": "HrPayrollCalcVacations",
+                      "USe": "Calc Vacations OF Employee",
+                      "Notes":" Stord proc Child ",
+                      "TAbles": [
+                              {
+                                  "TableNAme": "HrVacationRequest",
+                                  "SelectQuery": "SELECT HrVacationRequest.*,SalItemId INTO #vHrVacationRequest  FROM HrVacationRequest  INNER JOIN HrVacationNames ON HrVacationRequest.VacationCode = HrVacationNames.Serial  WHERE PayRollType = @PayrollType                                       AND EmpId IN ( SELECT EmpId FROM #vEmpSalCalc  )                               AND CAST(VacStartDate AS DATE) <= CAST(@DateTo AS DATE)                        AND CAST(VacEndDate AS DATE) >= CAST(@DateFrom AS DATE)                        AND HrVacationRequest.DiscountPercent > 0"
+                              }
+                          ]
+                  }
+              ]
+          }
+      }
+ 
+  ]
+}
+]

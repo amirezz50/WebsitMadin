@@ -1,0 +1,264 @@
+<!-- selection form -->
+<div class="banner">
+  <div class="card p-0 card-new">
+    <h3 class="newappoint">
+      {{ 'PO_BOOKNEWAPPOINTMENT'| translate }}
+    </h3>
+    <div class="card-body row mx-0 p-0">
+      <form class="col p-3">
+        <div class="form-row">
+          <div class="form-group col-md-3 px-0">
+            <label for="birthDate">{{'DAY' | translate}}</label>
+            <div class="input-group input-group-sm">
+              <input class="form-control" placeholder="{{'DATEFORMAT' | translate}}" [formControl]="selectedDay"
+                ngbDatepicker #d="ngbDatepicker">
+              <div class="input-group-addon" (click)="d.toggle()">
+                <i class="fa fa-calendar"></i>
+              </div>
+            </div>
+          </div>
+          <div class="form-group col-md-3 px-0">
+            <div class="row align-items-center">
+              <div class="col-12">
+                <sanabel-selectize appcode="1066" [formControl]="spicialityCodeForm"
+                  (clicked)="specialityClicked($event)"></sanabel-selectize>
+              </div>
+            </div>
+          </div>
+          <div class="form-group col-md-3 px-0">
+            <div class="row align-items-center">
+              <div class="col-12">
+                <sanabel-selectize appcode="1014" [formControl]="doctorCodeForm"
+                  [SearchKeys]="{SpecialityId:spicialityCodeForm.value, DocNursingTurnsideMode:1}"></sanabel-selectize>
+
+
+              </div>
+            </div>
+          </div>
+          <div class="form-group col-md-3 px-0">
+            <div class="row align-items-center">
+              <div class="col-12">
+                <button type="button" class="btn btn-search" (click)="specialityClicked($event)">{{ 'Search'| translate
+                  }}</button>
+              </div>
+            </div>
+          </div>
+        </div>
+      </form>
+    </div>
+  </div>
+</div>
+
+<!-- <hr> -->
+<!-- doctors data -->
+<!-- <div class="card">
+  <div class="card-body">
+    <div class="row h-30">
+      <div class="col">
+        <p-dataTable tableStyleClass="table table-bordered table-striped ui-state-highlight"
+          [value]="allAvailableDoctors" selectionMode="single" [rows]="10" [paginator]="true" [pageLinks]="3"
+          [rowsPerPageOptions]="[5,10,20,50,100]">
+
+          <p-column [style]="{'width': '30%'}" header="{{ 'DOCTOR' | translate }}" [sortable]="true">
+            <ng-template pTemplate="options" let-row="rowData">
+              <div>
+                {{ translate.currentLang == 'ar' ? row.nameAr: row.nameEn }}
+              </div>
+            </ng-template>
+          </p-column>
+
+          <p-column [style]="{'width': '30%'}" header="{{ 'SPECIALITY' | translate }}" [sortable]="true">
+            <ng-template pTemplate="options" let-row="rowData">
+              <div>
+                {{ translate.currentLang == 'ar' ? row.specialtyNameAr: row.specialtyNameEn }}
+              </div>
+            </ng-template>
+          </p-column>
+
+          <p-column [style]="{'width': '30%'}" header="{{ 'TYPE' | translate }}" [sortable]="true">
+            <ng-template pTemplate="options" let-row="rowData">
+              <div>
+                {{ translate.currentLang == 'ar' ? row.docCatNameAr: row.docCatNameEn }}
+              </div>
+            </ng-template>
+          </p-column>
+
+          <p-column [style]="{'width': '10%'}" header="{{ 'ACTIONS' | translate }}">
+            <ng-template pTemplate="options" let-row="rowData">
+              <icon-action (clicked)="onRowClick($event,row)" [appCodes]="[404]">
+              </icon-action>
+            </ng-template>
+          </p-column>
+        </p-dataTable>
+      </div>
+    </div>
+  </div>
+</div> -->
+
+<hr>
+<div class="row d-none">
+  <!-- available doctors -->
+  <div class="col-4">
+    <ul class="list-group">
+      <li class="list-group-item" [ngClass]="{'active': doctorCode == doctor.code}"
+        *ngFor="let doctor of allAvailableDoctors" (click)="onRowClick(404,doctor)">
+        {{ translate.currentLang == 'ar' ? doctor.nameAr: doctor.nameEn }}
+      </li>
+    </ul>
+  </div>
+  <!-- available times -->
+  <div class="col-4" *ngIf="showTimeSlot">
+    <portal-time-slot-picker [portal_padding]="true" (currentSlot)="selectedCurrentSlot($event)">
+    </portal-time-slot-picker>
+  </div>
+  <!-- available services -->
+  <div class="col-4">
+    <ul class="list-group">
+      <li class="list-group-item rounded-0 mb-2 d-flex px-2 align-items-center"
+        *ngFor="let service of specialityServices">
+        <span class="col-6">{{translate.currentLang == 'ar'? service.serviceNameAr : service.serviceNameEn}}</span>
+        <input class="col-4 form-control form-control-sm mx-2" [(ngModel)]="service.count"
+          placeholder="{{'COUNT'| translate}}" numbersOnly>
+        <div class="form-check p-0">
+          <input class="form-check-input" [(ngModel)]="service.isdefault" type="checkbox" />
+          <label class="form-check-label"></label>
+        </div>
+      </li>
+    </ul>
+    <div>
+      <btns-ctrl [appCodes]="[1]" (clicked)="onBtnClicked($event)"></btns-ctrl>
+    </div>
+  </div>
+</div>
+
+
+<div class="card bg-white p-4 my-4" *ngFor="let doctor of allAvailableDoctors">
+  <div class="row">
+    <div class="col-2">
+      <div class="img-data">
+        <img src="../../../assets/images/{{doctor?.genderEn}}.png" alt="" class="">
+      </div>
+    </div>
+    <div class="col-5">
+      <div class="card-doctor">
+        <h2 class="doc-name">
+          <small>دكتور</small> {{doctor?.doctorNameAr}}
+        </h2>
+        <h6 class="spcialist">{{doctor?.specialtyNameAr}}</h6>
+        <ul class="text-unstyled">
+          <li class="d-flex align-items-center">
+            <span class="fa ml-3 fa-user-md "></span>
+            <span class="">
+              المسمي الوظيفي: <span class="text-primary">{{doctor?.docCatNameAr}}</span>
+            </span>
+          </li>
+          <li class="d-flex align-items-center mt-2">
+            <span class="fa ml-3 fa-stethoscope text-primary"></span>
+            <span class="">
+              التخصص: <span class="text-primary">{{doctor?.specialtyNameAr}}</span>
+            </span>
+          </li>
+          <li class="d-flex align-items-center mt-2">
+            <span class="fa ml-3 fa-map-marker text-primary"></span>
+            <span class="">
+              {{doctor?.addressAr}}
+            </span>
+          </li>
+          <li class="d-flex align-items-center mt-2">
+            <span class="fa ml-3 fa-phone text-primary"></span>
+            <span class="" dir="ltr">
+              {{doctor?.mobileOnPortal}}
+            </span>
+          </li>
+          <li class="d-flex align-items-center mt-2">
+            <span class="fa fa-money text-primary"></span>
+            <span class="" dir="ltr">
+              الكشف:  <!--<span class="text-primary">{{doctor?.specialtyNameAr}}</span> -->
+            </span>
+          </li>
+        </ul>
+      </div>
+    </div>
+    <div class="col-5">
+      <div class="row align-items-center">
+        <div class="col-2 d-flex justify-content-center" style="max-width: 12.5%;display: none;">
+          <button class="btn btn-light fa fa-angle-right head-col-btn" title="Previous Day"
+            (click)="gotoNextPrevDay(doctor.reservationDate, 'PREV', doctor.code)"
+            [disabled]="_today == doctor._date"></button>
+        </div>
+        <!-- Scheduling -->
+        <!-- <div class="col-3 px-2">
+          <div class="card p-0" style="border-radius: 5px;">
+            <div class="card-header text-white py-2 px-0 text-center font-weight-bold col-card-head">اليوم</div>
+            <div class="card-body bg-white font-weight-bold text-center p-2">
+              <ul class="list-unstyled">
+                <li class="text-primary">09:00 م</li>
+                <li class="text-primary">09:15 م</li>
+                <li class="text-primary">09:30 م</li>
+                <li class="text-primary">09:45 م</li>
+                <li class="text-primary">10:00 م</li>
+                <li class="text-primary">المزيد</li>
+              </ul>
+            </div>
+            <button class="btn btn-danger card-footer font-weight-bold px-0 py-2 foot-col-btn">حجز</button>
+          </div>
+        </div>
+        <div class="col-3 px-2">
+          <div class="card p-0" style="border-radius: 5px;">
+            <div class="card-header text-white py-2 px-0 text-center font-weight-bold col-card-head">غدا</div>
+            <div class="card-body bg-white font-weight-bold text-center p-2">
+              <ul class="list-unstyled">
+                <li class="text-primary">09:00 م</li>
+                <li class="text-primary">09:15 م</li>
+                <li class="text-primary">09:30 م</li>
+                <li class="text-primary">09:45 م</li>
+                <li class="text-primary">10:00 م</li>
+                <li class="text-primary">المزيد</li>
+              </ul>
+            </div>
+
+            <button class="btn btn-danger card-footer font-weight-bold px-0 py-2 foot-col-btn">حجز</button>
+          </div>
+        </div> -->
+        <div class="col-8 px-2">
+          <div class="card p-0" style="border-radius: 5px;">
+            <div class="card-header text-white py-2 px-0 text-center font-weight-bold col-card-head">
+              <span *ngIf="_today == doctor._date">اليوم</span>
+              <span *ngIf="_today != doctor._date">{{doctor._date}} </span>
+            </div>
+            <div class="card-body bg-white font-weight-bold text-center p-2">
+              <ul class="list-unstyled" *ngIf="doctor.timeFound && !showMore">
+                <li class="time-box" (click)="selectedCurrentSlot(time)"
+                  [ngClass]="{'time-active': activeTime == time.id}"
+                  *ngFor="let time of doctor.shortTimes; let i = index">
+                  <span>{{time.startTime}}</span>
+                </li>
+                <li class="" *ngIf="doctor.shortTimes" (click)="showMore = !showMore">المزيد</li>
+              </ul>
+              <ul class="list-unstyled" style=" flex-wrap: wrap; display: flex; justify-content: space-between; padding: 5px;
+          " *ngIf="doctor.timeFound && showMore">
+                <li class="time-box" (click)="selectedCurrentSlot(time)"
+                  [ngClass]="{'time-active': activeTime == time.id}"
+                  *ngFor="let time of doctor.timesAvailable; let i = index">
+                  <span>{{time.startTime}}</span>
+                </li>
+                <li class="" *ngIf="doctor.timesAvailable" (click)="showMore = !showMore">أقل</li>
+              </ul>
+              <ul class="list-unstyled" *ngIf="!doctor.timeFound">
+                <li class="time-box">{{doctor.timeNotAvailableMsg}}</li>
+              </ul>
+            </div>
+
+            <button class="btn btn-danger card-footer font-weight-bold px-0 py-2 foot-col-btn"
+             routerLink="/portal/portal-payment" (click)="sendDoctor(doctor)">متابعة</button>
+             <!-- (click)="save()" -->
+          </div>
+        </div>
+        <div class="col-2 d-flex justify-content-center" style="max-width: 12.5%;display: none;">
+          <button class="btn btn-light fa fa-angle-left head-col-btn"
+            (click)="gotoNextPrevDay(doctor.reservationDate, 'NEXT', doctor.code)" title="Next Days"></button>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

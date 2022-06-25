@@ -1,0 +1,10 @@
+<div class="header-step-wid mt-0">
+  <a href="javascript:void(0)" class="step" *ngFor="let ctrl of AppCodes;index as i;" [ngClass]="{'editable-step':i==activeIndex,
+        'active':i==activeIndex,
+        'step-done':ctrl.isDone,
+        'step-invalid':!ctrl.isValid}"
+    [hidden]="ctrl.visible == 0" (click)="steppClicked(ctrl.appCode,ctrl,i)">
+    <span class="num-step">{{i + 1}}</span>
+    <span class="title-span-step">{{translate.currentLang == 'ar'? ctrl.nameAr: ctrl.nameEn}}</span>
+  </a>
+</div>

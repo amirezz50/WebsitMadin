@@ -1,0 +1,42 @@
+﻿{
+  "speciality": {
+    "display": true,
+    "required": true
+  },
+  "doc": {
+    "display": true,
+    "required": true
+  },
+  "bed": {
+    "display": true,
+    "required": true
+  },
+  "statustype": {
+    "display": true,
+    "required": false
+  },
+  "startDateNgb": {
+    "display": true,
+    "required": false
+  },
+  "remarks": {
+    "display": true,
+    "required": false
+  },
+  "resperiod": {
+    "display": true,
+    "required": false
+  },
+  "turnedDdoc": {
+    "display": true,
+    "required": false
+  },
+  "ngbDayStartHoure": {
+    "display": true,
+    "required": false
+  },
+  "residenceDegree": {
+    "display": true,
+    "required": true
+  }
+}

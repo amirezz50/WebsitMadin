@@ -1,0 +1,282 @@
+﻿{
+  "code": {
+    "display": false,
+    "required": true
+  }, 
+  "customCode": {
+    "display": false,
+    "required": false,
+    "min_length": 2,
+    "max_length": 20
+  }, 
+  "name.fnameAr": {
+    "display": true,
+    "required": true,
+    "min_length": 2,
+    "max_length": 20
+  },
+  "name.fnameEn": {
+    "display": true,
+    "required": false,
+    "min_length": 2,
+    "max_length": 20
+  },
+  "name.snameAr": {
+    "display": true,
+    "required": true,
+    "min_length": 2,
+    "max_length": 20
+  },
+  "name.snameEn": {
+    "display": true,
+    "required": false,
+    "min_length": 2,
+    "max_length": 20
+  },
+  "name.tnameAr": {
+    "display": true,
+    "required": true,
+    "min_length": 2,
+    "max_length": 20
+  },
+  "name.tnameEn": {
+    "display": true,
+    "required": false,
+    "min_length": 2,
+    "max_length": 20
+  },
+  "name.lnameAr": {
+    "display": true,
+    "required": false,
+    "min_length": 2,
+    "max_length": 20
+  },
+  "name.lnameEn": {
+    "display": true,
+    "required": false,
+    "min_length": 2,
+    "max_length": 20
+  },
+  "name.fullnameAr": {
+    "display": true,
+    "required": false
+  },
+  "name.fullnameEn": {
+    "display": true,
+    "required": false
+  },
+  "address.countryCode": {},
+  "address.govCode": {},
+  "address.cityCode": {},
+  "address.villageCode": {},
+  "address.nationalityId": {
+    "display": true,
+    "required": true
+  },
+  "address.fullAddressAr": {
+    "value": "",
+    "disabled": true
+  },
+  "address.fullAddressEn": {
+    "value": "",
+    "disabled": true
+  },
+  "identity.identityValue": {
+    "display": true,
+    "required": false
+  },
+  "therapeuticCards.contractId": {
+    "display": true,
+    "required": false
+  },
+  "therapeuticCards.cardNo": {
+    "display": true,
+    "required": false
+  },
+  "therapeuticCards.startDate": {
+    "display": true,
+    "required": false
+  },
+  "therapeuticCards.endDate": {
+    "display": true,
+    "required": false
+  },
+  "therapeuticCards.policyNumber": {
+    "display": true,
+    "required": false
+  },
+  "callNotes": {
+    "display": true,
+    "required": false,
+    "min_length": 5,
+    "defaultVal": "",
+    "controlType": "callData"
+  },
+
+  "specialization": {
+    "display": true,
+    "required": false,
+    "min_length": 5,
+    "defaultVal": "",
+    "controlType": "callData"
+  },
+  "callerPhone": {
+    "display": true,
+    "required": false,
+    "min_length": 5,
+    "defaultVal": "",
+    "controlType":"callData"
+  },  
+  "howToReachUs": {
+    "display": true,
+    "required": false,
+    "min_length": 5,
+    "defaultVal": "",
+    "controlType":"callData"
+  },
+  "branchAddress": {
+    "display": true,
+    "required": false,
+    "min_length": 5,
+    "defaultVal": "",
+    "controlType":"callData"
+  },
+  "docId": {
+    "display": true,
+    "required": false,
+    "min_length": 5,
+    "defaultVal": "",
+    "controlType":"callData"
+  },
+  "previousPatient": {
+    "display": true,
+    "required": false,
+    "min_length": 5,
+    "defaultVal": "",
+    "controlType":"callData"
+  },
+  "customerId": {
+    "display": true,
+    "required": false,
+    "min_length": 5,
+    "defaultVal": "",
+    "controlType":"callData"
+  },
+  "mobile2": {
+    "display": true,
+    "required": false,
+    "min_length": 11,
+    "max_length": 11,
+    "defaultVal": "",
+    "regex": "^(01)[0-9]{9}$",
+    "controlType":"callData"
+  },
+  "patientServiceLevelOne": {
+    "display": true,
+    "required": false,
+    "min_length": 5,
+    "defaultVal": "",
+    "controlType": "expectedService"
+
+  },
+  "patientServiceLevelTwo": {
+    "display": true,
+    "required": false,
+    "min_length": 5,
+    "defaultVal": "",
+    "controlType": "expectedService"
+
+  },
+  "patientServiceLevelThree": {
+    "display": true,
+    "required": false,
+    "min_length": 5,
+    "defaultVal": "",
+    "controlType": "expectedService"
+
+  },
+  "doctorID": {
+    "display": true,
+    "required": true,
+    "min_length": 5,
+    "defaultVal": "",
+    "controlType": "expectedService"
+  },
+  "cost": {
+    "display": true,
+    "required": false,
+    "min_length": 5,
+    "defaultVal": "",
+    "controlType": "expectedService"
+  },
+  "leadType": {
+    "display": true,
+    "required": true,
+    "min_length": 5,
+    "defaultVal": 1,
+    "controlType": "expectedService"
+  },
+  "expectedDate": {
+    "display": true,
+    "required": true,
+    "min_length": 5,
+    "defaultVal": "currentDate",
+    "controlType": "expectedService"
+  },
+  "gender": {
+    "display": true,
+    "required": false,
+    "min_length": 5,
+    "defaultVal": "",
+    "controlType": "expectedService"
+  },
+  "homePhone": {
+    "display": true,
+    "required": false,
+    "min_length": 5,
+    "defaultVal": "",
+    "controlType": "expectedService"
+  },
+  "patCode": {
+    "display": true,
+    "required": false,
+    "min_length": 5,
+    "defaultVal": "",
+    "controlType": "expectedService"
+  },
+
+  "birthDateNgb": {
+    "display": true,
+    "required": false,
+    "min_length": 5,
+    "defaultVal": "",
+    "controlType": "genControls"
+
+  },
+  "birthPlace": {
+    "display": true,
+    "required": false,
+    "min_length": 5,
+    "defaultVal": ""
+  },
+   "mobile": {
+    "display": true,
+    "required": false,
+    "min_length": 11,
+    "max_length": 11,
+    "defaultVal": "",
+    "regex": "^(01)[0-9]{9}$",
+    "controlType": "genControls"
+
+  },
+  "approxAge": {
+    "display": true,
+    "required": false,
+    "min_length": 5,
+    "defaultVal": "",
+    "controlType": "genControls"
+  }
+  
+ 
+
+}

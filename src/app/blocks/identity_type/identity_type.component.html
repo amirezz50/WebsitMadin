@@ -1,0 +1,33 @@
+<div class="container-fluid">
+    <form [formGroup]=identityForm>
+        <div class="row">
+            <div class="col-12 col-sm form-group">
+                <label class="" for="identityType">
+                {{ 'identity' | translate }}
+                </label>
+                <select class="form-control" #t id="identityType" [ngClass]="{'form-control-sm':smallInput}" (change)="onIdentitySelected(t.value)" formControlName="identityType" tabindex="10">
+                    <option value="0"></option>
+                    <option *ngFor="let type of identityTypes"
+                            [value]="type.code">
+                        {{translate.currentLang == 'ar'? type.nameAr: type.nameEn}}
+                    </option>
+                </select>
+            </div>
+            <div class="col-12 col-sm form-group" style="height: 64px;">
+                <label for="identityValue">
+                {{'NationalValue' | translate}}
+                </label>
+                <div class="placeholder">
+                    <input class="form-control" *ngIf="disableIdentity==true" formControlName="valueFormated" [ngClass]="{'text-danger':invaildvalue , 'text-success':!invaildvalue ,'form-control-sm':smallInput }" style="position:absolute;direction:ltr;"/>
+                    <input class="form-control" *ngIf="disableIdentity==false && identityType == 1" formControlName="valueFormated" [ngClass]="{'text-danger':invaildvalue , 'text-success':!invaildvalue ,'form-control-sm':smallInput }" style="position:absolute;direction:ltr;" disabled />
+                    <!-- <input class="form-control" value="0000000-00-00-00-0" [ngClass]="{'form-control-sm':smallInput}"   style="position:absolute;color: #752a42;"   disabled /> -->
+                    <input class="form-control" style="background: none!important;  position: absolute;z-index:10" 
+                    [ngClass]="{'form-control-sm':smallInput}" formControlName="identityValue"
+                     [identity]="identityType"   (keyup)="onIdentityKeyup($event)"
+                        tabindex="11">
+                </div>
+                <small class="text-danger" *ngIf="invalidMessage.length > 0">{{invalidMessage}}</small>
+            </div>
+        </div>
+    </form>
+</div>

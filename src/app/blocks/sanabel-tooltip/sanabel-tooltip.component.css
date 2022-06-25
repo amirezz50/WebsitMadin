@@ -1,0 +1,24 @@
+:host {
+    display: block
+}
+
+.tooth-div {
+    font              : 14px/16px Trebuchet MS, Helvetica, Arial, sans-serif;
+    padding           : 5px;
+    border            : 1px solid #404040;
+    color             : #404040;
+    background        : rgba(265, 265, 265, .9);
+    word-break        : keep-all;
+    box-shadow        : 1px 2px 4px rgba(0, 0, 0, .5);
+    -moz-box-shadow   : 1px 2px 4px rgba(0, 0, 0, .5);
+    -webkit-box-shadow: 1px 2px 4px rgba(0, 0, 0, .5);
+}
+
+.tooth-div img {
+    float         : left;
+    padding       : 3px;
+    max-width     : 100%;
+    height        : auto;
+    vertical-align: middle;
+    border        : 0;
+}

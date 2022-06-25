@@ -1,0 +1,39 @@
+.page-title{
+  font-size: 24px;
+  font-weight: 600;
+  padding: 7px 0px;
+  color: #178374;
+  margin-bottom:30px;
+}
+.form-group {
+  margin-bottom: 30px;
+}
+.form-group label, div>label, form>label {
+  font-size: 18px;
+  font-weight: 500;
+  color: #333;
+  margin-bottom: 10px;
+}
+.input-group .form-control, .input-group .custom-select, .input-group .custom-file {
+  position: relative;
+  flex: 1 1 auto;
+  width: 1%;
+  margin-bottom: 0;
+  border: 1px solid #ddd;
+  height: 42px;
+}
+.btn-send{
+  background-color: #fff;
+  border: 1px solid #178374;
+  color: #178374;
+  padding: 10px 60px;
+  margin: 30px 15px;
+  font-size: 16px;
+}
+.btn-send.active{
+  background-color: #178374;
+  border: 1px solid #178374;
+  color: #fff;
+
+}
+

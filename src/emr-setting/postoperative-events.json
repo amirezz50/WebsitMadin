@@ -1,0 +1,678 @@
+{
+    "secmain_head": {
+        "display": true,
+        "inputType": "mainHeader",
+        "lookupCode": 0,
+        "required": false,
+        "labelText": "Postoperative Events",
+        "cssClass": "col-12 pt-2"
+         
+    }, 
+    "surgicalSiteInfectionWithin30daysOfOperation": {
+        "display": true,
+        "inputType": "selectize",
+        "lookupCode": 10,
+        "required": false,
+        "labelText": "Surgical Site Infection within 30 days of operation: ",
+        "cssClass": "col-12 col-sm-6 col-md-3 col-lg-3 col-xl-2 pt-2 general-input-class"
+    },
+    "sternalSuperficialWoundInfection": {
+        "display": true,
+        "inputType": "selectize",
+        "lookupCode": 15,
+        "required": false,
+        "labelText": "Sternal Superficial Wound Infection:",
+        "cssClass": "col-12 col-sm-6 col-md-3 col-lg-3 col-xl-2 pt-2 general-input-class"
+    },
+    "deepSternalInfection": {
+        "display": true,
+        "inputType": "selectize",
+        "lookupCode": 15,
+        "required": false,
+        "labelText": "Deep Sternal Infection/ Mediastinitis: ",
+        "cssClass": "col-12 col-sm-6 col-md-3 col-lg-3 col-xl-2 pt-2 general-input-class"
+    },
+    "diagnosisDate": {
+        "display": true,
+        "inputType": "date",
+        "required": false,
+        "labelText": "Diagnosis Date: ",
+        "cssClass": "col-12 col-sm-6 col-md-3 col-lg-3 col-xl-2 pt-2 general-input-class"
+    },
+    "thoracotomy": {
+        "display": true,
+        "inputType": "selectize",
+        "lookupCode": 15,
+        "required": false,
+        "labelText": "Thoracotomy: ",
+        "cssClass": "col-12 col-sm-6 col-md-3 col-lg-3 col-xl-2 pt-2 general-input-class"
+    },
+    "conduitHarvest": {
+        "display": true,
+        "inputType": "selectize",
+        "lookupCode": 15,
+        "required": false,
+        "labelText": "Conduit Harvest : ",
+        "cssClass": "col-12 col-sm-6 col-md-3 col-lg-3 col-xl-2 pt-2 general-input-class"
+    },
+    "cannulationSite": {
+        "display": true,
+        "inputType": "selectize",
+        "lookupCode": 15,
+        "required": false,
+        "labelText": "Cannulation Site: ",
+        "cssClass": "col-12 col-sm-6 col-md-3 col-lg-3 col-xl-2 pt-2 general-input-class"
+    },
+    "woundInterventionProcedure": {
+        "display": true,
+        "inputType": "selectize",
+        "lookupCode": 24,
+        "required": false,
+        "labelText": "Wound Intervention/Procedure: ",
+        "cssClass": "col-12 col-sm-6 col-md-3 col-lg-3 col-xl-2 pt-2 general-input-class"
+    },
+    "woundInterventionOpenWithPackingIrrigation": {
+        "display": true,
+        "inputType": "selectize",
+        "lookupCode": 24,
+        "required": false,
+        "labelText": "Wound Intervention – Wound Vac: ",
+        "cssClass": "col-12 col-sm-6 col-md-3 col-lg-3 col-xl-2 pt-2 general-input-class"
+    },
+    "woundInterventionWoundVac": {
+        "display": true,
+        "inputType": "selectize",
+        "lookupCode": 24,
+        "required": false,
+        "labelText": "Wound Intervention – Wound Vac: ",
+        "cssClass": "col-12 col-sm-6 col-md-3 col-lg-3 col-xl-2 pt-2 general-input-class"
+    },
+    "hr1": {
+        "display": true,
+        "inputType": "hr",
+        "lookupCode": 0,
+        "required": false,
+        "labelText": "",
+        "cssClass": "col-12 general-input-class"
+    },
+    
+    "secondaryProcedureMuscleFlap": {
+        "display": true,
+        "inputType": "selectize",
+        "lookupCode": 24,
+        "required": false,
+        "labelText": "Secondary Procedure Muscle Flap:  ",
+        "cssClass": "col-12 col-sm-6 col-md-3 col-lg-3 col-xl-2 pt-2 general-input-class"
+    },
+    "secondaryProcedureOmentalFlap": {
+        "display": true,
+        "inputType": "selectize",
+        "lookupCode": 10,
+        "required": false,
+        "labelText": "Secondary Procedure Omental Flap: ",
+        "cssClass": "col-12 col-sm-6 col-md-3 col-lg-3 col-xl-2 pt-2 general-input-class"
+    },
+    
+    "otherInHospitalPostoperativeEventOccurred": {
+        "display": true,
+        "inputType": "selectize",
+        "lookupCode": 10,
+        "required": false,
+        "labelText": "Other In Hospital Postoperative Event Occurred: ",
+        "cssClass": "col-12 col-sm-6 col-md-3 col-lg-3 col-xl-2 pt-2 general-input-class"
+    },
+    "sec1_head": {
+        "display": true,
+        "inputType": "head3",
+        "lookupCode": 0,
+        "required": false,
+        "labelText": "<u>Operative</u>",
+        "cssClass": "col-12 pt-2"
+    },
+    "reOpForBleedingOrTamponade": {
+        "display": true,
+        "inputType": "selectize",
+        "lookupCode": 10,
+        "required": false,
+        "labelText": "ReOp for Bleeding /Tamponade:",
+        "cssClass": "col-12 col-sm-6 col-md-3 col-lg-3 col-xl-2 pt-2 general-input-class"
+    },
+    "reOpforValvularDysfunction": {
+        "display": true,
+        "inputType": "selectize",
+        "lookupCode": 27,
+        "required": false,
+        "labelText": "ReOp for Valvular Dysfunction: ",
+        "cssClass": "col-12 col-sm-6 col-md-3 col-lg-3 col-xl-2 pt-2 general-input-class"
+    },
+    "reinterventionforMyocardialIschemia": {
+        "display": true,
+        "inputType": "selectize",
+        "lookupCode": 10,
+        "required": false,
+        "labelText": "Reintervention for Myocardial Ischemia: ",
+        "cssClass": "col-12 col-sm-6 col-md-3 col-lg-3 col-xl-2 pt-2 general-input-class"
+    },
+    "vessel": {
+        "display": true,
+        "inputType": "selectize",
+        "lookupCode": 29,
+        "required": false,
+        "labelText": "Vessel:",
+        "cssClass": "col-12 col-sm-6 col-md-3 col-lg-3 col-xl-2 pt-2 general-input-class"
+    },
+    "interventionType": {
+        "display": true,
+        "inputType": "selectize",
+        "lookupCode": 30,
+        "required": false,
+        "labelText": "Intervention Type:",
+        "cssClass": "col-12 col-sm-6 col-md-3 col-lg-3 col-xl-2 pt-2 general-input-class"
+    },
+    "aorticReintervention": {
+        "display": true,
+        "inputType": "selectize",
+        "lookupCode": 10,
+        "required": false,
+        "labelText": "Aortic Reintervention: ",
+        "cssClass": "col-12 col-sm-6 col-md-3 col-lg-3 col-xl-2 pt-2 general-input-class"
+    },
+    "aorticReinterventionType": {
+        "display": true,
+        "inputType": "selectize",
+        "lookupCode": 32,
+        "required": false,
+        "labelText": "Type",
+        "cssClass": "col-12 col-sm-6 col-md-3 col-lg-3 col-xl-2 pt-2 general-input-class"
+    },
+    "reOpforOtherCardiacReasons": {
+        "display": true,
+        "inputType": "selectize",
+        "lookupCode": 10,
+        "required": false,
+        "labelText": "ReOp for Other Cardiac Reasons: ",
+        "cssClass": "col-12 col-sm-6 col-md-3 col-lg-3 col-xl-2 pt-2 general-input-class"
+    },
+    "returnedToTheORforOtherNonCardiacReasons": {
+        "display": true,
+        "inputType": "selectize",
+        "lookupCode": 10,
+        "required": false,
+        "labelText": "Returned to the OR for Other Non-Cardiac Reasons: ",
+        "cssClass": "col-12 col-sm-6 col-md-3 col-lg-3 col-xl-2 pt-2 general-input-class"
+    },
+    "sternotomyIssue": {
+        "display": true,
+        "inputType": "selectize",
+        "lookupCode": 10,
+        "required": false,
+        "labelText": "Open chest with planned delayed sternal closure: ",
+        "cssClass": "col-12 col-sm-6 col-md-3 col-lg-3 col-xl-2 pt-2 general-input-class"
+    },
+    "hr4": {
+        "display": true,
+        "inputType": "hr",
+        "lookupCode": 0,
+        "required": false,
+        "labelText": "",
+        "cssClass": "col-12 general-input-class"
+    },
+    "sec4_head": {
+        "display": true,
+        "inputType": "head3",
+        "lookupCode": 0,
+        "required": false,
+        "labelText": "<u>Infection</u>",
+        "cssClass": "col-12 pt-2"
+    },
+    "infectionSepsis": {
+        "display": true,
+        "inputType": "selectize",
+        "lookupCode": 10,
+        "required": false,
+        "labelText": "Sepsis:  ",
+        "cssClass": "col-12 col-sm-6 col-md-3 col-lg-3 col-xl-2 pt-2 general-input-class"
+    },
+    "positiveBloodCultures": {
+        "display": true,
+        "inputType": "selectize",
+        "lookupCode": 10,
+        "required": false,
+        "labelText": "Positive Blood Cultures:  ",
+        "cssClass": "col-12 col-sm-6 col-md-3 col-lg-3 col-xl-2 pt-2 general-input-class"
+    },
+     
+    "hr5": {
+        "display": true,
+        "inputType": "hr",
+        "lookupCode": 0,
+        "required": false,
+        "labelText": "",
+        "cssClass": "col-12 general-input-class"
+    },
+    "sec5_head": {
+        "display": true,
+        "inputType": "head3",
+        "lookupCode": 0,
+        "required": false,
+        "labelText": "<u>Neurologic, Central</u>",
+        "cssClass": "col-12 pt-2"
+    },
+    
+    "postoperativeStroke": {
+        "display": true,
+        "inputType": "selectize",
+        "lookupCode": 33,
+        "required": false,
+        "labelText": "Postoperative Stroke: : ",
+        "cssClass": "col-12 col-sm-6 col-md-3 col-lg-3 col-xl-2 pt-2 general-input-class"
+    },
+    "transientIschemicAttack": {
+        "display": true,
+        "inputType": "selectize",
+        "lookupCode": 10,
+        "required": false,
+        "labelText": "Transient Ischemic Attack (TIA): ",
+        "cssClass": "col-12 col-sm-6 col-md-3 col-lg-3 col-xl-2 pt-2 general-input-class"
+    },
+    "encephalopathy": {
+        "display": true,
+        "inputType": "selectize",
+        "lookupCode": 34,
+        "required": false,
+        "labelText": "Encephalopathy: ",
+        "cssClass": "col-12 col-sm-6 col-md-3 col-lg-3 col-xl-2 pt-2 general-input-class"
+    },
+    "comaOrUnresponsiveState": {
+        "display": true,
+        "inputType": "selectize",
+        "lookupCode": 10,
+        "required": false,
+        "labelText": "Coma/unresponsive state (not stroke): ",
+        "cssClass": "col-12 col-sm-6 col-md-3 col-lg-3 col-xl-2 pt-2 general-input-class"
+    },
+    
+    "hr6": {
+        "display": true,
+        "inputType": "hr",
+        "lookupCode": 0,
+        "required": false,
+        "labelText": "",
+        "cssClass": "col-12 general-input-class"
+    },
+    "sec6_head": {
+        "display": true,
+        "inputType": "head3",
+        "lookupCode": 0,
+        "required": false,
+        "labelText": "<u>Neurologic, Peripheral</u>",
+        "cssClass": "col-12 pt-2"
+    },
+    "lowerExtremityParalysis": {
+        "display": true,
+        "inputType": "selectize",
+        "lookupCode": 10,
+        "required": false,
+        "labelText": "Lower Extremity Paralysis: ",
+        "cssClass": "col-12 col-sm-6 col-md-3 col-lg-3 col-xl-2 pt-2 general-input-class"
+    },
+   
+    "paralysisType": {
+        "display": true,
+        "inputType": "selectize",
+        "lookupCode": 37,
+        "required": false,
+        "labelText": "Paralysis Type: ",
+        "cssClass": "col-12 col-sm-6 col-md-3 col-lg-3 col-xl-2 pt-2 general-input-class"
+    },
+    "paresisType": {
+        "display": true,
+        "inputType": "selectize",
+        "lookupCode": 10,
+        "required": false,
+        "labelText": "Paresis Type: ",
+        "cssClass": "col-12 col-sm-6 col-md-3 col-lg-3 col-xl-2 pt-2 general-input-class"
+    },
+    "phrenicNerveInjury": {
+        "display": true,
+        "inputType": "selectize",
+        "lookupCode": 10,
+        "required": false,
+        "labelText": "Phrenic Nerve Injury: ",
+        "cssClass": "col-12 col-sm-6 col-md-3 col-lg-3 col-xl-2 pt-2 general-input-class"
+    },
+    "recurrentLaryngealNerveInjury": {
+        "display": true,
+        "inputType": "selectize",
+        "lookupCode": 10,
+        "required": false,
+        "labelText": "Recurrent Laryngeal Nerve Injury: ",
+        "cssClass": "col-12 col-sm-6 col-md-3 col-lg-3 col-xl-2 pt-2 general-input-class"
+    },
+    
+    "hr2": {
+        "display": true,
+        "inputType": "hr",
+        "lookupCode": 0,
+        "required": false,
+        "labelText": "",
+        "cssClass": "col-12 general-input-class"
+    },
+    "sec2_head": {
+        "display": true,
+        "inputType": "head3",
+        "lookupCode": 0,
+        "required": false,
+        "labelText": "<u> Pulmonary </u>",
+        "cssClass": "col-12"
+    },
+    "prolongedVentilation": {
+        "display": true,
+        "inputType": "selectize",
+        "lookupCode": 10,
+        "required": false,
+        "labelText": "Prolonged Ventilation: ",
+        "cssClass": "col-12 col-sm-6 col-md-3 col-lg-3 col-xl-2 pt-2 general-input-class"
+    },
+    "pneumonia": {
+        "display": true,
+        "inputType": "selectize",
+        "lookupCode": 10,
+        "required": false,
+        "labelText": "Pneumonia: ",
+        "cssClass": "col-12 col-sm-6 col-md-3 col-lg-3 col-xl-2 pt-2 general-input-class"
+    },
+    "venousThromboembolismVTE": {
+        "display": true,
+        "inputType": "selectize",
+        "lookupCode": 10,
+        "required": false,
+        "labelText": "Venous Thromboembolism – VTE: : ",
+        "cssClass": "col-12 col-sm-6 col-md-3 col-lg-3 col-xl-2 pt-2 general-input-class"
+    },
+    "pulmonaryThromboembolism": {
+        "display": true,
+        "inputType": "selectize",
+        "lookupCode": 10,
+        "required": false,
+        "labelText": "Pulmonary Thromboembolism: ",
+        "cssClass": "col-12 col-sm-6 col-md-3 col-lg-3 col-xl-2 pt-2 general-input-class"
+    },
+    "deepVenousThrombosis": {
+        "display": true,
+        "inputType": "selectize",
+        "lookupCode": 10,
+        "required": false,
+        "labelText": "Deep Venous Thrombosis: ",
+        "cssClass": "col-12 col-sm-6 col-md-3 col-lg-3 col-xl-2 pt-2 general-input-class"
+    },
+    "pleuralEffusionRequiringDrainage": {
+        "display": true,
+        "inputType": "selectize",
+        "lookupCode": 10,
+        "required": false,
+        "labelText": "Pleural Effusion Requiring Drainage: ",
+        "cssClass": "col-12 col-sm-6 col-md-3 col-lg-3 col-xl-2 pt-2 general-input-class"
+    },
+    
+    "pneumothoraxRequiringIntervention": {
+        "display": true,
+        "inputType": "selectize",
+        "lookupCode": 10,
+        "required": false,
+        "labelText": "Pneumothorax Requiring Intervention: ",
+        "cssClass": "col-12 col-sm-6 col-md-3 col-lg-3 col-xl-2 pt-2 general-input-class"
+    },
+    "hr7": {
+        "display": true,
+        "inputType": "hr",
+        "lookupCode": 0,
+        "required": false,
+        "labelText": "",
+        "cssClass": "col-12 general-input-class"
+    },
+    "sec7_head": {
+        "display": true,
+        "inputType": "head3",
+        "lookupCode": 0,
+        "required": false,
+        "labelText": "<u>Renal</u>",
+        "cssClass": "col-12 pt-2"
+    },
+    "renalFailure": {
+        "display": true,
+        "inputType": "selectize",
+        "lookupCode": 10,
+        "required": false,
+        "labelText": "Renal Failure:",
+        "cssClass": "col-12 col-sm-6 col-md-3 col-lg-3 col-xl-2 pt-2 general-input-class"
+    },
+    "dialysis": {
+        "display": true,
+        "inputType": "selectize",
+        "lookupCode": 10,
+        "required": false,
+        "labelText": "Dialysis (Newly Required): ",
+        "cssClass": "col-12 col-sm-6 col-md-3 col-lg-3 col-xl-2 pt-2 general-input-class"
+    },
+    "requiredAfterHospitalDischarge": {
+        "display": true,
+        "inputType": "selectize",
+        "lookupCode": 10,
+        "required": false,
+        "labelText": "Required after Hospital Discharge: ",
+        "cssClass": "col-12 col-sm-6 col-md-3 col-lg-3 col-xl-2 pt-2 general-input-class"
+    },
+    "duration": {
+        "display": true,
+        "inputType": "selectize",
+        "lookupCode": 42,
+        "required": false,
+        "labelText": "Duration: ",
+        "cssClass": "col-12 col-sm-6 col-md-3 col-lg-3 col-xl-2 pt-2 general-input-class"
+    },
+    "ultraFiltrationRequired": {
+        "display": true,
+        "inputType": "selectize",
+        "lookupCode": 10,
+        "required": false,
+        "labelText": "Ultra-Filtration Required: ",
+        "cssClass": "col-12 col-sm-6 col-md-3 col-lg-3 col-xl-2 pt-2 general-input-class"
+    },
+    
+    "hr8": {
+        "display": true,
+        "inputType": "hr",
+        "lookupCode": 0,
+        "required": false,
+        "labelText": "",
+        "cssClass": "col-12 general-input-class"
+    },
+    "sec8_head": {
+        "display": true,
+        "inputType": "head3",
+        "lookupCode": 0,
+        "required": false,
+        "labelText": "<u>Vascular</u>",
+        "cssClass": "col-12 pt-2"
+    },
+   
+    "iliacOrFemoralDissection": {
+        "display": true,
+        "inputType": "selectize",
+        "lookupCode": 10,
+        "required": false,
+        "labelText": "Iliac/Femoral Dissection: ",
+        "cssClass": "col-12 col-sm-6 col-md-3 col-lg-3 col-xl-2 pt-2 general-input-class"
+    },
+    "acuteLimbIschemia": {
+        "display": true,
+        "inputType": "selectize",
+        "lookupCode": 10,
+        "required": false,
+        "labelText": "Acute Limb Ischemia: ",
+        "cssClass": "col-12 col-sm-6 col-md-3 col-lg-3 col-xl-2 pt-2 general-input-class"
+    },
+    
+    "hr9": {
+        "display": true,
+        "inputType": "hr",
+        "lookupCode": 0,
+        "required": false,
+        "labelText": "",
+        "cssClass": "col-12 general-input-class"
+    },
+    "sec9_head": {
+        "display": true,
+        "inputType": "head3",
+        "lookupCode": 0,
+        "required": false,
+        "labelText": "<u>Other</u>",
+        "cssClass": "col-12 pt-2"
+    },
+    "rhythmDisturbanceRequiringPermanentDevice": {
+        "display": true,
+        "inputType": "selectize",
+        "lookupCode": 43,
+        "required": false,
+        "labelText": "Rhythm Disturbance Requiring Permanent Device: ",
+        "cssClass": "col-12 col-sm-6 col-md-3 col-lg-3 col-xl-2 pt-2 general-input-class"
+    },
+    "cardiacArrest": {
+        "display": true,
+        "inputType": "selectize",
+        "lookupCode": 10,
+        "required": false,
+        "labelText": "Cardiac Arrest: ",
+        "cssClass": "col-12 col-sm-6 col-md-3 col-lg-3 col-xl-2 pt-2 general-input-class"
+    },
+    "postOpAorticEndoleak": {
+        "display": true,
+        "inputType": "selectize",
+        "lookupCode": 10,
+        "required": false,
+        "labelText": "Post Op Aortic Endoleak: ",
+        "cssClass": "col-12 col-sm-6 col-md-3 col-lg-3 col-xl-2 pt-2 general-input-class"
+    },
+    "postOpAorticEndoleakType": {
+        "display": true,
+        "inputType": "selectize",
+        "lookupCode": 45,
+        "required": false,
+        "labelText": "Type:",
+        "cssClass": "col-12 col-sm-6 col-md-3 col-lg-3 col-xl-2 pt-2 general-input-class"
+    },
+    "aorticRupture": {
+        "display": true,
+        "inputType": "selectize",
+        "lookupCode": 10,
+        "required": false,
+        "labelText": "Aortic Rupture: ",
+        "cssClass": "col-12 col-sm-6 col-md-3 col-lg-3 col-xl-2 pt-2 general-input-class"
+    },
+    "aorticDissection": {
+        "display": true,
+        "inputType": "selectize",
+        "lookupCode": 10,
+        "required": false,
+        "labelText": "Aortic Dissection: ",
+        "cssClass": "col-12 col-sm-6 col-md-3 col-lg-3 col-xl-2 pt-2 general-input-class"
+    },
+    "aorticDissectionType": {
+        "display": true,
+        "inputType": "selectize",
+        "lookupCode": 46,
+        "required": false,
+        "labelText": "Type:",
+        "cssClass": "col-12 col-sm-6 col-md-3 col-lg-3 col-xl-2 pt-2 general-input-class"
+    },
+    "aorticSideBranchMalperfusion": {
+        "display": true,
+        "inputType": "selectize",
+        "lookupCode": 10,
+        "required": false,
+        "labelText": "Aortic Side Branch malperfusion: ",
+        "cssClass": "col-12 col-sm-6 col-md-3 col-lg-3 col-xl-2 pt-2 general-input-class"
+    },
+    "aorticStentGraftinducedEntryTear": {
+        "display": true,
+        "inputType": "selectize",
+        "lookupCode": 10,
+        "required": false,
+        "labelText": "Aortic stent graft induced entry tear: ",
+        "cssClass": "col-12 col-sm-6 col-md-3 col-lg-3 col-xl-2 pt-2 general-input-class"
+    },
+    "anticoagulantEvent": {
+        "display": true,
+        "inputType": "selectize",
+        "lookupCode": 10,
+        "required": false,
+        "labelText": "Anticoagulant Event: ",
+        "cssClass": "col-12 col-sm-6 col-md-3 col-lg-3 col-xl-2 pt-2 general-input-class"
+    },
+  
+    "pericardiocentesis": {
+        "display": true,
+        "inputType": "selectize",
+        "lookupCode": 10,
+        "required": false,
+        "labelText": "Pericardiocentesis: ",
+        "cssClass": "col-12 col-sm-6 col-md-3 col-lg-3 col-xl-2 pt-2 general-input-class"
+    },
+    "gastroIntestinalEvent": {
+        "display": true,
+        "inputType": "selectize",
+        "lookupCode": 10,
+        "required": false,
+        "labelText": "Gastro-Intestinal Event: ",
+        "cssClass": "col-12 col-sm-6 col-md-3 col-lg-3 col-xl-2 pt-2 general-input-class"
+    },
+    "liverDysfunctionOrFailure": {
+        "display": true,
+        "inputType": "selectize",
+        "lookupCode": 10,
+        "required": false,
+        "labelText": "Liver Dysfunction/ Failure: ",
+        "cssClass": "col-12 col-sm-6 col-md-3 col-lg-3 col-xl-2 pt-2 general-input-class"
+    },
+    "multiSystemFailure": {
+        "display": true,
+        "inputType": "selectize",
+        "lookupCode": 10,
+        "required": false,
+        "labelText": "Multi-System Failure: ",
+        "cssClass": "col-12 col-sm-6 col-md-3 col-lg-3 col-xl-2 pt-2 general-input-class"
+    },
+    "atrialFibrillation": {
+        "display": true,
+        "inputType": "selectize",
+        "lookupCode": 10,
+        "required": false,
+        "labelText": "Atrial Fibrillation: ",
+        "cssClass": "col-12 col-sm-6 col-md-3 col-lg-3 col-xl-2 pt-2 general-input-class"
+    },
+    "other": {
+        "display": true,
+        "inputType": "selectize",
+        "lookupCode": 10,
+        "required": false,
+        "labelText": "Other:",
+        "cssClass": "col-12 col-sm-6 col-md-3 col-lg-3 col-xl-2 pt-2 general-input-class"
+    },
+     "serial": {
+        "display": false,
+        "inputType": "",
+        "lookupCode": "",
+        "required": false,
+        "labelText": " ",
+        "cssClass": "col-12 col-sm-6 col-md-3 col-lg-3 col-xl-2 pt-2 general-input-class"
+    },
+    "lineBreak": {
+        "display": true,
+        "inputType": "br",
+        "lookupCode": 0,
+        "required": false,
+        "labelText": "",
+        "cssClass": "col-12 col-sm-6 col-md-3 col-lg-3 col-xl-2 pt-2 general-input-class"
+    }
+}

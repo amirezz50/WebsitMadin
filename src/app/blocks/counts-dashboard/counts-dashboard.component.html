@@ -1,0 +1,38 @@
+<div id="dashboard-counts" class="w-100">
+  <div class="stat-page">
+    <div class="title-st">
+      <p>احصائيات المستشفي </p>
+    </div>
+    <div class="st-content">
+      <div class="row m-0">
+
+        <div class="col-md-3" *ngFor="let count of data;index as i;">
+          <div class="stat-container">
+            <div class="stat-num">
+              <span>{{count.cValueStr}}</span>
+            </div>
+            <!---->
+            <div class="stat-name">{{translate.currentLang == 'ar'? count.nameAr: count.nameEn}}</div>
+          </div>
+          <!--stat-container-->
+        </div>
+        <!--col-->
+        <!--<div class="col-sm-6 col-md-4 col-lg-3 mt-4  " *ngFor="let count of data;index as i;">
+          <div class="card ">
+            <div class="d-flex justify-content-center">
+              <span class="fa-stack fa-3x ">
+                <i class="fa fa-circle fa-stack-2x text-primary"></i>
+                <i class="fa fa-stack-1x fa-inverse">{{count.cValueStr}}</i>
+              </span>
+            </div>
+            <div class="card-block p-1">
+              <h5 class="text-bold">{{translate.currentLang == 'ar'? count.nameAr: count.nameEn}}</h5>
+            </div>
+          </div>
+        </div>-->
+
+
+      </div>
+    </div>
+  </div>
+</div>

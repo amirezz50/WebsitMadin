@@ -1,0 +1,272 @@
+<!-- Bootstrap NavBar -->
+<nav class="navbar navbar-expand-md navbar-dark checkLogout" *ngIf="_authService.isLogged()"
+  [ngClass]="{'checkLogout':this.logToggel==true} ">
+  <button class="navbar-toggler navbar-toggler-right" type="button" data-toggle="collapse"
+    data-target="#navbarNavDropdown" aria-controls="navbarNavDropdown" aria-expanded="false"
+    aria-label="Toggle navigation">
+    <span class="navbar-toggler-icon"></span>
+  </button>
+  <a class="navbar-brand custom-link" [routerLink]="[ '/portal/home' ]">
+    <img src="../../../assets/images/logoo.png" class="logo-dashboard d-inline-block align-top" alt="">
+    <span class="menu-collapsed px-3">{{translate.currentLang =='ar'?
+      _authService.getCashedPatientData?.branchNameAr: _authService.getCashedPatientData?.branchNameEn}}</span>
+  </a>
+
+  <!-- <i class="fa fa-lg fa-home text-white" [routerLink]="[ '/portal/home' ]"></i> -->
+  <div class="collapse navbar-collapse" id="navbarNavDropdown">
+    <ul class="navbar-nav mr-auto">
+      <!-- <li class="nav-item active">
+                <a class="nav-link bg-transparent border-0" [routerLink]="[ '/portal/home' ]">
+                    {{_authService.getCashedPatientData?.fullnameAr}}
+                    <span class="sr-only">(current)</span></a>
+            </li> -->
+      <!-- <li class="nav-item active">
+                <a class="nav-link bg-transparent border-0" href="javascript:void(0)" (click)="logout()">
+                    <span class="fas fa-sign-out-alt fa-lg text-dark"></span>
+                </a>
+            </li> -->
+      <!-- This menu is hidden in bigger devices with d-sm-none.
+            The sidebar isn't proper for smaller screens imo, so this dropdown menu can keep all the useful sidebar itens exclusively for smaller screens  -->
+      <li class="nav-item dropdown d-sm-block d-md-none">
+        <a class="nav-link bg-transparent border-0 dropdown-toggle" href="javascript:void(0)" id="smallerscreenmenu"
+          data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">{{'PO_MAINMENUE'|translate}}</a>
+        <div class="dropdown-menu" aria-labelledby="smallerscreenmenu">
+          <a class="dropdown-item" href="#top">{{'DASHBOARD'|translate}}</a>
+          <a class="dropdown-item" href="#top">{{'PROFILE'|translate}}</a>
+          <a class="dropdown-item" href="#top">{{'PO_VISITS'|translate}}</a>
+          <a class="dropdown-item" href="#top">{{'ABOUT'|translate}}</a>
+        </div>
+      </li><!-- Smaller devices - END -->
+    </ul>
+  </div>
+
+  <div class="dropdown">
+    <a style="    background-color: #178374;
+    color: white;" href="{{websiteUrl}}" class="btn-site" target="_blank">
+
+      <span style=" background-color: #178374;
+      color: white;">{{translate.currentLang=='ar'?'الموقع':'Website'}}</span>
+
+    </a>
+
+  </div>
+
+
+  <div class="dropdown">
+    <button class="btn dropdown-toggle btn-header" type="button" id="dropdownMenu" data-toggle="dropdown"
+      aria-haspopup="true" aria-expanded="false">
+      <span>{{langDesc}}</span>
+    </button>
+    <div class="dropdown-menu" aria-labelledby="dropdownMenu">
+
+      <a class="dropdown-item" (click)="LangChange(1)">
+        العربية
+      </a>
+      <!-- href="javascript:void(0);"  [routerLink]="[ '/portal/pat-reset-password' ]" -->
+      <a class="dropdown-item" (click)="LangChange(2)">
+        English
+      </a>
+
+    </div>
+  </div>
+
+  <div class="dropdown">
+    <button class="btn dropdown-toggle btn-header" type="button" id="dropdownMenuButton" data-toggle="dropdown"
+      aria-haspopup="true" aria-expanded="false">
+      <img type="image" src="assets/images/Portal/avatar.png" class="user-img">
+      <span>{{translate.currentLang =='ar'?
+        _authService.getCashedPatientData?.fullnameAr:_authService.getCashedPatientData?.fullnameEn}}</span>
+    </button>
+    <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
+
+      <a class="dropdown-item" href="javascript:void(0);" [routerLink]="[ '/portal/patient-profile' ]">
+        {{'ProfileInformation'|translate}}
+      </a>
+
+      <a class="dropdown-item" href="javascript:void(0);" [routerLink]="[ '/portal/pat-reset-password' ]">
+        {{'ChangePassword'|translate}}
+      </a>
+
+    </div>
+  </div>
+  <!-- <div class="dropdown">
+        <button class="dropbtn">Dropdown
+            <i class="fa fa-caret-down"></i>
+        </button>
+        <div class="dropdown-content">
+            <a href="#">Link 1</a>
+            <a href="#">Link 2</a>
+            <a href="#">Link 3</a>
+        </div>
+    </div> -->
+
+
+</nav><!-- NavBar END -->
+
+
+
+<!-- Bootstrap row -->
+<div [ngClass]="{'row': _authService.isLogged(),'checkLogout':this.logToggel==true} " id="body-row">
+  <!-- Sidebar -->
+  <div id="sidebar-container" *ngIf="_authService.isLogged()" class="sidebar-expanded d-none d-md-block">
+    <!-- d-* hiddens the Sidebar in smaller devices. Its itens can be kept on the Navbar 'Menu' -->
+    <!-- Bootstrap List Group -->
+    <ul class="list-group">
+
+      <!-- Separator with title -->
+      <!-- <li class="list-group-item sidebar-separator-title text-muted d-flex align-items-center menu-collapsed">
+        <small>{{'PO_MAINMENUE' | translate}}</small>
+      </li> -->
+      <!-- /END Separator -->
+      <a routerLinkActive="active" [routerLink]="[ '/portal/home' ]" class=" list-group-item list-group-item-action">
+        <div class="d-flex w-100 justify-content-start align-items-center">
+          <img src="assets/images/Portal/d1.png" alt="">
+          <span class="menu-collapsed">{{'DASHBOARD' | translate}}</span>
+        </div>
+      </a>
+      <!-- Menu with submenu -->
+      <!-- <a  data-toggle="collapse" aria-expanded="false"
+                class=" list-group-item list-group-item-action flex-column align-items-start">
+                <div class="d-flex w-100 justify-content-start align-items-center">
+                    <span class="fa fa-dashboard fa-fw ml-3"></span>
+                    <span >{{'PO_DASHBOARD' | translate}}</span>
+                    <span class="submenu-icon mr-auto"></span>
+                </div>
+            </a> -->
+      <!-- Submenu content
+
+            <div id='submenu1' class="collapse sidebar-submenu">
+                <a [routerLink]="[ '/portal/visits-history' ]" routerLinkActive="active"
+                    class="list-group-item list-group-item-action  text-white">
+                    <span class="menu-collapsed">الزيارات</span>
+                </a>
+                <a [routerLink]="[ '/portal/pat-services' ]" routerLinkActive="active"
+                    class="list-group-item list-group-item-action  text-white">
+                    <span class="menu-collapsed">الفحوصات</span>
+                </a>
+                <a [routerLink]="[ '/portal/rx-history' ]" routerLinkActive="active"
+                    class="list-group-item list-group-item-action  text-white">
+                    <span class="menu-collapsed">الروشتات</span>
+                </a>
+            </div> -->
+      <a [routerLink]="[ '/portal/visits-history' ]" routerLinkActive="active"
+        class=" list-group-item list-group-item-action">
+        <div class="d-flex w-100 justify-content-start align-items-center">
+          <img src="assets/images/Portal/d2.png" alt="">
+          <span class="menu-collapsed">{{'PO_VISITS' | translate}}</span>
+        </div>
+      </a>
+      <!-- Menu with submenu
+            <a data-toggle="collapse" aria-expanded="false"
+                class=" list-group-item list-group-item-action flex-column align-items-start">
+                <div class="d-flex w-100 justify-content-start align-items-center">
+                    <span class="fa fa-calendar fa-fw ml-3"></span>
+                    <span class="menu-collapsed">{{'PO_VISITS' | translate}}</span>
+                    <span class="submenu-icon mr-auto"></span>
+                </div>
+            </a> -->
+      <!-- Submenu content
+
+            <div id='submenu2' class="collapse sidebar-submenu">
+                <a [routerLink]="[ '/portal/new-order' ]" routerLinkActive="active"
+                    class="list-group-item list-group-item-action  text-white">
+                    <span class="menu-collapsed">حجز فحص جديد</span>
+                </a>
+                <a [routerLink]="[ '/portal/new-reservation' ]" routerLinkActive="active"
+                    class="list-group-item list-group-item-action  text-white">
+                    <span class="menu-collapsed">حجز ميعاد جديد</span>
+                </a>
+                <a [routerLink]="[ '/portal/reservations-history' ]" routerLinkActive="active"
+                    class="list-group-item list-group-item-action  text-white">
+                    <span class="menu-collapsed">الحجوزات السابقة</span>
+                </a>
+            </div> -->
+      <a [routerLink]="[ '/portal/reservations-history' ]" routerLinkActive="active"
+        class=" list-group-item list-group-item-action">
+        <div class="d-flex w-100 justify-content-start align-items-center">
+          <img src="assets/images/Portal/d3.png" alt="">
+          <span class="menu-collapsed">{{'PO_APPOINTMENT' | translate}}</span>
+        </div>
+      </a>
+      <!-- <a data-toggle="collapse" aria-expanded="false"
+                class=" list-group-item list-group-item-action flex-column align-items-start">
+                <div class="d-flex w-100 justify-content-start align-items-center">
+                    <span class="fa fa-cogs fa-fw ml-3"></span>
+                    <span class="menu-collapsed">{{'PO_APPOINTMENT' | translate}}</span>
+                    <span class="submenu-icon mr-auto"></span>
+                </div>
+            </a> -->
+
+      <!-- Submenu content
+            <div id='submenu3' class="collapse sidebar-submenu">
+                <a [routerLink]="[ '/portal/patient-profile' ]" routerLinkActive="active"
+                    class="list-group-item list-group-item-action  text-white">
+                    <span class="menu-collapsed">الصفحة الشخصية</span>
+                </a>
+                <a [routerLink]="[ '/portal/pat-reset-password' ]" routerLinkActive="active"
+                    class="list-group-item list-group-item-action  text-white">
+                    <span class="menu-collapsed">كلمة المرور</span>
+                </a>
+            </div> -->
+
+      <!-- Separator with title -->
+      <!-- <li class="list-group-item sidebar-separator-title text-muted d-flex align-items-center menu-collapsed">
+                <small>التواصل</small>
+            </li>
+            /END Separator -->
+
+      <a [routerLink]="[ '/portal/pat-services' ]" routerLinkActive="active"
+        class=" list-group-item list-group-item-action">
+        <div class="d-flex w-100 justify-content-start align-items-center">
+          <img src="assets/images/Portal/d4.png" alt="">
+          <span class="menu-collapsed fontsiz ">
+            <!-- {{'PO_CHECKUPS' | translate}} -->
+            {{translate.currentLang=='ar'?'الفحوصات المخبرية والاشعاعية':'Lab And X-Ray Check Up'}}
+          </span>
+        </div>
+      </a>
+
+      <a [routerLink]="[ '/portal/pat-examination' ]" routerLinkActive="active"
+        class=" list-group-item list-group-item-action">
+        <div class="d-flex w-100 justify-content-start align-items-center">
+          <img src="assets/images/Portal/d4.png" alt="">
+          <span class="menu-collapsed">
+            {{'Services' | translate}}
+          </span>
+        </div>
+      </a>
+      <a [routerLink]="[ '/portal/rx-history' ]" routerLinkActive="active"
+        class=" list-group-item list-group-item-action">
+        <div class="d-flex w-100 justify-content-start align-items-center">
+          <img src="assets/images/Portal/d5.png" alt="">
+          <span class="menu-collapsed">{{'PO_PRESCRIPTIONS' | translate}}
+          </span>
+        </div>
+      </a>
+    </ul><!-- List Group END-->
+    <!-- <li class="nav-item active">
+                <a class="nav-link bg-transparent border-0" href="javascript:void(0)" (click)="logout()">
+                    <span class="fas fa-sign-out-alt text-white">LogOut</span>
+                </a>
+            </li> -->
+    <div>
+      <button type="button" class="btn btn-logout" data-dismiss="modal" (click)="openDialog()">
+        <img src="assets/images/Portal/logout.png" alt=""> <span> {{'LOGOUT'|translate}} </span> </button>
+    </div>
+  </div><!-- sidebar-container END -->
+  <!-- MAIN -->
+  <div class="col">
+    <router-outlet></router-outlet>
+  </div>
+  <!-- Main Col END -->
+</div>
+<div class="confirmDialog" *ngIf=" logToggel==true ">
+  <div>
+    <h1>{{'LOGOUT'|translate}}?</h1>
+    <h3>{{'AREYOUSURETOLOGOUT'|translate}}?</h3>
+    <button class="btn btnlogout" (click)="logout()"> {{'LOGOUT'|translate}}</button>
+    <button class="btn btn-cancel" (click)="cancelDialog()">{{'Cancel'|translate}}</button>
+  </div>
+
+</div>
+<!-- body-row END -->

@@ -1,0 +1,26 @@
+<button mat-icon-button>
+
+  <span *ngIf="appCodesResult && appCodesResult.length > 1" style="font-size: 18px !important;"
+    [ngStyle]="{'color':iconColor}" class="fas fa-bars" [matMenuTriggerFor]="menu" (click)="toggleActions()"></span>
+
+  <span title="{{translate.currentLang == 'ar'? defaultAction.nameAr :defaultAction.nameEn}}"
+    [ngStyle]="{'color': defaultAction.serial == 3 || defaultAction.serial == 403 ?  '#E61414' : iconColor}"
+    style="font-size: 18px !important;margin: 7px;"
+    *ngIf="defaultAction &&  defaultAction.cssClasses != ''" (click)="action(defaultAction)"
+    class="far {{defaultAction.cssClasses}}"></span>
+
+</button>
+
+<mat-menu #menu="matMenu" xPosition="before" yPosition="below">
+  <div (mouseleave)="onmouseout()">
+    <button mat-menu-item *ngFor="let icon of appCodesResult" (click)="action(icon)">
+
+      <span *ngIf="!selectizeOptionsView" class="far {{icon.cssClasses}}" aria-hidden="true"
+        [ngStyle]="{'color': icon.serial == 3 || icon.serial == 403 ?  '#E61414' : iconColor}"
+        style="font-size: 18px !important;margin: 7px;"></span>
+
+      <span *ngIf="icon.iconeFlagTogglerValue" class="fa fa-check" aria-hidden="true"> </span>
+      <span>{{translate.currentLang == 'ar'? icon.nameAr :icon.nameEn}}</span>
+    </button>
+  </div>
+</mat-menu>

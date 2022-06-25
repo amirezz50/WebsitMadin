@@ -1,0 +1,392 @@
+<!-- [ngClass]="{'d-none': (pageMode == 1 || pageMode == 4 ) && ignorePageMode != 1 }" -->
+
+<div class="container-fluid mt-4" [hidden]="_patientVisitCode">
+    <div class="row p-2" [ngClass]="{'d-none': showUpMenue != 0}">
+        <fieldset class="col-md-7 fieldset-radio "
+            [ngClass]="{'pt-5': targetType == 1, 'pb-4 pt-2': targetType != 1,'d-none': (pageMode == 1 || pageMode == 4 || pageMode == 2 || pageMode == 3|| pageMode == 9) && ignorePageMode != 1 }">
+            <legend class="legend-radio">{{'FILTERSELECTION' | translate}}</legend>
+            <div class="form-check-inline mx-4" *ngFor="let item of lookupDataList; index as i;">
+                <label class="form-check-label fsz" [ngClass]="{'text-primary': item.code == targetType}">
+                    <input type="radio" class="form-check-input xvx mx-2" name="lookupSerial"
+                        [checked]="item.code == targetType" [value]="item.code" (change)="getChangeData($event)">
+                    {{translate.currentLang == 'ar' ? item.nameAr : item.nameEn}}
+                </label>
+            </div>
+        </fieldset>
+        <div
+            [ngClass]="{'col-md-1': (pageMode != 1 || pageMode != 4 || pageMode == 2 || pageMode == 3 || pageMode == 9) && ignorePageMode == 1, 'col-md-4': (pageMode == 1 || pageMode == 4 || pageMode == 2 || pageMode == 3) && ignorePageMode != 1}">
+        </div>
+        <fieldset class="col-md-4 fieldset- py-2">
+            <legend *ngIf="targetType == 1" class="legend-radio">{{'PATIENTDATACHOOSE' | translate}}</legend>
+            <legend *ngIf="targetType == 2" class="legend-radio">{{'EMPLOYEEDATACHOOSE' | translate}}</legend>
+            <legend *ngIf="targetType == 3" class="legend-radio">{{'CLIENTDATACHOOSE' | translate}}</legend>
+            <legend *ngIf="targetType == 4" class="legend-radio">{{'supplierMainData' | translate}}</legend>
+            <legend *ngIf="targetType == 5" class="legend-radio">{{'OTHERDATACHOOSE' | translate}}</legend>
+            <legend *ngIf="targetType ==6" class="legend-radio">{{'BANKTRANSFORMERSERIAL' | translate}}</legend>
+            <legend *ngIf="targetType > 5  && targetType != 9" class="legend-radio">{{'DATACHOOSE' | translate}}</legend>
+            <div>
+                <!-- [cancelColor]="'#dc3545'" -->
+                <sanabel-selectize [outlineSize]="0" [radiusSize]="25" [borderColor]="'#24b4e9'" [textColor]="'#24b4e9'"
+                    (clicked)="getAllImageForFirst($event, 1)" *ngIf="targetType == 1" [appcode]="1023"
+                    [simpleView]="true"></sanabel-selectize>
+                <br *ngIf="targetType == 1">
+                <sanabel-selectize [SearchKeys]="{PatCode:dataToSave.userCode}" [outlineSize]="0" [radiusSize]="25"
+                    [borderColor]="'#24b4e9'" [textColor]="'#24b4e9'" (clicked)="getVisitSerial($event)"
+                    *ngIf="targetType == 1" [appcode]="1096" #visitSerial2 [simpleView]="true"></sanabel-selectize>
+                <sanabel-selectize [outlineSize]="0" [radiusSize]="25" [borderColor]="'#24b4e9'" [textColor]="'#24b4e9'"
+                    (clicked)="getAllImageForFirst($event)" *ngIf="targetType == 2" [appcode]="1020" [(ngModel)]="empCode"
+                    [simpleView]="true"></sanabel-selectize>
+                <sanabel-selectize [outlineSize]="0" [radiusSize]="25" [borderColor]="'#24b4e9'" [textColor]="'#24b4e9'"
+                    (clicked)="getAllImageForFirst($event)" *ngIf="targetType == 3 && mode!=5" [appcode]="1040"
+                    [simpleView]="true"></sanabel-selectize>
+                <sanabel-selectize [outlineSize]="0" [radiusSize]="25" [borderColor]="'#24b4e9'" [textColor]="'#24b4e9'"
+                    (clicked)="getAllImageForFirst($event)" *ngIf="targetType == 3 && mode==5" [appcode]="1434"
+                    [simpleView]="true"></sanabel-selectize> 
+                <sanabel-selectize [outlineSize]="0" [radiusSize]="25" [borderColor]="'#24b4e9'" [textColor]="'#24b4e9'"
+                    (clicked)="getAllImageForFirst($event)" *ngIf="targetType == 4" [appcode]="1080"
+                    [simpleView]="true"></sanabel-selectize> 
+                <sanabel-selectize [outlineSize]="0" [radiusSize]="25" [borderColor]="'#24b4e9'" [textColor]="'#24b4e9'"
+                    (clicked)="getAllImageForFirst($event)" *ngIf="targetType == 6" [appcode]="8071"
+                    [simpleView]="true"></sanabel-selectize>
+                <!-- <input type="text " (clicked)="getAllImageForFirst($event)" *ngIf="targetType == 4"> -->
+                <div class="d-flex align-items-center mt-3 justify-content-center">
+                    <div class="w-50 text-center" *ngIf="targetType == 1">
+                        <label class="mb-0" for="vStatus">{{ 'ALLVISITS' | translate }}</label>
+                        <input type="checkbox" id="vStatus" class="form-control" [(ngModel)]="allVisits"
+                            (change)="getAllVisitsData($event)">
+                    </div>
+                    <div class="w-50 text-center">
+                        <button class="btn btn-outline-info px-5" (click)="getImagesData()">{{'SEARCH' |
+                            translate}}</button>
+                    </div>
+                </div>
+            </div>
+        </fieldset>
+    </div>
+    <div class="row p-2" [hidden]="!showVisitSerial">
+        <fieldset class="col-md-4 fieldset-radio pb-4 pt-2">
+            <legend class="legend-radio">{{'CHOOSEPATIENTVISIT' | translate}}</legend>
+            <div class="col">
+                <sanabel-selectize [SearchKeys]="{PatCode:dataToSave.userCode}" [outlineSize]="0" [radiusSize]="25"
+                    [borderColor]="'#24b4e9'" [textColor]="'#24b4e9'" (clicked)="getVisitSerial($event)"
+                    *ngIf="targetType == 1" [appcode]="1096" #visitSerial1 [simpleView]="true"></sanabel-selectize>
+            </div>
+            <div class="col">
+                <label for="vStatus">{{ 'ALLVISITS' | translate }}</label>
+                <input type="checkbox" id="vStatus" [(ngModel)]="allVisits" class="form-control col-sm-12"
+                    (change)="getAllVisitsData($event)">>
+            </div>
+            <div>
+
+                <div class=" w-50 text-center">
+                    <button class="btn btn-outline-info px-5" (click)="getImagesData()">{{'SEARCH' |
+                        translate}}</button>
+                </div>
+            </div>
+
+
+        </fieldset>
+    </div>
+</div>
+
+<div class="container-fluid mt-4" [ngClass]="{'d-none': pageMode != 1 ||  pageMode != 4 || approvals }">
+    <fieldset class="col-md-8 fieldset-radio pb-4 pt-2">
+        <legend *ngIf="targetType == 1" class="legend-radio">{{'PATIENTDATACHOOSE' | translate}}</legend>
+        <div class="row">
+
+            <div class="col-5" [hidden]="_patientVisitCode">
+                <sanabel-selectize [outlineSize]="0" [radiusSize]="15" [borderColor]="'#24b4e9'" [textColor]="'#24b4e9'"
+                    (clicked)="getAllImageForFirst($event, 1)" *ngIf="targetType == 1" [appcode]="1023"
+                    [simpleView]="true"></sanabel-selectize>
+            </div>
+            <div class="col-4">
+                <sanabel-selectize [SearchKeys]="{PatCode:dataToSave.userCode}" [outlineSize]="0" [radiusSize]="15"
+                    [borderColor]="'#24b4e9'" [textColor]="'#24b4e9'" (clicked)="getVisitSerial($event)"
+                    *ngIf="targetType == 1" [appcode]="1096" #visitSerial [simpleView]="true"></sanabel-selectize>
+            </div>
+            <div class="col-2">
+                <label for="vStatus">{{ 'ALLVISITIS' | translate }}</label>
+                <input type="checkbox" id="vStatus" class="form-control col-sm-12" (change)="getAllVisitsData($event)">
+            </div>
+            <div class="col-1" style="margin-left: 20px; margin-top: 10px;
+            margin-right: 100px;">
+                <button class="btn btn-outline-info px-5" (click)="getImagesData()">{{'SEARCH' | translate}}</button>
+            </div>
+        </div>
+    </fieldset>
+</div>
+
+<div class="contianer-fluid my-4">
+    <div class="files-body p-4 pb-5">
+        <!-- Image Form -->
+        <div class="row mx-0">
+            <fieldset class="col-md-8 fieldset-radio bg-white pb-4 pt-2">
+                <legend class="legend-radio">{{'IMAGEDATA' | translate}}</legend>
+                <div class="row">
+                    <div class="col-md-6">
+                        <div class="md-form">
+                            <input type="text" name="imageName" required [(ngModel)]="imageData.imageName"
+                                placeholder="{{'IMAGENAME' | translate}}" class="form-control input-radius bg-light">
+                        </div>
+                    </div>
+                    <div class="col-md-6">
+                        <div class="form-group">
+                            <div class="input-group input-group-sm">
+                                <input required class="form-control input-radius bg-light"
+                                    placeholder="{{'TRANCEDATE' | translate}}" name="date"
+                                    [(ngModel)]="imageData.transData" ngbDatepicker #dateF="ngbDatepicker">
+                                <div class="input-group-addon" (click)="dateF.toggle()">
+                                    <i class="fa fa-calendar"></i>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="row mt-3">
+                    <div class="col-md-12">
+                        <div class="md-form">
+                            <input type="text" name="imageNotes" [(ngModel)]="imageData.notes"
+                                placeholder="{{'Notes' | translate}}" class="form-control input-radius bg-light">
+                        </div>
+                    </div>
+                </div>
+                <div class="row mt-3" *ngIf="targetType == 4">
+                    <div class="col-md-6">
+                        <div class="md-form">
+                            <div>
+                                <legend class="legend-radio">{{'TransCode' | translate}}</legend>
+
+                                <sanabel-selectize appcode="1413" [customPlaceHolder]="'TransCode'" [radiusSize]="15"
+                                    [borderColor]="'#24b4e9'" [textColor]="'#24b4e9'" [simpleView]="true"
+                                    [SearchKeys]="{WithoutBill:1,SupplierCode:dataToSave.userCode }"
+                                    [(ngModel)]="imageData.transSerial" #transSerial (clicked)="setTransSerial($event)">
+                                </sanabel-selectize>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-md-6">
+                        <div class="md-form">
+
+                            <div *ngIf="targetType == 4">
+                                <legend class="legend-radio">{{'BILLNO' | translate}}</legend>
+                                <sanabel-selectize appcode="1412" placeholder="BILLNO" [radiusSize]="15"
+                                    [customPlaceHolder]="'BILLNO'" [borderColor]="'#24b4e9'" [textColor]="'#24b4e9'"
+                                    [simpleView]="true"
+                                    [SearchKeys]="{SupplierCode:dataToSave.userCode,TransSerial:imageData.transSerial }"
+                                    [(ngModel)]="imageData.billNumber" (clicked)="getImagesData()" #billNumber>
+                                </sanabel-selectize>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+            </fieldset>
+            <div class="col-4">
+                <fieldset class="col-md-12 fieldset-radio bg-white pb-4 pt-2">
+                    <legend class="legend-radio">{{'IMAGESSEARCH' | translate}}</legend>
+                    <div class="row pt-4">
+                        <div class="col-md-12">
+                            <div class="input-group">
+                                <div class="input-group-addon icon-style"><span class="fas fa-search"></span></div>
+                                <input type="text" #box (keyup.enter)="getImagesByFilter(box.value)"
+                                    class="form-control input-radius bg-light"
+                                    placeholder="{{'IMAGESSEARCH' | translate}}">
+                            </div>
+                        </div>
+                    </div>
+                </fieldset>
+                <fieldset *ngIf="showPatScanner == true" class="col-md-12 fieldset-radio bg-white pb-4 pt-2">
+                    <legend class="legend-radio"> {{'TURNONPATSCANNER' | translate}}</legend>
+                    <div class="form-check-inline mx-4">
+                        <label class="form-check-label fsz">
+                            <input type="radio" class="form-check-input xvx mx-2" name="activePatientStep" [value]="2"
+                                (click)="setChangeStep($event)" [checked]="flagCode == null">
+                            {{'ACTIVE' | translate}}
+                        </label>
+                    </div>
+                    <div class="form-check-inline mx-4">
+                        <label class="form-check-label fsz">
+                            <input type="radio" class="form-check-input xvx mx-2" name="activePatientStep" [value]="1"
+                                (click)="setChangeStep($event)" [checked]="flagCode == 1">
+                            {{'InActive' | translate}}
+                        </label>
+                    </div>
+                </fieldset>
+            </div>
+        </div>
+
+        <!-- Tabs -->
+        <div class="row mx-0">
+            <div class="tabs-menu mt-3 d-flex">
+                <nav>
+                    <div class="nav nav-tabs nav-fill" id="nav-tab" role="tablist">
+                        <a class="nav-item nav-link font-tab"
+                            (click)="getLookupSerial(tab.serial, tab.nameEn);selectSerial = (indx+1);"
+                            [ngClass]="{'active': (indx+1) == selectSerial}"
+                            *ngFor="let tab of docCategories; index as indx" id="nav-home-tab" data-toggle="tab"
+                            href="#tab{{indx+1}}" role="tab" aria-controls="nav-home"
+                            aria-selected="true">{{translate.currentLang == 'ar' ? tab.nameAr : tab.nameEn}} <span
+                                *ngIf="tab.imgCount > 0" class="badge badge-danger">{{tab.imgCount}}</span></a>
+                    </div>
+                </nav>
+            </div>
+        </div>
+        <hr class="border-bold">
+        <div class="row mx-0">
+            <div class="col-2 d-none d-sm-block mb-3 mb-md-0 p-0">
+                <div class="list-sidebar">
+                    <div class="top-search p-3">
+                        <div class="input-group">
+                            <div class="input-group-addon icon-style-sm text-dark">
+                                <span class="fas fa-search"></span>
+                            </div>
+                            <input type="text" class="form-control border-custom" #txtvalue
+                                (keyup)="filterListByName(txtvalue.value)"
+                                placeholder="{{'CLASSIFICATIONFILTER' | translate}}">
+                        </div>
+                    </div>
+                    <div class="bottom-list">
+                        <ul class="list-group text-center">
+                            <li *ngFor="let cat of ChildCategory; index as i"
+                                class="list-group-item px-2 rounded-0 bg-gray"
+                                [ngClass]="{'focus' : cat.serial == dataToSave.docManagmentSerial}"
+                                (click)="getChildCategoryId(cat.serial,cat.docManagementLookupSerial);">
+                                {{translate.currentLang == 'ar' ? cat.nameAr : cat.nameEn}} <span *ngIf="cat.count > 0"
+                                    class="badge badge-danger">{{cat.count}}</span>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+            <div class="d-none d-sm-block col-sm-7 mb-3 mb-md-0 text-center">
+                <!-- rotate -->
+                <span class="btn btn-danger fa fa-repeat mb-2 rounded-0"
+                    (click)="rotateImage('LEFT', 'general')"></span>
+                <span class="btn btn-danger fa fa-undo mb-2 rounded-0" (click)="rotateImage('RIGHT', 'general')"></span>
+                <!-- zoom -->
+                <span class="btn btn-success fa fa-search-plus mb-2 ml-2 rounded-0"
+                    (click)="zoomImg('IN', 'general')"></span>
+                <span class="btn btn-success fa fa-search-minus mb-2 rounded-0"
+                    (click)="zoomImg('OUT', 'general')"></span>
+                <div class="img-view text-center" (click)="slectImage()">
+                    <img id="imgPreview-general" *ngIf="publishPath && publishPath != null" src="{{publishPath}}"
+                        style="width: 400px; height: 400px;">
+                    <i *ngIf="!publishPath || publishPath == null" class="py-5 w-100 mx-auto d-block fa fa-picture-o">
+                        <p class="img-paragraph">your image will be viewed here</p>
+                    </i>
+                </div>
+            </div>
+            <div class="d-block d-sm-none col-sm-7 order-3 order-sm-2 mb-3 mb-md-0"
+                (click)="smallScreenSelectedImage()">
+                <div class="img-view text-center">
+                    <img *ngIf="_imageBase64 && _imageBase64 != null" [src]="_imageBase64"
+                        class="w-100 mx-auto d-block img-heigh">
+                    <i *ngIf="!_imageBase64 || _imageBase64 == null" class="py-5 w-100 mx-auto d-block fa fa-picture-o">
+                        <p class="img-paragraph">your image will be viewed here</p>
+                    </i>
+                </div>
+            </div>
+
+            <div class="col-3 d-none d-sm-block mb-3 mb-md-0">
+                <div class="tab-image-list tab-content pr-0" id="nav-tabContent">
+                    <div class="tab-pane fade show active" id="tab{{selectSerial}}" role="tabpanel"
+                        aria-labelledby="nav-home-tab">
+                        <!-- <img *ngIf="!alldata || alldata.length == 0" transdate="null" imagename="null" notes="null"
+                            serial="0" #img (click)="getImagePath(img.src, img)"
+                            src="../../../../assets/images/160x110.png" class="w-100 h-100 mx-auto d-block"> -->
+                        <div *ngIf="alldata.length == 0" class="img-view aside-img-view text-center">
+                            <i class="py-3 col-md-py-5 w-100 mx-auto d-block fa fa-picture-o">
+                                <p>your image will be viewed here</p>
+                            </i>
+                        </div>
+                        <div #image class="image-wrapper" id="test-for-delete">
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div *ngIf="showSelectedImage" class="col d-none d-sm-block selected-image">
+            <div class="text-center rotate-view">
+                <span class="btn btn-danger fa fa-repeat mb-2 rounded-0" (click)="rotateImage('LEFT', 'web')"></span>
+                <span class="btn btn-danger fa fa-undo mb-2 rounded-0" (click)="rotateImage('RIGHT', 'web')"></span>
+            </div>
+            <div class="text-center scale-view">
+                <span class="btn btn-success fa fa-search-plus mb-2 rounded-0" (click)="zoomImg('IN', 'web')"></span>
+                <span class="btn btn-success fa fa-search-minus mb-2 rounded-0" (click)="zoomImg('OUT', 'web')"></span>
+            </div>
+            <div>
+                <span class="fa fa-chevron-left slide slide-left" (click)="slideImage('NEXT')"></span>
+                <!-- <pinch-zoom [disableZoomControl]="'never'"> -->
+                <img id="imgPreview-web" [src]="popupPublishPath">
+                <!-- </pinch-zoom> -->
+                <span class="fa fa-chevron-right slide slide-right" (click)="slideImage('PREV')"></span>
+            </div>
+            <button (click)="hideSelectedImage()"><i class="fa fa-times"></i></button>
+        </div>
+
+        <div *ngIf="showSelectedImage" class="d-block d-sm-none col selected-image">
+            <img [src]="popupPublishPath">
+            <button (click)="hideSelectedImage()"><i class="fa fa-times"></i></button>
+        </div>
+    </div>
+</div>
+
+<div class="btn-list-down">
+    <div class="choose_file">
+        <button type="button" class="rounded-circle mx-2 btn-lg primary-button"><span
+                class="fas fa-plus-circle"></span></button>
+        <input type="file" accept="image/*" *ngIf="!multiple" name="cameraImg" id="cameraImg"
+            (change)="setEvent($event)" ng2FileSelect [uploader]="uploader" />
+        <input type="file" accept="image/*" *ngIf="multiple" name="cameraImg" id="cameraImg" (change)="setEvent($event)"
+            ng2FileSelect [uploader]="uploader" multiple />
+    </div>
+    <button type="submit" class="text-white rounded-circle mx-2 btn-lg search-button"
+        [disabled]="imageData.imageName == '' || !imageData.imageName || imageData.imageName == null"
+        (click)="onSubmit()"><span class="fas fa-floppy-o"></span></button>
+    <button type="button" (click)="openCamera()" class="btn btn-primary rounded-circle mx-2 btn-lg primary-button"><span
+            class="fa fa-camera"></span></button>
+    <button class="btn btn-primary rounded-circle mx-2 btn-lg primary-button" (click)="addMedicalDataPopup('lg')"
+        [disabled]="!applayPrint"><span class="fas fa-print"></span></button>
+</div>
+
+
+
+<block-modal-container #popup (close)="onpopupClose($event)">
+    <ng-container class="modal-title">
+        <h3>
+            {{translate.currentLang == 'ar' ? 'عرض الصورة' : 'Display Page as A4'}}
+        </h3>
+    </ng-container>
+    <ng-container class="modal-body">
+        <div class="img-view" id="section">
+            <img *ngIf="_imageBase64 && _imageBase64 != null" [src]="_imageBase64" class="w-100 mx-auto d-block">
+            <img *ngIf="!_imageBase64 || _imageBase64 == null" src="../../../../assets/images/800x600.png"
+                class="w-100 mx-auto d-block">
+        </div>
+        <!-- <app-print-page #printComponent section="section"></app-print-page> -->
+    </ng-container>
+</block-modal-container>
+
+<block-modal-container #modal (close)="afterPopupClosed($event)">
+    <div class="modal-body">
+        <div class="row">
+            <div class="col-6">
+                <h4 class="text-center">taken photo</h4>
+                <canvas id="canvas" [hidden]="true"></canvas>
+                <div class="output">
+                    <img id="photo" alt="The screen capture will appear in this box.">
+                </div>
+            </div>
+            <div class="col-6">
+                <div class="camera">
+                    <h4 class="text-center">Live Stream</h4>
+                    <video id="video" #video (canplay)="canPlay($event)">Video stream not available.</video>
+                    <button id="startbutton" (click)="takepicture($event)">Take photo</button>
+                    <button (click)="uploadBase64()">Save</button>
+                </div>
+            </div>
+        </div>
+    </div>
+</block-modal-container>
+<app-scanner></app-scanner>

@@ -1,0 +1,16 @@
+<p-dataTable  tableStyleClass="table table-bordered table-striped" [value]="therapeuticCard" selectionMode="single" [rows]="10"  [lazy]="true" (onPage)="paginate($event)" [paginator]="true" [pageLinks]="3" [rowsPerPageOptions]="[5,10,20,50,100]"
+             >
+    <p-column field="code" header="{{ 'SERIAL' | translate }}"  ></p-column>
+    <p-column field="patientCode" header="{{ 'PATCODE' | translate }}"  ></p-column>
+    <p-column field="cardNo" header="{{ 'CARDNUMBER' | translate }}"  ></p-column>
+    <p-column field="contractId" header="{{ 'contractID' | translate }}"  ></p-column>
+    <p-column field="policyNumber" header="{{ 'PolicyNumber' | translate }}"  ></p-column>
+    <p-column field="startDate" header="{{ 'StartDate' | translate }}"  ></p-column>
+    <p-column field="endDate" header="{{ 'EndDate' | translate }}"  ></p-column>
+    <p-column  header="{{ 'ACTIONS' | translate }}" [style]="{'width': '10%'}">
+        <ng-template pTemplate="options" let-row="rowData">
+          <icon-action (clicked)="onRowIconClick($event , row)" [rowData]="row" [appCodes]="[403]"></icon-action>
+        </ng-template>
+      </p-column>
+</p-dataTable>
+

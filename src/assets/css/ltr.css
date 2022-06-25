@@ -1,0 +1,237 @@
+body {
+    direction: ltr;
+    text-align: left;
+}
+
+.app-side {
+    right: auto;
+    left: 0;
+}
+
+.right-area {
+    margin-left: auto;
+    margin-right: 0;
+}
+
+header .container-fluid {
+    padding-left: 15px !important;
+    padding-right: 0 !important;
+}
+
+.lang-area .lang-name {
+    margin-right: 0px;
+    margin-left: 5px;
+}
+
+.user-img {
+    margin-right: 0;
+    margin-left: 10px;
+}
+
+.lang-area {
+    margin-right: 15px;
+    margin-left: 0;
+}
+
+.lang-area .languages-dropdown {
+    right: auto;
+    left: 0
+}
+
+.lang-area .languages-dropdown:before {
+    left: 11px;
+    right: auto;
+}
+
+.new-in-input-container i {
+    left: auto;
+    right: 8px;
+}
+
+.lang-area .languages-dropdown:after {
+    right: auto;
+    left: 12px;
+}
+
+.step:after {
+    right: -28px;
+    left: auto;
+    border-left: 0 !important;
+    border-bottom: 0 !important;
+    border-right: 1px solid rgba(140, 147, 158, 0.38);
+    border-top: 1px solid rgba(140, 147, 158, 0.38);
+}
+
+.step {
+    padding: 10px 7px 10px 48px;
+}
+
+.step::before {
+    right: auto;
+    left: 0;
+    clip-path: polygon(0% 20%, 60% 20%, 60% 0%, 100% 50%, 60% 100%, 60% 80%, 0% 80%) !important;
+}
+
+.step:first-child {
+    padding-left: 15px;
+}
+
+.accordion-area .btn-link {
+    text-align: left;
+}
+
+.accordion-area .btn-link i {
+    float: right;
+}
+
+.noti {
+    left: auto !important;
+    right: 3px !important;
+}
+
+.predcramb ul {
+    text-align: left;
+}
+
+.metismenu .arrow,
+.nav-tools {
+    margin-left: auto;
+    margin-right: 0 !important;
+}
+
+.fav-div {
+    left: auto;
+    right: -120%;
+}
+
+.show-fav-area {
+    right: 0;
+    left: auto
+}
+
+.fav-div .close-fav-div {
+    right: 20px;
+    left: auto;
+}
+
+
+/* abood */
+
+.home-links {
+    float: right !important;
+}
+
+.fa-expand {
+    right: 34px;
+    left: auto !important;
+}
+
+.new-in-input-container i {
+    right: 9px !important;
+    left: auto !important;
+}
+
+.mat-menu-content.ng-trigger.ng-trigger-fadeInItems>div {
+    flex-direction: row-reverse;
+}
+
+.container-fluied i.fa-arrows-alt-v {
+    left: auto !important;
+    right: 10px;
+}
+
+app-emr-charts .back_div {
+    right: auto !important;
+    left: -17px;
+}
+
+app-emr-charts .back_div i::before {
+    content: "\f053";
+}
+
+.fa-plus-square::before {
+    left: -3px !important;
+}
+
+app-emr-charts-stepper .fa-arrows-alt-v {
+    right: 15px;
+    left: auto !important;
+}
+
+app-rx-fav-medications-special .col-10 .list-group {
+    text-align: left !important;
+}
+
+.padding_en_ar {
+    padding-left: 15px !important;
+    padding-right: 0 !important;
+}
+
+.form-control {
+    /* text-align: right !important;
+  padding-right: 32px !important; */
+    text-align: left !important;
+    /* padding-right: 32px !important; */
+}
+
+sanabel-outpatappointment icon-action {
+    left: auto !important;
+    right: 0 !important;
+    transform: rotateY(180deg);
+}
+
+select.ng-invalid,
+sanabel-selectize.ng-invalid .form-control {
+    background-position: 196px 6px !important;
+}
+
+.right-area select {
+    padding: 0 !important;
+}
+
+.search .fa-close {
+    left: auto !important;
+    right: 10vw;
+}
+
+.icon-area {
+    margin-right: auto;
+    margin-left: unset !important;
+}
+
+.drop_down_menu ul li a {
+    font-family: sans-serif !important;
+    font-weight: bold;
+}
+
+.new-in-input-container::after {
+    left: auto !important;
+    right: 10px;
+}
+
+ul.nav.nav-sub>li a i {
+    display: inline-block;
+    transform: rotateY(173deg);
+}
+
+.nav-tools {
+    float: right !important;
+}
+
+.dirValue {
+    direction: rtl;
+}
+
+.dirValueAr {
+    text-align: right !important;
+}
+
+.icon-style {
+    right: -310px !important;
+    top: -1px !important;
+}
+
+.icon-style-sm {
+    right: -150px !important;
+    top: -2px !important;
+}

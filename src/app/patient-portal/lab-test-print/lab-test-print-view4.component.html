@@ -1,0 +1,836 @@
+<div class="container-fluid">
+    <div>
+        <div class="row">
+            <!-- <div class="col-2">
+                <sanabel-selectize appcode="39" (clicked)="SharedOrPercent($event)" [(ngModel)]="sharedOrPercent">
+                </sanabel-selectize>
+            </div> -->
+            <div class=" col-4">
+                <label for="">{{'PRINTTIMES' | translate}}</label>
+                <input type="checkbox" [checked]="printTimes == true" [(ngModel)]="printTimes" #check (click)="printTimesCheck(check.checked)" />
+            </div>
+            <div class=" col-3">
+                <label for="">{{'CORRECTEDRESULTSAPPEAR' | translate}}</label>
+                <input type="checkbox" [checked]="correctedResultsAppear == true" [(ngModel)]="correctedResultsAppear" #check (click)="correctedResultsAppearCheck(check.checked)" />
+            </div>
+        </div>
+
+        <div style="display:none">
+            <div id="labTestPrintView">
+                <div class="wrapper">
+
+                    <div>
+                        <table style="direction: ltr;" class="full-width" *ngIf="testData?.length != 0">
+                            <thead>
+                                <th>
+                                    <table style="width: 100%;">
+                                        <thead style="direction: ltr; ">
+                                            <tr>
+                                                <td width="20%" style="text-align: left;" class="groupHeaderLabelCell_ar">
+                                                    <h6>Patient Name</h6>
+                                                </td>
+                                                <td width="30%" style="font-size: 15px;" class="groupHeaderDataCell_ar">
+                                                    {{patientData?.patientNameAr}}
+                                                </td>
+                                                <td width="20%" style="text-align: left;" class="groupHeaderLabelCell_ar">
+                                                    <h6>ِAge </h6>
+                                                </td>
+                                                <td width="30%" style="font-size: 15px;" class="groupHeaderDataCell_ar">
+                                                    {{patientData?.patientAge }}
+                                                </td>
+                                            </tr>
+                                            <!---------------------------------------------------------------------------------->
+                                            <tr>
+                                                <td width="20%" style="text-align: left;" class="groupHeaderLabelCell_ar">
+                                                    <h6>Doctor</h6>
+                                                </td>
+                                                <td width="30%" style="font-size: 15px;" class="groupHeaderDataCell_ar">
+                                                    {{patientData?.doctorNameAr}}
+                                                </td>
+                                                <td width="20%" style="text-align: left;" class="groupHeaderLabelCell_ar">
+                                                    <h6>MRN</h6>
+                                                </td>
+                                                <td width="30%" style="font-size: 15px;" class="groupHeaderDataCell_ar">
+                                                    {{patientData?.patCode}}
+                                                </td>
+
+
+                                            </tr>
+                                            <!---------------------------------------------------------------------------------->
+                                            <tr>
+                                                <td width="20%" style="text-align: left;" class="groupHeaderLabelCell_ar">
+                                                    <h6>Request Date</h6>
+                                                </td>
+                                                <td width="30%" style="font-size: 15px;" class="groupHeaderDataCell_ar">
+                                                    {{patientData?.orderDate|date: 'dd/MM/yyyy-hh:mm'}}
+                                                </td>
+                                                <td width="20%" style="text-align: left;" class="groupHeaderLabelCell_ar">
+                                                    <h6>Request Number</h6>
+                                                </td>
+                                                <td width="30%" style="font-size: 15px;" class="groupHeaderDataCell_ar">
+                                                    {{patientData?.orderNumber}}</td>
+                                            </tr>
+
+                                            <!---------------------------------------------------------------------------------->
+                                            <tr>
+                                                <td width="17.5%" style="text-align: left;" class="groupHeaderLabelCell_ar">
+                                                    <h6>Lap Number </h6>
+                                                </td>
+                                                <td width="25%" style="font-size: 15px;" class="groupHeaderDataCell_ar">
+                                                    {{patientData?.OrderPlace}}</td>
+                                                <td width="17.5%" style="text-align: left;" class="groupHeaderLabelCell_ar">
+                                                    <h6>Result Date</h6>
+                                                </td>
+                                                <td width="25%" style="font-size: 15px;" class="groupHeaderDataCell_ar">
+                                                    {{patientData?.resultWriteDate | date:'dd/MM/yyyy-hh:mm:ssa ' }}
+                                                </td>
+                                            </tr>
+                                            <tr>
+                                                <td width="10%" style="text-align: left;" class="groupHeaderLabelCell_ar">
+                                                    <h6>Gender:</h6>
+                                                </td>
+                                                <td width="20%" style="font-size: 15px;" class="groupHeaderDataCell_ar">
+                                                    {{patientData?.gender }}
+                                                </td>
+                                            </tr>
+                                            <!---------------------------------------------------------------------------------->
+                                        </thead>
+                                    </table>
+                                </th>
+                            </thead>
+
+                            <!----------------------------->
+
+                            <tbody *ngIf="multiPrintFlag==0" style="direction: ltr; ">
+                                <tr>
+                                    <td>
+                                        <table style="margin:auto; width: 90%;" class="table nborer ">
+                                            <tbody>
+                                                <ng-template ngFor let-serve [ngForOf]="keysArr">
+                                                    <tr style="vertical-align:top;">
+                                                        <td [attr.colspan]="hasCorrectedValue == 1?6:5" class="tr-as-line"></td>
+                                                    </tr>
+                                                    <tr>
+                                                        <td [attr.colspan]="hasCorrectedValue == 1?5:4">
+                                                            <h6 style="text-align: center ;font-size: 16px ; margin-bottom:7px;margin-top:7px" scope="row">
+                                                                {{serve}}
+                                                            </h6>
+
+                                                        </td>
+
+                                                    </tr>
+                                                    <tr style="vertical-align:top;">
+                                                        <td [attr.colspan]="hasCorrectedValue == 1?6:5" class="tr-as-line"></td>
+                                                    </tr>
+                                                    <tr>
+                                                        <td>
+                                                            <h6 style="color:gray;">
+                                                                TestName </h6>
+                                                        </td>
+
+                                                        <td colspan="2">
+                                                            <h6 style=" color:gray; ">
+                                                                Result:</h6>
+                                                        </td>
+                                                        <td *ngIf="hasCorrectedValue == 1 && correctedResultsAppear== true ">
+                                                            <h6 style="color:gray;">
+                                                                Corrected Result: </h6>
+                                                        </td>
+
+                                                        <td width="5%">
+
+                                                        </td>
+                                                        <td colspan="2">
+                                                            <h6 style=" color:gray; ">
+                                                                Reference Range:
+                                                            </h6>
+                                                        </td>
+
+                                                    </tr>
+
+                                                    <tr *ngFor=" let sheet of  obj[serve] " style="font-size: 12px;">
+
+                                                        <td colspan="" width="30%" style="padding:8px">
+                                                            <span style="text-align: center;">
+                                                                <b style="font-size: 15px;">{{sheet.sheetNameEn}}</b>
+                                                            </span>
+                                                        </td>
+                                                        <td colspan="2" width="15%" style="padding:8px">
+                                                            <span style="text-align: center;">
+                                                                <b
+                                                                    [style.color]="sheet.abnormality == 1 ||sheet.abnormality == 2 ?'red':''">
+                                                                    <ng-container
+                                                                        *ngIf="sheet.itemType != 3 && sheet.itemType != 5 && sheet.sheetValue">
+                                                                        <span
+                                                                            style="font-size: 15px;">{{sheet.resultValue}}</span>
+                                                            </ng-container>
+                                                            <ng-container *ngIf="sheet.itemType == 5 && sheet.sheetValue">
+                                                                <span style="font-size: 15px;border: 1px solid black; margin:3px; padding:3px">
+                                                                            {{sheet.resultValue}} </span>Min
+                                                                <span style="font-size: 15px;border: 1px solid black; margin:3px; padding:3px">
+                                                                            {{sheet.sheetValue2}} </span>Sec
+
+                                                            </ng-container>
+                                                            <ng-container *ngIf="sheet.itemType == 3">
+                                                                {{sheet.sheetOptionAr}}
+                                                            </ng-container>
+                                                            </b>
+                                                            </span>
+                                                        </td>
+                                                        <td *ngIf="sheet.hasCorrectedValue == 1 && correctedResultsAppear== true">
+                                                            <span style="text-align: center; font-size: 15px;font-weight: 700;">
+                                                                <p style="font-size: 15px;">
+                                                                    ({{sheet.correctedSheetValue}})</p>
+                                                            </span>
+                                                        </td>
+                                                        <td width="5%">
+                                                            <span *ngIf="sheet.abnormalityLvl=='H'">
+                                                                <i style="color: red;" class="fas fa-arrow-up"
+                                                                    aria-hidden="true"></i>
+                                                            </span>
+                                                        </td>
+                                                        <td colspan="" width="20%">
+                                                            <span style="text-align: center; white-space: break-spaces;
+                                                            font-size: 15px;font-weight: 700;">
+                                                                <p style="font-size: 15px;">{{sheet.refValue}}</p>
+                                                            </span>
+                                                        </td>
+                                                        <td colspan="" width="10%">
+                                                            <span style="text-align: center;font-size: 15px;">
+                                                                <b>{{sheet.unitNameAr}}</b>
+                                                            </span>
+                                                        </td>
+                                                    </tr>
+                                                    <!-- </ng-template> -->
+                                                </ng-template>
+
+                                            </tbody>
+                                        </table>
+                                    </td>
+                                </tr>
+                            </tbody>
+                            <!-----------------------------sayed test-->
+                            <tbody *ngIf="multiPrintFlag==1" style="direction: ltr; ">
+                                <tr>
+                                    <td>
+                                        <table style="margin:auto; width: 95%;" class="table nborer ">
+                                            <thead style="direction: ltr; ">
+                                                <th style=" width: 13.14%;"></th>
+                                                <th style=" width: 13.14%;"></th>
+                                                <th style=" width: 7.14%;"></th>
+                                                <th style=" width: 7.14%;"></th>
+                                                <th style=" width: 7.14%;"></th>
+                                                <th style=" width: 1.14%;"></th>
+                                                <th style=" width: 1.14%;"></th>
+                                                <!-------------------------------------->
+                                                <th style=" width: 13.14%;"></th>
+                                                <th style=" width: 13.14%;"></th>
+                                                <th style=" width: 7.14%;"></th>
+                                                <th style=" width: 7.14%;"></th>
+                                                <th style=" width: 7.14%;"></th>
+                                                <th style=" width: 1.14%;"></th>
+                                                <th style=" width: 1.14%;"></th>
+                                            </thead>
+                                            <tbody>
+                                                <ng-template ngFor let-serve [ngForOf]="keysArr">
+                                                    <tr>
+                                                        <td colspan="14" class="tr-as-line"></td>
+                                                    </tr>
+                                                    <tr>
+                                                        <td colspan="14">
+                                                            <h6 scope="row" style="text-align: center;">
+                                                                {{serve}}
+                                                            </h6>
+                                                        </td>
+                                                    </tr>
+                                                    <tr>
+                                                        <td colspan="14" class="tr-as-line"></td>
+                                                    </tr>
+                                                    <tr>
+                                                        <td colspan="2">
+
+                                                            <!-- <h6 style="color:gray;">
+                                                                TestName </h6> -->
+                                                        </td>
+
+                                                        <td colspan="2">
+                                                            <h6 style=" color:gray; ">
+                                                                Result:</h6>
+                                                        </td>
+                                                        <td colspan="2">
+                                                            <h6 *ngIf="hasCorrectedValue == 1 && correctedResultsAppear== true " style="color:gray;">
+                                                                Corrected Result: </h6>
+                                                        </td>
+                                                        <td></td>
+
+                                                        <td colspan="2">
+                                                            <h6 style=" color:gray; ">
+                                                                Test :
+                                                            </h6>
+                                                        </td>
+                                                        <td colspan="2">
+                                                            <h6 style=" color:gray; ">
+                                                                Result:
+                                                            </h6>
+                                                        </td>
+                                                        <td colspan="2">
+                                                            <h6 *ngIf="hasCorrectedValue == 1 && correctedResultsAppear== true " style="color:gray;">
+                                                                Corrected Result: </h6>
+                                                        </td>
+                                                        <td></td>
+
+                                                    </tr>
+
+
+                                                    <tr *ngFor=" let sheet of  obj[serve]">
+                                                        <ng-template [ngIf]="sheet.calssName">
+
+                                                            <td class="calssName" colspan="10">
+                                                                <b style="font-size: 17px;text-decoration: underline;">
+                                                                    {{sheet.calssName}} </b>
+
+                                                            </td>
+                                                        </ng-template>
+                                                        <ng-template [ngIf]="!sheet.calssName">
+
+
+                                                            <td colspan="2">
+                                                                <span class="sheetNameEn" style="text-align: center;">
+                                                                    <b
+                                                                        style="font-size: 15px;">{{sheet.sheetNameEn}}</b>
+                                                                </span>
+                                                            </td>
+                                                            <td colspan="2">
+                                                                <span class="abnormality">
+                                                                    <b
+                                                                        [style.color]="sheet.abnormality == 1 ||sheet.abnormality == 2 ?'red':''">
+                                                                        <ng-container
+                                                                            *ngIf="sheet.itemType != 3 && sheet.sheetValue">
+                                                                            <span
+                                                                                style="font-size: 15px;font-weight: 700">{{sheet.resultValue}}</span>
+                                                                </ng-container>
+                                                                <ng-container *ngIf="sheet.itemType == 3">
+                                                                    {{sheet.sheetOptionAr}}
+                                                                </ng-container>
+                                                                </b>
+                                                                </span>
+                                                            </td>
+                                                            <td>
+                                                                <span class="abnormalityLvl" *ngIf="sheet.abnormalityLvl=='H'">
+                                                                    <i style="color: red;" class="fas fa-arrow-up"
+                                                                        aria-hidden="true"></i>
+                                                                </span>
+                                                            </td>
+                                                            <td colspan="1">
+                                                                <span class="refValue" style="text-align: center; white-space: break-spaces; font-size: 15px;font-weight: 700;">
+                                                                    {{sheet.refValue}}
+                                                                </span>
+                                                            </td>
+                                                            <td colspan="1">
+                                                                <span class="unitNameAr" style="text-align: center;">
+                                                                    <b>{{sheet.unitNameAr}}</b>
+                                                                </span>
+                                                            </td>
+                                                            <!---------------------------------------------------------bsm-------------------------------->
+
+                                                            <td colspan="2">
+                                                                <span class="sheetNameAr2" style="text-align: center;">
+                                                                    <b
+                                                                        style="font-size: 15px;">{{sheet.sheetNameAr2}}</b>
+                                                                </span>
+                                                            </td>
+                                                            <td colspan="2">
+                                                                <span class="abnormality2" style="text-align: center;">
+                                                                    <b
+                                                                        [style.color]="sheet.abnormality2 == 1 ||sheet.abnormality2 == 2 ?'red':''">
+                                                                        <ng-container
+                                                                            *ngIf="sheet.itemType != 3 && sheet.sheetValue2">
+                                                                            <span>{{sheet.resultValue2}}</span>
+                                                                </ng-container>
+                                                                <ng-container *ngIf="sheet.itemType == 3">
+                                                                    {{sheet.sheetOptionAr2}}
+                                                                </ng-container>
+                                                                </b>
+                                                                </span>
+                                                            </td>
+                                                            <td>
+                                                                <span Class="abnormalityLvl" *ngIf="sheet.abnormalityLvl=='H'">
+                                                                    <i style="color: red;" class="fas fa-arrow-up"
+                                                                        aria-hidden="true"></i>
+                                                                </span>
+                                                            </td>
+                                                            <td colspan="1">
+                                                                <span Class="refValue2" style="font-size: 15px;font-weight: 700">
+                                                                    {{sheet.refValue2}}
+                                                                </span>
+                                                            </td>
+                                                            <td colspan="1">
+                                                                <span Class="unitNameAr2" style="text-align: center;font-size: 15px;">
+                                                                    <b>{{sheet.unitNameAr2}}</b>
+                                                                </span>
+                                                            </td>
+                                                        </ng-template>
+                                                    </tr>
+
+                                                </ng-template>
+
+                                            </tbody>
+                                        </table>
+                                    </td>
+                                </tr>
+                            </tbody>
+                            <tbody *ngIf="multiPrintFlag==2" style="direction: ltr; ">
+                                <tr>
+                                    <td>
+                                        <!-- border-style: groove; -->
+                                        <table style="margin:auto; width: 95%;" style="  border: 1px solid black; border-spacing: 0px!important; padding: 0px !important; border-collapse: collapse;" class="table table-bordered table-striped full-width  mb-0 ">
+                                            <thead style="direction: ltr; ">
+                                                <th style=" width: 13.14%;"></th>
+                                                <th style=" width: 13.14%;"></th>
+                                                <th style=" width: 7.14%;"></th>
+                                                <th style=" width: 7.14%;"></th>
+                                                <th style=" width: 7.14%;"></th>
+                                                <th style=" width: 1.14%;"></th>
+                                                <th style=" width: 1.14%;"></th>
+                                                <!-------------------------------------->
+                                                <th style=" width: 13.14%;"></th>
+                                                <th style=" width: 13.14%;"></th>
+                                                <th style=" width: 7.14%;"></th>
+                                                <th style=" width: 7.14%;"></th>
+                                                <th style=" width: 7.14%;"></th>
+                                                <th style=" width: 1.14%;"></th>
+                                                <th style=" width: 1.14%;"></th>
+                                            </thead>
+                                            <tbody>
+                                                <ng-template ngFor let-serve [ngForOf]="keysArr">
+                                                    <tr>
+                                                        <td colspan="14" class="tr-as-line"></td>
+                                                    </tr>
+                                                    <tr>
+                                                        <td colspan="14">
+                                                            <h6 scope="row" style="text-align: center;">
+                                                                {{serve}}
+                                                            </h6>
+                                                        </td>
+                                                    </tr>
+                                                    <tr>
+                                                        <td colspan="14" class="tr-as-line"></td>
+                                                    </tr>
+                                                    <tr>
+                                                        <td colspan="3">
+
+                                                            <h6> TestName </h6>
+                                                        </td>
+
+                                                        <td colspan="11">
+                                                            <h6>
+                                                                Result </h6>
+                                                        </td>
+                                                    </tr>
+                                                    <tr *ngFor=" let sheetobj  of  MicroBilogyArray">
+                                                        <td style="font-size: 19px; font-weight: bold;" colspan="3">
+                                                            {{sheetobj.sheetNameEn}}
+                                                        </td>
+                                                        <td colspan="11">
+                                                            {{sheetobj.sheetValue}}
+                                                        </td>
+
+                                                    </tr>
+                                                    <br>
+                                                    <tr style="border: 1px solid black">
+                                                        <td colspan="7">
+
+                                                            <h6>
+                                                                ANTIBIOTIC </h6>
+                                                        </td>
+
+                                                        <td colspan="7">
+                                                            <h6>
+                                                                ANTIBIOTIC </h6>
+                                                        </td>
+                                                        <!-- <td colspan="2">
+                                                            
+                                                        </td>
+                                                        <td></td>
+
+                                                        <td colspan="2">
+                                                            <h6 style=" color:gray; ">
+                                                                Test :
+                                                            </h6>
+                                                        </td>
+                                                        <td colspan="2">
+                                                            <h6 style=" color:gray; ">
+                                                                Result:
+                                                            </h6>
+                                                        </td>
+                                                        <td colspan="2">
+                                                            <h6 *ngIf="hasCorrectedValue == 1 && correctedResultsAppear== true "
+                                                                style="color:gray;">
+                                                                Corrected Result: </h6>
+                                                        </td>
+                                                        <td></td> -->
+
+                                                    </tr>
+
+                                                    <tr style="border: 1px solid black" *ngFor=" let sheet of  obj[serve]">
+                                                        <ng-template [ngIf]="sheet.calssName">
+                                                            <!-- 
+                                                            <td colspan="14">
+                                                                <b style="font-size: 17px;text-decoration: underline;">
+                                                                    {{sheet.calssName}} </b>
+
+                                                            </td> -->
+                                                        </ng-template>
+                                                        <ng-template [ngIf]="!sheet.calssName">
+
+
+                                                            <td colspan="2">
+                                                                <span style="text-align: center;">
+                                                                    <b
+                                                                        style="font-size: 15px;">{{sheet.sheetNameEn}}</b>
+                                                                </span>
+                                                            </td>
+                                                            <td colspan="2">
+                                                                <span>
+                                                                    <b
+                                                                        [style.color]="sheet.abnormality == 1 ||sheet.abnormality == 2 ?'red':''">
+                                                                        <ng-container
+                                                                            *ngIf="sheet.itemType != 3 && sheet.sheetValue">
+                                                                            <span
+                                                                                style="font-size: 15px;font-weight: 700">{{sheet.resultValue}}</span>
+                                                                </ng-container>
+                                                                <ng-container *ngIf="sheet.itemType == 3">
+                                                                    {{sheet.sheetOptionAr}}
+                                                                </ng-container>
+                                                                </b>
+                                                                </span>
+                                                            </td>
+                                                            <td>
+                                                                <span *ngIf="sheet.abnormalityLvl=='H'">
+                                                                    <i style="color: red;" class="fas fa-arrow-up"
+                                                                        aria-hidden="true"></i>
+                                                                </span>
+                                                            </td>
+                                                            <td colspan="1">
+                                                                <!-- <span style="text-align: center; white-space: break-spaces;
+                                                                font-size: 15px;font-weight: 700;">
+                                                                    {{sheet.refValue}}
+                                                                </span> -->
+                                                            </td>
+                                                            <td colspan="1">
+                                                                <!-- <span style="text-align: center;">
+                                                                    <b>{{sheet.unitNameAr}}</b>
+                                                                </span> -->
+                                                            </td>
+                                                            <!---------------------------------------------------------bsm-------------------------------->
+
+                                                            <td colspan="2">
+                                                                <span style="text-align: center;">
+                                                                    <b
+                                                                        style="font-size: 15px;">{{sheet.sheetNameAr2}}</b>
+                                                                </span>
+                                                            </td>
+                                                            <td colspan="2">
+                                                                <span style="text-align: center;">
+                                                                    <b
+                                                                        [style.color]="sheet.abnormality2 == 1 ||sheet.abnormality2 == 2 ?'red':''">
+                                                                        <ng-container
+                                                                            *ngIf="sheet.itemType != 3 && sheet.sheetValue2">
+                                                                            <span>{{sheet.resultValue2}}</span>
+                                                                </ng-container>
+                                                                <ng-container *ngIf="sheet.itemType == 3">
+                                                                    {{sheet.sheetOptionAr2}}
+                                                                </ng-container>
+                                                                </b>
+                                                                </span>
+                                                            </td>
+                                                            <td>
+                                                                <span *ngIf="sheet.abnormalityLvl=='H'">
+                                                                    <i style="color: red;" class="fas fa-arrow-up"
+                                                                        aria-hidden="true"></i>
+                                                                </span>
+                                                            </td>
+                                                            <td colspan="1">
+                                                                <!-- <span style="font-size: 15px;font-weight: 700">
+                                                                    {{sheet.refValue2}}
+                                                                </span> -->
+                                                            </td>
+                                                            <td colspan="1">
+                                                                <!-- <span style="text-align: center;font-size: 15px;">
+                                                                    <b>{{sheet.unitNameAr2}}</b>
+                                                                </span> -->
+                                                            </td>
+                                                        </ng-template>
+                                                    </tr>
+
+                                                </ng-template>
+
+                                            </tbody>
+                                        </table>
+                                    </td>
+                                </tr>
+                            </tbody>
+
+                            <tbody *ngIf="multiPrintFlag==3" style="direction: ltr; ">
+                                <tr>
+                                    <td>
+                                        <table style="margin:auto; width: 90%;" class="table nborer ">
+                                            <tbody>
+                                                <ng-template ngFor let-serve [ngForOf]="keysArr">
+                                                    <tr style="vertical-align:top;">
+                                                        <td [attr.colspan]="hasCorrectedValue == 1?6:5"></td>
+                                                        <!-- class="tr-as-line" -->
+                                                    </tr>
+                                                    <tr style="border:1px solid black !important ;">
+
+
+                                                        <td [attr.colspan]="hasCorrectedValue == 1?5:4">
+                                                            <div style="border:1px solid black !important ;height:150px; width: 600px; ">
+
+                                                                <h6 style="text-align: left ;font-size: 16px ; margin-bottom:7px;margin-top:7px" scope="row">
+                                                                    <!-- {{serve}} -->
+                                                                    MORPHOLOGY:
+                                                                </h6>
+                                                                <ul class="list-group" *ngIf="serviceComment.length > 0 ">
+                                                                    <li class="list-group-item active">Comments:</li>
+                                                                    <li class="list-group-item"
+                                                                        *ngFor="let comment of serviceComment">
+                                                                        <span>{{comment.nameEn}} {{ comment.commentAsText}}</span>
+                                                                    </li>
+                                                                </ul>
+                                                            </div>
+                                                        </td>
+
+                                                    </tr>
+                                                    <tr style="vertical-align:top;">
+                                                        <td [attr.colspan]="hasCorrectedValue == 1?6:5"></td>
+                                                        <!-- class="tr-as-line" -->
+                                                    </tr>
+                                                    <tr>
+                                                        <td>
+                                                            <h6 style="color:gray;">
+                                                                TestName </h6>
+                                                        </td>
+
+                                                        <td colspan="2">
+                                                            <h6 style=" color:gray; ">
+                                                                Result:</h6>
+                                                        </td>
+                                                        <td *ngIf="hasCorrectedValue == 1 && correctedResultsAppear== true ">
+                                                            <h6 style="color:gray;">
+                                                                Corrected Result: </h6>
+                                                        </td>
+
+                                                        <td width="5%">
+
+                                                        </td>
+                                                        <td colspan="2">
+                                                            <!-- <h6 style=" color:gray; ">
+                                                                Reference Range:
+                                                            </h6> -->
+                                                        </td>
+
+                                                    </tr>
+
+                                                    <tr *ngFor=" let sheet of  obj[serve] " style="font-size: 12px;">
+
+                                                        <td colspan="" width="30%" style="padding:8px">
+                                                            <span style="text-align: center;">
+                                                                <b style="font-size: 15px;">{{sheet.sheetNameEn}}</b>
+                                                            </span>
+                                                        </td>
+                                                        <td colspan="2" width="15%" style="padding:8px">
+                                                            <span style="text-align: center;">
+                                                                <b
+                                                                    [style.color]="sheet.abnormality == 1 ||sheet.abnormality == 2 ?'red':''">
+                                                                    <ng-container
+                                                                        *ngIf="sheet.itemType != 3 && sheet.itemType != 5 && sheet.sheetValue">
+                                                                        <span
+                                                                            style="font-size: 15px;">{{sheet.resultValue}}</span>
+                                                            </ng-container>
+                                                            <ng-container *ngIf="sheet.itemType == 5 && sheet.sheetValue">
+                                                                <span style="font-size: 15px;border: 1px solid black; margin:3px; padding:3px">
+                                                                            {{sheet.resultValue}} </span>Min
+                                                                <span style="font-size: 15px;border: 1px solid black; margin:3px; padding:3px">
+                                                                            {{sheet.sheetValue2}} </span>Sec
+
+                                                            </ng-container>
+                                                            <ng-container *ngIf="sheet.itemType == 3">
+                                                                {{sheet.sheetOptionAr}}
+                                                            </ng-container>
+                                                            </b>
+                                                            </span>
+                                                        </td>
+                                                        <td *ngIf="sheet.hasCorrectedValue == 1 && correctedResultsAppear== true">
+                                                            <span style="text-align: center; font-size: 15px;font-weight: 700;">
+                                                                <p style="font-size: 15px;">
+                                                                    ({{sheet.correctedSheetValue}})</p>
+                                                            </span>
+                                                        </td>
+                                                        <td width="5%">
+                                                            <span *ngIf="sheet.abnormalityLvl=='H'">
+                                                                <i style="color: red;" class="fas fa-arrow-up"
+                                                                    aria-hidden="true"></i>
+                                                            </span>
+                                                        </td>
+                                                        <td colspan="" width="20%">
+                                                            <!-- <span style="text-align: center; white-space: break-spaces;
+                                                            font-size: 15px;font-weight: 700;">
+                                                                <p style="font-size: 15px;">{{sheet.refValue}}</p>
+                                                            </span> -->
+                                                        </td>
+                                                        <td colspan="" width="10%">
+                                                            <span style="text-align: center;font-size: 15px;">
+                                                                <b>{{sheet.unitNameAr}}</b>
+                                                            </span>
+                                                        </td>
+                                                    </tr>
+                                                    <!-- </ng-template> -->
+                                                </ng-template>
+
+                                            </tbody>
+                                        </table>
+                                    </td>
+                                </tr>
+                            </tbody>
+                            <tfoot>
+                                <tr>
+                                    <table style="width: 90%; margin:auto">
+                                        <thead style="direction: ltr;">
+                                            <tr style="vertical-align:top;">
+                                                <td colspan="6" class="tr-as-line"></td>
+                                            </tr>
+                                            <tr>
+                                                <td *ngIf="multiPrintFlag!=3" style="width: 49%; font-size: 18px;">
+                                                    <ul class="list-group" *ngIf="serviceComment.length > 0 ">
+                                                        <li class="list-group-item active">Comments:</li>
+                                                        <li class="list-group-item" *ngFor="let comment of serviceComment">
+                                                            <span>{{comment.nameEn}} {{ comment.commentAsText}}</span>
+                                                        </li>
+                                                    </ul>
+                                                    <!---------------------------------------------------------------------------->
+                                                </td>
+                                            </tr>
+                                        </thead>
+                                    </table>
+
+                                </tr>
+
+                                <tr *ngIf="printhistory" [style]="{'width': '100%'}" style="font-size: 14px;">
+                                    <td colspan="2">
+                                        <span>
+                                            Service history
+                                        </span>
+                                        <table class="full-width" [style]="{'width': '100%'}">
+                                            <thead colspan="2">
+                                                <tr style="font-size: 14px;">
+                                                    <th rowspan="2" class="groupHeaderLevel1_ar" [style]="{'width': '10%'}">
+                                                        {{'DATE'|translate}}
+                                                    </th>
+                                                    <th [attr.colspan]="getColspan(headersLev1)" class="groupHeaderLevel1_ar" *ngFor="let headersLev1 of HistoryArr.headersLev1">
+                                                        {{headersLev1['serviceNameAr']}}
+                                                    </th>
+                                                </tr>
+                                                <tr>
+                                                    <ng-template ngFor let-headersLev1 [ngForOf]="HistoryArr.headersLev1">
+                                                        <ng-template ngFor let-headersLev2 [ngForOf]="HistoryArr.headersLev2">
+                                                            <th class="groupHeaderLevel1_ar" *ngIf="headersLev2['serviceCode']==headersLev1['serviceCode']">
+                                                                {{headersLev2['sheetNameAr']}}
+                                                            </th>
+                                                        </ng-template>
+                                                    </ng-template>
+                                                </tr>
+                                            </thead>
+
+                                            <tbody>
+                                                <tr *ngFor="let sheetrow of HistoryArr.rows" style="font-size: 14px;">
+
+                                                    <td class="detailBand_ar" [style]="{'width': '10%'}">
+                                                        {{sheetrow['resultWriteDate']| date :'dd/MM/yyyy'}}
+
+                                                    </td>
+                                                    <td class="detailBand_ar" *ngFor="let el of HistoryArr.headersLev2; let i=index">
+                                                        {{HistoryArr.hashMap[sheetrow['resultWriteDate']+'_'+ el['sheetNameAr']]}}
+                                                    </td>
+                                                </tr>
+
+                                            </tbody>
+                                        </table>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <table style="width: 90%; margin:auto">
+                                        <thead style="direction: ltr;">
+                                            <tr style="vertical-align:top;">
+                                                <td colspan="6" class="tr-as-line"></td>
+                                            </tr>
+                                            <tr style="vertical-align:top;" *ngFor=" let timeData of timesArr ">
+                                                <td colspan="6">
+
+                                                    <div class="d-flex" *ngIf="timeData.statusCode == 9 && printTimes==true">
+                                                        <strong style="width: 129px; margin-right: 10px;"> Barcode Print
+                                                            : </strong>
+                                                        <span>
+                                                            {{timeData.stepTime}}
+                                                            ( {{timeData.userName}})
+                                                        </span>
+                                                    </div>
+                                                    <div class="d-flex" *ngIf="timeData.statusCode == 10 && printTimes==true">
+                                                        <strong style=" width:129px; margin-right: 10px;"> Sample
+                                                            Collection :
+                                                        </strong>
+                                                        <span> {{timeData.stepTime}} ( {{timeData.userName}});</span>
+                                                    </div>
+                                                    <div class="d-flex" *ngIf="timeData.statusCode == 13">
+                                                        <strong style="width:74px; margin-right: 10px;"> Written :
+                                                        </strong>
+                                                        <span>
+                                                            {{timeData.stepTime}} ( {{timeData.userName}})
+                                                        </span>
+                                                    </div>
+                                                    <!-- <span *ngIf="timeData.statusCode == 14">
+                                                        <h6> Approved : </h6> {{timeData.stepTime}}  &nbsp;&nbsp; (
+                                                        {{timeData.userName}}) &nbsp;&nbsp;
+                                                    </span> -->
+                                                    <div class="d-flex" *ngIf="timeData.statusCode ==14">
+                                                        <strong style="width: 74px; margin-right: 10px;"> Approved :
+                                                        </strong>
+                                                        <span>
+                                                            {{timeData.stepTime}} &nbsp;&nbsp; (
+                                                            {{timeData.userName}}) &nbsp;&nbsp;
+                                                        </span>
+
+                                                    </div>
+
+                                                </td>
+                                            </tr>
+                                            <tr style="display: flex; justify-content: space-between;">
+                                                <td style="width: 49%; font-size: 18px;" class="groupHeaderLabelCell_ar">
+                                                    <h6 style=" margin-right: 3px;">Technician :
+                                                    </h6>
+                                                    {{patientData?.technicianNamEn}}
+                                                </td>
+                                                <td style="width: 49%; font-size: 18px;" class="groupHeaderLabelCell_ar">
+                                                    <h6 style=" margin-right: 3px;">Physician : </h6>
+                                                    {{patientData['labDocNameEn']}}
+                                                </td>
+                                            </tr>
+
+                                        </thead>
+                                    </table>
+                                </tr>
+                            </tfoot>
+                        </table>
+
+                    </div>
+
+
+
+
+                </div>
+            </div>
+        </div>
+    </div>
+    <app-print-page *ngIf="needRefresh==true" #printComponent section="labTestPrintView" [includefontAwsom]='true' (click)="PrintedCount()">
+    </app-print-page>
+</div>

@@ -1,0 +1,107 @@
+
+<div class="modal-content">
+    
+    <div class="modal-header">
+        <h4>Compose Message</h4>
+    </div>
+    <div class="modal-body" style="height: 100% !important">
+        <div class="form-group">
+            <sanabel-selectize appcode="1020" [smallInput]="true" placeholder="To" [(ngModel)]="MailObj.to" name="to"></sanabel-selectize>
+            <!-- (clicked)="userSelectizeClicked($event) -->
+        </div>
+      
+        <div class="form-group">
+            <input type="text" class="form-control" placeholder="Subject" [(ngModel)]="MailObj.subject" name="subject">
+        </div>
+        <!-- <div class="form-group">
+            <input type="text" class="form-control" placeholder="message" [(ngModel)]="MailObj.message" name="message" >
+        </div> -->
+
+
+    </div>
+    <div class="" style="padding-right: 14px;">
+
+
+        <button type="button" class="btn width-200 btn-primary" (click)="sentMail()"><i class="fa fa-send mr-2"></i> Send</button>
+
+      
+        <!-- <input  #file disabled type="text" (click)="openInNewWindow()"  [(ngModel)]="MailObj.name"/>
+          <img src="../../../../assets/images/pdf.png" (click)="openInNewWindow()"  /> -->
+        <br />
+      
+
+
+    </div>
+    <ckeditor debounce="300" [(ngModel)]="MailObj.htmlContent" name="htmlContent">
+    </ckeditor>
+</div>
+
+
+
+
+<div #contentHtml [hidden]="hideen == 1">
+
+
+    <!DOCTYPE html>
+    <html>
+    <head>
+    <style>
+    table {
+      font-family: arial, sans-serif;
+      border-collapse: collapse;
+      width: 100%;
+    }
+    
+    td, th {
+      border: 1px solid #dddddd;
+      text-align: left;
+      padding: 8px;
+    }
+    
+    tr:nth-child(even) {
+      background-color: #dddddd;
+    }
+    </style>
+    </head>
+    <body>
+    
+        <h2>Po.Order - {{MailObj.subject}}</h2>
+
+
+        <table style="width:100%;text-align: center;">
+          <tr>
+            <th><strong style="text-decoration: underline;">{{'CODE' | translate}}</strong></th>
+            <th><strong style="text-decoration: underline;">{{'POORDERSUPPLYDATE' | translate}}</strong></th>
+            <th><strong style="text-decoration: underline;">{{'SUPPLIER' | translate}}</strong></th>
+          </tr>
+          <tr>
+            <td>{{row?.serial}}</td>
+            <td>{{ row?.regDate  | date :'short' }}</td>
+            <td>{{translate.currentLang == 'ar' ? row.nameAr : row.nameEn}}</td>
+          </tr>
+        </table>
+ <hr>
+    
+    <table style="width:100%;text-align: center;">
+      <tr >
+        <td class="groupHeaderLevel1_ar">{{'UNIT' | translate}}</td>
+        <td class="groupHeaderLevel1_ar">{{'QTYNEEDED' | translate}}</td>
+        <td class="groupHeaderLevel1_ar">{{'ITEMNAME' | translate}}</td>
+        <td class="groupHeaderLevel1_ar">{{'ITEMCODE' | translate}}</td>
+      </tr>
+      <tbody>
+        <tr *ngFor="let item of items" style="text-align: center;">
+          <td class="detailBand_ar">{{translate.currentLang == 'ar' ? item.unitNameAr : item.unitNameEn}}</td>
+          <td class="detailBand_ar">{{item.quantity}}</td>
+          <td class="detailBand_ar">{{translate.currentLang == 'ar' ? item.nameAr : item.nameEn}}</td>
+          <td class="detailBand_ar">{{item.code}}</td>
+        </tr>
+        <tr><td colspan="8"></td></tr>
+      </tbody>
+     
+    </table>
+    
+    </body>
+    </html>
+     
+</div>

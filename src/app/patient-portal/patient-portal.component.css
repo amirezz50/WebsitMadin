@@ -1,0 +1,224 @@
+#body-row {
+    margin-left: 0;
+    margin-right: 0;
+}
+
+#sidebar-container {
+    min-height: 100vh;
+    background-color: #178374;
+    padding: 0;
+}
+
+/* Sidebar sizes when expanded and expanded */
+
+.sidebar-expanded {
+    width: 230px;
+}
+
+.sidebar-collapsed {
+    width: 60px;
+}
+
+/* Menu item*/
+
+#sidebar-container .list-group a {
+  padding: 5px 8px;
+  color: white;
+  background-color: #178374;
+  border: 0px solid rgba(0,0,0,0.125);
+  border-radius: 10px;
+
+}
+#sidebar-container .list-group a img{
+  margin: 0 5px;
+  padding: 0;
+  width: 30px;
+}
+/* Submenu item*/
+
+#sidebar-container .list-group .sidebar-submenu a {
+    height: 45px;
+    padding-right: 30px;
+
+}
+
+.sidebar-submenu {
+    font-size: 0.9rem;
+}
+
+/* Separators */
+
+.sidebar-separator-title {
+    background-color: #178374;
+    height: 35px;
+}
+
+.sidebar-separator {
+    background-color: #178374;
+    height: 25px;
+}
+
+.logo-separator {
+    background-color: #178374;
+    height: 60px;
+}
+
+/* Closed submenu icon */
+
+#sidebar-container .list-group .list-group-item[aria-expanded="false"] .submenu-icon::after {
+    content: " \f0d7";
+    font-family: FontAwesome;
+    display: inline;
+    text-align: right;
+    padding-left: 10px;
+}
+
+/* Opened submenu icon */
+
+#sidebar-container .list-group .list-group-item[aria-expanded="true"] .submenu-icon::after {
+    content: " \f0d9";
+    font-family: FontAwesome;
+    display: inline;
+    text-align: left;
+    padding-right: 10px;
+}
+
+.custom-link {
+    background: none;
+    border: 0;
+    display: flex;
+    align-items: center;
+    padding: 0;
+    margin-right: 0;
+    margin-left: 1rem;
+}
+.confirmDialog{
+  width: 400px;
+  height: 220px;
+  position: fixed;
+  background-color: #fff;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  border: 1px solid #eee;
+  border-radius: 30px;
+  padding: 30px 15px;
+  text-align: center;
+
+}
+
+.confirmDialog h1{
+  font-size: 18px;
+  padding: 12px 10px;
+  font-weight: 600;
+}
+.confirmDialog h3{
+  font-size: 16px;
+  padding: 20px 10px;
+}
+
+.confirmDialog .btnlogout{
+  background: #178374;
+  border: 1px solid #178374;
+  width: 130px;
+  margin: 10px;
+  border-radius: 10px;
+  font-size: 14px;
+  padding: 8px;
+}
+.confirmDialog .btn-cancel{
+  background: #fff;
+  border: 1px solid #178374;
+  width: 130px;
+  margin: 10px;
+  border-radius: 10px;
+  font-size: 14px;
+  padding: 8px;
+  color: #178374;
+}
+.checkLogout{
+  filter: blur(13px);
+  background: #999999;
+}
+
+/*=========================*/
+.navbar{
+  background-color: #178374;
+  padding: 0;
+}
+.logo-dashboard{
+  width: 50px;
+  margin: 5px 15px;
+}
+.btn-header{
+  background-color: transparent;
+  margin: 5px 5px;
+  vertical-align: middle;
+  align-items: center;
+  display: flex;
+  padding: 10px;
+  height: 40px;
+
+}
+.user-img{
+  width: 25px;
+  height: 25px;
+  border-radius: 50%;
+  margin: 0 5px;
+}
+.active{
+  background-color:#084B42 !important;
+}
+.list-group {
+  /* padding-inline-end: 15px; */
+  padding: 10px;
+}
+.btn-logout{
+  background: transparent;
+  display: flex;
+  padding: 0;
+  align-items: center;
+  width: 100%;
+  border-radius: 0;
+  font-size: 16px;
+  text-transform: capitalize;
+  margin-top: 100%;
+
+
+}
+.btn-logout img{
+ width: 40px;
+ height: 40px;
+ margin: 0 5px;
+}
+.dropdown-menu {
+  min-width: 150px;
+}
+.show .dropdown-toggle {
+  color: #fff !important;
+  font-weight: 400 !important;
+}
+.dropdown-item {
+  display: block;
+  width: 100%;
+  padding: 10px;
+  clear: both;
+  font-weight: 500;
+  color: #777;
+  text-align: inherit;
+  white-space: nowrap;
+  background-color: transparent;
+  border: 0;
+  font-size: 12px;
+  border-bottom: 1px solid #ddd;
+}
+.dropdown-item:hover {
+  background-color: #178374;
+  color: #fff;
+}
+.btn-site{
+  background: #084b42;
+}
+.fontsiz{
+  font-size: 12px;
+}

@@ -1,0 +1,19 @@
+<!-- azmio -->
+<div class="row">
+  <div class="col-4">
+      <label>{{ 'APPOINTMENTS' | translate }}</label>
+      <sanabel-selectize appcode="65" [excludedCodes]="'2'" [simpleView]="true" [(ngModel)]="monthlyOrDaily" >
+      </sanabel-selectize>
+  </div>
+  <div class="col-4">
+      <label>{{'MONTH' | translate}}</label>
+      <sanabel-selectize appcode="57" [simpleView]="true" [(ngModel)]="monthNo"  (clicked)="monthlyReservationTimes($event)"
+          [required]="true" name="month">
+      </sanabel-selectize>
+  </div>
+</div>
+<app-monthly-resources-slot-view [showPatCode]="1" *ngIf="monthlyOrDaily==3"   [scheduleType]="100"
+  [listeningGuid]="6" >
+</app-monthly-resources-slot-view>
+<doctor-time-inquery *ngIf="monthlyOrDaily==1" [activePage]="'clinic'" >
+</doctor-time-inquery>

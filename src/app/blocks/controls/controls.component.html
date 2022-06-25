@@ -1,0 +1,11 @@
+<div class="text-center d-print-none" [ngClass]="{'my-2 py-2': !noMargins}">
+  <form>
+    <button type="button" *ngFor="let ctrl of AppCodes " [ngClass]="getCSSClasses(ctrl)" (click)="controlClicked(ctrl)"
+      class="btn {{ctrl.cssClasses}}" [tabindex]="tabindex">
+      <i *ngIf="ctrl.serial == 1" class="fa fa-save fa-fw" aria-hidden="true"></i>
+      <i *ngIf="ctrl.serial == 2" class="fa fa-long-arrow-left fa-fw" aria-hidden="true"></i>
+      <i *ngIf="ctrl.serial == 3" class="fa fa-trash-o fa-fw" aria-hidden="true"></i>
+      {{translate.currentLang == 'ar'? ctrl.nameAr: ctrl.nameEn}}
+    </button>
+  </form>
+</div>

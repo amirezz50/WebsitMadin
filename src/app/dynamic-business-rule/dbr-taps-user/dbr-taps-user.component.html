@@ -1,0 +1,10 @@
+﻿<tab-ctrl [paramsObject]="dbrTapsUser" [defaultTab]="2327" (clicked)="activatedbrTapsUser($event)"></tab-ctrl>
+
+
+<div class="card-block" *ngIf="activedbrTapsUser == 2327 || tab2327Activated == true" [hidden]="activedbrTapsUser != 2327">
+  <app-dbr-setup-user> </app-dbr-setup-user>
+</div>
+
+<div class="card-block" *ngIf="activedbrTapsUser == 2328 || tab2328Activated == true" [hidden]="activedbrTapsUser != 2328">
+  <app-dbr-parms-user> </app-dbr-parms-user>
+</div>

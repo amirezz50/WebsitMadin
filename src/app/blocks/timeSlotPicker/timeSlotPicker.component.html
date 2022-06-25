@@ -1,0 +1,47 @@
+<div class="container-fluid" [ngClass]="{'p-0': portal_padding}">
+  <h3 *ngIf="isNoSlot">
+    {{'DEVICENOTSCH' | translate }}
+  </h3>
+  <div class="row" *ngIf="checkFutureDate">
+    <div class="col-6">
+      <label for="startDate">{{ 'FAVTS_DATE' | translate }}</label>
+      <div class="input-group">
+        <input class="form-control" placeholder="{{'DATEFORMAT' | translate}}" ngbDatepicker #dp="ngbDatepicker"
+          (navigate)="startDateChanged()" (change)="startDateChanged()" [(ngModel)]="startDateNgb">
+        <div class="input-group-addon" (click)="dp.toggle()">
+          <i class="fa fa-calendar-minus-o"></i>
+        </div>
+      </div>
+    </div>
+    <div class="col">
+      <h4 class="text-info">{{translate.currentLang == 'ar'? currentSatrt.genDaysNameAr: currentSatrt.genDaysNameEn}}
+        {{ 'CORRESPONDING' | translate }} {{ currentSatrt.dateOnly }}</h4>
+    </div>
+  </div>
+  <table *ngIf="!isNoSlot" class="table nborer timetablesot">
+    <tbody>
+      <tr *ngFor="let hour of timeSlotTree">
+        <th scope="row">
+          <button class="btn bg-info text-white" title="Hour">{{hour.id}}</button>
+        </th>
+        <td>
+          <div class="btn-group btn-group-lg" role="group">
+            <div class="row">
+              <div class="col">
+                <!-- [title]="time.gender == 1 ? 'M' : (time.gender == 2 ? 'F' : 'Unknown')" -->
+                <button type="button" style="font-size: 12px;" *ngFor="let time of hour.children " [ngClass]="getCSSClasses(time)"
+                  class="m-1 btn" (click)="selectedSlot(time)">
+                  <div class="d-flex">
+                    <span class="mx-1">{{time.startTime}}</span>
+                    <div class="custom-fm" [ngClass]="{'text-danger': time.slotStatus == 1}" *ngIf="time.gender == 1">M</div>
+                    <div class="custom-fm" [ngClass]="{'text-danger': time.slotStatus == 1}" *ngIf="time.gender == 2">F</div>
+                  </div>
+                </button>
+              </div>
+            </div>
+          </div>
+        </td>
+      </tr>
+    </tbody>
+  </table>
+</div>

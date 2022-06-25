@@ -1,0 +1,12 @@
+{
+  "cacheSettings": [
+    {
+      "name": "language",
+      "version": "1.0"
+    },
+    {
+      "name": "countries",
+      "version": "1.0"
+    }
+  ]
+}

@@ -1,0 +1,206 @@
+﻿<div class="container-fluid">
+    <div class="row" [formGroup]="nameForm">
+
+        <div class="form-group d-none d-md-block col-md-3">
+            <label for="titleCode">
+                {{ 'title' | translate }}
+            </label>
+
+            <select class="form-control  form-control-sm " autofocus id="1" tabindex="1"
+                (keydown.Tab)="handleKeyEvent( $event,1 )" formControlName="titleCode" (change)="sendTitleCode()">
+                <option></option>
+                <option *ngFor="let title of titleCodeList" [value]="title.code">
+                    {{title.nameAr}}--{{title.nameEn}}
+                </option>
+            </select>
+
+        </div>
+
+        <!-- <div class="col-md-9 " style="direction:ltr !important"> -->
+        <div class="col-12 col-md-9">
+            <div [hidden]="namingTranslationSetting == 4" class="row dirValueAr">
+
+                <div class="form-group d-md-none col-12">
+                    <label for="titleCode">
+                        {{ 'title' | translate }}
+                    </label>
+
+                    <select class="form-control  form-control-sm " autofocus id="2" tabindex="1"
+                        (keydown.Tab)="handleKeyEvent( $event,1 )" formControlName="titleCode">
+                        <option></option>
+                        <option *ngFor="let title of titleCodeList" [value]="title.code">
+                            {{title.nameAr}}--{{title.nameEn}}
+                        </option>
+                    </select>
+
+                </div>
+
+                <div class="col-12 col-sm-6 col-md-3" *ngIf="nameAllowNumber">
+                    <input class="form-control form-control-sm dirValueAr" style="direction: rtl;" #fnameAr id="2"
+                        formControlName="fnameAr" (blur)="dictionaryTranslate(fnameAr.value,'fnameAr')"
+                        placeholder="الاسم الاول" tabindex="2" (Kedown.Tab)="handleKeyEvent( $event,2 )">
+                </div>
+
+                <div class="col-12 col-sm-6 col-md-3" *ngIf="!nameAllowNumber">
+                    <input class="form-control form-control-sm dirValueAr" style="direction: rtl;" #fnameAr textArOnly
+                        id="2" formControlName="fnameAr" (blur)="dictionaryTranslate(fnameAr.value,'fnameAr')"
+                        placeholder="الاسم الاول" tabindex="2" (Kedown.Tab)="handleKeyEvent( $event,2 )">
+                </div>
+
+
+                <div class="col-12 col-sm-6 col-md-3" *ngIf="!nameAllowNumber">
+                    <input class="form-control form-control-sm dirValueAr" style="direction: rtl;" #snameAr textArOnly
+                        id="3" formControlName="snameAr" (blur)="dictionaryTranslate(snameAr.value,'snameAr')"
+                        placeholder="الاسم الثانى" tabindex="3" (Kedown.Tab)="handleKeyEvent( $event,3 )">
+                </div>
+                <div class="col-12 col-sm-6 col-md-3" *ngIf="nameAllowNumber">
+                    <input class="form-control form-control-sm dirValueAr" style="direction: rtl;" #snameAr id="3"
+                        formControlName="snameAr" (blur)="dictionaryTranslate(snameAr.value,'snameAr')"
+                        placeholder="الاسم الثانى" tabindex="3" (Kedown.Tab)="handleKeyEvent( $event,3 )">
+                </div>
+
+                <div class="col-12 col-sm-6 col-md-3" *ngIf="!nameAllowNumber">
+                    <input class="form-control form-control-sm dirValueAr" style="direction: rtl;" #tnameAr textArOnly
+                        id="4" formControlName="tnameAr" (blur)="dictionaryTranslate(tnameAr.value,'tnameAr')"
+                        placeholder="الاسم الثالث" tabindex="4" (change)="searchSameNames()"
+                        (Kedown.Tab)="handleKeyEvent( $event,4 )">
+                </div>
+                <div class="col-12 col-sm-6 col-md-3" *ngIf="nameAllowNumber">
+                    <input class="form-control form-control-sm dirValueAr" style="direction: rtl;" #tnameAr id="4"
+                        formControlName="tnameAr" (blur)="dictionaryTranslate(tnameAr.value,'tnameAr')"
+                        placeholder="الاسم الثالث" tabindex="4" (change)="searchSameNames()"
+                        (Kedown.Tab)="handleKeyEvent( $event,4 )">
+                </div>
+
+                <div class="col-12 col-sm-6 col-md-3" *ngIf="!nameAllowNumber">
+                    <input class="form-control form-control-sm dirValueAr" style="direction: rtl;" #lnameAr textArOnly
+                        id="5" formControlName="lnameAr" (blur)="dictionaryTranslate(lnameAr.value,'lnameAr')"
+                        placeholder="الاسم الاخير" tabindex="5" (Kedown.Tab)="handleKeyEvent( $event,5 )">
+                </div>
+                <div class="col-12 col-sm-6 col-md-3" *ngIf="nameAllowNumber">
+                    <input class="form-control form-control-sm dirValueAr" style="direction: rtl;" #lnameAr id="5"
+                        formControlName="lnameAr" (blur)="dictionaryTranslate(lnameAr.value,'lnameAr')"
+                        placeholder="الاسم الاخير" tabindex="5" (Kedown.Tab)="handleKeyEvent( $event,5 )">
+                </div>
+
+
+            </div>
+            &nbsp;
+            <!--************************ engilsh area ****************-->
+            <div [hidden]="namingTranslationSetting == 3" class="row dirValue">
+
+                <div class="col-12 col-sm-6 col-md-3" *ngIf="!nameAllowNumber">
+                    <input class="form-control form-control-sm" #lnameEn textEnOnly id="9" formControlName="lnameEn"
+                        (blur)="dictionaryTranslate(lnameEn.value,'lnameEn')" placeholder="last Name" tabindex="9">
+                </div>
+                <div class="col-12 col-sm-6 col-md-3" *ngIf="nameAllowNumber">
+                    <input class="form-control form-control-sm" #lnameEn id="9" formControlName="lnameEn"
+                        (blur)="dictionaryTranslate(lnameEn.value,'lnameEn')" placeholder="last Name" tabindex="9">
+                </div>
+
+                <div class="col-12 col-sm-6 col-md-3" *ngIf="!nameAllowNumber">
+                    <input class="form-control form-control-sm" #tnameEn textEnOnly id="8" formControlName="tnameEn"
+                        (blur)="dictionaryTranslate(tnameEn.value,'tnameEn')" placeholder="Third Name" 
+                        (change)="searchSameNames()" tabindex="8"
+                        (Kedown.Tab)="handleKeyEvent( $event, 8 )">
+
+                    <div *ngIf="nameForm.controls['tnameEn'].errors && (nameForm.controls['tnameEn'].dirty || nameForm.controls['tnameEn'].touched)"
+                        class="alert alert-danger">
+                        <small [hidden]="!nameForm.controls['tnameEn'].errors.required">
+                            *
+                        </small>
+                        <small [hidden]="!nameForm.controls['tnameEn'].errors.minlength">
+                            Name must be at least 2 characters long.
+                        </small>
+                    </div>
+                </div>
+                <div class="col-12 col-sm-6 col-md-3" *ngIf="nameAllowNumber">
+                    <input class="form-control form-control-sm" #tnameEn id="8" formControlName="tnameEn"
+                        (blur)="dictionaryTranslate(tnameEn.value,'tnameEn')" placeholder="Third Name" 
+                        (change)="searchSameNames()" tabindex="8"
+                        (Kedown.Tab)="handleKeyEvent( $event, 8 )">
+
+                    <div *ngIf="nameForm.controls['tnameEn'].errors && (nameForm.controls['tnameEn'].dirty || nameForm.controls['tnameEn'].touched)"
+                        class="alert alert-danger">
+                        <small [hidden]="!nameForm.controls['tnameEn'].errors.required">
+                            *
+                        </small>
+                        <small [hidden]="!nameForm.controls['tnameEn'].errors.minlength">
+                            Name must be at least 2 characters long.
+                        </small>
+                    </div>
+                </div>
+
+
+                <div class="col-12 col-sm-6 col-md-3" *ngIf="!nameAllowNumber">
+                    <input class="form-control form-control-sm" #snameEn textEnOnly id="7" formControlName="snameEn"
+                        (blur)="dictionaryTranslate(snameEn.value,'snameEn')" placeholder="Second Name" tabindex="7"
+                        (Kedown.Tab)="handleKeyEvent( $event,7)">
+                </div>
+                <div class="col-12 col-sm-6 col-md-3" *ngIf="nameAllowNumber">
+                    <input class="form-control form-control-sm" #snameEn id="7" formControlName="snameEn"
+                        (blur)="dictionaryTranslate(snameEn.value,'snameEn')" placeholder="Second Name" tabindex="7"
+                        (Kedown.Tab)="handleKeyEvent( $event,7)">
+                </div>
+
+                <div class="col-12 col-sm-6 col-md-3" *ngIf="!nameAllowNumber">
+                    <input class="form-control form-control-sm" #fnameEn textEnOnly id="6" formControlName="fnameEn"
+                        (blur)="dictionaryTranslate(fnameEn.value,'fnameEn')" placeholder="First Name" tabindex="6"
+                        (Kedown.Tab)="handleKeyEvent( $event,6)">
+                </div>
+                <div class="col-12 col-sm-6 col-md-3" *ngIf="nameAllowNumber">
+                    <input class="form-control form-control-sm" #fnameEn id="6" formControlName="fnameEn"
+                        (blur)="dictionaryTranslate(fnameEn.value,'fnameEn')" placeholder="First Name" tabindex="6"
+                        (Kedown.Tab)="handleKeyEvent( $event,6)">
+                </div>
+
+            </div>
+        </div>
+
+    </div>
+</div>
+
+<div [hidden]="!toggle">
+    <ng-template #content let-c="close" let-d="dismiss">
+        <div class="modal-header">
+            <h4 class="modal-title">الاسماء المتشابه</h4>
+            <button type="button" class="close" aria-label="Close" (click)="d('Cross click')">
+                <span aria-hidden="true">&times;</span>
+            </button>
+
+            <!--<i *ngFor="let x of MVObj;let i = index">-->
+
+
+        </div>
+        <div class="modal-body">
+            <p-dataTable tableStyleClass="table table-bordered table-striped" [value]="names" [rows]="10"
+                [paginator]="true" [pageLinks]="3" [rowsPerPageOptions]="[5,10,20,50,100]">
+                <p-column field="code" header="{{ 'CODE' | translate }}" [sortable]="true"></p-column>
+                <p-column field="{{translate.currentLang == 'ar' ? 'fullnameAr':'fullnameEn'}}"
+                    header="{{ 'Name' | translate }}" [sortable]="true"></p-column>
+                <p-column field="mobile" header="{{ 'MOBILENUMBER' | translate }}" [sortable]="true"></p-column>
+                <p-column field="{{translate.currentLang == 'ar' ? 'fullAddressAr':'fullAddressAr'}}"
+                    header="{{ 'ADDRESS' | translate }}" [sortable]="true"></p-column>
+                <p-column field="gender" header="{{ 'GENDER' | translate }}" [sortable]="true">
+                    <ng-template pTemplate="options" let-row="rowData">
+                        <img style="width:25px; height:25px;"
+                            src="../../../assets/images/Gender{{row['gender']}}.png" />
+                    </ng-template>
+                </p-column>
+                <p-column field="{{translate.currentLang == 'ar' ? 'flagAr':'flagEn'}}"
+                    header="{{ 'TYPE' | translate }}" [sortable]="true"></p-column>
+                <p-column>
+                    <ng-template pTemplate="options" let-row="rowData">
+                        <i class="fa fa-pencil-square" (click)="getpatientdataRow(row);c('Close click');"
+                            placement="top">
+                        </i>
+                    </ng-template>
+                </p-column>
+
+            </p-dataTable>
+        </div>
+        <div class="modal-footer">
+            <button type="button" class="btn btn-secondary" (click)="c('Close click')">Close</button>
+        </div>
+    </ng-template>
+</div>

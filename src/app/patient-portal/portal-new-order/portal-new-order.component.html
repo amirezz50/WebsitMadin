@@ -1,0 +1,96 @@
+<div class="container-fluid mt-4">
+  <div class="row">
+    <div class="col-sm-4 col-12">
+      <h5 class="page-title">{{"ReservationVisits" | translate}}</h5>
+    </div>
+  </div>
+
+  <div class="row">
+    <div class="col-md-6 col-md-3">
+      <div class="form-group">
+        <label>{{'DATE'|translate}}</label>
+        <div class="input-group">
+          <input class="form-control" placeholder="{{'DATEFORMAT' | translate}}"
+            [(ngModel)]="regPatVisitVM.startDateNgb" ngbDatepicker #d="ngbDatepicker">
+          <div class="input-group-addon" (click)="d.toggle()">
+            <i class="fa fa-calendar"></i>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="col-md-6 col-md-3">
+      <sanabel-selectize appcode="1016" [(ngModel)]="regPatVisitVM.specialityCode" #specialitySearch
+        (clicked)="specialityClicked($event)">
+      </sanabel-selectize>
+    </div>
+  </div>
+  <div class="row">
+    <div class="col-md-6 col-md-3">
+      <sanabel-selectize appcode="1014" [(ngModel)]="regPatVisitVM.docId"
+        [SearchKeys]=" resourceType !=3 ?{DefaultMedTypeDoc:true,MedicalType:6} :{DefaultMedTypeDoc:false,MedicalType:6}"
+        #doctorSearch (clicked)="doctorClicked($event)">
+      </sanabel-selectize>
+    </div>
+    <div class="col-md-6 col-md-3">
+      <sanabel-selectize appcode="1057" [(ngModel)]="regPatVisitVM.placeCode" #clinicSearch
+        (clicked)="clinicClicked($event)">
+      </sanabel-selectize>
+    </div>
+
+  </div>
+  <div class="row">
+    <div class="col-md-6 col-md-3">
+      <sanabel-selectize appcode="1073" [SearchKeys]="{LoadCurrentBranchOnly:1}"
+        [(ngModel)]="regPatVisitVM.medicalCaseType">
+      </sanabel-selectize>
+    </div>
+    <div class="col-md-6 col-md-3">
+      <sanabel-selectize appcode="32" [SearchKeys]="{LoadCurrentBranchOnly:1}"
+        [(ngModel)]="regPatVisitVM.medicalCaseType">
+      </sanabel-selectize>
+    </div>
+
+  </div>
+
+
+  <div class="row">
+    <div class="col-sm-12 col-12">
+      <h5 class="page-title">{{"ATTATCHDOCUMENT" | translate}}</h5>
+    </div>
+    <div class="col-md-4 col-md-3">
+      <!-- (OutBase64)="addVisitDocument($event)" -->
+      <image-upload-new [height]="112" [imageBase64]="'fffhfh'" [docFolderLookupSerial]="1" [imgMode]="2"
+        [imageType]="1" [imageContent]="'imageContent'">
+      </image-upload-new>
+
+
+    </div>
+    <div class="col-md-4 col-md-3">
+      <!-- (OutBase64)="addVisitDocument($event)" -->
+      <image-upload-new [height]="112" [imageBase64]="'gfg'" hbbb [docFolderLookupSerial]="1" [imgMode]="2"
+        [imageType]="1" [imageContent]="'imageContent'">
+      </image-upload-new>
+    </div>
+    <div class="col-md-4 col-md-3">
+      <!-- (OutBase64)="addVisitDocument($event)" -->
+      <image-upload-new [height]="112" [imageBase64]="'fffhfh'" [docFolderLookupSerial]="1" [imgMode]="2"
+        [imageType]="1" [imageContent]="'imageContent'">
+      </image-upload-new>
+
+
+    </div>
+  </div>
+
+  <div class="row">
+    <button class="btn btn-send active" (click)="bookCheckUp(regPatVisitVM)">
+      {{'PO_BOOK'|translate}}
+    </button>
+    <button class="btn btn-send" routerLink="/portal/pat-services">
+      {{'Cancel'|translate}}
+    </button>
+  </div>
+</div>
+
+
+
+<!-- <app-order-add (myStepFinished)="orderAddFinished($event)" *ngIf="viewOrderAdd" [orderType]="1" [portalOrder]="true"></app-order-add> -->

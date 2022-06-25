@@ -1,0 +1,102 @@
+<div class="container-fluid">
+  <div class="card card-outline-primary">
+     
+
+     
+    <div class="panel-body">
+      <div class="card-block">
+         
+        <div class="ui-widget-header search-area">
+          <div class="container-fluid">
+            <app-fast-search [appearFastSearch]="false"
+                             [emitSearchAfterInt]="true" 
+                             [appCodes]="[1128]"
+                             name="fastSearchData" 
+                             (searchKeys)="getDbrParms($event)" ngDefaultControl>
+
+            </app-fast-search>
+          </div>
+        </div>
+
+        <form>
+          <div >
+             
+            <p-dataTable tableStyleClass="table table-bordered table-striped" [value]="dbrParmsItem"
+                         [rows]="10" [paginator]="true" [pageLinks]="3" (onPage)="paginate($event)" selectionMode="single"
+                         [rowsPerPageOptions]="[5,10,20,50,100]">
+
+              <p-column [style]="{'width': '20%'}" field="code" header="{{ 'CODE' | translate }}" [sortable]="true">
+                <ng-template pTemplate="options" let-row="rowData" disabled >
+                  <input type="text" class="col-sm-12 form-control  form-control-sm" (change)="onRowDataChange(row,$event);" disabled
+                        
+                         [(ngModel)]="row.code"
+                         name="code{{row.code}}" />
+                </ng-template>
+              </p-column>
+               
+              <p-column [style]="{'width': '20%'}" field="searchAppCode" header="{{ 'SEARCHAPPCODE' | translate }}" [sortable]="true">
+                <ng-template pTemplate="options" let-row="rowData">
+                  <input type="text"  (change)="onRowDataChange(row,$event);"
+                         class="form-control  col-sm-12 form-control-sm " [(ngModel)]="row.searchAppCode"
+                         name="searchAppCode{{row.code}}" />
+                </ng-template>
+              </p-column>
+               
+              <p-column [style]="{'width': '20%'}" field="descAr" header="{{ 'DESCAR' | translate }}" [sortable]="true">
+                <ng-template pTemplate="options" let-row="rowData">
+                  <input type="text"  (change)="onRowDataChange(row,$event);"
+                         class="form-control col-sm-12 form-control-sm " [(ngModel)]="row.descAr"
+                         name="descAr{{row.code}}" />
+                </ng-template>
+              </p-column>
+               
+              <p-column [style]="{'width': '20%'}" field="descEn" header="{{ 'DESCEN' | translate }}" [sortable]="true">
+                <ng-template pTemplate="options" let-row="rowData">
+                  <input type="text"  (change)="onRowDataChange(row,$event);"
+                         class="form-control col-sm-12 form-control-sm " [(ngModel)]="row.descEn"
+                         name="descEn{{row.code}}" />
+                </ng-template>
+              </p-column>
+               
+              <p-column [style]="{'width': '20%'}" field="type" header="{{ 'TYPE' | translate }}" [sortable]="true">
+                <ng-template pTemplate="options" let-row="rowData">
+                  <input type="text"   (change)="onRowDataChange(row,$event);"
+                         class="form-control col-sm-12 form-control-sm " [(ngModel)]="row.type"
+                         name="type{{row.code}}" />
+                </ng-template>
+              </p-column>
+               
+              <p-column [style]="{'width': '20%'}" field="sort" header="{{ 'SORT' | translate }}" [sortable]="true">
+                <ng-template pTemplate="options" let-row="rowData">
+                  <input type="text"  (change)="onRowDataChange(row,$event);"
+                         class="form-control col-sm-12 form-control-sm " [(ngModel)]="row.sort"
+                         name="sort{{row.code}}" />
+                </ng-template>
+              </p-column>
+
+               
+
+              <p-column [style]="{'width': '7%'}" [sortable]="true">
+                 <ng-template pTemplate="options" let-row="rowData"> 
+                 <icon-action (clicked)="onRowIconClick($event ,row)" [appCodes]="[403]"></icon-action>
+                </ng-template>
+              </p-column>
+
+            </p-dataTable>
+
+             
+
+          </div>
+          <div class="container-fluid">
+            <div class="row">
+              <div class="col">
+                <btns-ctrl [paramsArr]="controlsParams" (clicked)="onClicked($event)"></btns-ctrl>
+              </div>
+            </div>
+          </div>
+
+        </form>
+      </div>
+    </div>
+  </div>
+</div>

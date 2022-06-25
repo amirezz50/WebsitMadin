@@ -1,0 +1,267 @@
+<!-- <div class="container-fluied card card-header" *ngIf="pannerDisplay" > -->
+<div class="container-fluied active border mt-1" *ngIf="pannerDisplay" [class.active]="bannerCollapse">
+    <!-- by abood -->
+    <!-- <div class="container-fluied card card-header" *ngIf="pannerDisplay" [class.active]="bannerCollapse" (click)="collapsing()" > -->
+    <i class="fas fa-arrows-alt-v" (click)="collapsing()"></i>
+    <!-- <i class="fas fa-tint" (click)="addPatientBloodType(patient)" placement="right" displayType="topClassBlock" [ngbPopover]="popContent" #popover="ngbPopover"></i> -->
+    <ng-template #popContent>
+        <div class="container-fluid py-3">
+            <div>
+                <div class="form-group">
+                    <sanabel-selectize appcode="1023" [disabled]="true" [(ngModel)]="patientCode"></sanabel-selectize>
+                </div>
+                <div class="form-group">
+                    <sanabel-selectize appcode="24" [tabindex]="35" [(ngModel)]="patientBloodTypeData.bloodGroup">
+                    </sanabel-selectize>
+                </div>
+                <div class="form-group">
+                    <label class="small">RH</label>
+                    <sanabel-selectize appcode="290" [tabindex]="34" [simpleView]="true"
+                        [(ngModel)]="patientBloodTypeData.rhValue"></sanabel-selectize>
+                </div>
+
+                <div class="text-center">
+                    <button type="submit" class="btn btn-primary rounded-0 btn-sm" style="letter-spacing: 1px;"
+                        (click)="saveData(popover);">{{'SAVE' | translate}}</button>
+                </div>
+            </div>
+        </div>
+    </ng-template>
+
+
+    <!--  -->
+    <div class="pb_content container-fluid">
+        <div class="row">
+
+            <div class="col-1 img_div">
+                <div class="p_image h-100 d-flex align-items-center justify-content-left">
+                    <img class="img-thumbnail img-circle" src="../../../assets/images/patient .jpg" alt="">
+                </div>
+            </div>
+
+            <div class="row col left_banner">
+
+           
+                <div class="col  d-flex align-items-center mt-2">
+                    <span class="text-primary mx-2">
+                        {{'accountNo' | translate}}
+                    </span>
+                    <small class="font-weight-bold">
+                        {{ patient.visitSerial}}
+                    </small>
+                </div>
+                <div class="col  d-flex align-items-center mt-2">
+                    <span class="text-primary mx-2">
+                        {{'PATCASE' | translate}}
+                    </span>
+                    <small class="font-weight-bold">
+                        <!-- {{ patient.patCaseType}} -->
+                        {{translate.currentLang == 'ar' ? patient.patCaseTypeNameAr : patient.patCaseTypeNameEn}}
+                    </small>
+                </div>
+                <!-- added at 21/1/2020  -->
+                <div class="col  d-flex align-items-center mt-2" *ngIf="patient.docNameEn != undefiend">
+                    <span class="text-primary mx-2">
+                        {{'doctorName' | translate}}
+                    </span>
+                    <small class="font-weight-bold">
+                        {{translate.currentLang == 'ar' ? patient.docNameAr : patient.docNameEn}}
+                    </small>
+                </div>
+                <div class="col  d-flex align-items-center mt-2" (click)="selectAge()">
+                    <span class="mx-2" [ngStyle]="{'color': (patient.age==0 || !patient.age)? 'red ' : '#007bff' }">
+                        {{'AGE' | translate }}
+                    </span>
+
+                    <small class="font-weight-bold">
+                        ({{translate.currentLang == 'ar' ? patient.ageAr : patient.ageEn}})
+                    </small>
+                </div>
+
+                <!-- Blood group dont used Here now  -->
+                <!-- <div class="col  d-flex align-items-center mt-2">
+                    <span class="text-primary mx-2">
+                        {{'BloodGroup' | translate }} :
+                    </span>
+                    <small
+                        class="font-weight-bold">{{translate.currentLang == 'ar' ? patient.bloodGroupAr : patient.bloodGroupEn}}</small>
+                </div>
+
+                <div class="col  d-flex align-items-center mt-2">
+                    <span class="text-primary mx-2">
+                        {{'RH' | translate }} :
+                    </span>
+                    <small
+                        class="font-weight-bold">{{translate.currentLang == 'ar' ? patient.rhvalueAr : patient.rhvalueEn}}</small>
+                </div> -->
+
+
+                <div class="col  d-flex align-items-center mt-2">
+                    <span class="text-primary mx-2">
+                        {{'MAILADDRESS' | translate }} :
+                    </span>
+                    <small class="font-weight-bold">
+                        {{patient.mailAddress}}
+                    </small>
+                </div>
+
+                <div class="col  d-flex align-items-center mt-2">
+                    <span class="text-primary mx-2">
+                        <i class="fa fa-2x fa-map-marker"
+                            title="{{translate.currentLang == 'ar' ? patient.fullAddressAr : patient.fullAddressEn}}"></i>
+                    </span>
+                    <small class="font-weight-bold">
+                        {{translate.currentLang == 'ar' ? patient.addressAr : patient.addressEn}}
+                    </small>
+                </div>
+
+                <div class="col  d-flex align-items-center mt-2">
+                    <span class="text-primary mx-2">
+                        {{'Religion' | translate }} :
+                    </span>
+                    <small class="font-weight-bold">
+                        <!-- {{patient.religion_name_en}} -->
+                        ({{translate.currentLang == 'ar' ? patient.religion_name_ar : patient.religion_name_en}})
+
+                    </small>
+                </div>
+
+                <div class="col  d-flex align-items-center mt-2">
+                    <span class="text-primary mx-2">
+                        <i class="fa fa-2x fa-phone"></i>
+                    </span>
+                    <div class="">
+                        <small class="font-weight-bold">{{patient.mobile}}</small>
+                    </div>
+                </div>
+
+
+                <div class="col  d-flex align-items-center mt-2">
+                    <span class="text-primary mx-2">
+                        {{'Contract' | translate }} :
+                    </span>
+                    <small class="font-weight-bold">
+                        ({{translate.currentLang == 'ar' ? patient.contractsAr : patient.contractsEn}})
+                    </small>
+                </div>
+
+
+
+
+
+                <!-- <div class="col-1 align-right">
+          <i class="material-icons collapse" (click)="toggleMenu()" style="cursor:pointer" title="{{toggle? 'More Detail': 'Less Detail'}}">
+            {{toggle? 'keyboard_arrow_up': 'keyboard_arrow_down'}}</i>
+        </div> -->
+
+                <!------------------------------------------------------------------------------------>
+                <!-- <div class="row" *ngIf="!toggle">
+      </div> -->
+
+
+
+
+
+
+
+
+                <!------------------------------------------------------------------------------------>
+                <!-- <div class="row" *ngIf="medical==1">
+      </div> -->
+                <div class="col  d-flex align-items-center mt-2" *ngIf="medical==1  ">
+                    <span class="text-primary mx-2">
+                        {{'DOCTOR' | translate }} :
+                    </span>
+                    <small class="font-weight-bold">
+                        {{translate.currentLang == 'ar' ? lastStatus.docNameAr : lastStatus.docNameEn}}
+                    </small>
+                </div>
+
+                <div class="col  d-flex align-items-center mt-2" *ngIf="medical==1">
+                    <span class="text-primary mx-2">{{'PLACENAME' | translate }} :</span>
+                    <small class="font-weight-bold">{{translate.currentLang == 'ar' ? lastStatus.placeNameAr :
+                        lastStatus.placeNameEn}}
+                    </small>
+                </div>
+
+                <div class="col  d-flex align-items-center mt-2" *ngIf="medical==1">
+                    <span class="text-primary mx-2">{{'ALLERGIES' | translate }}</span>
+                    <span class="text-danger col" *ngFor="let allegy of allergies">{{allegy.drugNameEn}} </span>
+                </div>
+
+                <div class="col  d-flex align-items-center mt-2" *ngIf="medical==1">
+                    <span class="text-primary mx-2">BMI :</span>
+                    <small class="font-weight-bold">{{lastStatus.bmi}}</small>
+                </div>
+
+                <div class="col  d-flex align-items-center mt-2" *ngIf="medical==1">
+                    <span class="text-primary mx-2">BSA :</span>
+                    <small class="font-weight-bold">{{lastStatus.bsa}}</small>
+                </div>
+
+                <div class="col  d-flex align-items-center mt-2 " *ngIf="medical==1 && lastStatus.infection == 1">
+                    <span class="mx-2">
+                        <img style="width:25px; height:25px;" src="../../../assets/images/Infection.png"
+                            alt="Infection Illness" title="This Patient has infection illness" />
+                    </span>
+                    <div class="text-primary">
+                        <span class="font-weight-bold">{{'INFECTION' | translate}}</span>
+                    </div>
+                </div>
+
+                <div class="col  d-flex align-items-center mt-2 " *ngIf="medical==1 && lastStatus.chronic == 1">
+                    <span class="mx-2">
+                        <img style="width:40px; height:40px;" src="../../../assets/images/Chronic.png"
+                            alt="Chronic Illness" title="This Patient has chronic illness" />
+                    </span>
+                    <div class="text-primary">
+                        <span class="font-weight-bold">{{'CHRONIC' | translate}}</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="row master-form" *ngIf="this.editAge==true" [ngStyle]="{'height': showCalenderFlag==true? '322px ' : '' }">
+
+            <div class="col-1">
+                <label>
+                    {{'APPROXAGE' | translate}}
+                </label>
+            </div> 
+            <div class="col-2">
+                <input type="number" class="form-control" #approxAge (change)="onChange(approxAge.value)">
+            </div>
+            <div class="col-1">
+
+                <label>{{'BIRTHDATE' | translate}}</label>
+            </div>
+            <div class="col-2">
+
+                <div class="input-group input-group-sm">
+                    <input class="form-control" placeholder="{{'DATEFORMAT' | translate}}" [(ngModel)]="birthDay"
+                        ngbDatepicker #d="ngbDatepicker" (ngModelChange)="showCalenderData('change')">
+                    <div class="input-group-addon" (click)="d.toggle();showCalender()" >
+                        <i class="fa fa-calendar" ></i>
+                    </div>
+                    <!-- <input type="date"  class="form-control" placeholder="{{'DATEFORMAT' | translate}}" [formControl]="selectedDay"  (change)="changeDate($event)"> -->
+
+                </div>
+               
+            </div>
+            <div class="col-1">
+                <btns-ctrl [appCodes]="[1]" (clicked)="onClicked($event)"></btns-ctrl>
+            </div>
+            <!-- <div class="col-2">
+
+                <input class="customDate form-control" placeholder="{{'BIRTHDATE' | translate}}" ngbDatepicker
+                    #dp="ngbDatepicker" >
+                <div class="input-group-addon" (click)="dp.toggle()">
+                    <i class="fa fa-calendar-minus-o" style="right: 25px; top: 7px;"></i>
+                </div>
+            </div> -->
+
+
+
+        </div>
+    </div>
+</div>

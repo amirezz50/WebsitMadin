@@ -1,0 +1,24 @@
+<select *ngIf="compType == 'select'" class="form-control" style="font-size: 12px; height: 30px; padding: 0 4px;" #inpt [(ngModel)]="innerValue" (change)="selectItem(inpt.value)">
+  <option value="0">{{'SEARCH' | translate}}</option>
+  <option *ngFor="let item of options" [value]="item.code">{{translate.currentLang == 'ar' ? item.nameAr: item.nameEn}}</option>
+</select>
+
+
+<div [ngClass]="getCSSClasses()" *ngIf="compType == 'checkboxFlex'">
+  <div class="p-2" *ngFor="let item of options">
+    <input type="checkbox" (change)="selectItem(item.code)" [checked]="innerValue == item.code">
+    {{translate.currentLang == 'ar' ? item.nameAr: item.nameEn}}<br>
+  </div>
+</div>
+
+
+<div class="row" *ngIf="compType == 'checkbox'">
+  <div class="col-{{12/inputGrid}}" *ngFor="let item of options">
+    <input type="checkbox" (change)="selectItem(item.code)" [checked]="innerValue == item.code">
+    {{translate.currentLang == 'ar' ? item.nameAr: item.nameEn}}<br>
+  </div>
+</div>
+
+
+<!-- class="align-self-start" -->
+<!-- "" -->

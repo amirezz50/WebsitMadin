@@ -1,0 +1,46 @@
+
+
+.profile-title{
+  display: flex;
+  justify-content: space-between;
+  padding: 10px;
+  border-bottom: 1px solid #ddd;
+  margin-bottom:30px;
+}
+.profile-title h4{
+    font-size: 18px;
+    padding: 15px 0;
+}
+.profile-title .btn-edit{
+  background: #178374;
+  font-size: 14px;
+  padding: 8px 15px;
+  border-radius: 8px;
+  margin: 8px 0;
+
+}
+.card-data h4{
+  font-size:16px;
+}
+.card-info{
+    padding: 10px 15px;
+    border-radius: 15px;
+    margin: 15px;
+    min-height: 400px;
+    background: #eee;
+}
+.item-info{
+  display: flex;
+  justify-content: space-between;
+  padding: 10px;
+  border-bottom: 1px solid #fff;
+}
+.item-info h5{
+  font-size: 14px;
+  color: #333;
+
+}
+.item-info h6{
+  font-size: 14px;
+  color: #777;
+}

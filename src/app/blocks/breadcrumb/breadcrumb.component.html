@@ -1,0 +1,30 @@
+<div class="predcramb" *ngIf="areaList.length > 0">
+  <ul>
+    <li style="color:#5cb85c" aria-hidden="true" (click)="getHome()">
+      <a href="javascript:void(0);">
+        <i class="fa fa-home fa-2x"></i>
+      </a>
+    </li>
+    <li><span>\</span></li>
+    <ng-template ngFor let-area [ngForOf]="areaList ">
+      <li aria-hidden="true"
+          (click)="emitSelectArea(area)">
+        <a href="javascript:void(0);">
+          {{translate.currentLang == 'ar'? area.nameAr: area.nameEn}}
+        </a>
+      </li>
+      <li><span>\</span></li>
+    </ng-template>
+
+  </ul>
+</div>
+
+<!--div class="predcramb">
+       <ul>
+         <li><a href="#">الرئيسية </a></li>
+         <li><span>\</span></li>
+         <li><a href="#">البرنامج الطبي</a></li>
+         <li><span>\</span></li>
+         <li><a href="#">الآطباء</a></li>
+       </ul>
+     </div>-->

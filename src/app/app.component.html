@@ -1,0 +1,348 @@
+<div id="login_style_div" [ngClass]="{'login-style' : !userLogged}" class="flex-grid " onScroll=($event)>
+    <div class="clearfix"> </div>
+
+    <header *ngIf="userLogged" id="pageheader">
+
+        <!--logo-->
+        <div class="col-3">
+            <div class="logo">
+                <div class="system-logo">
+                    <a href="javascript:void(0);" class="d-flex justify-content-center align-items-center" data-toggle="tooltip" data-placement="left" title="Tooltip on top">
+                        <img [src]="'../assets/images/bg/logo-'+  displayFlag + '.jpg' " alt="logo" style="width: 25%;border-radius: 5px;" class="mx-2"/>
+                        <div class="name-hosp d-none-m">
+                            <span>
+                                {{headerParms.branchNameAr}}
+                                <br />
+                                {{headerParms.branchNameEn}}
+                            </span>
+                        </div>
+                    </a>
+                </div>
+            </div>
+        </div>
+
+        <!-- icons-rightSide -->
+        <ul class="icon-area first_area">
+            <li>
+                <div class="drop_down">
+                    <div class="font_icon">
+                        <i class="fa fa-fw fa-bars" (click)="toggleDashboard()" data-side="mini"></i>
+                    </div>
+                </div>
+            </li>
+
+            <li class="d-none-md">
+                <div class="drop_down">
+                    <div class="font_icon">
+                        <i class="fas fa-search" (click)="hideSearch()"></i>
+                    </div>
+                </div>
+            </li>
+
+            <li>
+                <div class="drop_down d-none-m">
+                    <div class="font_icon">
+                        <i (click)="toggleCountsDashboard()" class="fa fa-tachometer" aria-hidden="true"></i>
+                    </div>
+                </div>
+            </li>
+        </ul>
+
+        <!--title-page-->
+        <div class="title-page">
+
+            <h3> {{translate.currentLang == 'ar'? currentLink.nameAr: currentLink.nameEn}} </h3>
+        </div>
+
+        <!-- search -->
+        <div class="search animated" [class.fadeInDown]="hideSearchBar" [class.scale1]="hideSearchBar">
+            <form class="position-relative w-100 h-100" action="#">
+                <i class="fa fa-close" (click)="hideSearch()"></i>
+                <input class="d-block w-100 h-100" (blur)="hideSearch()" (keyup)="searchLink($event)" type="text" placeholder="{{ 'SEARCH' | translate }}.." />
+            </form>
+        </div>
+
+        <!-- icons-leftSide -->
+        <ul class="icon-area third_area">
+
+            <li>
+                <!-- language -->
+                <select (change)="LangChange($event.target.value)" name="sources" id="sources" class="custom-select sources" style="display: none" placeholder="select language">
+                    <option value="1">
+                        <a href="javascript:void(0);">
+                            <img src="../assets/images/arabic.png" alt="" />
+                            <span>ع</span>
+                        </a>
+                    </option>
+                    <option value="2">
+                        <a href="javascript:void(0);">
+                            <img src="../assets/images/english.png" alt="" />
+                            <span>En</span>
+                        </a>
+                    </option>
+                </select>
+
+                <!-- by abood -->
+                <div class="lang_dropper" (click)="langShow()">
+                    <span>{{currentLangFlag}}</span>
+                    <div class="drop_down_content" [class.show]="language">
+                        <span class="drop_down_items" (click)="RTL()">ع</span>
+                        <span class="drop_down_items" (click)="LTR()">En</span>
+                    </div>
+                </div>
+
+            </li>
+
+            <li class="hidden_in_sm">
+                <div class="drop_down">
+                    <div class="font_icon">
+                        <i class="fa fa-power-off" (click)="logout()"></i>
+                    </div>
+                </div>
+            </li>
+        </ul>
+
+        <!-- username dropdown -->
+        <div class="user-area">
+            <div class="dropdown">
+
+                <button (click)="ddClick('dropdown-user')" class="btn dropdown-toggle user-drop ml-auto" type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="true">
+                    <div class="user-name">
+                        <span> {{headerParms.userName}} - {{headerParms.dbName}}</span>
+
+                    </div>
+                    <!---->
+
+        
+                </button>
+
+                <div class="dropdown-menu" [ngClass]="{'show' : appdropdowns['dropdown-user']}" aria-labelledby="dropdownMenuButton" x-placement="bottom-start">
+                    <a class="dropdown-item" href="javascript:void(0);">
+                        <sanabel-selectize appcode="1063" [smallInput]="true" [SearchKeys]="{SecUserId:currentUserId}" (clicked)="userSelectizeClicked($event)"></sanabel-selectize>
+                    </a>
+                    <a class="dropdown-item" (click)="logout()" href="javascript:void(0);">
+                        <i class="icon-key"></i> {{ 'LOGOUT' | translate }}
+                    </a>
+
+                    <a class="dropdown-item" (click)="changePasswordPopup(null)" href="javascript:void(0);">
+                        <i class="icon-key"></i> {{ 'PASSWORD' | translate }}
+                    </a>
+
+                    <a class="dropdown-item" *ngIf="secLoginPrivileges?.forDebugPrivilege == 1" (click)="forDebug()" href="javascript:void(0);">
+                        <span *ngIf="forDebugXHR">
+                            <i class="fa fa-check  fa-2x fa-success"></i>
+                        </span>
+                        <span *ngIf="!forDebugXHR">
+                            <i class="fa fa-ban fa-2x fa-danger"></i>
+                        </span> {{ 'FORDEBUg' | translate }}
+                    </a>
+
+                </div>
+            </div>
+        </div>
+
+        <!-- icons-centerSide-->
+        <ul class="icon-area second_area d-none-m">
+
+            <li>
+                <div class="drop_down" (click)="sowreqClicked(hr)">
+                    <div class="font_icon active">
+                        <i class="fas fa-angle-double-down">
+                        </i>
+                    </div>
+
+                    <div class="drop_down_menu drop_down_menu_none" #hr>
+                        <ul>
+                            <li>
+                                <a href="javascript:void(0);" (click)="reqClicked(1)">
+                                    <label for="nameEn">{{ 'VACATIONREQUEST' | translate }}</label>
+                                </a>
+                            </li>
+                            <li>
+                                <a href="javascript:void(0);" (click)="reqClicked(2)">
+                                    <label for="nameEn">{{ 'PERMISSIONREQUEST' | translate }}</label>
+                                </a>
+                            </li>
+                            <li>
+                                <a href="javascript:void(0);" (click)="reqClicked(3)">
+                                    <label for="nameEn">{{ 'LOANREQUEST' | translate }}</label>
+                                </a>
+                            </li>
+                            <li>
+                                <a href="javascript:void(0);" (click)="reqClicked(4)">
+                                    <label for="nameEn">{{ 'EXCHANGEREQUIEST' | translate }}</label>
+                                </a>
+                            </li>
+                            <li>
+                                <a href="javascript:void(0);" (click)="reqClicked(5)">
+                                    <label for="nameEn">{{ 'SALARYPATH' | translate }}</label>
+                                </a>
+                            </li>
+                            <li>
+                                <a href="javascript:void(0);" (click)="reqClicked(6)">
+                                    <label for="nameEn">{{ 'COVERLETTER' | translate }}</label>
+                                </a>
+                            </li>
+                            <li>
+                                <a href="javascript:void(0);" (click)="reqClicked(7)">
+                                    <label for="nameEn">{{ 'APPRAISALREQUEST' | translate }}</label>
+                                </a>
+                            </li> 
+                            <li>
+                                <a href="javascript:void(0);" (click)="reqClicked(8)">
+                                    <label for="nameEn">{{ 'HrEmpVisaRequest' | translate }}</label>
+                                </a>
+                            </li>
+                            <li>
+                                <a href="javascript:void(0);" (click)="reqClicked(9)">
+                                    <label for="nameEn">{{ 'HREMPBOOKINGTRAIN' | translate }}</label>
+                                </a>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+            </li>
+            <!--  -->
+
+            <li class="hidden_in_sm">
+                <div class="drop_down">
+                    <div class="font_icon">
+                        <i class="fas fa-sync-alt" (click)="clearLocalStorage(true)"></i>
+                    </div>
+                </div>
+            </li>
+
+            <li class="hidden_in_sm">
+                <div class="drop_down">
+                    <div class="font_icon">
+                        <i class="fas fa-star" (click)="toggleFavArea()"></i>
+                    </div>
+                </div>
+            </li>
+
+            <li>
+                <div class="drop_down">
+                    <div class="font_icon"><a routerLink="/mailsListBox">
+                        <i class="fas fa-envelope" (click)="getModalEmail()"></i></a>
+                    </div>
+
+                    <div class="drop_down_menu">
+                        <ul>
+                            <li><a href="#">link</a></li>
+                            <li><a href="#">link</a></li>
+                            <li><a href="#">link</a></li>
+                            <li><a href="#">link</a></li>
+                            <li><a href="#">link</a></li>
+                        </ul>
+                    </div>
+                </div>
+            </li>
+
+            <li>
+                <div class="drop_down" (click)="setDisplayForddm(ddm, $event)">
+                    <div class="font_icon active">
+                        <i class="fas fa-bell">
+                            <span class="badge badge-pill">{{notifications?.length}}</span>
+                        </i>
+                    </div>
+                    <div [ngClass]="(showAlertList)?'drop_down_menu  drop_down_menu_block':'drop_down_menu  drop_down_menu_none'" id="ddm" #ddm>
+                        <ul>
+                            <li class="position-relative " [ngClass]="{'new_noti' : notify.isReaded == 0}" *ngFor="let notify of notifications">
+                                <a href="javascript:void(0);" (click)="OnNotifiClick(notify)">
+                                    <figure><i class="fas fa-bolt"></i></figure>
+                                    <p class="h-100 mx-2">
+                                        {{translate.currentLang=='ar' ? notify.bodyNM?.messageAr : notify.bodyNM?.messageEn}}
+                                    </p>
+                                </a>
+                            </li>
+
+                            <li class="position-relative text-center" (click)="goToAllAlert()">
+                                <a href="javascript:void(0);">
+                                    <p class="h-100 mx-auto text-primary">{{'DISPLAYALL' | translate}}</p>
+                                </a>
+                            </li>
+                            <li class="position-relative text-center" (click)="goToChat()">
+                                <a href="javascript:void(0);">
+                                    <p class="h-100 mx-auto text-primary">{{'CHAT' | translate}}</p>
+                                </a>
+                            </li>
+
+                        </ul>
+                    </div>
+                </div>
+            </li>
+
+        </ul>
+
+    </header>
+
+    <div [hidden]="menuHidden" *ngIf="userLogged" class="w-100">
+        <dashboard class="flex-grid" (LinkClick)="hideDashboard($event)" [child_id]="child_id" [hidden]="!countsHidden" #dashboardComponent>
+        </dashboard>
+        <counts-dashboard class="flex-grid container-area" *ngIf="!countsHidden"></counts-dashboard>
+    </div>
+
+    <div class="container-area" *ngIf="menuHidden" id="pagecontent">
+        <router-outlet></router-outlet>
+    </div>
+</div>
+
+<!-- loader -->
+<div class="loaderrr" [ngClass]="{'loader-show': isLoading, 'loader-hide':!isLoading}">
+    <div class="loader_container">
+
+        <svg class="preloader-icon" width="72" height="75" viewBox="0 0 34 38">
+            <path class="preloader-path" stroke-dashoffset="0"
+                d="M29.437 8.114L19.35 2.132c-1.473-.86-3.207-.86-4.68 0L4.153 8.114C2.68 8.974 1.5 10.56 1.5 12.28v11.964c0 1.718 1.22 3.306 2.69 4.165l10.404 5.98c1.47.86 3.362.86 4.834 0l9.97-5.98c1.472-.86 2.102-2.45 2.102-4.168V12.28c0-1.72-.59-3.306-2.063-4.166z">
+                <animate attributeType="XML" attributeName="stroke-dashoffset" from="0" to="102px" dur="1s"
+                    repeatCount="indefinite" />
+            </path>
+        </svg>
+
+
+
+    </div>
+</div>
+
+<block-modal-container #popup (close)="onpopupClose($event)">
+    <ng-container class="modal-title">
+    </ng-container>
+    <ng-container class="modal-body" [ngComponentOutlet]="DynamicComponent"></ng-container>
+</block-modal-container>
+
+<!-- <toast></toast> -->
+<modal-confirm></modal-confirm>
+<div style="display: none">
+    <ckeditor debounce="500">
+
+    </ckeditor>
+</div>
+
+<div class="layout-gray" [ngClass]="{'show-layout-gray' : showFavArea}" (click)=" showFavArea =!showFavArea ; "></div>
+
+<div class="fav-div " [ngClass]="{'show-fav-area' : showFavArea}">
+
+    <h3 class="title-fav-div">
+        <i class="btn btn-default  fa fa-bars" style="font-size:24px;" (click)="onMasterActionIcon($event)"></i> روابط سريعه
+    </h3>
+    <!-- #box (keyup)="onKeyUp(box.value)" -->
+    <input type="text" class="form-control form-control-sm" #inputElement [formControl]="searchInputControl" #xyz (keyup.enter)="favSearchOnkeyEnter(xyz.value)" />
+    <lable> </lable>
+    <div class="close-fav-div" (click)=" showFavArea =!showFavArea ; "><i class="fas fa-times"></i></div>
+    <ul>
+        <div class="w-100">
+            <li *ngFor="let fav of favoLinks ">
+                <i class="fa fa-trash" title="delete" (click)="onFavourite(fav,3)"></i>
+                <a href="javascript:void(0);" (click)="onLinkClicked(fav ,$event)">
+                    <lable> {{fav.sortView}} </lable>
+                    <i class="fas fa-angle-left"></i> {{translate.currentLang == 'ar'? fav.nameAr: fav.nameEn}}
+                </a>
+            </li>
+        </div>
+    </ul>
+</div>
+
+
+<block-modal-container #popup1>
+    <ng-container class="modal-body" [ngComponentOutlet]="DynamicComponent1"></ng-container>
+</block-modal-container>

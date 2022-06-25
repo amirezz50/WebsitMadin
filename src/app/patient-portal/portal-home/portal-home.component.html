@@ -1,0 +1,68 @@
+<div class="container-fluid mt-4">
+  <div class="row">
+    <div class="col-lg-3 col-md-6 col-sm-6 col-6">
+      <div class="cars-statistics">
+        <img src="assets/images/Portal/stat.png" alt="">
+        <div>
+          <h2>{{patientInformationNO.appointmentNo }}</h2>
+          <p>{{'PO_APPOINTMENT'|translate}}</p>
+        </div>
+      </div>
+    </div>
+    <div class="col-lg-3 col-md-6 col-sm-6 col-6">
+      <div class="cars-statistics">
+        <img src="assets/images/Portal/stat.png" alt="">
+        <div>
+          <h2>{{patientInformationNO.checkupNo }}</h2>
+          <p>{{'PO_CHECKUPS'|translate}}</p>
+        </div>
+      </div>
+    </div>
+    <div class="col-lg-3 col-md-6 col-sm-6 col-6">
+      <div class="cars-statistics">
+        <img src="assets/images/Portal/stat.png" alt="">
+
+        <div>
+          <h2>{{patientInformationNO.prescriptionNo}}</h2>
+          <p>{{'PO_MYPRESCRIPTION'|translate}}</p>
+        </div>
+      </div>
+    </div>
+
+    <div class="col-lg-3 col-md-6 col-sm-6 col-6">
+      <div class="cars-statistics">
+        <img src="assets/images/Portal/stat.png" alt="">
+
+        <div>
+          <h2>{{patientInformationNO.visitNo }}</h2>
+          <p>{{'PO_VISITS'|translate}}</p>
+        </div>
+      </div>
+    </div>
+
+  </div>
+  <div class="row">
+    <div class="col-md-12">
+      <div class="card-appointment">
+        <form>
+          <h2>
+            {{'PO_NEWAPPOINTEMENTS'|translate}}
+          </h2>
+          <div class="appointment-item" *ngFor=" let appointment of patientData">
+            <div class="info">
+              <img src="assets/images/Portal/avatar.png" alt="">
+              <div>
+                <h3>{{appointment.doctorNameEn}}</h3>
+                <p>{{appointment.specialityNameAr}}</p>
+              </div>
+            </div>
+            <div>
+              <p><i class="far fa-calendar"></i> <span>{{appointment.expectedStartDate| date:'dd/MM/yyyy'}}</span> </p>
+              <p><i class="far fa-clock"></i> <span>{{appointment.expectedStartTime}}</span></p>
+            </div>
+          </div>
+        </form>
+      </div>
+    </div>
+  </div>
+</div>

@@ -1,0 +1,4 @@
+<div class="blcs-preview" [ngStyle]="{'background-color': color ? color.hex : null}" (click)="togglePalette()">
+  <i class="p-1 mr-1 ml-1">{{colorName}}</i>
+</div>
+<bytelabs-color-selector-palette *ngIf="showPalette"></bytelabs-color-selector-palette>

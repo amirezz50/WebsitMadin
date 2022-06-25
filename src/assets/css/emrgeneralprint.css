@@ -1,0 +1,79 @@
+﻿.full-screen {
+    top: 50px;
+    right: 0;
+    left: 0;
+    width: 100%;
+    /* padding: 20px !important; */
+    border: 1px solid #3377ab;
+    /* border-top: 50px solid #3377AB; */
+    z-index: 99999;
+    background: #fff;
+    height: 100%;
+}
+
+.icon-full-screen {
+    position: absolute;
+    top: 20px;
+    left: 25px;
+    color: #fff;
+    font-size: large;
+    cursor: pointer;
+}
+
+.resusc-level {
+    color: #4A97F3;
+}
+
+.emergant-level {
+    color: #FF1C20;
+}
+
+.urgent-level {
+    color: #FFC107;
+}
+
+.less-urgent-level {
+    color: #46E510;
+}
+
+.non-urgent-level {
+    color: #000000;
+}
+
+.overflow-height {
+    max-height: 750px;
+    overflow: scroll;
+}
+
+.full-screen-view {
+    width: 100%;
+}
+
+.invoice-head td {
+    padding: 0 8px;
+}
+
+.container {
+    padding-top: 30px;
+}
+
+.invoice-body {
+    background-color: transparent;
+}
+
+.invoice-thank {
+    margin-top: 60px;
+    padding: 5px;
+}
+
+address {
+    margin-top: 15px;
+}
+
+strong {
+    text-decoration: underline;
+}
+
+.underLine {
+    text-decoration: underline;
+}

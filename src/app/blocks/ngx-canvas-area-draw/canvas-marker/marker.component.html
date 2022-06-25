@@ -1,0 +1,184 @@
+<div class=" ">
+    <carousel-veiwer [fromMarker]="true" (onImageUrl)="onCarouselVeiwerImageUrl($event)"></carousel-veiwer>
+</div>
+<div class="row ">
+    <div class="col-6">
+        <!--<button (click)="areaDraw.startPaint()">New shape</button>-->
+        <btns-ctrl [appCodes]="[1]" (click)="saveEmrGraphics()"></btns-ctrl>
+    </div>
+    <!-- <div class="col-6">
+    <button (click)="reset()">Reset</button>
+    <button (click)="clean()">Clean</button>
+  </div> -->
+</div>
+<div class="row" [hidden]="true">
+    <div class="col">
+        <div class="row">
+            <div class="col">
+                <label>Image URL</label>
+                <input class="form-control" type="text" [(ngModel)]="imageUrl" (keyup)="reset()">
+            </div>
+            <div class="col">
+                <label>Update while moving</label>
+                <input type="checkbox" [(ngModel)]="updateWhileMoving">
+            </div>
+        </div>
+        <div class="row">
+            <div class="col">
+                <label>Stroke Color</label>
+                <input class="form-control" type="text" [(ngModel)]="strokeColor">
+            </div>
+            <div class="col">
+                <label>Fill Color</label>
+                <input class="form-control" type="text" [(ngModel)]="fillColor">
+            </div>
+        </div>
+        <div class="row">
+            <div class="col">
+                <label>Handle Fill Color</label>
+                <input class="form-control" type="text" [(ngModel)]="handleFillColor">
+            </div>
+            <div class="col">
+                <label>Handle Stroke Color</label>
+                <input class="form-control" type="text" [(ngModel)]="handleStrokeColor">
+            </div>
+        </div>
+    </div>
+</div>
+<div class="row" *ngIf="!drawSvg">
+    <div class="col-2 list-group">
+        <a class="list-group-item list-group-item-action flex-column align-items-start" *ngFor="let item of legendArr" href="javascript:void(0)" (click)="onLegendChange(item)">
+
+            <div class="d-flex w-100 justify-content-between">
+                <h5 class="mb-1">{{translate.currentLang == 'ar'? item.nameAr : item.nameEn }}</h5>
+
+                <span class="circle-btn" [ngStyle]="{'background-color':item.strokeColor}" *ngIf="item.shapeTypeTag =='ARC'"></span>
+
+                <span [ngStyle]="{'color':item.strokeColor}" *ngIf=" item.shapeTypeTag =='TEXT'">{{item.shapeAsText}}</span>
+
+                <span class="arrow-up" [ngStyle]="{'border-color':item.strokeColor}" *ngIf=" item.shapeTypeTag =='TRI'">{{item.shapeAsText}}</span>
+
+                <span class="rec-btn" [ngStyle]="{'background-color':item.strokeColor}" *ngIf="item.shapeTypeTag =='REC'"></span>
+
+                <span [ngStyle]="{'color':item.strokeColor}" *ngIf="item.shapeTypeTag =='PEN'">
+          <i class="fa fa-pencil fa-2x"></i>
+        </span>
+            </div>
+        </a>
+    </div>
+    <div class="col" *ngIf=" imageUrl != ''">
+        <div style="height:400px;width:700px;margin: auto;" #areaDraw="canvasAreaDraw" class="border border-info rounded" (activeShapeChangeEvent)="sceneChange($event)" (addShapeEvent)="onAddShape()" (removeShapeEvent)="onRemoveShape($event)" [defaultShapes]="defaults"
+            [eventWhileMoving]="updateWhileMoving" [strokeColor]="strokeColor" [fillColor]="fillColor" [activeLegend]="activeLegend" [canvasAreaDraw]="imageUrl" [handleFillColor]="handleFillColor" [handleStrokeColor]="handleStrokeColor" [canvasLegends]="canvasLegends"
+            (GetCanvasLegends)="GetCanvasLegends($event)" [restoreConvasState]="restoreConvasLegend">
+        </div>
+    </div>
+    <div class="col-2 list-group" *ngIf="!isRefreshSelectedLegends">
+        <a class="list-group-item list-group-item-action flex-column align-items-start" *ngFor="let item of canvasLegends" href="javascript:void(0)" (click)="removeDrawedLegendFromCanvas(item)">
+
+            <div class="d-flex w-100 justify-content-between">
+                <h5 class="mb-1">{{translate.currentLang == 'ar'? item.nameAr : item.nameEn }}</h5>
+
+                <span class="circle-btn" [ngStyle]="{'background-color':item.strokeColor}" *ngIf="item.shapeTypeTag =='ARC'"></span>
+
+                <span [ngStyle]="{'color':item.strokeColor}" *ngIf=" item.shapeTypeTag =='TEXT'">{{item.shapeAsText}}</span>
+
+                <span class="arrow-up" [ngStyle]="{'border-color':item.strokeColor}" *ngIf=" item.shapeTypeTag =='TRI'">{{item.shapeAsText}}</span>
+
+                <span class="rec-btn" [ngStyle]="{'background-color':item.strokeColor}" *ngIf="item.shapeTypeTag =='REC'"></span>
+
+                <span [ngStyle]="{'color':item.strokeColor}" *ngIf="item.shapeTypeTag =='PEN'">
+          <i class="fa fa-pencil fa-2x"></i>
+        </span>
+            </div>
+
+        </a>
+    </div>
+</div>
+
+<div class="row" *ngIf="drawSvg" [ngClass]="{'mb-5 pb-3': drawSvg}">
+    <div class="col-2 list-group">
+        <a class="list-group-item list-group-item-action flex-column align-items-start" *ngFor="let item of legendArr" href="javascript:void(0)" (click)="onLegendChange(item)" [ngClass]="{'active': activeLegend.serial == item.serial}">
+
+            <div class="d-flex w-100 justify-content-between">
+                <h5 class="mb-1">{{translate.currentLang == 'ar'? item.nameAr : item.nameEn }}</h5>
+
+                <span class="circle-btn" [ngStyle]="{'background-color':item.strokeColor}" *ngIf="item.shapeTypeTag =='ARC'"></span>
+
+                <span [ngStyle]="{'color':item.strokeColor}" *ngIf=" item.shapeTypeTag =='TEXT'">{{item.shapeAsText}}</span>
+
+                <span class="arrow-up" [ngStyle]="{'border-color':item.strokeColor}" *ngIf=" item.shapeTypeTag =='TRI'">{{item.shapeAsText}}</span>
+
+                <span class="rec-btn" [ngStyle]="{'background-color':item.strokeColor}" *ngIf="item.shapeTypeTag =='REC'"></span>
+
+                <span [ngStyle]="{'color':item.strokeColor}" *ngIf="item.shapeTypeTag =='PEN'">
+          <i class="fa fa-pencil fa-2x"></i>
+        </span>
+            </div>
+        </a>
+    </div>
+    <div class="col text-center" id="svgViewScreen"></div>
+    <div class="col-2 list-group">
+        <a class="list-group-item list-group-item-action flex-column align-items-start" *ngFor="let item of canvasLegends" href="javascript:void(0)" (click)="removeShapeTooth(item, true)">
+
+            <div class="d-flex w-100 justify-content-between" *ngIf="item.shapeProp.state != 2">
+                <h5 class="mb-1">{{translate.currentLang == 'ar'? item.nameAr : item.nameEn }}</h5>
+
+                <span class="circle-btn" [ngStyle]="{'background-color':item.strokeColor}" *ngIf="item.shapeTypeTag =='ARC'"></span>
+
+                <span [ngStyle]="{'color':item.strokeColor}" *ngIf=" item.shapeTypeTag =='TEXT'">{{item.shapeAsText}}</span>
+
+                <span class="arrow-up" [ngStyle]="{'border-color':item.strokeColor}" *ngIf=" item.shapeTypeTag =='TRI'">{{item.shapeAsText}}</span>
+
+                <span class="rec-btn" [ngStyle]="{'background-color':item.strokeColor}" *ngIf="item.shapeTypeTag =='REC'"></span>
+
+                <span [ngStyle]="{'color':item.strokeColor}" *ngIf="item.shapeTypeTag =='PEN'">
+          <i class="fa fa-pencil fa-2x"></i>
+        </span>
+            </div>
+
+        </a>
+    </div>
+</div>
+
+<!-- <button class="btn btn-primary" [awesomeTooltip]="'hello world!'">hello world</button> -->
+
+
+<span id="organs-tip" style="display: none;left: 557px; top: 302px;">
+  <b id="tip_title"></b>
+  <br>
+  <img id="tip_img" alt="tip-image">
+  <span id="tip_desc">Upper right<br>canine<br>(eye tooth)<br>≈ 11-12 years</span>
+</span>
+
+
+<span id="spots_tip" style="display: none;left: 557px; top: 302px;">
+  <span id="spot_note"></span>
+</span>
+
+
+
+
+<!-- <div class="col-6"> 
+  <div #area2Draw="canvasAreaDraw" class="border border-info rounded" [strokeColor]="strokeColor"
+    [fillColor]="fillColor" [handleFillColor]="handleFillColor" [handleStrokeColor]="handleStrokeColor"
+    [canvasAreaDraw]="image2Url"></div>
+</div> -->
+
+<block-modal-container #popup (close)="onpopupClose($event)">
+    <ng-container class="modal-title">
+        <h3 style="font-family: inherit">
+            Tooth Data
+        </h3>
+    </ng-container>
+    <ng-container class="modal-body">
+        <div class="text-center">
+            <input class="form-control my-3" [(ngModel)]="toothNotes" placeholder="Notes" type="text">
+            <button class="btn btn-primary px-3 mt-2" (click)="saveToothData()">Save</button>
+        </div>
+    </ng-container>
+</block-modal-container>
+
+
+<!-- <circle cx="246" cy="435" r="30" fill="#000000" fill-opacity="0.6" stroke="#FF0000" stroke-opacity="0.6" id="mt_spots_0"
+  cursor="pointer">
+</circle> -->

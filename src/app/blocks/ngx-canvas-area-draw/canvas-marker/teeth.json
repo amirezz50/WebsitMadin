@@ -1,0 +1,130 @@
+{
+    "d1": {
+        "title": "<u>RIGHT MAXILLARY 3RD MOLAR</u>",
+        "desc": "<b>Click to open modal window!</b>"
+    },
+    "d2": {
+        "title": "<u>RIGHT MAXILLARY 2ND MOLAR</u>",
+        "desc": "Upper right second <br>molar tooth<br>≈ 12-13 years"
+    },
+    "d3": {
+        "title": "<u>RIGHT MAXILLARY 1ST MOLAR</u>",
+        "desc": "Upper right first <br>molar tooth<br>≈ 6-7 years"
+    },
+    "d4": {
+        "title": "<u>RIGHT MAXILLARY 2ND BICUSPID</u>",
+        "desc": "Upper right second <br>premolar tooth<br>≈ 10-12 years"
+    },
+    "d5": {
+        "title": "<u>RIGHT MAXILLARY 1ST BICUSPID</u>",
+        "desc": "Upper right first <br>premolar tooth<br>≈ 10-11 years"
+    },
+    "d6": {
+        "title": "<u>RIGHT MAXILLARY CUSPID</u>",
+        "desc": "Upper right<br>canine<br>(eye tooth)<br>≈ 11-12 years"
+    },
+    "d7": {
+        "title": "<u>RIGHT MAXILLARY LATERAL INCISOR</u>",
+        "desc": "Upper right lateral<br>incisor<br>≈ 8-9 years"
+    },
+    "d8": {
+        "title": "<u>RIGHT MAXILLARY CENTRAL INCISOR</u>",
+        "desc": "Upper right central<br>incisor<br>≈ 7-8 years"
+    },
+    "d9": {
+        "title": "<u>LEFT MAXILLARY CENTRAL INCISOR</u>",
+        "desc": "Upper left central<br>incisor<br>≈ 7-8 years"
+    },
+    "d10": {
+        "title": "<u>LEFT MAXILLARY LATERAL INCISOR</u>",
+        "desc": "Upper left lateral<br>incisor<br>≈ 8-9 years"
+    },
+    "d11": {
+        "title": "<u>LEFT MAXILLARY CUSPID</u>",
+        "desc": "Upper left<br>canine<br>(eye tooth)<br>≈ 11-12 years"
+    },
+    "d12": {
+        "title": "<u>LEFT MAXILLARY 1ST BICUSPID</u>",
+        "desc": "Upper left first <br>premolar tooth<br>≈ 10-11 years"
+    },
+    "d13": {
+        "title": "<u>LEFT MAXILLARY 2ND BICUSPID</u>",
+        "desc": "Upper left second <br>premolar tooth<br>≈ 10-12 years"
+    },
+    "d14": {
+        "title": "<u>LEFT MAXILLARY 1ST MOLAR</u>",
+        "desc": "Upper left first <br>molar tooth<br>≈ 6-7 years"
+    },
+    "d15": {
+        "title": "<u>LEFT MAXILLARY 2ND MOLAR</u>",
+        "desc": "Upper left second <br>molar tooth<br>≈ 12-13 years"
+    },
+    "d16": {
+        "title": "<u>LEFT MAXILLARY 3RD MOLAR</u>",
+        "desc": "Upper left third <br>molar tooth<br>(wisdom tooth)<br>≈ 17-21 years"
+    },
+    "d17": {
+        "title": "<u>LEFT MANDIBULAR 3RD MOLAR</u>",
+        "desc": "Lower left third <br>molar tooth<br>(wisdom tooth)<br>≈ 17-21 years"
+    },
+    "d18": {
+        "title": "<u>LEFT MANDIBULAR 2ND MOLAR</u>",
+        "desc": "Lower left second <br>molar tooth<br>≈ 11-13 years"
+    },
+    "d19": {
+        "title": "<u>LEFT MANDIBULAR 1ST MOLAR</u>",
+        "desc": "Lower left first <br>molar tooth<br>≈ 6-7 years"
+    },
+    "d20": {
+        "title": "<u>LEFT MANDIBULAR 2ND BICUSPID</u>",
+        "desc": "Lower left second <br>premolar tooth<br>≈ 11-12 years"
+    },
+    "d21": {
+        "title": "<u>LEFT MANDIBULAR 1ST BICUSPID</u>",
+        "desc": "Lower left first <br>premolar tooth<br>≈ 10-12 years"
+    },
+    "d22": {
+        "title": "<u>LEFT MANDIBULAR CUSPID</u>",
+        "desc": "Lower left<br>canine<br>(eye tooth)<br>≈ 9-10 years"
+    },
+    "d23": {
+        "title": "<u>LEFT MANDIBULAR LATERAL INCISOR</u>",
+        "desc": "Lower left lateral<br>incisor<br>≈ 7-8 years"
+    },
+    "d24": {
+        "title": "<u>LEFT MANDIBULAR CENTRAL INCISOR</u>",
+        "desc": "Lower left central<br>incisor<br>≈ 6-7 years"
+    },
+    "d25": {
+        "title": "<u>RIGHT MANDIBULAR CENTRAL INCISOR</u>",
+        "desc": "Lower right central<br>incisor<br>≈ 6-7 years"
+    },
+    "d26": {
+        "title": "<u>RIGHT MANDIBULAR LATERAL INCISOR</u>",
+        "desc": "Lower right lateral<br>incisor<br>≈ 7-8 years"
+    },
+    "d27": {
+        "title": "<u>RIGHT MANDIBULAR CUSPID</u>",
+        "desc": "Lower right<br>canine<br>(eye tooth)<br>≈ 9-10 years"
+    },
+    "d28": {
+        "title": "<u>RIGHT MANDIBULAR 1ST BICUSPID</u>",
+        "desc": "Lower right first <br>premolar tooth<br>≈ 10-12 years"
+    },
+    "d29": {
+        "title": "<u>RIGHT MANDIBULAR 2ND BICUSPID</u>",
+        "desc": "Lower right second <br>premolar tooth<br>≈ 11-12 years"
+    },
+    "d30": {
+        "title": "<u>RIGHT MANDIBULAR 1ST MOLAR</u>",
+        "desc": "Lower right first <br>molar tooth<br>≈ 6-7 years"
+    },
+    "d31": {
+        "title": "<u>RIGHT MANDIBULAR 2ND MOLAR</u>",
+        "desc": "Lower right second <br>molar tooth<br>≈ 11-13 years"
+    },
+    "d32": {
+        "title": "<u>RIGHT MANDIBULAR 3RD MOLAR</u>",
+        "desc": "Lower right third <br>molar tooth<br>(wisdom tooth)<br>≈ 17-21 years"
+    }
+}

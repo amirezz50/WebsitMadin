@@ -1,0 +1,287 @@
+<div *ngIf="!verticalMode">
+  <div class="master-form">
+    <div class="row">
+      <div class="col-sm-3" *ngIf="settingHM['2005'] ">
+        <label for="ngbFromDate" class="mb-2">
+          {{ 'FROM' | translate }}
+        </label>
+        <div class="input-group input-group-sm">
+          <input class="form-control" placeholder="{{'DATEFORMAT' | translate}}" [(ngModel)]="_ngbFromDate"
+            (change)="getDateFrom($event)" (navigate)="getDateFrom($event)" ngbDatepicker
+            #ngbFromDate="ngbDatepicker"  required/>
+          <div class="input-group-addon" (click)="ngbFromDate.toggle()">
+            <i class="fa fa-calendar"></i>
+          </div>
+        </div>
+
+      </div>
+      <div class="col-sm-3" *ngIf="settingHM['2006']">
+        <label for="ngbToDate" class="mb-2">
+          {{ 'TO' | translate }}
+        </label>
+        <div class="input-group input-group-sm">
+          <input class="form-control" placeholder="{{'DATEFORMAT' | translate}}" [(ngModel)]="_ngbToDate"
+            (change)="getDateTo($event)" (navigate)="getDateTo($event)" ngbDatepicker #ngbToDate="ngbDatepicker" required />
+          <div class="input-group-addon" (click)="ngbToDate.toggle()">
+            <i class="fa fa-calendar"></i>
+          </div>
+        </div>
+      </div>
+
+      <div class="col-sm-3" *ngIf="settingHM['7005']">
+        <div class="form-group d-none d-md-block col-md-1">
+          <label>
+            {{ 'YEAR' | translate }}
+          </label>
+          <input class="form-control form-control-sm " [(ngModel)]="hrSearchCretiria.year" type="number"
+            (clicked)="getYear($event)">
+        </div>
+      </div>
+
+      <div class="col-sm-3" *ngIf="settingHM['57'] ">
+        <div class="form-group">
+          <sanabel-selectize appcode="57" [(ngModel)]="hrSearchCretiria.month" (clicked)="getMonth($event)">
+          </sanabel-selectize>
+        </div>
+      </div>
+
+      <div class="col-sm-3" *ngIf="settingHM['1275'] ">
+        <div class="form-group">
+          <sanabel-selectize appcode="1275" [SearchKeys]="{IgnoreWorkStaus:1}" [(ngModel)]="hrSearchCretiria.empCode" (clicked)="getEmpCode($event)">
+          </sanabel-selectize>
+        </div>
+      </div>
+      <div class="col-sm-3" *ngIf="settingHM['1024'] ">
+        <div class="form-group">
+          <sanabel-selectize appcode="1024" [(ngModel)]="hrSearchCretiria.JobId" (clicked)="getEmpJob($event)">
+          </sanabel-selectize>
+        </div>
+      </div>
+      <div class="col-sm-3" *ngIf="settingHM['1025'] ">
+        <div class="form-group">
+          <sanabel-selectize appcode="1025" [(ngModel)]="hrSearchCretiria.section" (clicked)="getEmpSection($event)">
+          </sanabel-selectize>
+        </div>
+      </div>
+      <div class="col-sm-3" *ngIf="settingHM['1153'] ">
+        <div class="form-group">
+          <sanabel-selectize appcode="1153" [(ngModel)]="hrSearchCretiria.department" (clicked)="getEmpDep($event)">
+          </sanabel-selectize>
+        </div>
+      </div>
+      <div class="col-sm-3" *ngIf="settingHM['50'] ">
+        <div class="form-group">
+          <sanabel-selectize appcode="50" [(ngModel)]="hrSearchCretiria.contractType"
+            (clicked)="getEmpContract($event)">
+          </sanabel-selectize>
+        </div>
+      </div>
+      <div class="col-sm-3" *ngIf="settingHM['381']">
+        <div class="form-group">
+          <sanabel-selectize appcode="381" [(ngModel)]="hrSearchCretiria.confirmedFingerPrint"
+            (clicked)="getConfirmedFingerPrint($event)">
+          </sanabel-selectize>
+        </div>
+      </div>
+      <div class="col-sm-3" *ngIf="settingHM['1150'] ">
+        <div class="form-group">
+          <sanabel-selectize appcode="1150" [(ngModel)]="hrSearchCretiria.payrollType"
+            (clicked)="getPayrollType($event)">
+          </sanabel-selectize>
+        </div>
+      </div> 
+      <div class="col-sm-3" *ngIf="settingHM['1029']">
+        <div class="form-group">
+          <sanabel-selectize appcode="1029" [(ngModel)]="hrSearchCretiria.violation" (clicked)="getViolation($event)">
+          </sanabel-selectize>
+        </div>
+      </div>
+      <div class="col-sm-3" *ngIf="settingHM['276']">
+        <div class="form-group">
+          <sanabel-selectize appcode="276" [(ngModel)]="hrSearchCretiria.revised" (clicked)="getRevised($event)">
+          </sanabel-selectize>
+        </div>
+      </div>
+      <div class="col-sm-3" *ngIf="settingHM['385']">
+        <div class="form-group">
+          <sanabel-selectize appcode="385" [(ngModel)]="hrSearchCretiria.inCompleteFingerPrint"
+            (clicked)="getInCompleteFingerPrint($event)">
+          </sanabel-selectize>
+        </div>
+      </div>
+      <div class="col-sm-3" *ngIf="settingHM['204'] ">
+        <div class="form-group">
+          <sanabel-selectize appcode="204" [(ngModel)]="hrSearchCretiria.attendMethod"
+            (clicked)="getEmpAttendMethod($event)">
+          </sanabel-selectize>
+        </div>
+      </div> 
+      <div class="col-sm-3" *ngIf="settingHM['1309'] ">
+        <div class="form-group">
+          <sanabel-selectize appcode="1309" [(ngModel)]="hrSearchCretiria.hrServiceAwardReasons"
+            (clicked)="getHrServiceAwardReasons($event)">
+          </sanabel-selectize>
+        </div>
+      </div>
+      <div class="col-sm-3" *ngIf="settingHM['1298'] ">
+        <div class="form-group">
+          <sanabel-selectize appcode="1298" [(ngModel)]="hrSearchCretiria.hrEmpServingBranch"
+            (clicked)="getHrEmpServingBranch($event)">
+          </sanabel-selectize>
+        </div>
+      </div>
+     
+      <div class="col d-flex pt-4" *ngIf="!hideIconSearch">
+        <div class="btn-group align-self-center">
+          <button class="btn btn-primary" title="{{ 'SEARCH' | translate }}" placement="top" ngbTooltip="search "
+            (click)="onSearchClick()">
+            <i class="fa fa-search"></i>
+          </button>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<div *ngIf="verticalMode">
+  <div class="master-form">
+    <div class="row" *ngIf="settingHM['1275']">
+      <div class="col-sm-12">
+        <div class="form-group">
+          <sanabel-selectize appcode="1275" [SearchKeys]="{IgnoreWorkStaus:1}" [(ngModel)]="hrSearchCretiria.empCode" (clicked)="getEmpCode($event)">
+          </sanabel-selectize>
+        </div>
+      </div>
+    </div>
+    <div class="row">
+      <div class="col-sm-12" *ngIf="settingHM['2005']">
+        <label for="ngbFromDate" class="mb-2">
+          {{ 'FROM' | translate }}
+        </label>
+        <div class="input-group input-group-sm">
+          <input class="form-control" placeholder="{{'DATEFORMAT' | translate}}" [(ngModel)]="_ngbFromDate"
+            (change)="getDateFrom($event)" (navigate)="getDateFrom($event)" (click)="getDateFrom($event)" ngbDatepicker
+            #ngbFromDate="ngbDatepicker" />
+          <div class="input-group-addon" (click)="ngbFromDate.toggle()">
+            <i class="fa fa-calendar"></i>
+          </div>
+        </div>
+
+      </div>
+    </div>
+    <div class="row" *ngIf="settingHM['2006']">
+      <div class="col-sm-12" *ngIf="!hideDate">
+        <label for="ngbToDate" class="mb-2">
+          {{ 'TO' | translate }}
+        </label>
+        <div class="input-group input-group-sm">
+          <input class="form-control" placeholder="{{'DATEFORMAT' | translate}}" [(ngModel)]="_ngbToDate"
+            (change)="getDateTo($event)" (navigate)="getDateTo($event)" ngbDatepicker #ngbToDate="ngbDatepicker" />
+          <div class="input-group-addon" (click)="ngbToDate.toggle()">
+            <i class="fa fa-calendar"></i>
+          </div>
+        </div>
+
+      </div>
+    </div>
+    <div class="row" *ngIf="settingHM['7005']">
+      <div class="col-sm-12">
+        <label>
+          {{ 'YEAR' | translate }}
+        </label>
+        <input class="form-control form-control-sm " [(ngModel)]="hrSearchCretiria.year" type="number"
+          (clicked)="getYear($event)">
+      </div>
+    </div>
+    <div class="row" *ngIf="settingHM['57']">
+      <div class="col-sm-12">
+        <sanabel-selectize appcode="57" [(ngModel)]="hrSearchCretiria.month" (clicked)="getMonth($event)">
+        </sanabel-selectize>
+      </div>
+    </div>
+   
+    <div class="row" *ngIf="settingHM['1024']">
+      <div class="col-sm-12">
+        <div class="form-group">
+          <sanabel-selectize appcode="1024" [(ngModel)]="hrSearchCretiria.JobId" (clicked)="getEmpJob($event)">
+          </sanabel-selectize>
+        </div>
+      </div>
+    </div>
+    <div class="row" *ngIf="settingHM['1025']">
+      <div class="col-sm-12">
+        <div class="form-group">
+          <sanabel-selectize appcode="1025" [(ngModel)]="hrSearchCretiria.section" (clicked)="getEmpSection($event)">
+          </sanabel-selectize>
+        </div>
+      </div>
+    </div>
+    <div class="row" *ngIf="settingHM['1153']">
+      <div class="col-sm-12">
+        <div class="form-group">
+          <sanabel-selectize appcode="1153" [(ngModel)]="hrSearchCretiria.department" (clicked)="getEmpDep($event)">
+          </sanabel-selectize>
+        </div>
+      </div>
+    </div>
+    <div class="row" *ngIf="settingHM['50']">
+      <div class="col-sm-12">
+        <div class="form-group">
+          <sanabel-selectize appcode="50" [(ngModel)]="hrSearchCretiria.contractType"
+            (clicked)="getEmpContract($event)">
+          </sanabel-selectize>
+        </div>
+      </div>
+    </div>
+    <div class="row" *ngIf="settingHM['1150']">
+      <div class="col-sm-12">
+        <div class="form-group">
+          <sanabel-selectize appcode="1150" [(ngModel)]="hrSearchCretiria.payrollType"
+            (clicked)="getPayrollType($event)">
+          </sanabel-selectize>
+        </div>
+      </div>
+    </div>
+    <div class="row" *ngIf="settingHM['276']">
+      <div class="col-sm-12">
+        <div class="form-group">
+          <sanabel-selectize appcode="276" [(ngModel)]="hrSearchCretiria.revised" (clicked)="getRevised($event)">
+          </sanabel-selectize>
+        </div>
+      </div>
+    </div>
+   
+    <div class="row" *ngIf="settingHM['1309'] ">
+      <div class="col-sm-12">
+        <div class="form-group">
+          <sanabel-selectize appcode="1309" [(ngModel)]="hrSearchCretiria.hrServiceAwardReasons"
+            (clicked)="getHrServiceAwardReasons($event)">
+          </sanabel-selectize>
+        </div>
+      </div>
+    </div>
+
+    <div class="row">
+      <div class="col-sm-12" *ngIf="settingHM['1298'] ">
+        <div class="form-group">
+          <sanabel-selectize appcode="1298" [(ngModel)]="hrSearchCretiria.hrEmpServingBranch"
+            (clicked)="getHrEmpServingBranch($event)">
+          </sanabel-selectize>
+        </div>
+      </div>
+    </div>
+
+
+
+    <div class="row">
+      <div class="col d-flex pt-4" *ngIf="!hideIconSearch">
+        <div class="btn-group align-self-center">
+          <button class="btn btn-primary" title="{{ 'SEARCH' | translate }}" placement="top" ngbTooltip="search "
+            (click)="onSearchClick()">
+            <i class="fa fa-search"></i>
+          </button>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

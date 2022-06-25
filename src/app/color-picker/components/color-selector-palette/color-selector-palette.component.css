@@ -1,0 +1,42 @@
+:host {
+  position: absolute;
+}
+
+  :host .blcs-palette {
+    position: fixed;
+    display: flex;
+    flex-wrap: wrap;
+    z-index: 500;
+  }
+
+  :host .blcs-color {
+    flex-grow: 0;
+    flex-shrink: 0;
+    border: 0px solid white;
+    transition: border-width 0.1s ease-in-out;
+    -webkit-box-sizing: border-box;
+    /* Safari/Chrome, other WebKit */
+    -moz-box-sizing: border-box;
+    /* Firefox, other Gecko */
+    box-sizing: border-box;
+  }
+
+    :host .blcs-color:hover {
+      border: 3px solid white;
+    }
+
+  :host .blcs-pos-tl {
+    transform: translateY(-100%) translateX(-100%);
+  }
+
+  :host .blcs-pos-tr {
+    transform: translateY(-100%);
+  }
+
+  :host .blcs-pos-bl {
+    transform: translateX(-100%);
+  }
+
+  :host .blcs-color-selected {
+    border: 1px solid white;
+  }

@@ -1,0 +1,34 @@
+<!------------------------------------------------------------------------------------------------>
+<!------------------------------------------------------------------------------------------------>
+<ng-template *ngIf="type==1" #popup let-c="close" let-d="dismiss">
+    <div class="modal-header">
+        <ng-content select=".modal-title"></ng-content>
+       
+        <button [attr.id]="popupName" type="button" class=" dar fa fa-close" aria-label="Close" (click)="d('Cross click')">
+            </button>
+           
+    </div>
+    <div class="modal-body">
+        <ng-content select=".modal-body"></ng-content>
+    </div>
+    <!--<div class="modal-footer">
+            <button type="button" class="btn btn-secondary" (click)="c('Close click')">close</button>
+        </div>-->
+</ng-template>
+<!------------------------------------------------------------------------------------------------>
+<!------------------------------------------------------------------------------------------------>
+<ng-template *ngIf="type==2" #popup let-c="close" let-d="dismiss">
+    <div class="modal-header">
+        <ng-content select=".modal-title"></ng-content>
+        <button #popupCloseBtn type="button" class="fa fa-close" aria-label="Close" (click)="d('Cross click')">
+        </button>
+    </div>
+    <div class="modal-body">
+        <ng-content select=".modal-body"></ng-content>
+        <!--<ng-container *ngComponentOutlet="dynamicComponent"></ng-container>-->
+    </div>
+    <div class="modal-footer">
+        <button type="button" class="btn btn-secondary" (click)="c('Close click')">close</button>
+        <button type="button" class="btn btn-success" (click)="c('saved')">save</button>
+    </div>
+</ng-template>

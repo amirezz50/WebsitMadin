@@ -1,0 +1,353 @@
+<div class="" [ngClass]="onFocusClasses">
+  <div class="form-group" [ngClass]="{'form-group': !formGroupToggle}">
+    <label [hidden]="simpleView == true" class="w-100" (click)="onlabelClick()">
+      {{selectizeOptions.placholderKey | translate}}
+    </label>
+    <div class="flex-container">
+      <div class="selectize-control demo-default single " style="flex-grow: 8">
+        <div class="input-group input-group-sm  " [ngClass]="{'newin':multiItems.length > 0}">
+          <div>
+            <div *ngFor="let item of multiItems">
+              <span *ngIf="translate.currentLang == 'ar' " (click)="select(item)">
+                {{item['customCode'] ? item['customCode'] : item['code']}}-{{item[selectizeOptions.labelFieldAr]}}
+                <!-- <span class="birch_close_btn" (click)="select(item)">x </span> dont need it much more -->
+              </span>
+              <span *ngIf="translate.currentLang == 'en' " (click)="select(item)">
+                {{item['customCode'] ? item['customCode'] : item['code']}}-{{item[selectizeOptions.labelField]}}
+                <!-- <span class="birch_close_btn" (click)="select(item)">x </span> -->
+              </span>
+            </div>
+          </div>
+          <!-- [value]="selectizeOptions.currentResults[0].code" -->
+          <div class="new-in-input-container" [ngClass]="radiusSize > 0 ? 'add-radius':'no-radius'"
+            [style.background-color]="inputBackgroundColor">
+            <input type="text" #inputElement [attr.disabled]="disabled == true ? true : null" [attr.required]="required"
+              [hidden]="canceled" class="form-control w-100 input-new"
+              placeholder="{{selectizeOptions.placholderKey | translate}}" [formControl]="searchInputControl"
+              (keyup)="onEnter(inputElement.value)" (blur)="onInputBlur($event)" (change)="onChange($event)"
+              (focus)="onFocus(value)" [tabindex]="tabindex" [style.color]="textColor" [style.borderColor]="borderColor"
+              [ngClass]="{
+                  'add-radius': radiusSize > 0,
+                  'rounded-custom': noRadius == 0,
+                  'delete-outline': outlineSize == 0
+                }" />
+            <!-- [style.color]="cancelColor" -->
+
+            <i class="fa fa-times-circle" *ngIf="disabled != true && selectizeOptions?.selected && !multi"
+              placement="top" ngbTooltip="press to remove selected" (click)="clear(false)">
+            </i>
+            <i class="fa fa-angle-up" *ngIf="disabled != true && toggleDropdown " placement="top" (click)="onBlur()">
+            </i>
+
+            <i class="fa fa-plus  " *ngIf="multiItems?.length > 0  &&  multiItems[0]['highLightedForMulti']  "
+              placement="top" ngbTooltip="Add Selected Items" (click)="emitSelectedItems()"></i>
+            <i class="fa fa-trash  text-danger "
+              *ngIf="multiItems?.length > 0  &&  !multiItems[0]['highLightedForMulti']  " placement="top"
+              ngbTooltip="delete Selected Items" (click)="deleteMltiItems()"></i>
+
+          </div>
+
+          <span [hidden]="!canceled">
+            {{searchInputControl.value}}
+          </span>
+
+        </div>
+      </div>
+      <icon-action *ngIf="isActionIconVisiable" (clicked)="rowIconClickTwo($event,'row')"
+        [appCodes]="actionsSettingsList" [selectizeOptionsView]="defaultSelectedAppCodes"></icon-action>
+    </div>
+  </div>
+
+  <div class="selectize-dropdown single demo-default"
+    [ngClass]="{'fadeInDown':toggleDropdown,'fadeOut': !toggleDropdown}" *ngIf="toggleDropdown">
+    <div #scroll class="selectize-dropdown-content list-group" [style.maxHeight.px]="(ItemsCount * 40) - 5">
+      <div *ngFor="let item of selectizeOptions.currentResults" class="option list-group-item" [ngClass]="{'highLightedOption': ( highLightedOption == item[selectizeOptions.valueField] || item.highLightedForMulti),
+             'highLightedForMulti':  item.highLightedForMulti }" [attr.data-value]="item[selectizeOptions.valueField]"
+        (click)="select(item)" (mouseover)="onMouseHover(item)">
+        <div class="row" [ngSwitch]="appcode">
+
+          <!-- selectize template area -->
+          <ng-template [ngSwitchCase]="1052">
+            <div *ngIf="item['customCode'] != null ">
+              <span class="col-sm-10" *ngIf="translate.currentLang == 'ar' ">{{item['customCode']}}-
+                {{item[selectizeOptions.labelFieldAr]}}</span>
+              <span class="col-sm-10" *ngIf="translate.currentLang == 'en' ">{{item['customCode']}}-
+                {{item[selectizeOptions.labelField]}}</span>
+            </div>
+            <div *ngIf="item['customCode'] == null ">
+              <span class="col-sm-10" *ngIf="translate.currentLang == 'ar' ">{{item['code']}}-
+                {{item[selectizeOptions.labelFieldAr]}}</span>
+              <span class="col-sm-10" *ngIf="translate.currentLang == 'en' ">{{item['code']}}-
+                {{item[selectizeOptions.labelField]}}</span>
+            </div>
+            <span class="col" *ngIf="item.apologizeFlag == 1">
+              <i class="fa fa-danger fa-info-circle"></i>
+            </span>
+          </ng-template>
+          <!-- abdo -->
+          <ng-template [ngSwitchCase]="1247">
+            <div *ngIf="item['customCode'] != null ">
+              <span class="col-sm-10" *ngIf="translate.currentLang == 'ar' ">{{item['customCode']}}-
+                {{item[selectizeOptions.labelFieldAr]}}<span *ngIf="item['genericName'] && linkId == 5368" style="
+                            color: red;
+                            font-size: 12px;
+                             ">({{item['genericName']}})</span></span>
+              <span class="col-sm-10" *ngIf="translate.currentLang == 'en' ">{{item['customCode']}}-
+                {{item[selectizeOptions.labelField]}}<span *ngIf="item['genericName'] && linkId == 5368" style="
+                        color: red;
+                        font-size: 12px;
+                         ">({{item['genericName']}})</span></span>
+            </div>
+            <div *ngIf="item['customCode'] == null ">
+              <span class="col-sm-10" *ngIf="translate.currentLang == 'ar' ">{{item['code']}}-
+                {{item[selectizeOptions.labelFieldAr]}}<span *ngIf="item['genericName'] && linkId == 5368" style="
+                        color: red;
+                        font-size: 12px;
+                         ">({{item['genericName']}})</span></span>
+              <span class="col-sm-10" *ngIf="translate.currentLang == 'en' ">{{item['code']}}-
+                {{item[selectizeOptions.labelField]}}<span *ngIf="item['genericName'] && linkId == 5368" style="
+                        color: red;
+                        font-size: 12px;
+                         ">({{item['genericName']}})</span></span>
+            </div>
+            <span class="col" *ngIf="item.apologizeFlag == 1">
+              <i class="fa fa-danger fa-info-circle"></i>
+            </span>
+          </ng-template>
+
+          <ng-template [ngSwitchCase]="1109">
+            <div *ngIf="item['customCode'] != null ">
+              <span class="col-sm-10" *ngIf="translate.currentLang == 'ar' ">{{item['customCode']}}-
+                {{item[selectizeOptions.labelFieldAr]}}</span>
+              <span class="col-sm-10" *ngIf="translate.currentLang == 'en' ">{{item['customCode']}}-
+                {{item[selectizeOptions.labelField]}}</span>
+            </div>
+            <div *ngIf="item['customCode'] == null ">
+              <span class="col-sm-10" *ngIf="translate.currentLang == 'ar' ">{{item['code']}}-
+                {{item[selectizeOptions.labelFieldAr]}}</span>
+              <span class="col-sm-10" *ngIf="translate.currentLang == 'en' ">{{item['code']}}-
+                {{item[selectizeOptions.labelField]}}</span>
+            </div>
+            <span class="col" *ngIf="item.apologizeFlag == 1">
+              <i class="fa fa-danger fa-info-circle"></i>
+            </span>
+          </ng-template>
+
+          <ng-template [ngSwitchCase]="1040">
+
+            <span class="col-sm-10" *ngIf="translate.currentLang == 'ar' ">{{item['code']}}-
+              {{item[selectizeOptions.labelFieldAr]}}</span>
+            <span class="col-sm-10" *ngIf="translate.currentLang == 'en' ">{{item['code']}}-
+              {{item[selectizeOptions.labelField]}}</span>
+
+
+
+            <span class="col text-danger" *ngIf="item.statusFlag==0">
+              {{ 'InActive' | translate }}
+            </span>
+
+
+            <span class="col text-danger" *ngIf="item.expireFlag==1">
+              {{ 'Expire' | translate }}
+            </span>
+
+          </ng-template>
+
+          <!---------------ASMAA_For Doctors Vaction in DropDown------------------->
+          <ng-template [ngSwitchCase]="1014">
+
+            <span class="col-sm-10" *ngIf="translate.currentLang == 'ar' ">{{item['customCode'] ? item['customCode'] :
+              item['code']}}-
+              {{item[selectizeOptions.labelFieldAr]}}</span>
+            <span class="col-sm-10" *ngIf="translate.currentLang == 'en' ">{{item['customCode'] ? item['customCode'] :
+              item['code']}}-
+              {{item[selectizeOptions.labelField]}}</span>
+
+            <span class="col text-danger" *ngIf="item.hasVacation==1">
+              {{ 'ONVACATION' | translate }}
+            </span>
+
+          </ng-template>
+          <!---------------------------EDN OF ASMAA------------------------------>
+          <!--gouhr to set in active secLogins-->
+          <ng-template [ngSwitchCase]="1077">
+
+            <span class="col-sm-10" *ngIf="translate.currentLang == 'ar' ">{{item['code']}}-
+              {{item[selectizeOptions.labelFieldAr]}}</span>
+            <span class="col-sm-10" *ngIf="translate.currentLang == 'en' ">{{item['code']}}-
+              {{item[selectizeOptions.labelField]}}</span>
+
+            <span class="col text-danger" *ngIf="item.active==0">
+              {{ 'InActive' | translate }}
+            </span>
+
+
+            <!--<span class="col-md-2 text-danger" *ngIf="item.active==1">
+                  {{ 'Expire' | translate }}
+              </span>-->
+
+          </ng-template>
+
+          <ng-template [ngSwitchCase]="1078">
+            <span class="col-sm-10" *ngIf="translate.currentLang == 'ar' ">{{item['code']}}-
+              {{item[selectizeOptions.labelFieldAr]}}</span>
+            <span class="col-sm-10" *ngIf="translate.currentLang == 'en' ">{{item['code']}}-
+              {{item[selectizeOptions.labelField]}}
+            </span>
+            <span class="col text-danger" *ngIf="item.underInventory== 1">
+              {{ 'UNDERINVENTORY' | translate }}
+            </span>
+          </ng-template>
+
+          <ng-template [ngSwitchCase]="1044">
+            <span class="col-sm-10" *ngIf="(translate.currentLang == 'ar' )">{{item['code']}}-
+              {{item[selectizeOptions.labelFieldAr]}}
+              <span *ngIf="item['genericName'] && linkId == 5226 " style="
+                        color: red;
+                        font-size: 12px;
+                    ">({{item['genericName']}})</span>
+            </span>
+            <span class="col-sm-10" *ngIf="(translate.currentLang == 'en' )">{{item['code']}}-
+              {{item[selectizeOptions.labelField]}}
+              <span *ngIf="item['genericName'] && linkId == 5226" style="
+                        color: red;
+                        font-size: 12px;
+                    ">({{item['genericName']}})</span>
+            </span>
+
+          </ng-template>
+
+          <!--gouhr to set in active secLogins-->
+          <ng-template [ngSwitchCase]="1063">
+
+            <span class="col-sm-10" *ngIf="translate.currentLang == 'ar' ">
+              {{item['code']}}-{{item[selectizeOptions.labelFieldAr]}}</span>
+            <span class="col-sm-10" *ngIf="translate.currentLang == 'en' ">{{item['code']}}-
+              {{item[selectizeOptions.labelField]}}</span>
+            <span class="col text-danger" *ngIf="item.active==0">
+              {{ 'InActive' | translate }}
+            </span>
+
+          </ng-template>
+
+          <ng-template [ngSwitchCase]="51">
+            <span class="col" *ngIf="translate.currentLang == 'ar' ">
+              {{item['code']}}-{{item[selectizeOptions.labelField]}}</span>
+            <span class="col"
+              *ngIf="translate.currentLang == 'en' ">{{item['code']}}-{{item[selectizeOptions.labelField]}}</span>
+          </ng-template>
+
+          <ng-template [ngSwitchCase]="1069">
+            <span *ngIf="translate.currentLang == 'ar' "> {{item[selectizeOptions.labelField]}}</span>
+            <span *ngIf="translate.currentLang == 'en' ">{{item[selectizeOptions.labelField]}}</span>
+            <span *ngIf="item['code'] == null && addNewItem == 1">&nbsp;&nbsp; Would you like to add
+              "{{newItemValue}}" ?</span>
+          </ng-template>
+
+
+
+
+
+          <ng-template ngSwitchDefault>
+            <div *ngIf="item['customCode'] != null ">
+              <span *ngIf="translate.currentLang == 'ar' ">{{item['customCode']}}-
+                {{item[selectizeOptions.labelFieldAr]}}</span>
+              <span *ngIf="translate.currentLang == 'en' ">{{item['customCode']}}-
+                {{item[selectizeOptions.labelField]}}</span>
+            </div>
+            <div *ngIf="item['customCode'] == null ">
+              <span *ngIf="translate.currentLang == 'ar' ">{{item['code']}}-
+                {{item[selectizeOptions.labelFieldAr]}}</span>
+              <span *ngIf="translate.currentLang == 'en' ">{{item['code']}}-
+                {{item[selectizeOptions.labelField]}}</span>
+            </div>
+            <span *ngIf="item['code'] == null && addNewItem == 1">&nbsp;&nbsp; Would you like to add
+              "{{newItemValue}}"?</span>
+            <span *ngIf="item['code'] == null && addNewItem == 2">&nbsp;&nbsp; Would you like to add
+              "{{newItemValue}}"?</span>
+
+          </ng-template>
+
+
+
+        </div>
+      </div>
+
+      <!-- <p-paginator></p-paginator> -->
+
+      <div id="_paginator" class="_paginator" [class]="styleClass" [ngStyle]="heightOfSelectize"
+        style="border: 0 !important" [hidden]="!paginator" class="text-sm-center"
+        [ngClass]="{'card-header py-0 px-0':true}">
+
+        <span class="btn  btn-sm"
+          style="border-radius: 0 !important;font-weight: 700;padding: 0.3rem .5rem;font-size: 0.9rem; border-style: solid;border-width: 1px; border-color:  blue">
+          {{ _totalRecords}}
+        </span>
+        <!-- first page -->
+        <a href="#" #nextlink class="btn btn-secondary btn-sm"
+          style="border-radius: 0 !important;font-weight: 700;padding: 0.3rem .5rem;font-size: 0.9rem;"
+          (mouseenter)="hoveredItem = $event.target" (mouseleave)="hoveredItem = null"
+          (click)="changePageToFirst($event)"
+          [ngClass]="{'ui-state-disabled':isLastPage(),'ui-state-hover':(nextlink === hoveredItem  && !isLastPage())}"
+          [tabindex]="isLastPage() ? -1 : null">
+          <span class="fa fa-forward"></span>
+        </a>
+        <!-- prev page -->
+        <a href="#" #lastlink class="btn btn-secondary btn-sm"
+          style="border-radius: 0 !important;font-weight: 700;padding: 0.3rem .5rem;font-size: 0.9rem;"
+          (mouseenter)="hoveredItem = $event.target" (mouseleave)="hoveredItem = null"
+          (click)="changePageToPrev($event)"
+          [ngClass]="{'ui-state-disabled':isLastPage(),'ui-state-hover':(lastlink === hoveredItem  && !isLastPage())}"
+          [tabindex]="isLastPage() ? -1 : null">
+          <span class="fa fa-step-forward"></span>
+        </a>
+        <span class="ui-paginator-pages">
+          <button href="#" #plink *ngFor="let pageLink of pageLinks" class="btn btn-secondary btn-sm"
+            style="border-radius: 0 !important;font-weight: 700;padding: 0.43rem .5rem;font-size: 0.7rem;"
+            (mouseenter)="hoveredItem = $event.target" (mouseleave)="hoveredItem = null"
+            (click)="changePage(pageLink - 1, $event , 'specificPageNo')"
+            [ngClass]="{'btn-warning':(plink === hoveredItem), 'btn-info': (pageLink-1 == getPage())}">{{pageLink}}</button>
+        </span>
+        <!-- next -->
+        <a href="#" #firstlink class="btn btn-secondary btn-sm"
+          style="border-radius: 0 !important;font-weight: 700;padding: 0.3rem .5rem;font-size: 0.9rem;"
+          (mouseenter)="hoveredItem = $event.target" (mouseleave)="hoveredItem = null"
+          (click)="changePageToNext($event)"
+          [ngClass]="{'ui-state-disabled':isFirstPage(),'ui-state-hover':(firstlink === hoveredItem && !isFirstPage())}"
+          [tabindex]="isFirstPage() ? -1 : null">
+          <span class="fa fa-step-backward"></span>
+        </a>
+        <!-- last -->
+        <a #prevlink class="btn btn-secondary btn-sm"
+          style="border-radius: 0 !important;font-weight: 700;padding: 0.3rem .5rem;font-size: 0.9rem;"
+          (mouseenter)="hoveredItem = $event.target" (mouseleave)="hoveredItem = null"
+          (click)="changePageToLast($event)"
+          [ngClass]="{'ui-state-disabled':isFirstPage(),'ui-state-hover':(prevlink === hoveredItem && !isFirstPage())}"
+          [tabindex]="isFirstPage() ? -1 : null">
+          <span class="fa fa-backward"></span>
+        </a>
+
+        <select class="ui-paginator-rpp-options ui-widget ui-state-default position-relative"
+          style="top: 2px;border: 1px #868e96 solid;" *ngIf="rowsPerPageOptions" (change)="onRppChange($event)">
+          <option (click)="$event.stopPropagation()" *ngFor="let opt of rowsPerPageOptions" [value]="opt"
+            [selected]="rows == opt">{{opt}}</option>
+        </select>
+        <a #prevlink class="btn btn-secondary btn-sm"
+          style="border-radius: 0 !important;font-weight: 700;padding: 0.3rem .5rem;font-size: 0.9rem;"
+          (mouseenter)="hoveredItem = $event.target" (mouseleave)="hoveredItem = null" (click)="refreshCurrent($event)"
+          [ngClass]="{'ui-state-disabled':isFirstPage(),'ui-state-hover':(prevlink === hoveredItem && !isFirstPage())}"
+          [tabindex]="isFirstPage() ? -1 : null">
+          <span class="fa fa-refresh"></span>
+        </a>
+      </div>
+
+      <!-- end of paginator -->
+      <!-- end of paginator -->
+      <!-- end of paginator -->
+      <!-- end of paginator -->
+
+    </div>
+
+  </div>
+
+</div>

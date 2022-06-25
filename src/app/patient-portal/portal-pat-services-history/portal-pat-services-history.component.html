@@ -1,0 +1,85 @@
+<div class="container-fluid mt-4">
+  <div class="row">
+    <div class="col-sm-4 col-12">
+      <h5 class="page-title">{{"PO_CHECKUPS" | translate}}</h5>
+    </div>
+    <div class="col-sm-4 col-8">
+      <div class="card-search">
+        <div class="input-group rounded">
+          <span>
+            <i class="fas fa-search"></i>
+          </span>
+          <input type="search" class="form-control rounded" [formControl]="searchInputControl"
+            placeholder="{{ 'Search' | translate }}" aria-label="Search" aria-describedby="search-addon" />
+        </div>
+      </div>
+    </div>
+    <div class="col-sm-4 col-8">
+      <div class="text-end  d-none">
+        <button type="button" class="btn btn-link" [routerLink]="[ '/portal/new-order' ]">{{ 'NEWCHECKUP'|
+          translate }}</button>
+      </div>
+    </div>
+  </div>
+
+
+  <div class="row">
+    <div class="col-12">
+      <div class="card-table">
+        <table class="table">
+          <thead>
+            <tr>
+              <th>{{ 'ORDERSERIAL' | translate }}</th>
+              <th>{{ 'SERVICECODE' | translate }}</th>
+              <th>{{ 'SERVICENAME' | translate }}</th>
+              <!-- <th>{{ 'ServiceStatus' | translate }}</th> -->
+              <th>{{ 'DOCTOR'| translate }}</th>
+              <th>{{'STATUS'|translate}}</th>
+              <th>{{ 'DATETIME' | translate }}</th>
+              <th>{{ 'ACTION' | translate }}</th>
+              <!-- <th>{{ 'Payed' | translate }}</th> -->
+            </tr>
+          </thead>
+          <tbody>
+            <tr *ngFor="let item of patServices| paginate: { itemsPerPage: 10, currentPage: p }">
+              <td>{{item.orderMasterSerial}}</td>
+              <td>{{item.customServiceCode}}</td>
+              <td>{{translate.currentLang == 'ar' ? item.serviceNameAr:item.serviceNameEn}}</td>
+
+              <!-- <td>
+                <span *ngIf="item.servStatus == 13;">
+                  <span *ngIf="item.abnormality == 1">Abnormal</span>
+                  <span *ngIf="item.abnormality == 0">Normal</span>
+                </span>
+              </td> -->
+              <td>{{translate.currentLang == 'ar' ? item.docNameAr : item.docNameEn}}</td>
+              <td>{{translate.currentLang == 'ar' ? item.serviceStatusDoneAr : item.serviceStatusDoneEn}}</td>
+
+              <td>{{ item.expectedStartTime | date:'dd/MM/yy, h:mm a' }}</td>
+              <!-- <td>{{item.payed}}</td> -->
+
+
+              <button type="button" *ngIf="item.serviceStatusCode==15 || item.serviceStatusCode==14"
+                class="btn btn-link" (click)="setdata(item)" [routerLink]="[ '/portal/printResult' ]">{{ 'PRINT'|
+                translate }}</button>
+              <button type="button" *ngIf="item.serviceType==2 && item.serviceStatusCode==19" class="btn btn-link" (click)="getPatientReport(item)"
+                >{{ 'PRINT'|
+                translate }}</button>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+    </div>
+    <div style="text-align:center" class="col-md-12">
+      <nav aria-label="Page navigation example">
+        <pagination-controls maxSize="10" (pageChange)="p = $event"></pagination-controls>
+      </nav>
+      <br>
+      <br>
+      <br>
+
+    </div>
+  </div>
+
+</div>
+<!-- <div id="pdfTable" #pdfTable></div> -->

@@ -1,0 +1,102 @@
+﻿{
+  "name.titleCode": {
+    "display": true,
+    "required": false
+  },
+  "name.fnameAr": {
+    "display": true,
+    "required": true,
+    "min_length": 2,
+    "max_length": 20
+  },
+  "name.fnameEn": {
+    "display": true,
+    "required": true,
+    "min_length": 2,
+    "max_length": 20
+  },
+  "name.snameAr": {
+    "display": true,
+    "required": false,
+    "min_length": 2,
+    "max_length": 20
+  },
+  "name.snameEn": {
+    "display": true,
+    "required": false,
+    "min_length": 2,
+    "max_length": 20
+  },
+  "name.tnameAr": {
+    "display": true,
+    "required": true,
+    "min_length": 2,
+    "max_length": 20
+  },
+  "name.tnameEn": {
+    "display": true,
+    "required": true,
+    "min_length": 2,
+    "max_length": 20
+  },
+  "name.lnameAr": {
+    "display": true,
+    "required": false,
+    "min_length": 2,
+    "max_length": 20
+  },
+  "name.lnameEn": {
+    "display": true,
+    "required": false,
+    "min_length": 2,
+    "max_length": 20
+  },
+  "name.fullnameAr": {
+    "display": true,
+    "required": false
+  },
+  "name.fullnameEn": {
+    "display": true,
+    "required": false
+  },
+  "address.countryCode": {},
+  "address.govCode": {},
+  "address.cityCode": {},
+  "address.villageCode": {},
+  "address.nationalityId": {
+    "display": true,
+    "required": false
+  },
+  "identity.identityValue": {
+    "display": true,
+    "required": true
+  },
+  "address.fullAddressAr": {
+    "value": "",
+    "disabled": true
+  },
+  "address.fullAddressEn": {
+    "value": "",
+    "disabled": true
+  },
+  "birthPlace": {
+    "display": true,
+    "required": false,
+    "min_length": 5,
+    "defaultVal": ""
+  },
+   "mobile": {
+    "display": true,
+    "required": true,
+    "min_length": 10,
+    "max_length": 10,
+    "defaultVal": "",
+    "regex": "^(01)[0-9]{9}$"
+  },
+  "mailAddress": {
+    "display": true,
+    "required": false,
+    "regex": "^[a-z0-9!#$%&'*+/=?^_`{|}~-]+(?:\\.[a-z0-9!#$%&'*+/=?^_`{|}~-]+)*@(?:[a-z0-9](?:[a-z0-9-]*[a-z0-9])?\\.)+[a-z0-9](?:[a-z0-9-]*[a-z0-9])?$",
+    "defaultVal": ""
+  }
+}

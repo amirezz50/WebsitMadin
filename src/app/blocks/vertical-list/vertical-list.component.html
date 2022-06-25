@@ -1,0 +1,30 @@
+<div>
+  <ul class="list-group panel">
+    <li *ngFor="let group of  groups;let i = index" class="list-group-item list-group-item-primary">
+      <div class="row">
+        <div (click)="onGroupClick(group,i) " class="col-9">
+          <span *ngIf="translate.currentLang == 'ar' " [ngClass]="{'text-success': group.clicked == true}">
+            {{group.nameAr}}</span>
+          <span *ngIf="translate.currentLang == 'en' " [ngClass]="{'text-success': group.clicked == true}">
+            {{group.nameEn}}</span>
+          <i *ngIf="group?.children"
+            [ngClass]="{'float-left': translate.currentLang == 'ar', 'float-right': translate.currentLang == 'en' }"
+            class="  fa fa-angle-down  mcd"></i>
+        </div>
+        <div class="col-3 border border-primary" (click)="OnMoveServiceClick()">
+          <span>
+            <i class="fa fa-arrow-circle-left fa-1x icons-style" (click)="OnMoveServiceClick()" aria-hidden="true"
+              placement="center" ngbTooltip="{{ 'MOVESERVICE' | translate }}"></i>
+          </span>
+        </div>
+      </div>
+      <ul [ngClass]="{'collapse':group.code != currentGroupCode}">
+        <li *ngFor="let subgroup of  group?.children " (click)="onItemClick(subgroup)"
+          class="list-group-item text-success">
+          <span *ngIf="translate.currentLang == 'en' "> {{subgroup.nameEn}}</span>
+          <span *ngIf="translate.currentLang == 'ar' "> {{subgroup.nameAr}}</span>
+        </li>
+      </ul>
+    </li>
+  </ul>
+</div>

@@ -1,0 +1,154 @@
+﻿{
+	"resourceType": "Bundle",
+	"id": "ee8b8400-0b31-4ff9-8187-737b64c1001",
+	"meta": {
+		"profile": [
+			"http://nphies.sa/fhir/ksa/nphies-fs/StructureDefinition/bundle|1.0.0"
+		]
+	},
+	"type": "message",
+	"timestamp": "2021-03-25",
+	"entry": [
+		{
+			"fullUrl": "urn:uuid:c4f39a7f-feaa-4b6b-91aa-286225c1001",
+			"resource": {
+				"resourceType": "MessageHeader",
+				"id": "c4f39a7f-feaa-4b6b-91aa-286225c1001",
+				"meta": {
+					"profile": [
+						"http://nphies.sa/fhir/ksa/nphies-fs/StructureDefinition/message-header|1.0.0"
+					]
+				},
+				"eventCoding": {
+					"system": "http://nphies.sa/terminology/CodeSystem/ksa-message-events",
+					"code": "poll-request"
+				},
+				"destination": [
+					{
+						"endpoint": "http://nphies.sa/license/payer-license/TMB-INS",
+						"receiver": {
+							"type": "Organization",
+							"identifier": {
+								"system": "http://nphies.sa/license/nphies",
+								"value": "NPHIES"
+							}
+						}
+					}
+				],
+				"sender": {
+					"type": "Organization",
+					"identifier": {
+						"system": "http://nphies.sa/license/provider-license",
+						"value": "PR-FHIR"
+					}
+				},
+				"source": {
+					"endpoint": "http://nphies.sa/license/provider-license/PR-FHIR"
+				},
+				"focus": [
+					{
+						"reference": "http://nphies.sa/Task/841001"
+					}
+				]
+			}
+		},
+		{
+			"fullUrl": "http://nphies.sa/Task/841001",
+			"resource": {
+				"resourceType": "Task",
+				"id": "841001",
+				"meta": {
+					"profile": [
+						"http://nphies.sa/fhir/ksa/nphies-fs/StructureDefinition/task|1.0.0"
+					]
+				},
+				"identifier": [
+					{
+						"use": "official",
+						"system": "http:/happyvalley.com/task",
+						"value": "841001"
+					}
+				],
+				"status": "requested",
+				"intent": "order",
+				"priority": "stat",
+				"code": {
+					"coding": [
+						{
+							"system": "http://nphies.sa/terminology/CodeSystem/task-code",
+							"code": "poll"
+						}
+					]
+				},
+				"authoredOn": "2021-03-25",
+				"lastModified": "2021-03-25",
+				"requester": {
+					"reference": "http://pr-fhir.com.sa/Organization/10"
+				},
+				"owner": {
+					"identifier": {
+						"system": "http://nphies.sa/license/nphies",
+						"value": "NPHIES"
+					}
+				},
+				"input": [
+					{
+						"type": {
+							"coding": [
+								{
+									"system": "http://nphies.sa/terminology/CodeSystem/task-input-type",
+									"code": "include-message-type"
+								}
+							]
+						},
+						"valueCode": "claim-response"
+					},
+					{
+						"type": {
+							"coding": [
+								{
+									"system": "http://nphies.sa/terminology/CodeSystem/task-input-type",
+									"code": "period"
+								}
+							]
+						},
+						"valuePeriod": {
+							"start": "2020-11-01T12:10:00.000Z",
+							"end": "2020-11-30T00:00:00.000Z"
+						}
+					}
+				]
+			}
+		},
+		{
+			"fullUrl": "http://pr-fhir.com.sa/Organization/10",
+			"resource": {
+				"resourceType": "Organization",
+				"id": "10",
+				"meta": {
+					"profile": [
+						"http://nphies.sa/fhir/ksa/nphies-fs/StructureDefinition/provider-organization|1.0.0"
+					]
+				},
+				"identifier": [
+					{
+						"use": "official",
+						"system": "http://nphies.sa/license/provider-license",
+						"value": "PR-FHIR"
+					}
+				],
+				"active": true,
+				"type": [
+					{
+						"coding": [
+							{
+								"system": "http://nphies.sa/terminology/CodeSystem/organization-type",
+								"code": "prov"
+							}
+						]
+					}
+				]
+			}
+		}
+	]
+}

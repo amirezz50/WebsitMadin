@@ -1,0 +1,230 @@
+﻿{
+	"resourceType": "Bundle",
+	"id": "0a51a1fb-444f-4c16-b41e-b02982e4ecb6",
+	"meta": {
+		"profile": [
+			"http://nphies.sa/fhir/ksa/nphies-fs/StructureDefinition/bundle|1.0.0"
+		]
+	},
+	"type": "message",
+	"timestamp": "2021-03-28",
+	"entry": [
+		{
+			"fullUrl": "urn:uuid:fd821f8a-c88c-4fb5-9b3d-af79729b3102",
+			"resource": {
+				"resourceType": "MessageHeader",
+				"id": "fd821f8a-c88c-4fb5-9b3d-af79729b3102",
+				"meta": {
+					"profile": [
+						"http://nphies.sa/fhir/ksa/nphies-fs/StructureDefinition/message-header|1.0.0"
+					]
+				},
+				"eventCoding": {
+					"system": "http://nphies.sa/terminology/CodeSystem/ksa-message-events",
+					"code": "nullify-request"
+				},
+				"destination": [
+					{
+						"endpoint": "http://nphies.sa/license/payer-license/TMB-INS",
+						"receiver": {
+							"type": "Organization",
+							"identifier": {
+								"system": "http://nphies.sa/license/payer-license",
+								"value": "TMB-INS"
+							}
+						}
+					}
+				],
+				"sender": {
+					"type": "Organization",
+					"identifier": {
+						"system": "http://nphies.sa/license/provider-license",
+						"value": "PR-FHIR"
+					}
+				},
+				"source": {
+					"endpoint": "http://nphies.sa/license/provider-license/PR-FHIR"
+				},
+				"focus": [
+					{
+						"reference": "http://pr-fhir.com.sa/Task/908390"
+					}
+				]
+			}
+		},
+		{
+			"fullUrl": "http://pr-fhir.com.sa/Task/908390",
+			"resource": {
+				"resourceType": "Task",
+				"id": "908390",
+				"meta": {
+					"profile": [
+						"http://nphies.sa/fhir/ksa/nphies-fs/StructureDefinition/task|1.0.0"
+					]
+				},
+				"identifier": [
+					{
+						"system": "http://pr-fhir.com.sa/Task",
+						"value": "908390"
+					}
+				],
+				"status": "requested",
+				"intent": "order",
+				"priority": "routine",
+				"code": {
+					"coding": [
+						{
+							"system": "http://nphies.sa/terminology/CodeSystem/task-code",
+							"code": "nullify"
+						}
+					]
+				},
+				"focus": {
+					"type": "Claim",
+					"identifier": {
+						"system": "http://happyvalley.com/claim",
+						"value": "735215"
+					}
+				},
+				"authoredOn": "2021-03-28",
+				"lastModified": "2021-03-28",
+				"requester": {
+					"reference": "Organization/10"
+				},
+				"owner": {
+					"reference": "Organization/11"
+				},
+				"reasonCode": {
+					"coding": [
+						{
+							"system": "http://nphies.sa/terminology/CodeSystem/task-reason-code",
+							"code": "WI"
+						}
+					]
+				}
+			}
+		},
+		{
+			"fullUrl": "http://pr-fhir.com.sa/Organization/10",
+			"resource": {
+				"resourceType": "Organization",
+				"id": "10",
+				"meta": {
+					"profile": [
+						"http://nphies.sa/fhir/ksa/nphies-fs/StructureDefinition/provider-organization|1.0.0"
+					]
+				},
+				"identifier": [
+					{
+						"use": "official",
+						"system": "http://nphies.sa/license/provider-license",
+						"value": "PR-FHIR"
+					}
+				],
+				"active": true,
+				"type": [
+					{
+						"coding": [
+							{
+								"system": "http://nphies.sa/terminology/CodeSystem/organization-type",
+								"code": "prov"
+							}
+						]
+					}
+				],
+				"name": "PR-FHIR",
+				"address": [
+					{
+						"text": "asdasdsa",
+						"use": "work",
+						"line": [
+							"7137 Prince Muhammad Ibn Saud Ibn Abdul Aziz",
+							"Al Quds, 3243"
+						],
+						"city": "Riyadh",
+						"country": "Saudi Arabia"
+					}
+				],
+				"contact": [
+					{
+						"name": {
+							"text": "Hassan Olayan",
+							"family": "Olayan",
+							"given": [
+								"Hassan"
+							]
+						},
+						"telecom": [
+							{
+								"system": "email",
+								"value": "hassan.olayan@pr-fhir.com.sa",
+								"use": "work"
+							}
+						]
+					}
+				]
+			}
+		},
+		{
+			"fullUrl": "http://pr-fhir.com.sa/Organization/11",
+			"resource": {
+				"resourceType": "Organization",
+				"id": "11",
+				"meta": {
+					"profile": [
+						"http://nphies.sa/fhir/ksa/nphies-fs/StructureDefinition/insurer-organization|1.0.0"
+					]
+				},
+				"identifier": [
+					{
+						"use": "official",
+						"system": "http://nphies.sa/license/payer-license",
+						"value": "TMB-INS"
+					}
+				],
+				"active": true,
+				"type": [
+					{
+						"coding": [
+							{
+								"system": "http://nphies.sa/terminology/CodeSystem/organization-type",
+								"code": "ins"
+							}
+						]
+					}
+				],
+				"name": "TMB-INS",
+				"address": [
+					{
+						"text": "asdasdsa",
+						"use": "work",
+						"line": [
+							"380 Prince Muhammad Ibn Saud Ibn Abdul Aziz",
+							"Al Quds, 3243"
+						],
+						"city": "Riyadh",
+						"country": "Saudi Arabia"
+					}
+				],
+				"contact": [
+					{
+						"name": {
+							"text": "Daoud Tarik",
+							"family": "Tarik",
+							"given": [
+								"Daoud"
+							]
+						},
+						"telecom": [
+							{
+								"system": "email",
+								"value": "daoud.tarik@tmb-ins.com.sa",
+								"use": "work"
+							}
+						]
+					}
+				]
+			}
+		}
+	]
+}

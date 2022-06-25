@@ -1,0 +1,1158 @@
+{
+    "sec1_head": {
+        "display": true,
+        "inputType": "mainHeader",
+        "lookupCode": 0,
+        "required": false,
+        "labelText": "Adult Cardiac Anesthesiology",
+        "cssClass": "col-12 pt-2"
+         
+    },
+    "primaryAnesthesiologistName": {
+        "display": true,
+        "inputType": "selectize",
+        "lookupCode": "",
+        "required": false,
+        "labelText": "Primary Anesthesiologist Name: ",
+        "cssClass": "col-12 col-sm-6 col-md-3 col-lg-3 col-xl-2 pt-2 general-input-class"
+    },
+    "hr1": {
+        "display": true,
+        "inputType": "hr",
+        "lookupCode": 0,
+        "required": false,
+        "labelText": "",
+        "cssClass": "col-12 general-input-class"
+    },
+
+    "painScoreBaseline": {
+        "display": true,
+        "inputType": "selectize",
+        "lookupCode": 44,
+        "required": false,
+        "labelText": "Pain Score Baseline: ",
+        "cssClass": "col-12 col-sm-6 col-md-3 col-lg-3 col-xl-2 pt-2 general-input-class"
+    },
+    "hr2": {
+        "display": true,
+        "inputType": "hr",
+        "lookupCode": 0,
+        "required": false,
+        "labelText": "",
+        "cssClass": "col-12 general-input-class"
+    },
+    "algorithmToGuideTransfusion": {
+        "display": true,
+        "inputType": "selectize",
+        "lookupCode": 18,
+        "required": false,
+        "labelText": "Algorithm to Guide Transfusion: ",
+        "cssClass": "col-12 col-sm-6 col-md-3 col-lg-3 col-xl-2 pt-2 general-input-class"
+    },
+    "cellSaverVolume": {
+        "display": true,
+        "inputType": "text",
+        "lookupCode": "",
+        "required": false,
+        "labelText": "Cell Saver Volume: ",
+        "cssClass": "col-12 col-sm-6 col-md-3 col-lg-3 col-xl-2 pt-2 general-input-class"
+    },
+    "hr3": {
+        "display": true,
+        "inputType": "hr",
+        "lookupCode": 0,
+        "required": false,
+        "labelText": "",
+        "cssClass": "col-12 general-input-class"
+    },
+    "heparinTotalDose": {
+        "display": true,
+        "inputType": "text",
+        "lookupCode": "",
+        "required": false,
+        "labelText": "Heparin Total Dose: ",
+        "cssClass": "col-12 col-sm-6 col-md-3 col-lg-3 col-xl-2 pt-2 general-input-class"
+    },
+    "heparinManagement": {
+        "display": true,
+        "inputType": "selectize",
+        "lookupCode": 20,
+        "required": false,
+        "labelText": "Heparin Management: ",
+        "cssClass": "col-12 col-sm-6 col-md-3 col-lg-3 col-xl-2 pt-2 general-input-class"
+    },
+    "hr4": {
+        "display": true,
+        "inputType": "hr",
+        "lookupCode": 0,
+        "required": false,
+        "labelText": "",
+        "cssClass": "col-12 general-input-class"
+    },
+    "protamineTotalDose": {
+        "display": true,
+        "inputType": "text",
+        "lookupCode":"",
+        "required": false,
+        "labelText": "Protamine Total Dose: ",
+        "cssClass": "col-12 col-sm-6 col-md-3 col-lg-3 col-xl-2 pt-2 general-input-class"
+    },
+    "antithrombinIIITotalDose": {
+        "display": true,
+        "inputType": "text",
+        "lookupCode": "",
+        "required": false,
+        "labelText": "Antithrombin III Total Dose: ",
+        "cssClass": "col-12 col-sm-6 col-md-3 col-lg-3 col-xl-2 pt-2 general-input-class"
+    },
+    "viscoelasticTestingUsedIntraop": {
+        "display": true,
+        "inputType": "selectize",
+        "lookupCode": 10,
+        "required": false,
+        "labelText": "Viscoelastic Testing Used Intraop: ",
+        "cssClass": "col-12 col-sm-6 col-md-3 col-lg-3 col-xl-2 pt-2 general-input-class"
+    },
+    "hr5": {
+        "display": true,
+        "inputType": "hr",
+        "lookupCode": 0,
+        "required": false,
+        "labelText": "",
+        "cssClass": "col-12 general-input-class"
+    },
+    "volatileAgentUsed": {
+        "display": true,
+        "inputType": "selectize",
+        "lookupCode": 10,
+        "required": false,
+        "labelText": "Volatile Agent Used: ",
+        "cssClass": "col-12 col-sm-6 col-md-3 col-lg-3 col-xl-2 pt-2 general-input-class"
+    },
+    "volatileAgentsUsed": {
+        "display": true,
+        "inputType": "selectize",
+        "lookupCode": 25,
+        "required": false,
+        "labelText": "Volatile Agent(s) used: ",
+        "cssClass": "col-12 col-sm-6 col-md-3 col-lg-3 col-xl-2 pt-2 general-input-class"
+    },
+    "volatileAgentsTiming": {
+        "display": true,
+        "inputType": "selectize",
+        "lookupCode": 28,
+        "required": false,
+        "labelText": "Volatile Agent(s) timing: ",
+          "cssClass": "col-12 col-sm-6 col-md-3 col-lg-3 col-xl-2 pt-2 general-input-class"
+  },
+    "hr6": {
+        "display": true,
+        "inputType": "hr",
+        "lookupCode": 0,
+        "required": false,
+        "labelText": "",
+        "cssClass": "col-12 general-input-class"
+    },
+    "intraopInfusionDexmedetomidine": {
+        "display": true,
+        "inputType": "selectize",
+        "lookupCode": 10,
+        "required": false,
+        "labelText": "Intraop Infusion Dexmedetomidine:",
+        "cssClass": "col-12 col-sm-6 col-md-3 col-lg-3 col-xl-2 pt-2 general-input-class"
+    },
+    "intraopInfusionPropofol": {
+        "display": true,
+        "inputType": "selectize",
+        "lookupCode": 10,
+        "required": false,
+        "labelText": "Intraop Infusion Propofol: ",
+        "cssClass": "col-12 col-sm-6 col-md-3 col-lg-3 col-xl-2 pt-2 general-input-class"
+    },
+    "intraopMgsMidazolam": {
+        "display": true,
+        "inputType": "selectize",
+        "lookupCode": 10,
+        "required": false,
+        "labelText": "Intraop Mgs Midazolam: ",
+        "cssClass": "col-12 col-sm-6 col-md-3 col-lg-3 col-xl-2 pt-2 general-input-class"
+    },
+    "intraopInsulin": {
+        "display": true,
+        "inputType": "text",
+        "lookupCode": "",
+        "required": false,
+        "labelText": "Intraop Insulin :",
+        "cssClass": "col-12 col-sm-6 col-md-3 col-lg-3 col-xl-2 pt-2 general-input-class"
+    },
+    "totalDose": {
+        "display": true,
+        "inputType": "selectize",
+        "lookupCode": 10,
+        "required": false,
+        "labelText": "Total Dose:",
+        "cssClass": "col-12 col-sm-6 col-md-3 col-lg-3 col-xl-2 pt-2 general-input-class"
+    },
+    "hr7": {
+        "display": true,
+        "inputType": "hr",
+        "lookupCode": 0,
+        "required": false,
+        "labelText": "",
+        "cssClass": "col-12 general-input-class"
+    },
+    "preInductionSystolicBP": {
+        "display": true,
+        "inputType": "text",
+        "lookupCode": "",
+        "required": false,
+        "labelText": "Pre Induction Systolic BP: ",
+        "cssClass": "col-12 col-sm-6 col-md-3 col-lg-3 col-xl-2 pt-2 general-input-class"
+    },
+    "preInductionDiastolicBP": {
+        "display": true,
+        "inputType": "text",
+        "lookupCode": "",
+        "required": false,
+        "labelText": "Pre Induction Diastolic BP:",
+        "cssClass": "col-12 col-sm-6 col-md-3 col-lg-3 col-xl-2 pt-2 general-input-class"
+    },
+    "preInductionMeanBP": {
+        "display": true,
+        "inputType": "text",
+        "lookupCode": "",
+        "required": false,
+        "labelText": "Pre Induction Mean BP: ",
+        "cssClass": "col-12 col-sm-6 col-md-3 col-lg-3 col-xl-2 pt-2 general-input-class"
+    },
+    "hr8": {
+        "display": true,
+        "inputType": "hr",
+        "lookupCode": 0,
+        "required": false,
+        "labelText": "",
+        "cssClass": "col-12 general-input-class"
+    },
+    "preInductionHeartRate": {
+        "display": true,
+        "inputType": "text",
+        "lookupCode": "",
+        "required": false,
+        "labelText": "Pre Induction Heart Rate: ",
+        "cssClass": "col-12 col-sm-6 col-md-3 col-lg-3 col-xl-2 pt-2 general-input-class"
+    },
+    "pulmonaryArteryCatheterUsed": {
+        "display": true,
+        "inputType": "selectize",
+        "lookupCode": 10,
+        "required": false,
+        "labelText": "Pulmonary Artery Catheter Used: ",
+        "cssClass": "col-12 col-sm-6 col-md-3 col-lg-3 col-xl-2 pt-2 general-input-class"
+    },
+    "hr9": {
+        "display": true,
+        "inputType": "hr",
+        "lookupCode": 0,
+        "required": false,
+        "labelText": "",
+        "cssClass": "col-12 general-input-class"
+    },
+    "coreTemperatureSource": {
+        "display": true,
+        "inputType": "selectize",
+        "lookupCode": 10,
+        "required": false,
+        "labelText": "Core Temperature Source: ",
+        "cssClass": "col-12 col-sm-6 col-md-3 col-lg-3 col-xl-2 pt-2 general-input-class"
+    },
+    "coreTempMax": {
+        "display": true,
+        "inputType": "text",
+        "lookupCode": "",
+        "required": false,
+        "labelText": "Core Temp Max: ",
+        "cssClass": "col-12 col-sm-6 col-md-3 col-lg-3 col-xl-2 pt-2 general-input-class"
+    },
+    "hr10": {
+        "display": true,
+        "inputType": "hr",
+        "lookupCode": 0,
+        "required": false,
+        "labelText": "",
+        "cssClass": "col-12 general-input-class"
+    },
+    "intraOpNitricOxide": {
+        "display": true,
+        "inputType": "selectize",
+        "lookupCode": 10,
+        "required": false,
+        "labelText": "Intra Op Nitric Oxide: ",
+        "cssClass": "col-12 col-sm-6 col-md-3 col-lg-3 col-xl-2 pt-2 general-input-class"
+    },
+    "anesthTotalCrystalloid": {
+        "display": true,
+        "inputType": "text",
+        "lookupCode": "",
+        "required": false,
+        "labelText": "Anesth. Total Crystalloid: ",
+        "cssClass": "col-12 col-sm-6 col-md-3 col-lg-3 col-xl-2 pt-2 general-input-class"
+    },
+    "anesthSyntheticColloid": {
+        "display": true,
+        "inputType": "text",
+        "lookupCode": "",
+        "required": false,
+        "labelText": "Anesth. Synthetic Colloid: ",
+        "cssClass": "col-12 col-sm-6 col-md-3 col-lg-3 col-xl-2 pt-2 general-input-class"
+    },
+    "hr11": {
+        "display": true,
+        "inputType": "hr",
+        "lookupCode": 0,
+        "required": false,
+        "labelText": "",
+        "cssClass": "col-12 general-input-class"
+    },
+    "anesthesiologyTotalAlbumin": {
+        "display": true,
+        "inputType": "text",
+        "lookupCode": "",
+        "required": false,
+        "labelText": "Anesthesiology Total Albumin: ",
+        "cssClass": "col-12 col-sm-6 col-md-3 col-lg-3 col-xl-2 pt-2 general-input-class"
+    },
+    "intraopGlucoseTrough": {
+        "display": true,
+        "inputType": "text",
+        "lookupCode": "",
+        "required": false,
+        "labelText": "Intraop Glucose Trough: ",
+        "cssClass": "col-12 col-sm-6 col-md-3 col-lg-3 col-xl-2 pt-2 general-input-class"
+    },
+    "hr12": {
+        "display": true,
+        "inputType": "hr",
+        "lookupCode": 0,
+        "required": false,
+        "labelText": "",
+        "cssClass": "col-12 general-input-class"
+    },
+    "intraopVasodilatorsUsed": {
+        "display": true,
+        "inputType": "selectize",
+        "lookupCode": 10,
+        "required": false,
+        "labelText": "Intraop Vasodilators Used: ",
+        "cssClass": "col-12 col-sm-6 col-md-3 col-lg-3 col-xl-2 pt-2 general-input-class"
+    },
+    "hr13": {
+        "display": true,
+        "inputType": "hr",
+        "lookupCode": 0,
+        "required": false,
+        "labelText": "",
+        "cssClass": "col-12 general-input-class"
+    },
+    "intraoperativeProcessed_EEG_BIS": {
+        "display": true,
+        "inputType": "selectize",
+        "lookupCode": 10,
+        "required": false,
+        "labelText": "Intraoperative Processed EEG (BIS):",
+        "cssClass": "col-12 col-sm-6 col-md-3 col-lg-3 col-xl-2 pt-2 general-input-class"
+    },
+    "hr14": {
+        "display": true,
+        "inputType": "hr",
+        "lookupCode": 0,
+        "required": false,
+        "labelText": "",
+        "cssClass": "col-12 general-input-class"
+    },
+    "intraopTransesophageal_Echo_TEE": {
+        "display": true,
+        "inputType": "selectize",
+        "lookupCode": 10,
+        "required": false,
+        "labelText": "Intraop Transesophageal Echo (TEE): ",
+        "cssClass": "col-12 col-sm-6 col-md-3 col-lg-3 col-xl-2 pt-2 general-input-class"
+    },
+    "hr15": {
+        "display": true,
+        "inputType": "hr",
+        "lookupCode": 0,
+        "required": false,
+        "labelText": "",
+        "cssClass": "col-12 general-input-class"
+    },
+    "pre_procedureLVEFMeasured": {
+        "display": true,
+        "inputType": "selectize",
+        "lookupCode": 10,
+        "required": false,
+        "labelText": "Pre-procedure LVEF Measured: ",
+        "cssClass": "col-12 col-sm-6 col-md-3 col-lg-3 col-xl-2 pt-2 general-input-class"
+    },
+    "LVEF": {
+        "display": true,
+        "inputType": "text",
+        "lookupCode": "",
+        "required": false,
+        "labelText": "LVEF: ",
+        "cssClass": "col-12 col-sm-6 col-md-3 col-lg-3 col-xl-2 pt-2 general-input-class"
+    },
+    "hr16": {
+        "display": true,
+        "inputType": "hr",
+        "lookupCode": 0,
+        "required": false,
+        "labelText": "",
+        "cssClass": "col-12 general-input-class"
+    },
+    "pre_procedureRVFunction": {
+        "display": true,
+        "inputType": "selectize",
+        "lookupCode": 35,
+        "required": false,
+        "labelText": "Pre-procedure RV Function: ",
+        "cssClass": "col-12 col-sm-6 col-md-3 col-lg-3 col-xl-2 pt-2 general-input-class"
+    },
+    "hr17": {
+        "display": true,
+        "inputType": "hr",
+        "lookupCode": 0,
+        "required": false,
+        "labelText": "",
+        "cssClass": "col-12 general-input-class"
+    },
+    "mitralRegurgitation": {
+        "display": true,
+        "inputType": "selectize",
+        "lookupCode": 36,
+        "required": false,
+        "labelText": "Mitral Regurgitation: ",
+        "cssClass": "col-12 col-sm-6 col-md-3 col-lg-3 col-xl-2 pt-2 general-input-class"
+    },
+    "hr18": {
+        "display": true,
+        "inputType": "hr",
+        "lookupCode": 0,
+        "required": false,
+        "labelText": "",
+        "cssClass": "col-12 general-input-class"
+    },
+    "mitralStenosis": {
+        "display": true,
+        "inputType": "selectize",
+        "lookupCode": 38,
+        "required": false,
+        "labelText": "Mitral Stenosis: ",
+        "cssClass": "col-12 col-sm-6 col-md-3 col-lg-3 col-xl-2 pt-2 general-input-class"
+    },
+    "hr19": {
+        "display": true,
+        "inputType": "hr",
+        "lookupCode": 0,
+        "required": false,
+        "labelText": "",
+        "cssClass": "col-12 general-input-class"
+    },
+    "aorticRegurgitation": {
+        "display": true,
+        "inputType": "selectize",
+        "lookupCode": 36,
+        "required": false,
+        "labelText": "Aortic Regurgitation: ",
+        "cssClass": "col-12 col-sm-6 col-md-3 col-lg-3 col-xl-2 pt-2 general-input-class"
+    },
+    "hr20": {
+        "display": true,
+        "inputType": "hr",
+        "lookupCode": 0,
+        "required": false,
+        "labelText": "",
+        "cssClass": "col-12 general-input-class"
+    },
+    "aorticStenosis": {
+        "display": true,
+        "inputType": "selectize",
+        "lookupCode": 38,
+        "required": false,
+        "labelText": "Aortic Stenosis: ",
+        "cssClass": "col-12 col-sm-6 col-md-3 col-lg-3 col-xl-2 pt-2 general-input-class"
+    },
+    "hr21": {
+        "display": true,
+        "inputType": "hr",
+        "lookupCode": 0,
+        "required": false,
+        "labelText": "",
+        "cssClass": "col-12 general-input-class"
+    },
+    "aorticValveAreaAssessed": {
+        "display": true,
+        "inputType": "selectize",
+        "lookupCode": 10,
+        "required": false,
+        "labelText": "Aortic Valve Area Assessed:",
+        "cssClass": "col-12 col-sm-6 col-md-3 col-lg-3 col-xl-2 pt-2 general-input-class"
+    },
+    "hr22": {
+        "display": true,
+        "inputType": "hr",
+        "lookupCode": 0,
+        "required": false,
+        "labelText": "",
+        "cssClass": "col-12 general-input-class"
+    },
+    "aorticValveArea": {
+        "display": true,
+        "inputType": "text",
+        "lookupCode": "",
+        "required": false,
+        "labelText": "Aortic Valve Area: ",
+        "cssClass": "col-12 col-sm-6 col-md-3 col-lg-3 col-xl-2 pt-2 general-input-class"
+    },
+    "hr23": {
+        "display": true,
+        "inputType": "hr",
+        "lookupCode": 0,
+        "required": false,
+        "labelText": "",
+        "cssClass": "col-12 general-input-class"
+    },
+    "tricuspidRegurgitation": {
+        "display": true,
+        "inputType": "selectize",
+        "lookupCode": 36,
+        "required": false,
+        "labelText": "Tricuspid Regurgitation: ",
+        "cssClass": "col-12 col-sm-6 col-md-3 col-lg-3 col-xl-2 pt-2 general-input-class"
+    },
+    "hr24": {
+        "display": true,
+        "inputType": "hr",
+        "lookupCode": 0,
+        "required": false,
+        "labelText": "",
+        "cssClass": "col-12 general-input-class"
+    },
+    "patentForamenOvale": {
+        "display": true,
+        "inputType": "selectize",
+        "lookupCode": 10,
+        "required": false,
+        "labelText": "Patent Foramen Ovale: ",
+        "cssClass": "col-12 col-sm-6 col-md-3 col-lg-3 col-xl-2 pt-2 general-input-class"
+    },
+    "hr25": {
+        "display": true,
+        "inputType": "hr",
+        "lookupCode": 0,
+        "required": false,
+        "labelText": "",
+        "cssClass": "col-12 general-input-class"
+    },
+    "ascendingAortaAssessed": {
+        "display": true,
+        "inputType": "selectize",
+        "lookupCode": 10,
+        "required": false,
+        "labelText": "Ascending Aorta Assessed : ",
+        "cssClass": "col-12 col-sm-6 col-md-3 col-lg-3 col-xl-2 pt-2 general-input-class"
+    },
+    "maximalAscendingAortaDiameter": {
+        "display": true,
+        "inputType": "text",
+        "lookupCode": "",
+        "required": false,
+        "labelText": "Maximal Ascending Aorta Diameter: ",
+        "cssClass": "col-12 col-sm-6 col-md-3 col-lg-3 col-xl-2 pt-2 general-input-class"
+    },
+    "maximalAscendingAortaAtheromaThickness": {
+        "display": true,
+        "inputType": "text",
+        "lookupCode": "",
+        "required": false,
+        "labelText": "Maximal Ascending Aorta Atheroma Thickness: ",
+        "cssClass": "col-12 col-sm-6 col-md-3 col-lg-3 col-xl-2 pt-2 general-input-class"
+    },
+    "ascendingAortaAtheromaMobility": {
+        "display": true,
+        "inputType": "selectize",
+        "lookupCode": 10,
+        "required": false,
+        "labelText": "Ascending Aorta Atheroma Mobility:  ",
+        "cssClass": "col-12 col-sm-6 col-md-3 col-lg-3 col-xl-2 pt-2 general-input-class"
+    },
+    "hr26": {
+        "display": true,
+        "inputType": "hr",
+        "lookupCode": 0,
+        "required": false,
+        "labelText": "",
+        "cssClass": "col-12 general-input-class"
+    },
+    "aorticArchVisualized": {
+        "display": true,
+        "inputType": "selectize",
+        "lookupCode": 10,
+        "required": false,
+        "labelText": "Aortic Arch Visualized: ",
+        "cssClass": "col-12 col-sm-6 col-md-3 col-lg-3 col-xl-2 pt-2 general-input-class"
+    },
+    "maximalAorticArchAtheromaThickness": {
+        "display": true,
+        "inputType": "text",
+        "lookupCode": "",
+        "required": false,
+        "labelText": "Maximal Aortic Arch Atheroma Thickness:  ",
+        "cssClass": "col-12 col-sm-6 col-md-3 col-lg-3 col-xl-2 pt-2 general-input-class"
+    },
+    "aorticArchAtheromaMobility": {
+        "display": true,
+        "inputType": "selectize",
+        "lookupCode": 10,
+        "required": false,
+        "labelText": "Aortic Arch Atheroma Mobility::",
+        "cssClass": "col-12 col-sm-6 col-md-3 col-lg-3 col-xl-2 pt-2 general-input-class"
+    },
+    "hr27": {
+        "display": true,
+        "inputType": "hr",
+        "lookupCode": 0,
+        "required": false,
+        "labelText": "",
+        "cssClass": "col-12 general-input-class"
+    },
+    "cardiopulmonaryBypassUsed": {
+        "display": true,
+        "inputType": "selectize",
+        "lookupCode": 10,
+        "required": false,
+        "labelText": "Cardiopulmonary Bypass Used:",
+        "cssClass": "col-12 col-sm-6 col-md-3 col-lg-3 col-xl-2 pt-2 general-input-class"
+    },
+    "hr28": {
+        "display": true,
+        "inputType": "hr",
+        "lookupCode": 0,
+        "required": false,
+        "labelText": "",
+        "cssClass": "col-12 general-input-class"
+    },
+    "retrogradeAutologousPrimingOfCPBCircuit": {
+        "display": true,
+        "inputType": "selectize",
+        "lookupCode": 10,
+        "required": false,
+        "labelText": "Retrograde Autologous Priming of CPB Circuit: ",
+        "cssClass": "col-12 col-sm-6 col-md-3 col-lg-3 col-xl-2 pt-2 general-input-class"
+    },
+    "hr29": {
+        "display": true,
+        "inputType": "hr",
+        "lookupCode": 0,
+        "required": false,
+        "labelText": "",
+        "cssClass": "col-12 general-input-class"
+    },
+    "totalCrystalloidAdministeredByPerfusionTeam": {
+        "display": true,
+        "inputType": "text",
+        "lookupCode": "",
+        "required": false,
+        "labelText": "Total Crystalloid Administered by Perfusion Team:",
+        "cssClass": "col-12 col-sm-6 col-md-3 col-lg-3 col-xl-2 pt-2 general-input-class"
+    },
+    "hr30": {
+        "display": true,
+        "inputType": "hr",
+        "lookupCode": 0,
+        "required": false,
+        "labelText": "",
+        "cssClass": "col-12 general-input-class"
+    },
+    "totalSyntheticColloidAdministeredByPerfusionTeam": {
+        "display": true,
+        "inputType": "text",
+        "lookupCode": "",
+        "required": false,
+        "labelText": "Total Synthetic Colloid Administered by Perfusion Team:  ",
+        "cssClass": "col-12 col-sm-6 col-md-3 col-lg-3 col-xl-2 pt-2 general-input-class"
+    },
+    "hr31": {
+        "display": true,
+        "inputType": "hr",
+        "lookupCode": 0,
+        "required": false,
+        "labelText": "",
+        "cssClass": "col-12 general-input-class"
+    },
+    "totalAlbuminAdministeredByPerfusionTeam": {
+        "display": true,
+        "inputType": "text",
+        "lookupCode": "",
+        "required": false,
+        "labelText": "Total Albumin Administered by Perfusion Team: ",
+        "cssClass": "col-12 col-sm-6 col-md-3 col-lg-3 col-xl-2 pt-2 general-input-class"
+    },
+    "hr32": {
+        "display": true,
+        "inputType": "hr",
+        "lookupCode": 0,
+        "required": false,
+        "labelText": "",
+        "cssClass": "col-12 general-input-class"
+    },
+    "hemofiltrationVolumeRemovedByPerfusionTeam": {
+        "display": true,
+        "inputType": "text",
+        "lookupCode": "",
+        "required": false,
+        "labelText": "Hemofiltration Volume Removed by Perfusion Team:  ",
+        "cssClass": "col-12 col-sm-6 col-md-3 col-lg-3 col-xl-2 pt-2 general-input-class"
+    },
+    "hr33": {
+        "display": true,
+        "inputType": "hr",
+        "lookupCode": 0,
+        "required": false,
+        "labelText": "",
+        "cssClass": "col-12 general-input-class"
+    },
+    "inotropesUsedToWeanFromCPB": {
+        "display": true,
+        "inputType": "selectize",
+        "lookupCode": 10,
+        "required": false,
+        "labelText": "Inotropes used to wean from CPB: ",
+        "cssClass": "col-12 col-sm-6 col-md-3 col-lg-3 col-xl-2 pt-2 general-input-class"
+    },
+    "hr34": {
+        "display": true,
+        "inputType": "hr",
+        "lookupCode": 0,
+        "required": false,
+        "labelText": "",
+        "cssClass": "col-12 general-input-class"
+    },
+    "vasopressorsUsedToWeanFromCPB": {
+        "display": true,
+        "inputType": "selectize",
+        "lookupCode": 10,
+        "required": false,
+        "labelText": "Vasopressors used to wean from CPB: ",
+        "cssClass": "col-12 col-sm-6 col-md-3 col-lg-3 col-xl-2 pt-2 general-input-class"
+    },
+    "hr35": {
+        "display": true,
+        "inputType": "hr",
+        "lookupCode": 0,
+        "required": false,
+        "labelText": "",
+        "cssClass": "col-12 general-input-class"
+    },
+    "postProcedureUseOfIntraoperativeTEE": {
+        "display": true,
+        "inputType": "selectize",
+        "lookupCode": 10,
+        "required": false,
+        "labelText": "Post-Procedure Use Of Intraoperative TEE:  ",
+        "cssClass": "col-12 col-sm-6 col-md-3 col-lg-3 col-xl-2 pt-2 general-input-class"
+    },
+    "hr36": {
+        "display": true,
+        "inputType": "hr",
+        "lookupCode": 0,
+        "required": false,
+        "labelText": "",
+        "cssClass": "col-12 general-input-class"
+    },
+    "systolicAnteriorMotionOfMitralValve": {
+        "display": true,
+        "inputType": "selectize",
+        "lookupCode": 10,
+        "required": false,
+        "labelText": "Systolic Anterior Motion of Mitral Valve: ",
+        "cssClass": "col-12 col-sm-6 col-md-3 col-lg-3 col-xl-2 pt-2 general-input-class"
+    },
+    "hr37": {
+        "display": true,
+        "inputType": "hr",
+        "lookupCode": 0,
+        "required": false,
+        "labelText": "",
+        "cssClass": "col-12 general-input-class"
+    },
+    "returnToCPBForEchoRelatedDiagnosis": {
+        "display": true,
+        "inputType": "selectize",
+        "lookupCode": 10,
+        "required": false,
+        "labelText": "Return to CPB for Echo Related Diagnosis: ",
+        "cssClass": "col-12 col-sm-6 col-md-3 col-lg-3 col-xl-2 pt-2 general-input-class"
+    },
+    "hr38": {
+        "display": true,
+        "inputType": "hr",
+        "lookupCode": 0,
+        "required": false,
+        "labelText": "",
+        "cssClass": "col-12 general-input-class"
+    },
+    "postProcedureLVEFMeasured": {
+        "display": true,
+        "inputType": "selectize",
+        "lookupCode": 10,
+        "required": false,
+        "labelText": "Post-Procedure LVEF Measured :",
+        "cssClass": "col-12 col-sm-6 col-md-3 col-lg-3 col-xl-2 pt-2 general-input-class"
+    },
+
+    "postProcedureLVEF": {
+        "display": true,
+        "inputType": "text",
+        "lookupCode": "",
+        "required": false,
+        "labelText": "Post-Procedure LVEF:",
+        "cssClass": "col-12 col-sm-6 col-md-3 col-lg-3 col-xl-2 pt-2 general-input-class"
+    },
+    "hr39": {
+        "display": true,
+        "inputType": "hr",
+        "lookupCode": 0,
+        "required": false,
+        "labelText": "",
+        "cssClass": "col-12 general-input-class"
+    },
+    "postProcedureRVFunction": {
+        "display": true,
+        "inputType": "selectize",
+        "lookupCode": 35,
+        "required": false,
+        "labelText": "Post-Procedure RV Function: ",
+        "cssClass": "col-12 col-sm-6 col-md-3 col-lg-3 col-xl-2 pt-2 general-input-class"
+    },
+    "hr40": {
+        "display": true,
+        "inputType": "hr",
+        "lookupCode": 0,
+        "required": false,
+        "labelText": "",
+        "cssClass": "col-12 general-input-class"
+    },
+    "intraoperativeCardiacArrestRelatedToAnesthesiaCare": {
+        "display": true,
+        "inputType": "selectize",
+        "lookupCode": 35,
+        "required": false,
+        "labelText": "Intraoperative cardiac arrest related to anesthesia care: ",
+        "cssClass": "col-12 col-sm-6 col-md-3 col-lg-3 col-xl-2 pt-2 general-input-class"
+    },
+    "hr41": {
+        "display": true,
+        "inputType": "hr",
+        "lookupCode": 0,
+        "required": false,
+        "labelText": "",
+        "cssClass": "col-12 general-input-class"
+    },
+    "patientDiedInTheOR": {
+        "display": true,
+        "inputType": "selectize",
+        "lookupCode": 10,
+        "required": false,
+        "labelText": "Patient Died in the OR:  ",
+        "cssClass": "col-12 col-sm-6 col-md-3 col-lg-3 col-xl-2 pt-2 general-input-class"
+    },
+    "hr42": {
+        "display": true,
+        "inputType": "hr",
+        "lookupCode": 0,
+        "required": false,
+        "labelText": "",
+        "cssClass": "col-12 general-input-class"
+    },
+    "coreTempMeasuredUponEntryToICU_PACU": {
+        "display": true,
+        "inputType": "selectize",
+        "lookupCode": 10,
+        "required": false,
+        "labelText": "Core Temp Measured upon Entry to ICU/PACU:  ",
+        "cssClass": "col-12 col-sm-6 col-md-3 col-lg-3 col-xl-2 pt-2 general-input-class"
+    },
+    "postOpCoreTemp": {
+        "display": true,
+        "inputType": "text",
+        "lookupCode": "",
+        "required": false,
+        "labelText": "Post Op Core Temp: ",
+        "cssClass": "col-12 col-sm-6 col-md-3 col-lg-3 col-xl-2 pt-2 general-input-class"
+    },
+    "hr43": {
+        "display": true,
+        "inputType": "hr",
+        "lookupCode": 0,
+        "required": false,
+        "labelText": "",
+        "cssClass": "col-12 general-input-class"
+    },
+    "post_Op_INRMeasuredUponAdmissionToPostOpCareLocation_PACU_ICU": {
+        "display": true,
+        "inputType": "selectize",
+        "lookupCode": "",
+        "required": false,
+        "labelText": "Post-Op INR Measured upon admission to post op care location (PACU, ICU): ",
+        "cssClass": "col-12 col-sm-6 col-md-3 col-lg-3 col-xl-2 pt-2 general-input-class"
+    },
+    "INR": {
+        "display": true,
+        "inputType": "text",
+        "lookupCode": "",
+        "required": false,
+        "labelText": "INR: ",
+        "cssClass": "col-12 col-sm-6 col-md-3 col-lg-3 col-xl-2 pt-2 general-input-class"
+    },
+    "hr44": {
+        "display": true,
+        "inputType": "hr",
+        "lookupCode": 0,
+        "required": false,
+        "labelText": "",
+        "cssClass": "col-12 general-input-class"
+    },
+    "wBC_MeasuredUponAdmissionToPostOpCareLocation_PACU_ICU": {
+        "display": true,
+        "inputType": "selectize",
+        "lookupCode": 10,
+        "required": false,
+        "labelText": "WBC Measured upon admission to post op care location (PACU, ICU): ",
+        "cssClass": "col-12 col-sm-6 col-md-3 col-lg-3 col-xl-2 pt-2 general-input-class"
+    },
+    "WBC": {
+        "display": true,
+        "inputType": "text",
+        "lookupCode": "",
+        "required": false,
+        "labelText": "WBC : ",
+        "cssClass": "col-12 col-sm-6 col-md-3 col-lg-3 col-xl-2 pt-2 general-input-class"
+    },
+    "hr45": {
+        "display": true,
+        "inputType": "hr",
+        "lookupCode": 0,
+        "required": false,
+        "labelText": "",
+        "cssClass": "col-12 general-input-class"
+    },
+    "platelets_MeasuredUponAdmissionToPostOpCareLocation_PACU_ICU": {
+        "display": true,
+        "inputType": "selectize",
+        "lookupCode": 10,
+        "required": false,
+        "labelText": "Platelets Measured upon admission to post op care location (PACU, ICU):",
+        "cssClass": "col-12 col-sm-6 col-md-3 col-lg-3 col-xl-2 pt-2 general-input-class"
+    },
+    "platelet_Count": {
+        "display": true,
+        "inputType": "text",
+        "lookupCode": "",
+        "required": false,
+        "labelText": "Platelet Count: ",
+        "cssClass": "col-12 col-sm-6 col-md-3 col-lg-3 col-xl-2 pt-2 general-input-class"
+    },
+    "hr46": {
+        "display": true,
+        "inputType": "hr",
+        "lookupCode": 0,
+        "required": false,
+        "labelText": "",
+        "cssClass": "col-12 general-input-class"
+    },
+    "hematocrit_MeasuredUponAdmissionToPostOpCareLocation_PACU_ICU": {
+        "display": true,
+        "inputType": "selectize",
+        "lookupCode": 10,
+        "required": false,
+        "labelText": "Hematocrit Measured upon admission to post op care location (PACU, ICU):",
+        "cssClass": "col-12 col-sm-6 col-md-3 col-lg-3 col-xl-2 pt-2 general-input-class"
+    },
+    "hematocrit": {
+        "display": true,
+        "inputType": "text",
+        "lookupCode": "",
+        "required": false,
+        "labelText": "Hematocrit: ",
+        "cssClass": "col-12 col-sm-6 col-md-3 col-lg-3 col-xl-2 pt-2 general-input-class"
+    },
+    "hr47": {
+        "display": true,
+        "inputType": "hr",
+        "lookupCode": 0,
+        "required": false,
+        "labelText": "",
+        "cssClass": "col-12 general-input-class"
+    },
+    "fibrinogen_MeasuredUponAdmissionToPostOpCareLocation_PACU_ICU": {
+        "display": true,
+        "inputType": "selectize",
+        "lookupCode": 10,
+        "required": false,
+        "labelText": "Fibrinogen Measured upon admission to post op care location (PACU, ICU):",
+        "cssClass": "col-12 col-sm-6 col-md-3 col-lg-3 col-xl-2 pt-2 general-input-class"
+    },
+    "fibrinogen": {
+        "display": true,
+        "inputType": "text",
+        "lookupCode": "",
+        "required": false,
+        "labelText": "Fibrinogen: ",
+        "cssClass": "col-12 col-sm-6 col-md-3 col-lg-3 col-xl-2 pt-2 general-input-class"
+    },
+    "hr48": {
+        "display": true,
+        "inputType": "hr",
+        "lookupCode": 0,
+        "required": false,
+        "labelText": "",
+        "cssClass": "col-12 general-input-class"
+    },
+    "lactate_MeasuredUponAdmissionToPostOpCareLocation_PACU_ICU": {
+        "display": true,
+        "inputType": "selectize",
+        "lookupCode": 10,
+        "required": false,
+        "labelText": "Lactate Measured upon admission to post op care location (PACU, ICU):",
+        "cssClass": "col-12 col-sm-6 col-md-3 col-lg-3 col-xl-2 pt-2 general-input-class"
+    },
+    "lactate": {
+        "display": true,
+        "inputType": "text",
+        "lookupCode": "",
+        "required": false,
+        "labelText": "lactate: ",
+        "cssClass": "col-12 col-sm-6 col-md-3 col-lg-3 col-xl-2 pt-2 general-input-class"
+    },
+    "hr49": {
+        "display": true,
+        "inputType": "hr",
+        "lookupCode": 0,
+        "required": false,
+        "labelText": "",
+        "cssClass": "col-12 general-input-class"
+    },
+    "postOpDexmedetomidine": {
+        "display": true,
+        "inputType": "selectize",
+        "lookupCode": 10,
+        "required": false,
+        "labelText": "Post Op Dexmedetomidine: ",
+        "cssClass": "col-12 col-sm-6 col-md-3 col-lg-3 col-xl-2 pt-2 general-input-class"
+    },
+    "hr50": {
+        "display": true,
+        "inputType": "hr",
+        "lookupCode": 0,
+        "required": false,
+        "labelText": "",
+        "cssClass": "col-12 general-input-class"
+    },
+    "postOpPropofol": {
+        "display": true,
+        "inputType": "selectize",
+        "lookupCode": 10,
+        "required": false,
+        "labelText": "Post Op Propofol:  ",
+        "cssClass": "col-12 col-sm-6 col-md-3 col-lg-3 col-xl-2 pt-2 general-input-class"
+    },
+    "hr51": {
+        "display": true,
+        "inputType": "hr",
+        "lookupCode": 0,
+        "required": false,
+        "labelText": "",
+        "cssClass": "col-12 general-input-class"
+    },
+    "postOpDelirium": {
+        "display": true,
+        "inputType": "selectize",
+        "lookupCode": 10,
+        "required": false,
+        "labelText": "Post Op Delirium: ",
+        "cssClass": "col-12 col-sm-6 col-md-3 col-lg-3 col-xl-2 pt-2 general-input-class"
+    },
+    "hr52": {
+        "display": true,
+        "inputType": "hr",
+        "lookupCode": 0,
+        "required": false,
+        "labelText": "",
+        "cssClass": "col-12 general-input-class"
+    },
+    "postOpHeparinInducedThrombocytopenia": {
+        "display": true,
+        "inputType": "selectize",
+        "lookupCode": 10,
+        "required": false,
+        "labelText": "Post Op Heparin Induced Thrombocytopenia:",
+        "cssClass": "col-12 col-sm-6 col-md-3 col-lg-3 col-xl-2 pt-2 general-input-class"
+    },
+    "hr53": {
+        "display": true,
+        "inputType": "hr",
+        "lookupCode": 0,
+        "required": false,
+        "labelText": "",
+        "cssClass": "col-12 general-input-class"
+    },
+    "painScorePOD3": {
+        "display": true,
+        "inputType": "selectize",
+        "lookupCode": 33,
+        "required": false,
+        "labelText": "Pain Score POD #3: ",
+        "cssClass": "col-12 col-sm-6 col-md-3 col-lg-3 col-xl-2 pt-2 general-input-class"
+    },
+    "hr54": {
+        "display": true,
+        "inputType": "hr",
+        "lookupCode": 0,
+        "required": false,
+        "labelText": "",
+        "cssClass": "col-12 general-input-class"
+    },
+    "painScoreDischarge": {
+        "display": true,
+        "inputType": "selectize",
+        "lookupCode": 33,
+        "required": false,
+        "labelText": "Pain Score Discharge: ",
+        "cssClass": "col-12 col-sm-6 col-md-3 col-lg-3 col-xl-2 pt-2 general-input-class"
+    },
+    "hr55": {
+        "display": true,
+        "inputType": "hr",
+        "lookupCode": 0,
+        "required": false,
+        "labelText": "",
+        "cssClass": "col-12 general-input-class"
+    },
+    "serial": {
+        "display": false,
+        "inputType": "",
+        "lookupCode": "",
+        "required": false,
+        "labelText": "",
+        "cssClass": "col-12 col-sm-6 col-md-3 col-lg-3 col-xl-2 pt-2 general-input-class"
+    },
+    "visitSerial": {
+        "display": false,
+        "inputType": "",
+        "lookupCode": "",
+        "required": false,
+        "labelText": "",
+        "cssClass": "col-12 col-sm-6 col-md-3 col-lg-3 col-xl-2 pt-2 general-input-class"
+    }
+    
+}

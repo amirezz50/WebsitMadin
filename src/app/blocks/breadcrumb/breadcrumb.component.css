@@ -1,0 +1,9 @@
+﻿.breadcrumb > li {
+    display: inline-block;
+    
+}
+.breadcrumb-item {
+    display: inline-block;
+    
+    font-size :  18px;
+}

@@ -1,0 +1,7 @@
+@font-face {
+	font-family: 'gesstwo';
+	src: url('GESSTwoMedium.otf');
+	src: local('GESSTwoMedium'), url('GESSTwoMedium.ttf') format('truetype');
+	font-weight: normal;
+	font-style: normal;
+}

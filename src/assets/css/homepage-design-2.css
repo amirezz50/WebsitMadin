@@ -1,0 +1,70 @@
+:root {
+    --first-color: #ff7b00;
+    --second-color: #ff9500;
+    --third-color: #ec9c2c7c;
+}
+
+header {
+    background-color: var(--first-color);
+}
+.lang_dropper .drop_down_content {
+    background-color: var(--first-color);
+}
+nav>ul>li>a:hover,
+nav>ul>li.active>a {
+    background-color: var(--second-color);
+    border-radius: 5px;
+}
+
+nav>ul>li.active>ul>li a:hover {
+    color: var(--first-color);
+}
+
+.nav-sub .active>a:focus {
+    background-color: var(--third-color);
+    color: var(--first-color);
+}
+
+.links-container .title {
+    color: #000;
+    border-radius: 5px;
+    background-color: var(--second-color);
+}
+
+.links-container .link-container-area ul li {
+    border-radius: 5px;
+}
+
+.links-container .link-container-area ul li a:last-of-type {
+    font-size: 13px;
+    width: 24px;
+}
+
+.links-container .link-container-area ul li:hover {
+    box-shadow: inset -400px 0px 0px #84a59db5;
+}
+
+.links-container .link-container-area ul li a:first-of-type {
+    color: rgb(0 0 0 / 63%);
+}
+
+
+
+/* table header  */
+.ui-datatable-tablewrapper table th {
+    background-color: var(--first-color);
+    padding: 6px 1px;
+    font-size: 13px;
+}
+
+.table thead th {
+    background-color: var(--first-color);
+    color: #fff !important;
+}
+/* table header  */
+
+/* btns */
+button[ngbtooltip] {
+    background-color: var(--second-color)
+}
+/* btns */

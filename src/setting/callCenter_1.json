@@ -1,0 +1,464 @@
+﻿{
+  "code": {
+    "display": false,
+    "required": true
+  },
+  "expectedDate": {
+    "display": true,
+    "required": false,
+     
+    "defaultVal": "currentDate",
+    "controlType": "expectedService"
+  },
+  "dateHijri": {
+    "display": true,
+    "required": false,
+    "min_length": 2,
+    "max_length": 20
+  },
+  "customCode": {
+    "display": false,
+    "required": false,
+    "min_length": 2,
+    "max_length": 20
+  },
+  "oldCode": {
+    "display": true,
+    "required": false,
+    "min_length": 2,
+    "max_length": 20
+  },
+  "name.fnameAr": {
+    "display": true,
+     "required": false,
+    "min_length": 2,
+    "max_length": 20
+  },
+  "name.fnameEn": {
+    "display": true,
+     "required": false,
+    "min_length": 2,
+    "max_length": 20
+  },
+  "name.snameAr": {
+    "display": true,
+     "required": false,
+    "min_length": 2,
+    "max_length": 20
+  },
+  "name.snameEn": {
+    "display": true,
+     "required": false,
+    "min_length": 2,
+    "max_length": 20
+  },
+  "name.tnameAr": {
+    "display": true,
+     "required": false,
+    "min_length": 2,
+    "max_length": 20
+  },
+  "name.tnameEn": {
+    "display": true,
+     "required": false,
+    "min_length": 2,
+    "max_length": 20
+  },
+  "name.lnameAr": {
+    "display": true,
+    "required": false,
+    "min_length": 2,
+    "max_length": 20
+  },
+  "name.lnameEn": {
+    "display": true,
+    "required": false,
+    "min_length": 2,
+    "max_length": 20
+  },
+  "name.fullnameAr": {
+    "display": true,
+    "required": false
+  },
+  "name.fullnameEn": {
+    "display": true,
+    "required": false
+  },
+  "address.countryCode": {
+    "display": true,
+    "required": true
+  },
+  "address.govCode": {
+    "display": true,
+    "required": false
+  },
+  "address.cityCode": {},
+  "address.villageCode": {},
+  "address.nationalityId": {
+    "display": true,
+    "required": false
+  },
+  "address.fullAddressAr": {
+    "value": "",
+    "disabled": true
+  },
+  "address.fullAddressEn": {
+    "value": "",
+    "disabled": true
+  },
+  "identity.identityValue": {
+    "display": true,
+    "required": false
+  },
+  "therapeuticCards.contractId": {
+    "display": true,
+    "required": false
+  },
+  "therapeuticCards.cardNo": {
+    "display": true,
+    "required": false
+  },
+  "therapeuticCards.startDate": {
+    "display": true,
+    "required": false
+  },
+  "therapeuticCards.endDate": {
+    "display": true,
+    "required": false
+  },
+  "therapeuticCards.policyNumber": {
+    "display": true,
+    "required": false
+  },
+  "gender": {
+    "display": true,
+    "required": false,
+     
+    "defaultVal": ""
+  },
+  "birthDateNgb": {
+    "display": true,
+    "required": false,
+     
+    "defaultVal": ""
+  },
+  "birthPlace": {
+    "display": true,
+    "required": false,
+     
+    "defaultVal": ""
+  },
+  "homePhone": {
+    "display": true,
+    "required": false,
+     
+    "defaultVal": ""
+  },
+   "mobile": {
+    "display": true,
+     "required": false, 
+    "defaultVal": ""
+   
+  },
+  "mobile2": {
+    "display": true,
+    "required": false,
+    "min_length": 11,
+    "max_length": 11,
+    "defaultVal": "",
+    "regex": "^(01)[0-9]{9}$"
+  },
+  "mailAddress": {
+    "display": true,
+    "required": false,
+    "regex": "^[a-z0-9!#$%&'*+/=?^_`{|}~-]+(?:\\.[a-z0-9!#$%&'*+/=?^_`{|}~-]+)*@(?:[a-z0-9](?:[a-z0-9-]*[a-z0-9])?\\.)+[a-z0-9](?:[a-z0-9-]*[a-z0-9])?$",
+    "defaultVal": ""
+  },
+  "fatherName": {
+    "display": true,
+    "required": false,
+     
+    "defaultVal": ""
+  },
+  "motherName": {
+    "display": true,
+    "required": false,
+     
+    "defaultVal": ""
+  },
+  "nickName": {
+    "display": true,
+    "required": false,
+     
+    "defaultVal": ""
+  },
+  "parentId": {
+    "display": true,
+    "required": false,
+     
+    "defaultVal": ""
+  },
+  "employeeId": {
+    "display": true,
+    "required": false,
+     
+    "defaultVal": ""
+  },
+  "fileNo": {
+    "display": true,
+    "required": false,
+     
+    "defaultVal": ""
+  },
+  "religionId": {
+    "display": true,
+    "required": false,
+     
+    "defaultVal": ""
+  },
+  "maritalStatus": {
+    "display": true,
+    "required": false,
+     
+    "defaultVal": ""
+  },
+  "bloodGroup": {
+    "display": true,
+    "required": false,
+     
+    "defaultVal": ""
+  },
+  "rhValue": {
+    "display": true,
+    "required": false,
+     
+    "defaultVal": ""
+  },
+  "stopFlag": {
+    "display": true,
+    "required": false,
+     
+    "defaultVal": ""
+  },
+  "vipFlag": {
+    "display": true,
+    "required": false,
+     
+    "defaultVal": ""
+  },
+  "mortaliyFlag": {
+    "display": true,
+    "required": false,
+     
+    "defaultVal": ""
+  },
+  "mortalityDate": {
+    "display": true,
+    "required": false,
+     
+    "defaultVal": ""
+  },
+  "vipLevel": {
+    "display": true,
+    "required": false,
+     
+    "defaultVal": ""
+  },
+  "dateHijriNgb": {
+    "display": true,
+    "required": false,
+     
+    "defaultVal": ""
+  },
+  "mortalityDateNgb": {
+    "display": true,
+    "required": false,
+     
+    "defaultVal": ""
+  },
+  "placeCode": {
+    "display": true,
+    "required": false,
+     
+    "defaultVal": ""
+  },
+  "startDateNgb": {
+    "display": true,
+    "required": false,
+     
+    "defaultVal": ""
+  },
+  "ngbDayStartHoure": {
+    "display": true,
+    "required": false,
+     
+    "defaultVal": ""
+  },
+  "callerName": {
+    "display": true,
+    "required": false,
+     
+    "defaultVal": ""
+  },
+  "callerPhone": {
+    "display": true,
+    "required": false,
+     
+    "defaultVal": ""
+  },
+  "callerAddress": {
+    "display": true,
+    "required": false,
+     
+    "defaultVal": ""
+  },
+  "nationalityId": {
+    "display": true,
+    "required": false,
+     
+    "defaultVal": ""
+  },
+  "callNotes": {
+    "display": true,
+    "required": false,
+     
+    "defaultVal": ""
+  },
+  "callReason": {
+    "display": true,
+     "required": false,
+     
+    "defaultVal": "",
+    "controlType": "callData"
+  },
+  "callResult": {
+    "display": true,
+     "required": false,
+     
+    "defaultVal": "",
+    "controlType": "callData"
+  },
+  "specialization": {
+    "display": true,
+     "required": false,
+    
+    "defaultVal": ""
+  },
+  "howToReachUs": {
+    "display": true,
+    "required": false, 
+    "defaultVal": ""
+  },
+  "branchAddress": {
+    "display": true,
+     "required": false,
+    
+    "defaultVal": ""
+  },
+  "serviceCode": {
+    "display": true,
+    "required": false,
+ 
+    "defaultVal": ""
+  },
+  "serviceName": {
+    "display": true,
+    "required": false,
+  
+    "defaultVal": ""
+  },
+  "visitSerial": {
+    "display": true,
+    "required": false,
+   
+    "defaultVal": ""
+  },
+  "approxAge": {
+    "display": true,
+    "required": false,
+     
+    "defaultVal": ""
+  },
+  "patCode": {
+    "display": true,
+    "required": false,
+     
+    "defaultVal": ""
+  },
+  "patientServiceLevelOne": {
+    "display": true,
+    "required": false,
+     
+    "defaultVal": ""
+  },
+  "patientServiceLevelTwo": {
+    "display": true,
+    "required": false,
+     
+    "defaultVal": ""
+  },
+  "patientServiceLevelThree": {
+    "display": true,
+    "required": false,
+     
+    "defaultVal": ""
+  },
+ 
+  "doctorID": {
+    "display": true,
+    "required": false,
+     
+    "defaultVal": "",
+    "controlType": "expectedService"
+  },
+  "cost": {
+    "display": true,
+    "required": false,
+     
+    "defaultVal": ""
+  },
+  "leadType": {
+    "display": true,
+    "required": false,
+     
+    "defaultVal": 1,
+    "controlType": "expectedService"
+  },
+  "clientCode": {
+    "display": true,
+    "required": false,
+     
+    "defaultVal": ""
+  },
+  "docId": {
+    "display": true,
+    "required": false,
+     
+    "defaultVal": ""
+  },
+  "serial": {
+    "display": true,
+    "required": false,
+     
+    "defaultVal": ""
+  },
+  "previousPatient": {
+    "display": true,
+    "required": false,
+     
+    "defaultVal": ""
+  },
+  "customerId": {
+    "display": true,
+    "required": false,
+     
+    "defaultVal": ""
+  },
+  "secoundMobile": {
+    "display": true,
+    "required": false,
+     
+    "defaultVal": ""
+  }
+
+}

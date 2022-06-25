@@ -1,0 +1,27 @@
+<div class="container-fluid">
+  <div class="row">
+    <!-- menu -->
+    <div class="col-md-2 p-1">
+      <ul class="list-group panel">
+        <li  *ngFor="let group of  groups "  class="list-group-item list-group-item-primary">
+          <div (click)="onGroupClick(group)">
+            <span *ngIf="translate.currentLang == 'ar' "> {{group.nameAr}}</span>
+            <span *ngIf="translate.currentLang == 'en' "> {{group.nameEn}}</span>
+            <i *ngIf="group?.children" [ngClass]="{'float-left': translate.currentLang == 'ar', 'float-right': translate.currentLang == 'en' }"  class="  fa fa-angle-down"></i>
+          </div>
+          <ul [ngClass]="{'collapse':group.code != currentGroupCode}">
+            <li *ngFor="let subgroup of  group?.children " (click)="onReportClick(subgroup)"  class="list-group-item text-success">
+              <span *ngIf="translate.currentLang == 'en' "> {{subgroup.nameEn}}</span>
+              <span *ngIf="translate.currentLang == 'ar' "> {{subgroup.nameAr}}</span>
+            </li>
+          </ul>
+        </li>
+      </ul>
+    </div>
+      <div class="col p-1 " *ngIf="currentReport">
+        <dev-express-report [userAllReports]="true"></dev-express-report>
+      </div>
+    </div>
+
+</div>
+

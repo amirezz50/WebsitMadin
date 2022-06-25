@@ -1,0 +1,82 @@
+<div class="container-fluid mt-4">
+  <div class="row">
+    <div class="col-sm-4 col-12">
+      <h5 class="page-title">{{"PO_MYPRESCRIPTION" | translate}}</h5>
+    </div>
+    <div class="col-sm-4 col-12">
+      <div class="card-search">
+        <div class="input-group rounded">
+          <span>
+            <i class="fas fa-search"></i>
+          </span>
+          <input type="search" class="form-control rounded" [formControl]="searchInputControl"
+            placeholder="{{ 'Search' | translate }}" aria-label="Search" aria-describedby="search-addon" />
+
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="card-body px-0">
+    <div class="row h-30">
+      <div class="col-12">
+        <div class="card-table">
+          <table class="table">
+            <thead>
+              <tr>
+                <th>{{ 'VisitCode' | translate }}</th>
+                <th>{{ 'RXCODE' | translate }}</th>
+                <th>{{ 'Pharmacy' | translate }}</th>
+                <th>{{ 'Physician' | translate }}</th>
+                <th>{{ 'Speciality' | translate }}</th>
+                <th>{{ 'DIAGNOSES' | translate }}</th>
+                <th>{{ 'RXDATE' | translate }}</th>
+                <th>{{ 'PLACE' | translate }}</th>
+                <th>{{ 'RXSTATUS' | translate }}</th>
+                <th>{{ 'ACTION' | translate }}</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr *ngFor="let item of rxhistory">
+                <td>{{item.visitSerial}}</td>
+                <td>{{item.serial}}</td>
+                <td>{{translate.currentLang == 'ar'? item.pharmacyNameAr: item.pharmacyNameEn}}</td>
+                <td> {{translate.currentLang == 'ar'? item.docNameAr: item.docNameEn}}</td>
+                <td> {{translate.currentLang == 'ar'? item.specialityNameAr: item.specialityNameEn}}</td>
+                <td> {{ item.diagAsText}}</td>
+                <td> {{ item.regDate | date:'dd/MM/yy, h:mm a' }}</td>
+                <td> {{translate.currentLang == 'ar'? item.nameAr: item.nameEn}}</td>
+                <td> {{translate.currentLang == 'ar'? item.statusNameAr: item.statusNameEn}}</td>
+                <td>
+                  <button type="button" 
+                  class="btn btn-link" (click)="setdata(item)" [routerLink]="[ '/portal/printRx' ]">{{ 'PRINT'|
+                  translate }}</button>
+
+
+                
+                </td>
+              
+                <!-- <td>
+              <i  class="fa" (clicked)="onRowClick($event,row)">&#xf25a;</i>
+            </td> -->
+              </tr>
+            </tbody>
+          </table>
+        </div>
+      </div>
+      <div style="text-align:center" class="col-md-12">
+        <nav aria-label="Page navigation example">
+          <pagination-controls maxSize="10" (pageChange)="p = $event"></pagination-controls>
+        </nav>
+        <br>
+        <br>
+        <br>
+  
+      </div>
+
+    </div>
+
+
+
+  </div>
+</div>

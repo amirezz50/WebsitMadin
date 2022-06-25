@@ -1,0 +1,88 @@
+﻿<div class="container-fluid">
+    <div class="card card-outline-primary">
+        <div class="card-header card-primary text-sm-center text-white text-center">
+            <!--{{translate.currentLang == 'ar'? editSupplierType.nameAr: editSupplierType.nameEn}}-->
+        </div>
+        <div class="panel-body">
+            <div class="card-block">
+                <form [formGroup]="moduleForm" *ngIf="module">
+                  <div class="container-fluid">
+
+                    <div class="row">
+                      <div class="col-sm-4">
+                        <div class="form-group">
+                          <label for="nameEn">{{ 'ENGLISHNAME' | translate }}</label>
+                          <input type="text" class="form-control form-control-sm" formControlName="nameEn" id="nameEn" />
+                        </div>
+                      </div>
+                    </div>
+                    <div class="row">
+                      <div class="col-sm-4">
+                        <div class="form-group">
+                          <label for="nameAr">{{ 'ARABICNAME' | translate }}</label>
+                          <input type="text" id="nameAr" class="form-control form-control-sm" formControlName="nameAr" />
+                        </div>
+                      </div>
+                    </div>
+                    <div class="row">
+                      <div class="col-sm-4">
+                        <div class="form-group">
+                          <label for="iconName">Icon</label>
+                          <input type="text" id="iconName" class="form-control form-control-sm" formControlName="iconName" />
+                        </div>
+                      </div>
+                    </div>
+
+
+                    <div class="row">
+                      <div class="col-sm-4">
+                        <div class="form-group">
+                          <label for="levelNo">level No</label>
+                          <input type="number" id="levelNo" class="form-control form-control-sm" formControlName="levelNo" />
+                        </div>
+                      </div>
+                    </div>
+                    <div class="row">
+                      <div class="col-sm-4">
+                        <div class="form-group">
+                          <label for="compType">comp Type</label>
+                          <input type="text" id="compType" class="form-control form-control-sm" formControlName="compType" />
+                        </div>
+                      </div>
+                    </div>
+                    <div class="row">
+                      <div class="col-sm-4">
+                        <div class="form-group">
+                          <label for="iconName">Route Path</label>
+                          <input type="text" id="routePath" class="form-control form-control-sm" formControlName="routePath" />
+                        </div>
+                      </div>
+
+                    </div>
+                    <div class="row">
+                      <div class="col-sm-4">
+                        <div class="form-group">
+                          <!--<sanabel-selectize  ></sanabel-selectize>-->
+                        </div>
+                        <div class="row">
+                          <div class="col-sm-4">
+                            <div class="form-group">
+                              <input type="checkbox" id="active" class="form-control form-control-sm" formControlName="active" />
+                            </div>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                    <div class="container-fluid">
+                      <div class="row">
+                        <div class="col">
+                          <btns-ctrl [paramsArr]="controlsParams" (clicked)="onClicked($event)"></btns-ctrl>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </form>
+            </div>
+        </div>
+    </div>
+</div>

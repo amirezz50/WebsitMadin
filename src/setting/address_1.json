@@ -1,0 +1,22 @@
+﻿{
+  "countryNameEn": {
+    "display": true,
+    "required": true,
+    "min_length": 4,
+    "defaultVal": "Egypt"
+  },
+
+  "countryNameAr": {
+    "display": true,
+    "required": true,
+    "min_length": 4,
+    "defaultVal": "مصر"
+  },
+
+  "nationalityId": {
+    "display": true,
+    "required": true,
+    "min_length": 4,
+    "defaultVal": 63
+  }
+}

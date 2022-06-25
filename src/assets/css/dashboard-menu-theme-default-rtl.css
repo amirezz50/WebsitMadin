@@ -1,0 +1,326 @@
+/*
+|----------------------------------------------------------------------------
+	Dashboard Menu - Bootstrap4 Admin Dashboard Menu Full Responsive Main Custom CSS
+	Author: MGScoder
+	Author URL: https://codecanyon.net/user/mgscoder
+	Version: 1.0
+|----------------------------------------------------------------------------
+*/
+
+/*
+|------------------------------------------------------------------
+	[Table of contents]:
+
+	1. HEADER
+	2. NAVIGATION
+	3. INNER BODY
+	4. FOOTER / .footer
+	5. OTHERS
+	6. RESPONSIVE
+	
+|-------------------------------------------------------------------
+*/
+html, body {
+	direction:rtl;
+	text-align: right;
+}
+.pull-left {
+	float:right;
+}
+.pull-right {
+	float:left;
+}
+.dropdown-menu {
+    text-align: right;
+}
+/*
+|----------------------------------------------------------------------------
+	1. HEADER
+|----------------------------------------------------------------------------
+*/
+.app-wrap {
+    color: #333;
+    font-size: 14px;
+}
+.navbar-header .navbar-header-left {
+    background-color: #eee;
+}
+.logo-lg {
+    padding: 0 10px;
+}
+
+/*
+|----------------------------------------------------------------------------
+	2. NAVIGATION
+|----------------------------------------------------------------------------
+*/
+.hidden-md {
+	display: none;
+}
+/*------------------- Header -------------------*/
+
+.app-heading nav.navbar {
+    padding: 0;
+}
+.navbar-header-nav > li > a > .point {
+	top: -5px;
+}
+.label-notify {
+    background-color: #f39c12;
+    padding: 0 8px;
+    border-radius: 2px;
+    color: rgba(255, 255, 255, 0.8);
+	font-size: 12px;
+}
+.label-notify.b-orange {
+    background-color: #f39c12;
+}
+.dropdown-toggle::after {
+	vertical-align: .125em;
+    border-top: .4em solid #f39c12;
+	border-right: .4em solid transparent;
+	border-left: .4em solid transparent;
+}
+.navbar-header-nav > li > a > .label {
+    top: -9px;
+	left: 10px;
+}
+.label-danger {
+    background-color: #e74c3c;
+    padding: 0 8px;
+    border-radius: 2px;
+    color: rgba(255, 255, 255, 0.8);
+	font-size: 12px;
+}
+ul.navbar-header-nav li.dropdown ul.dropdown-menu.pull-right.show {
+    min-width: 140px;
+    padding: 10px;
+}
+.app-heading .form-control {
+    font-size: 14px;
+}
+
+.navbar-form .icon-after-input .icon a {
+	color: #333;
+}
+.navbar-form .icon-after-input .form-control:focus + .icon a {
+	color: #3498db;
+}
+.navbar-form .form-control:focus {
+	border-color: #3498db;
+}
+
+/*------------------- Side Nav -------------------*/
+.app-side .side-nav a.active, .app-side .side-nav a.active:hover, .app-side .side-nav a.active:focus {
+	background: #373d49;
+	color: #fff;
+}
+.app-side .nav .nav-divider {
+	background-color: rgba(255, 255, 255, 0.2);
+}
+aside .user-panel li.dropdown ul.dropdown-menu.pull-right.show {
+    padding: 10px;
+	left: auto !important;
+	right: 0;
+}
+
+.nav .nav-divider {
+    height: 1px;
+    margin: 0;
+    overflow: hidden;
+}
+.side-nav ul.nav a:hover i.fa.arrow {
+    -webkit-animation: none;
+    animation: none;
+}
+.nav.nav-stacked .nav-divider {
+    margin-top: 0;
+    margin-bottom: 0;
+}
+aside.app-side ul.nav.nav-sub > li ul.nav.nav-sub li a {
+    padding-right: 50px;
+}
+aside.app-side ul.nav.nav-sub > li ul.nav.nav-sub li ul.nav.nav-sub li a {
+    padding-right: 70px;
+}
+nav.nav .fa.fa-bars {
+    color: #007bff;
+}
+nav.nav .fa.fa-bars::before {
+    font-size: 28px;
+}
+
+.app-side-opened.app-side-mini aside.app-side .nav.nav-sub > li > a {
+    width: auto;
+}
+.app-side-opened.app-side-mini:not(.page-fixed):not(.app-side-expand-on-hover) .app-side .side-nav > ul > li > ul.collapse, 
+.app-side-opened.app-side-mini:not(.page-fixed):not(.app-side-expand-on-hover) .app-side .side-nav > ul > li.active > ul.collapse.in {
+    position: static !important;
+    margin-right: 60px;
+}
+
+.side-footer {
+	background-color: #252830;
+	border-top: 1px solid rgba(255, 255, 255, 0.2);
+}
+
+.navbar-default {
+	background: rgba(250, 250, 250, 0.99);
+}
+.navbar-default .navbar-header-nav > li > a {
+	color: #333;
+}
+.navbar-default .navbar-header-nav > li > a:hover,
+.navbar-default .navbar-header-nav > li > a:focus {
+	color: #000;
+	background-color: transparent;
+}
+
+.nav.nav-bordered > li.active:not(.disabled) > a::after,
+.nav.nav-bordered > li:not(.disabled) > a.active::after {
+	background: #3498db;
+	-webkit-transform: scale3d(1, 1, 1);
+	transform: scale3d(1, 1, 1);
+}
+
+/*
+|----------------------------------------------------------------------------
+	3. INNER BODY
+|----------------------------------------------------------------------------
+*/
+.w-sm {
+    width: 280px;
+}
+.small {
+    padding-top: 5px;
+}
+.text-asbestos, .text-wisteria {
+    color: #3498db !important;
+    font-size: 14px;
+    padding: 10px 0 0;
+}
+.navbar-header-nav .media-body {
+    margin-right: 5px;
+}
+.navbar-header-nav h5.media-heading {
+    font-size: 14px;
+    margin: 8px 0 10px;
+}
+.user-image img {
+    border: 1px solid rgba(255, 255, 255, 0.7);
+    border-radius: 5px;
+}
+.box-tools .dropdown ul.dropdown-menu.pull-right.show {
+    padding: 10px;
+}
+.box-tools .label.label-success {
+    background-color: #2ecc71;
+    padding: 5px 10px;
+    border-radius: 5px;
+    color: #fff;
+}
+
+
+/*
+|----------------------------------------------------------------------------
+	4. FOOTER / .footer
+|----------------------------------------------------------------------------
+*/
+#footer.footer {
+	padding: 10px 0 0;
+}
+.footer .copyright, .footer .copyright a {
+	color: #fff;
+	font-size: 14px;
+}
+.side-footer p {
+	margin: 10px 0 5px;
+}
+.progress-bar {
+    background-color: #007bff;
+}
+.progress-bar-success {
+    background-color: #f39c12;
+}
+.app-footer {
+	background-color: #252830;
+}
+
+/*
+|----------------------------------------------------------------------------
+	5. OTHERS
+|----------------------------------------------------------------------------
+*/
+.app-heading .dropdown-menu, .app-side .dropdown-menu {
+    font-size: 14px;
+}
+.dashhead-title, .container-fluid h4 {
+    font-weight: 700;
+}
+.task-info-action, .task-info-time, .member-skills {
+    color: #777;
+}
+
+
+
+/*
+|----------------------------------------------------------------------------
+	6. RESPONSIVE
+|----------------------------------------------------------------------------
+*/
+@media screen and (max-width: 991px) {
+	.navbar-header-nav > li > a, .navbar-header-nav > a {
+		padding: 20px 10px;
+	}
+	.logged-user-display-name {
+		display: none;
+	}
+}
+@media screen and (max-width: 767px) {	
+	.hidden-md {
+		display: block;
+	}	
+	.visible-md {
+		display: none;
+	}	
+	.navbar-header .navbar-header-left {
+		width: 120px;
+	}
+	.logo .logo-xs img {
+		max-width: 120px;
+		padding: 0 10px;
+	}
+	.navbar-header-nav > li > a, .navbar-header-nav > a {
+		padding: 20px 15px;
+	}
+}
+@media screen and (max-width: 480px) {
+	.navbar-header-nav > li > a, .navbar-header-nav > a {
+		padding: 20px 10px;
+	}
+}
+@media screen and (max-width: 420px) {	
+	.navbar-header .navbar-header-left {
+		width: 100%;
+		text-align: center;
+		padding: 10px;
+	}
+	ul.navbar-header-nav li.dropdown ul.dropdown-menu.pull-right.show {
+		padding: 5px;
+	}
+	.w-sm {
+		width: 270px;
+	}
+	ul.navbar-header-nav li.dropdown ul.dropdown-menu.pull-right.show {
+		min-width: 120px;
+	}
+}
+	
+@media screen and (max-width: 375px) {
+	.w-sm {
+		width: 250px;
+	}		
+	ul.navbar-header-nav li.dropdown ul.dropdown-menu.w-sm.pull-right.show {
+		left: -70px;
+	}
+}

@@ -1,0 +1,42 @@
+<div id="confirmationModal" class="dialog-container" style="z-index: 555555555555555;">
+    <div class="p-3 bg-white" [ngClass]="{'newBackg': timingAlert}">
+        <div class="p-2" [ngClass]="{'head-bgStyle': timingAlert, 'newharder': !timingAlert}">
+            <h5 [ngClass]="{'head-h': timingAlert}">
+                <i *ngIf="timingAlert" class="fa fa-exclamation-triangle fa-lg"></i>
+                {{title}}
+            </h5>
+        </div>
+        <div [ngClass]="{'card card-block': !timingAlert, 'content-msg': timingAlert}">
+            <p [ngStyle]="{'font-size': timingAlert ? '18px': '0.9rem'}" [ngClass]="{'my-3': timingAlert}">
+                {{message}}
+            </p>
+        </div>
+        <div class="pt-2 pb-2">
+            <button class="btn" id="cancelButton" [ngClass]="{'d-none': timingAlert}">
+                {{cancelText | translate}}
+            </button>
+            <button class="btn" [ngClass]="{'newClose': timingAlert}" id="okButton">
+                {{okText | translate}} <span  *ngIf="timingAlert">({{timeLeft}})</span>
+            </button>
+        </div>
+    </div>
+
+    <!-- New Design -->
+    <!-- <div class="p-5 bg-white newBackg" *ngIf="timingAlert">
+        <h2 class="py-3 head-bgStyle">
+            <i class="fa fa-exclamation-triangle fa-lg"></i> {{title}}
+        </h2>
+        <div class="content-msg">*ngIf="!timingAlert"
+            {{message}}
+        </div>
+        <div class="mt-3">
+            <button class="btn btn-warning newClose" id="okButton">
+                {{okText | translate}} ({{timeLeft}})
+            </button>
+            <button class="btn btn-danger" id="cancelButton">
+                {{cancelText | translate}}
+            </button>
+        </div>
+    </div> -->
+
+</div>

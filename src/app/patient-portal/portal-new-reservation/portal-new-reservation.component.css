@@ -1,0 +1,134 @@
+.col-card-head {
+  background: none;
+  background-color: #178374;
+  border-color: #178374;
+  border-radius: 5px 5px 0 0;
+}
+
+.foot-col-btn {
+  background: none;
+  background-color: #123e38;
+  width: 100%;
+  border: 1px solid #178374;
+  border-radius: 6px;
+}
+
+.head-col-btn {
+    border: 1px solid #ddd;
+    font-size: 20px;
+    padding: 2px 15px;
+    color: #3489db;
+}
+
+.reserve-div {
+    background: #2196F3;
+    border: #2196f3;
+    color: #fff;
+    width: fit-content;
+    display: flex;
+}
+
+.reserve-h4 {
+    width: 50%;
+    margin: auto;
+    text-align: center;
+    line-height: 1.5;
+    font-weight: 600;
+    letter-spacing: 1px;
+}
+
+.time-li:hover, .time-active {
+    background-color: #3489db;
+    color: #fff !important;
+    cursor: pointer;
+}
+
+
+.input-group .form-control, .input-group .custom-select, .input-group .custom-file {
+  position: relative;
+  flex: 1 1 auto;
+  width: 1%;
+  margin-bottom: 0;
+  height: 40px;
+  border-radius: 0px !important;
+  border: 1px solid #ddd;
+}
+
+label, .form-group label, div>label, form>label {
+  font-size: 16px;
+  color: #000;
+  margin-bottom: 13px;
+}
+.banner{
+    background-image: url("../../../assets/images/Portal/banner.png");
+    width: 100%;
+    padding: 15px;
+    margin: 30px 0;
+    border-radius: 15px;
+
+}
+.card {
+  background-color: #0000004d;
+  padding: 10px 13px;
+  -webkit-animation: fadeIn 1s ease;
+  animation: fadeIn 1s ease;
+  width: 100%;
+  margin: 10px auto;
+  display: block;
+  border-radius: 15px;
+  border: 1px solid #ddd;
+}
+.btn-search{
+  background: #178374;
+  width: 100%;
+  border: 1px solid #178374;
+  margin: 37px 0 0;
+  height: 40px;
+}
+.newappoint{
+  font-size: 24px;
+  text-align: center;
+  color: #fff;
+  padding: 20px 5px 0px;
+}
+.card-doctor{
+
+}
+.doc-name{
+  font-size: 22px;
+  font-weight: 600;
+  color: #178374;
+}
+.spcialist{
+  font-size: 14px;
+  font-weight: 600;
+  color: white;
+  padding: 5px 15px;
+  margin: 10px 0;
+  background: #178374;
+  display: inline-block;
+  border-radius: 24px;
+}
+.time-box{
+  border: 1px solid #ddd;
+  color: #666 !important;
+  width: 23%;
+  padding: 3px;
+  margin-bottom: 5px;
+  border-radius: 8px;
+}
+.card-new{
+  border: 0px solid #ddd !important;
+  width: 85% !important;
+  padding: 0px 15px !important;
+}
+.img-data{
+  text-align: center;
+}
+.img-data img{
+  width: 100px;
+  height: 100px;
+  border-radius: 50%;
+  border: 1px solid #eee;
+  margin-top: 15px;
+}

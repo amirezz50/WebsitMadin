@@ -1,0 +1,88 @@
+<div class="expert section ">
+
+  <div class="col-md-12">
+    <div class="title-section">
+      <h2>{{'DOCTOR'|translate}}</h2>
+    </div>
+  </div>
+  <div class="col-12 card">
+    <div class=" row">
+      <div class="img-data col-auto">
+        <img src="../../../assets/images/{{doctor?.imgSrc}}.png" alt="" class="">
+      </div>
+      <div class="col-11">
+        <h4>{{translate.currentLang =='ar'?doctor.doctorNameAr:doctor.doctorNameEn}}</h4>
+        <h6>{{translate.currentLang =='ar'?doctor.docCatNameAr:doctor.docCatNameEn}}</h6>
+
+      </div>
+      <!-- <p>{{doctor.price}} SAR</p> -->
+
+    </div>
+  </div>
+
+
+</div>
+
+<div>
+
+  <h1>Payment</h1>
+  <div class="row">
+    <div class="col-6">
+      <div>
+        <button>cash</button>
+        <button>credit card</button>
+        <button>stc Pay</button>
+        <button>Pay</button>
+      </div>
+      <div class="card">
+        <label>
+          Credit Card Information
+        </label>
+        <div>
+          <div>
+            <input type="text" placeholder="Card Name">
+            <div>
+              <input type="text" placeholder="Card Number">
+            </div>
+            <div>
+              <input type="text" placeholder="Expires MM | YYY">
+              <input type="text" placeholder="CVV / CVC">
+            </div>
+
+            <button class="btn">Pay</button>
+          </div>
+        </div>
+      </div>
+
+    </div>
+    <div class="col-6">
+      <div class="card">
+        <label>
+          Booking Summery
+        </label>
+        <div class="card-body">
+          <!-- doctor information -->
+          <div>
+
+          </div>
+          <div style="display:inline-block">
+            <label>Sub Total</label>
+            <label>Price</label>
+          </div>
+          <div class="input-group mb-3">
+            <input type="text" class="form-control" placeholder="Redeem promo code" aria-label="Recipient's username"
+              aria-describedby="basic-addon2">
+            <div class="input-group-append">
+              <span class="input-group-text" id="basic-addon2">Apply</span>
+            </div>
+          </div>
+          <div>
+            <label>Total </label>
+            <label>Price</label>
+          </div>
+        </div>
+      </div>
+
+
+    </div>
+  </div>

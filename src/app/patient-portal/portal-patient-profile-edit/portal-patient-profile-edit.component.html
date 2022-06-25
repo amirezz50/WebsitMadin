@@ -1,0 +1,12 @@
+<div class="row">
+  <div class="col-md-6">
+    <form [formGroup]="patientForm">
+      <input type="text" #adress formControlName="addressAr" class="form-control input-radius bg-light"
+        placeholder="{{'ADDRESS|translate'}}">
+      <input type="text" #adress formControlName="mobile" class="form-control input-radius bg-light"
+        placeholder="{{'MOBILENUMBER|translate'}}">
+      <btns-ctrl [appCodes]="[1]" (clicked)="onClicked($event)">
+      </btns-ctrl>
+    </form>
+  </div>
+</div>

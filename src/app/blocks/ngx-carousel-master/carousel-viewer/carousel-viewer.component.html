@@ -1,0 +1,86 @@
+<!--<ngx-carousel class="banner" [inputs]="carouselBanner" (carouselLoad)="carouselBannerLoad()">
+    <ngx-item NgxCarouselItem *ngFor="let tile of carouselBannerItems; let i = index;">
+        <div class="bannerStyle" [style.background]="'url(' + tile + ')'">
+            <h1>{{i}}</h1>
+        </div>
+    </ngx-item>
+    <button NgxCarouselPrev class="leftRs">&lt;</button>
+    <button NgxCarouselNext class="rightRs">&gt;</button>
+</ngx-carousel>-->
+
+<!-- main -->
+<div class="container-fluid p-0">
+    <!--<h2>Tile</h2>
+    <ngx-carousel [inputs]="carouselTile" (carouselLoad)="carouselTileLoad()">
+        <ngx-tile NgxCarouselItem *ngFor="let tile of carouselTileItems; let i = index;">
+            <div class="tile" [style.background]="'url(' + tile + ')'">
+                <h1>{{i}}</h1>
+            </div>
+        </ngx-tile>
+        <button NgxCarouselPrev class="leftRs">&lt;</button>
+        <button NgxCarouselNext class="rightRs">&gt;</button>
+    </ngx-carousel>-->
+
+    <!--<h2>Tile-WithLoop and Animation</h2>
+    <ngx-carousel [inputs]="carouselTileOne" (carouselLoad)="carouselTileOneLoad()">
+        <ngx-tile NgxCarouselItem *ngFor="let tile of carouselTileOneItems; let i = index;">
+            <div class="wBg">
+                <div class="tile" [style.background]="'url(' + tile + ')'">
+                    <h1>{{i}}</h1>
+                </div>
+                <h4>Tile</h4>
+                <p>content</p>
+            </div>
+        </ngx-tile>
+        <button NgxCarouselPrev class="leftRs">&lt;</button>
+        <button NgxCarouselNext class="rightRs">&gt;</button>
+    </ngx-carousel>-->
+
+    <!--<h2>Fixed-Width</h2>-->
+    <ngx-carousel [inputs]="carouselTileTwo" (carouselLoad)="carouselTileTwoLoad()" *ngIf="!fromMarker">
+        <ngx-tile NgxCarouselItem *ngFor="let tile of specialityImages; let i = index;">
+            <div (click)="afterSelectImage(tile)">
+                <div>
+                    <h6 [hidden]="true">{{i}}</h6>
+                    <img [src]="tile.santizerImagePath">
+                </div>
+                <!--<h4>Tile</h4>
+                <p>content</p>-->
+            </div>
+        </ngx-tile>
+        <button NgxCarouselPrev class="leftRs">&lt;</button>
+        <button NgxCarouselNext class="rightRs">&gt;</button>
+    </ngx-carousel>
+
+    <!-- marker component imgs view -->
+    <div class="row" *ngIf="fromMarker">
+        <div class="col-md-12">
+            <div id="Carousel" class="carousel slide" data-ride="carousel">
+
+                <!-- Carousel items -->
+                <div class="carousel-inner">
+
+                    <div class="carousel-item" *ngFor="let item of customImgArr; let i = index;"
+                        [ngClass]="{'active': i == 0}">
+                        <div class="row">
+                            <div class="col-md-3" *ngFor="let img of item.images">
+                                <a href="javascript:void(0)" (click)="afterSelectImage(img)">
+                                    <img *ngIf="!img.svgView" [src]="img.santizerImagePath" [alt]="img.serial"
+                                        class="img-thumbnail" style="height: 225px !important;">
+                                    <div *ngIf="img.svgView" id="svgView" [attr.xyz]="getHtmlView(img)"></div>
+                                </a>
+                            </div>
+                        </div>
+                        <!--.row-->
+                    </div>
+                    <!--.item-->
+
+                </div>
+                <!--.carousel-inner-->
+                <a data-slide="prev" href="#Carousel" class="left carousel-control ctrl-left fa fa-chevron-left"></a>
+                <a data-slide="next" href="#Carousel" class="right carousel-control ctrl-right fa fa-chevron-right"></a>
+            </div>
+            <!--.Carousel-->
+        </div>
+    </div>
+</div>

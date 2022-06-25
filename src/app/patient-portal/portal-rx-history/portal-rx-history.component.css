@@ -1,0 +1,128 @@
+
+
+.page-title{
+  font-size:18px;
+  font-weight: 600;
+  padding: 5px;
+}
+.card-search .input-group i {
+    position: absolute;
+    left: 10px;
+    right: initial;
+    top: 10px;
+    color: #ccc;
+    font-size: 16px;
+    z-index: 999;
+}
+.btn-link{
+  background-color: #178374;
+  color: #fff !important;
+  padding: 10px 30px;
+  border-radius: 12px;
+  text-decoration: none;
+}
+.btn-search{
+  background-color: #178374;
+  color: #fff !important;
+}
+.card-search .form-control{
+  border: 1px #ddd solid;
+}
+.card-table{
+  margin: 20px 0;
+}
+.card-table .table thead th {
+  background-color: #178374;
+  color: #fff !important;
+  padding: 20px 15px;
+  /* border-radius: 10px; */
+  font-size: 14px;
+  font-weight: 500;
+}
+.card-table .table tbody tr {
+  border-top: 3px solid #fff;
+  border-bottom: 3px solid #fff;
+}
+.card-table .table tbody td {
+  padding: 15px;
+  background: #F4F4F8;
+  border: none;
+  font-weight: 500;
+  font-size: 14px;
+  font-family: 'cairo';
+  color: #747B8D;
+}
+.pagination{
+  margin: 30px 15;
+}
+
+.pagination .page-link {
+  position: relative;
+  display: block;
+  padding: 10px;
+  width: 40px;
+  height: 40px;
+  text-align: center;
+  margin-left: -1px;
+  line-height: 1.25;
+  font-size: 16px;
+  margin: 3px;
+  color: #333;
+  border-radius: 10px;
+  background-color: #f4f4f8;
+  border: 1px solid #f4f4f8;
+}
+.pagination .page-link.active{
+  color: #fff;
+  background-color: #178374;
+  border: 1px solid #178374;
+}
+
+.pagination .page-link:hover{
+  color: #fff;
+  background-color: #178374;
+  border: 1px solid #178374;
+}
+
+:host /deep/ .ngx-pagination {
+  margin: 30px 15;
+}
+
+:host /deep/.ngx-pagination .current,
+.btn-info {
+  position: relative;
+  display: inline-block;
+  padding: 10px;
+  width: 40px;
+  height: 40px;
+  text-align: center;
+  margin-left: -1px;
+  line-height: 1.25;
+  font-size: 16px;
+  margin: 3px;
+  color: #333;
+  border-radius: 10px;
+  background-color: #178374;
+  border: 1px solid #178374;
+  color: white;
+  font-weight: bolder;
+}
+
+:host /deep/.ngx-pagination .current:hover {
+  background-color: #f4f4f8;
+  border: 1px solid #f4f4f8;
+}
+:host /deep/.ngx-pagination a{
+  position: relative;
+  display: flex;
+  padding: 13px;
+  height: 40px;
+  text-align: center;
+  line-height: 1.25;
+  font-size: 16px;
+  margin: 3px;
+  color: #333;
+  border-radius: 10px;
+  background-color: #f4f4f8;
+  border: 1px solid #f4f4f8;
+}

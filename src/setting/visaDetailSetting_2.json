@@ -1,0 +1,22 @@
+{
+    "cardNumber": {
+        "display": true,
+        "required": true,
+        "defaultVal": 0
+    },
+    "cshVisaCardsTypeCode": {
+        "display": true,
+        "required": false,
+        "defaultVal": 1
+    },
+    "bankTransCode": {
+        "display": true,
+        "required": false,
+        "defaultVal": 0
+    },
+    "cshVisaMachinesCode": {
+        "display": true,
+        "required": false,
+        "defaultVal": 1
+    }
+}

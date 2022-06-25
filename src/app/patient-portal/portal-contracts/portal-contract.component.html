@@ -1,0 +1,104 @@
+<section class="container-fluid px-0">
+
+  <form [formGroup]="therapeuticCardsForm">
+    <!-- <div>
+      <input class="form-control form-control-sm" type="number" formControlName="patientCode" />
+    </div> -->
+
+    <div class="row">
+      <!-- [ngClass]="{'disabledDiv': visitType == 1}" -->
+      <!-- <div *ngIf="useOldContract ==1" class="col-md-3">
+        <div class="mt-5">
+          <label> {{ 'DISPLAYALL' | translate }} </label>
+          <input type="checkbox" (click)="displayAll()" name="displayAll">
+        </div>
+      </div> -->
+
+      <!-- <div class="col-12 col-sm-6 col-md-4" *ngIf="!displayAllInp && defaultOldContract && useOldContract == 1 ">
+        <sanabel-selectize appcode="1410" [disabled]="!editable " formControlName="contractId" #contractSearch
+          [tabindex]="tabindex" required [SearchKeys]="{PatCode:defaultOldContract,contractType:contractTypeId}"
+          (clicked)="contractClicked($event)">
+        </sanabel-selectize>
+      </div> -->
+
+      <div class="col-12 col-sm-12 col-md-12" >
+        <sanabel-selectize appcode="1040" [disabled]="!editable " formControlName="contractId" #contractSearch
+          [tabindex]="tabindex" required [SearchKeys]="{contractType:contractTypeId}"
+          (clicked)="contractClicked($event)">
+        </sanabel-selectize>
+      </div>
+
+      <div *ngIf="companyTypeFlag == 2  " [ngClass]="{'col-2': !portalReg, 'col-4': portalReg}">
+        <div class="mt-3">
+          <label for="cardNo my-3 ">
+            {{ 'CARDNUMBER' | translate }}
+          </label>
+          <input class="form-control form-control-sm" type="text" (change)="onValuesChange()"
+            formControlName="cardNo" />
+        </div>
+      </div>
+
+      <div *ngIf="companyTypeFlag == 2 " [ngClass]="{'col-2': !portalReg, 'col-4': portalReg}">
+        <label>{{ 'StartDate' | translate }}</label>
+        <div class="form-group">
+          <div class="input-group input-group-sm">
+            <input class="form-control" placeholder="{{'DATEFORMAT' | translate}}" (navigate)="onValuesChange()"
+              (blur)="onValuesChange()" formControlName="startDate" name="dp" ngbDatepicker #dp="ngbDatepicker">
+            <div class="input-group-addon" (click)="dp.toggle()">
+              <i class="fa fa-calendar"></i>
+
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div *ngIf="companyTypeFlag == 2  " [ngClass]="{'col-2': !portalReg, 'col-4': portalReg}">
+        <label>{{ 'EndDate' | translate }}</label>
+        <div class="form-group">
+          <div class="input-group input-group-sm">
+            <input class="form-control" placeholder="{{'DATEFORMAT' | translate}}" (navigate)="onValuesChange()"
+              (blur)="onValuesChange()" name="d" formControlName="endDate" ngbDatepicker #d="ngbDatepicker">
+            <div class="input-group-addon" (click)="d.toggle()">
+              <i class="fa fa-calendar"></i>
+            </div>
+          </div>
+        </div>
+      </div>
+
+
+      <!-- <div class="col-12 col-sm-6 col-md-8">
+        <sanabel-selectize appcode="1277" formControlName="inTransferBodiesSerial"></sanabel-selectize>
+      </div> -->
+
+
+
+    </div>
+
+    <div class="container text-sm-center" *ngIf="contractClickedBool">
+      <div class="row">
+        <div class="col-sm">
+          <label for="">{{priPricingItemsNameAr}}
+            <p>:</p>
+          </label>
+          <span>{{discountValue}}%</span>
+        </div>
+
+        <div class="col-sm">
+          <label for="">{{ 'DEFRAY' | translate }}
+            <p>:</p>
+          </label>
+          <span>{{patShareValue}}</span>
+        </div>
+
+        <div class="col-sm">
+          <label for="">{{ 'BENEFITKIND' | translate }}
+            <p>:</p>
+          </label>
+          <span>{{discountOwnerNameAr}}</span>
+        </div>
+
+      </div>
+    </div>
+  </form>
+
+</section>

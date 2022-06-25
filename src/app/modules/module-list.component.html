@@ -1,0 +1,34 @@
+﻿<div class="card panel-default">
+    <!--page Header-->
+    <div class="card-header header-style text-center">
+        <h6>
+            {{ 'MODULES' | translate }}<i class="fa fa-plus fa-1x icons-style"
+                                                   aria-hidden="true" placement="left"
+                                                   ngbTooltip="{{ 'ADD' | translate }}"
+                                                   [routerLink]="[ 'new' ]"></i>
+        </h6>
+    </div>
+    <!--search area-->
+    <div class="ui-widget-header search-area">
+        <i class="fa fa-search search-icon"></i>
+        <input #gb type="text" pInputText size="30" placeholder="{{ 'FILTER' | translate }}">
+    </div>
+    <!--table area-->
+    <!--header for column name & field for column content-->
+    <p-dataTable tableStyleClass="table table-bordered table-striped" [value]="modules"
+                 [rows]="10" [paginator]="true" [pageLinks]="3"
+                 [rowsPerPageOptions]="[5,10,20,50,100]" [globalFilter]="gb">
+        <p-column field="code" header="{{ 'CODE' | translate }}" [sortable]="true"></p-column>
+        <p-column field="nameAr" header="{{ 'ARABICNAME' | translate }}" [sortable]="true"></p-column>
+        <p-column field="nameEn" header="{{ 'ENGLISHNAME' | translate }}" [sortable]="true"></p-column>
+        <p-column field="routePath" header="{{ 'ROUTEPATH' | translate }}" [sortable]="true"></p-column>
+        <p-column styleClass="col-button">
+            <ng-template pTemplate="options" let-row="rowData">
+                <i class="fa fa-pencil-square" [routerLink]="[ row['code']]"
+                   placement="top" ngbTooltip="{{ 'EDIT' | translate }}"></i>
+                <i class="fa fa-trash" (click)="delete(row)"
+                   placement="top" ngbTooltip="{{ 'DELETE' | translate }}"></i>
+            </ng-template>
+        </p-column>
+    </p-dataTable>
+</div>

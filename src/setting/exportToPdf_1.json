@@ -1,0 +1,16 @@
+{
+    "margin": 2,
+    "image": {
+        "type": "png",
+        "quality": 0.98
+    },
+    "html2canvas": {
+        "scale": 1,
+        "width": 779
+    },
+    "jsPDF": {
+        "unit": "mm",
+        "format": "a4",
+        "orientation": "p"
+    }
+}

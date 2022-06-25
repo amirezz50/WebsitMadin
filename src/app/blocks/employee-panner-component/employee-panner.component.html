@@ -1,0 +1,77 @@
+<div class="container-fluid p-0">
+    <div class="pb_content header-style" *ngIf="showPanner" style="background-color :#f1f1f1">
+        <div class="row mx-0 pb-2">
+            <div class="col-sm-1" style="position: relative;top: 18px;">
+                <img style="width:25px; height:25px;"
+                    src="../../../assets/images/Gender{{_empPannerData.genderCode}}.png" data-placement="bottom"
+                    title="{{_empPannerData.genderAr }}" />
+
+                <span class="flag flag-{{_empPannerData.nationalityEn}} " ngbTooltip="{{_empPannerData.nationalityAr}}">
+                </span>
+            </div>
+            <div class="col-lg-3">
+                {{_empPannerData.customCode }}
+            </div>
+            <div div class="col-lg-3 col-md-6 col-sm-12 age d-flex align-items-center">
+                <span class="mx-2 spanStyle">{{'Name' | translate}}: </span>
+                <small class="font-weight-bold">
+                    {{translate.currentLang == 'ar' ? _empPannerData?.fullnameAr : _empPannerData?.fullnameEn}}
+                </small>
+            </div>
+            <div class="col-lg-2 col-md-6 col-sm-12 age d-flex align-items-center">
+                <span class="mx-2 spanStyle">{{'JOBID' | translate}}: </span>
+                <small class="font-weight-bold">
+                    {{translate.currentLang == 'ar' ? _empPannerData?.jobNameAr : _empPannerData?.jobNameEn}}
+                </small>
+            </div>
+            <div class="col-lg-3 col-md-6 col-sm-12 age d-flex align-items-center">
+                <span class="mx-2 spanStyle">{{'DEPARTMENT' | translate}}: </span>
+                <small class="font-weight-bold">
+                    {{translate.currentLang == 'ar' ? _empPannerData?.departmentAr : _empPannerData?.departmentEn}}
+                </small>
+            </div>
+            <div class="col-lg-2 col-md-6 col-sm-12 age d-flex align-items-center">
+                <span class="mx-2 spanStyle">{{'AGE' | translate}}: </span>
+                <small class="font-weight-bold">
+                    {{translate.currentLang == 'ar' ? _empPannerData?.ageAr : _empPannerData?.ageEn}}
+                </small>
+            </div>
+        </div>
+
+        <div class="row mx-0 pb-2">
+            <div class="col-sm-1">
+
+            </div>
+            <div class="col-lg-3 col-md-6 col-sm-12 age d-flex align-items-center">
+                <span class="mx-2 spanStyle">{{'CONTRACTWORKTYPE' | translate}}: </span>
+                <small class="font-weight-bold">
+                    {{translate.currentLang == 'ar' ? _empPannerData?.contractTypeAr : _empPannerData?.contractTypeEn}}
+                </small>
+            </div>
+            <div class="col-lg-2 col-md-6 col-sm-12 age d-flex align-items-center">
+                <span class="mx-2 spanStyle">{{'workStatus' | translate}}: </span>
+                <small class="font-weight-bold">
+                    {{translate.currentLang == 'ar' ? _empPannerData?.workStatusAr : _empPannerData?.workStatusEn}}
+                </small>
+            </div>
+            <div class="col-lg-3 col-md-6 col-sm-12 age d-flex align-items-center">
+                <span class="mx-2 spanStyle">{{'hireDate' | translate}}: </span>
+                <small class="font-weight-bold">
+                    {{_empPannerData.hireDate | date:'dd/MM/yyyy'}}
+                </small>
+            </div>
+            <div class="col-lg-2 col-md-6 col-sm-12 age d-flex align-items-center">
+                <span class="mx-2 spanStyle">{{'JobType' | translate}}: </span>
+                <small class="font-weight-bold">
+                    {{translate.currentLang == 'ar' ? _empPannerData?.jobTypeNameAr :_empPannerData?.jobTypeNameEn}}
+                </small>
+            </div>
+
+        </div>
+    </div>
+</div>
+<style>
+    .spanStyle {
+        color: #1571a1
+    }
+</style>

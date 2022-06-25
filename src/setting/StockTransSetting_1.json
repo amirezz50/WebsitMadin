@@ -1,0 +1,7 @@
+{
+  "StockSetting": {
+    "SentMail": 1,
+    "Po_OrderMsgBody": "Po Request for supply of items",
+    "Po_OrderMsgSubject": "PoOrder "
+  }
+}

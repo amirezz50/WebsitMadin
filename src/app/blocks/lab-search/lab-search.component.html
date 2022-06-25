@@ -1,0 +1,48 @@
+<div class="card-block p-b-0">
+  <div class="row">
+    <div class="col-3">
+      <label>{{'SERVICENAME' | translate }}: </label>
+      <sanabel-selectize [simpleView]="true" appcode="1082" #serviceSelectize (clicked)="getSelectedService($event)"
+        [SearchKeys]="{levelNo:3,serviceType:1}"></sanabel-selectize>
+    </div>
+    <div class="col-3">
+      <label>{{'SHEET' | translate }}: </label>
+      <sanabel-selectize [simpleView]="true" appcode="1296" #sheetSelectize [multi]="true"
+        (addSelected)="addSelectedSheetFromSelectize($event)"></sanabel-selectize>
+    </div>
+  </div>
+  <div class="row">
+    <div class="col">
+      <p-dataTable tableStyleClass="table table-bordered table-striped" [value]="serviceSheets">
+        <p-column field="{{translate.currentLang == 'ar' ? 'sheetDescEn':'sheetDescEn'}}"
+          header="{{'SHEET' | translate }}" [style]="{'width': '25%'}"></p-column>
+        <p-column field="sheetValue" header="{{'VALUE' | translate }}" [style]="{'width': '25%'}">
+          <ng-template pTemplate="options" let-row="rowData">
+                    <input *ngIf="row['type']==1" type="text" class="form-control" [(ngModel)]="row['sheetValue']" />
+                    <input *ngIf="row['type']==2" type="text" class="form-control" [(ngModel)]="row['sheetValue']" />
+                    <div *ngIf="row['type']==3">
+                        <sanabel-selectize [simpleView]="true" [SearchKeys]="{SheetCode:row['sheetCode']}" appcode="1129" [(ngModel)]="row['sheetValue']">
+                        </sanabel-selectize>
+                    </div>
+                    <div *ngIf="row['type']==4">
+                        <label>{{row['formulaName']}}</label>
+                        <input disabled type="text" class="form-control" [(ngModel)]="row['sheetValue']" />
+                    </div>
+          </ng-template>
+        </p-column>
+        <p-column field="{{translate.currentLang == 'ar' ? 'unitNameEn':'unitNameEn'}}" header="{{'UNIT' | translate }}"
+          [style]="{'width': '20%'}"></p-column>
+        <p-column header="{{ 'ACTIONS' | translate }}" [style]="{'width': '15%'}">
+          <ng-template pTemplate="options" let-row="rowData">
+            <button *ngIf="row['isNew']" class="btn" (click)="removeNewServiceSheetFromUi(row);">
+              <i class="fa fa-close fa-2x"></i>
+            </button>
+          </ng-template>
+        </p-column>
+      </p-dataTable>
+    </div>
+  </div>
+
+  <btns-ctrl [appCodes]="[2183,7]" (clicked)="onBtnsClicked($event)"></btns-ctrl>
+
+</div>

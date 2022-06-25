@@ -1,0 +1,13 @@
+<!--<form>
+  <div class="mdl-textfield mdl-js-textfield mdl-textfield--floating-label">
+    <label class="mdl-textfield__label" for="filterText">Filter...</label>
+    <input type="text" id="filterText" class="mdl-textfield__input" [(ngModel)]="filter" (keyup)="filterChanged($event)" />
+  </div>
+</form>-->
+
+
+<div class="form-group row">
+    <div class="col-md-12">
+        <input placeholder="Filter..." class="form-control" type="text" id="filterText" [(ngModel)]="filter" (keyup)="filterChanged($event)">
+    </div>
+</div>

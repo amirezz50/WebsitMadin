@@ -1,0 +1,89 @@
+<div class="mb-4">
+  <!-- <div class="d-flex justify-content-center flex-row-reverse mb-4 row"> -->
+  <div *ngIf="imgMode==1" [ngClass]="class" class="col-12">
+    <img class="img-thumbnail" *ngIf="pathOrBase64==2" (click)="slectImage()" id="img" alt="Patient image"
+      [src]="docPath">
+    <img class="img-thumbnail" *ngIf="pathOrBase64==1  && _imageBase64 != '' " (click)="slectImage()" id="img"
+      alt="Patient image" [src]="_imageBase64">
+  </div>
+
+  <div *ngIf="imgMode==2" [ngClass]="class">
+    <img class="img-thumbnail" *ngIf="pathOrBase64==2" (click)="slectImage()" id="img" [src]="docPath">
+
+    <img class="img-thumbnail" *ngIf="pathOrBase64==1" (click)="slectImage()" id="img" [src]="_imageBase64">
+  </div>
+  <div id="scanned_images">
+
+  </div>
+
+  <div *ngIf="imgMode==3" [ngClass]="class">
+    <img class="img-thumbnail" *ngIf="pathOrBase64==2" id="img" (click)="slectImage()" alt="Assets image"
+      style="border:0!important" [src]="docPath">
+
+    <img class="img-thumbnail" *ngIf="pathOrBase64==1" id="img" (click)="slectImage()" alt="Assets image"
+      style="border:0!important" [src]="_imageBase64">
+  </div>
+
+  <div class="" *ngIf="_imageBase64 === ''" [ngClass]="class" class="col-12">
+    <img id="img" class="img-thumbnail" alt="Patient image" src="../../../../assets/images/avatar.jpg">
+  </div>
+
+  <div class="col-12 px-4" role="group" aria-label="Basic example">
+
+    <label class="btn btn-upload">
+      <i class="fa fa-upload">
+        <input type="file" accept="image/*" (change)="setEvent($event)" ng2FileSelect [uploader]="uploader"
+          style="display: none;" />
+      </i>
+    </label>
+
+    <label class="btn btn-upload" (click)="openCamera()">
+      <i class="fa fa-camera">
+      </i>
+    </label>
+
+    <!-- <scanner-viewer (ScanResult)="ScanResultBase64($event)"> </> -->
+
+    <label class="btn btn-upload" (click)="save()">
+      <i class="fa fa-save">
+      </i>
+    </label>
+    <label title="Scan" class="btn btn-upload" (click)="scanToJpg()">
+      <i class="fas fa-scanner"></i>
+
+    </label>
+
+  </div>
+  <img id="img" alt="Patient image" [src]="scanImageBase64">
+
+  <div *ngIf="showSelectedImage" class="col d-none d-sm-block selected-image">
+    <img *ngIf="pathOrBase64==2" id="img" alt="Patient image" [src]="docPath">
+    <img *ngIf="pathOrBase64 == 1 && _imageBase64 != ''" id="img" alt="Patient image" [src]="_imageBase64">
+
+    <button (click)="hideSelectedImage()"><i class="fa fa-times"></i></button>
+  </div>
+
+
+  <block-modal-container #popup (close)="afterPopupClosed($event)">
+    <div class="modal-body">
+      <div class="row">
+        <div class="col-6">
+          <h4 class="text-center">taken photo</h4>
+          <canvas id="canvas" [hidden]="true"></canvas>
+          <div class="output">
+            <img id="photo" alt="The screen capture will appear in this box.">
+          </div>
+        </div>
+        <div class="col-6">
+          <div class="camera">
+            <h4 class="text-center">Live Stream</h4>
+            <video id="video" #video (canplay)="canPlay($event)">Video stream not available.</video>
+            <button id="startbutton" (click)="takepicture($event)">Take photo</button>
+            <button (click)="uploadBase64()">Save</button>
+          </div>
+        </div>
+      </div>
+    </div>
+  </block-modal-container>
+
+</div>
